@@ -8,16 +8,20 @@
                     "name": "Text Question Type",
                     "commands": [
                         {
-                            "type": "maximize-window",
+                            "callsite": "12",
                             "studio": {},
-                            "callsite": "12"
+                            "type": "maximize-window"
                         },
                         {
+                            "callsite": "1",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('a').withText('LIBRARY')"
                             },
                             "studio": {
+                                "offsetX": 29,
+                                "offsetY": 4,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -76,20 +80,20 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 29,
-                                "offsetY": 4
+                                "useOffsets": false
                             },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "1"
+                            "type": "click"
                         },
                         {
+                            "callsite": "2",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('#sub-menu').find('a').withText('Examples')"
                             },
                             "studio": {
+                                "offsetX": 20,
+                                "offsetY": 5,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -155,20 +159,20 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 20,
-                                "offsetY": 5
+                                "useOffsets": false
                             },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "2"
+                            "type": "click"
                         },
                         {
+                            "callsite": "3",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('#sq_100i')"
                             },
                             "studio": {
+                                "offsetX": 116,
+                                "offsetY": 17,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -234,43 +238,43 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 116,
-                                "offsetY": 17
+                                "useOffsets": false
                             },
                             "text": "John Doe",
-                            "options": {},
-                            "type": "type-text",
-                            "callsite": "3"
+                            "type": "type-text"
                         },
                         {
-                            "type": "type-text",
-                            "studio": {},
                             "callsite": "13",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('#sq_101i')"
                             },
-                            "options": {},
-                            "text": "2018-12-20"
+                            "studio": {},
+                            "text": "2018-12-20",
+                            "type": "type-text"
                         },
                         {
-                            "type": "type-text",
-                            "studio": {},
                             "callsite": "14",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('#sq_102i')"
                             },
-                            "options": {},
-                            "text": "#003000"
+                            "studio": {},
+                            "text": "#003000",
+                            "type": "type-text"
                         },
                         {
+                            "callsite": "7",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('#sq_103i')"
                             },
                             "studio": {
+                                "offsetX": null,
+                                "offsetY": null,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -336,21 +340,21 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": null,
-                                "offsetY": null
+                                "useOffsets": false
                             },
                             "text": "jd@a.com",
-                            "options": {},
-                            "type": "type-text",
-                            "callsite": "7"
+                            "type": "type-text"
                         },
                         {
+                            "callsite": "9",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                                "value": "Selector('#surveyElement').find('.sv_complete_btn')"
                             },
                             "studio": {
+                                "offsetX": 54,
+                                "offsetY": 13,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -407,18 +411,31 @@
                                             "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(45).find('input').nth(2)"
                                         },
                                         "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyElement').find('.sv_complete_btn')"
+                                        },
+                                        "ruleType": "cust"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 54,
-                                "offsetY": 13
+                                "useOffsets": false
                             },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "9"
+                            "type": "click"
                         },
                         {
-                            "type": "assertion",
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('#surveyResult').textContent"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "10",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "\"result: {\\\"name\\\":\\\"John Doe\\\",\\\"birthdate\\\":\\\"2018-12-20\\\",\\\"color\\\":\\\"#003000\\\",\\\"email\\\":\\\"jd@a.com\\\"}\""
+                            },
+                            "options": {},
                             "studio": {
                                 "selectors": [
                                     {
@@ -479,17 +496,7 @@
                                     }
                                 ]
                             },
-                            "callsite": "10",
-                            "assertionType": "eql",
-                            "actual": {
-                                "type": "js-expr",
-                                "value": "Selector('#surveyResult').textContent"
-                            },
-                            "expected": {
-                                "type": "js-expr",
-                                "value": "\"result: {\\\"name\\\":\\\"John Doe\\\",\\\"birthdate\\\":\\\"2018-12-20\\\",\\\"color\\\":\\\"#003000\\\",\\\"email\\\":\\\"jd@a.com\\\"}\""
-                            },
-                            "options": {}
+                            "type": "assertion"
                         }
                     ]
                 },
@@ -497,9 +504,9 @@
                     "name": "Radiogroup Question Type",
                     "commands": [
                         {
-                            "type": "maximize-window",
+                            "callsite": "7",
                             "studio": {},
-                            "callsite": "7"
+                            "type": "maximize-window"
                         },
                         {
                             "callsite": "1",
@@ -801,7 +808,7 @@
                             "options": {},
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                                "value": "Selector('#surveyElement').find('.sv_complete_btn')"
                             },
                             "studio": {
                                 "offsetX": 56,
@@ -862,6 +869,13 @@
                                             "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(29).find('input').nth(2)"
                                         },
                                         "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyElement').find('.sv_complete_btn')"
+                                        },
+                                        "ruleType": "cust"
                                     }
                                 ],
                                 "useOffsets": false
@@ -948,9 +962,9 @@
                     "name": "Dropdown Question Type",
                     "commands": [
                         {
-                            "type": "maximize-window",
+                            "callsite": "10",
                             "studio": {},
-                            "callsite": "10"
+                            "type": "maximize-window"
                         },
                         {
                             "callsite": "1",
@@ -1331,7 +1345,7 @@
                             "options": {},
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                                "value": "Selector('#surveyElement').find('.sv_complete_btn')"
                             },
                             "studio": {
                                 "offsetX": 39,
@@ -1392,6 +1406,13 @@
                                             "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(20).find('input').nth(2)"
                                         },
                                         "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyElement').find('.sv_complete_btn')"
+                                        },
+                                        "ruleType": "cust"
                                     }
                                 ],
                                 "useOffsets": false
@@ -1478,9 +1499,9 @@
                     "name": "Dropdown + restful Question Type",
                     "commands": [
                         {
-                            "type": "maximize-window",
+                            "callsite": "12",
                             "studio": {},
-                            "callsite": "12"
+                            "type": "maximize-window"
                         },
                         {
                             "callsite": "1",
@@ -2177,7 +2198,7 @@
                             "options": {},
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                                "value": "Selector('#surveyElement').find('.sv_complete_btn')"
                             },
                             "studio": {
                                 "offsetX": 51,
@@ -2238,6 +2259,13 @@
                                             "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(47).find('input').nth(2)"
                                         },
                                         "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyElement').find('.sv_complete_btn')"
+                                        },
+                                        "ruleType": "cust"
                                     }
                                 ],
                                 "useOffsets": false
@@ -2324,9 +2352,9 @@
                     "name": "Checkbox Question Type",
                     "commands": [
                         {
-                            "type": "maximize-window",
+                            "callsite": "8",
                             "studio": {},
-                            "callsite": "8"
+                            "type": "maximize-window"
                         },
                         {
                             "callsite": "1",
@@ -2549,7 +2577,7 @@
                             "options": {},
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('[data-bind=\"css: question.koCss().controlLabel\"].sv_q_checkbox_control_label').find('span').withText('Ford')"
+                                "value": "Selector('span').withText('Ford').find('span')"
                             },
                             "studio": {
                                 "offsetX": 7,
@@ -2628,7 +2656,7 @@
                             "options": {},
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('span').withText('Audi').find('[data-bind=\"text: koRenderedHtml\"]')"
+                                "value": "Selector('span').withText('Audi').find('span')"
                             },
                             "studio": {
                                 "offsetX": 21,
@@ -2707,7 +2735,7 @@
                             "options": {},
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                                "value": "Selector('#surveyElement').find('.sv_complete_btn')"
                             },
                             "studio": {
                                 "offsetX": 71,
@@ -2768,6 +2796,13 @@
                                             "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(29).find('input').nth(2)"
                                         },
                                         "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyElement').find('.sv_complete_btn')"
+                                        },
+                                        "ruleType": "cust"
                                     }
                                 ],
                                 "useOffsets": false
@@ -2854,9 +2889,9 @@
                     "name": "Image picker Question Type",
                     "commands": [
                         {
-                            "type": "maximize-window",
+                            "callsite": "7",
                             "studio": {},
-                            "callsite": "7"
+                            "type": "maximize-window"
                         },
                         {
                             "callsite": "1",
@@ -3151,7 +3186,7 @@
                             "options": {},
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                                "value": "Selector('#surveyElement').find('.sv_complete_btn')"
                             },
                             "studio": {
                                 "offsetX": 61,
@@ -3212,6 +3247,13 @@
                                             "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(26).find('input').nth(2)"
                                         },
                                         "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyElement').find('.sv_complete_btn')"
+                                        },
+                                        "ruleType": "cust"
                                     }
                                 ],
                                 "useOffsets": false
@@ -3298,9 +3340,9 @@
                     "name": "Boolean Question Type",
                     "commands": [
                         {
-                            "type": "maximize-window",
+                            "callsite": "7",
                             "studio": {},
-                            "callsite": "7"
+                            "type": "maximize-window"
                         },
                         {
                             "callsite": "1",
@@ -3602,7 +3644,7 @@
                             "options": {},
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                                "value": "Selector('#surveyElement').find('.sv_complete_btn')"
                             },
                             "studio": {
                                 "offsetX": 56,
@@ -3663,6 +3705,13 @@
                                             "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(18).find('input').nth(2)"
                                         },
                                         "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyElement').find('.sv_complete_btn')"
+                                        },
+                                        "ruleType": "cust"
                                     }
                                 ],
                                 "useOffsets": false
@@ -3742,6 +3791,673 @@
                                 ]
                             },
                             "type": "assertion"
+                        }
+                    ]
+                },
+                {
+                    "name": "Matrix Question Type",
+                    "commands": [
+                        {
+                            "type": "maximize-window",
+                            "studio": {},
+                            "callsite": "10"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('a').withText('LIBRARY')"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('a').withText('LIBRARY')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.menu-item-center').find('a').withText('LIBRARY')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('LIBRARY').find('.product-link')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.menu-item-center').find('.product-link')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.product-link').nth(0)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('LIBRARY').find('a')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.menu-item-center').find('a')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('nav').find('div').find('div').find('ul').find('div').nth(1).find('li').find('a')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 29,
+                                "offsetY": 4
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "1"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('#sub-menu').find('a').withText('Examples')"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sub-menu').find('a').withText('Examples')"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('Examples').find('.sub-menu-link')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.sub-menu-item').nth(1).find('a').withText('Examples')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('a').withText('Examples').nth(0)"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.sub-menu-link').nth(1)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sub-menu').find('.sub-menu-link').nth(1)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('Examples').find('a')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sub-menu').find('ul').find('li').nth(1).find('a')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').find('div').find('nav').find('ul').find('li').nth(1).find('a')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 31,
+                                "offsetY": 12
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "2"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('small').withText('Matrix question').nth(0)"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('small').withText('Matrix question').nth(0)"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#item-types').find('small').withText('Matrix question').nth(0)"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.nav.nav-second-level.examples-menu-active').find('small').withText('Matrix question').nth(0)"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Matrix question').nth(7).find('small')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#item-types').find('li').nth(7).find('a').find('div').nth(1).find('small')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.nav.nav-second-level.examples-menu-active').find('li').nth(7).find('a').find('div').nth(1).find('small')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('nav').find('div').find('ul').find('li').find('ul').find('li').nth(7).find('a').find('div').nth(1).find('small')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 14,
+                                "offsetY": null
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "3"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('#sq_100').find('div').nth(2).find('fieldset').find('table').find('tbody').find('tr').find('td').nth(1).find('label').nth(1)"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"attr: { headers: $data.locText.renderedHtml }\"]').find('[data-bind^=\"css: question.koCss().cellLabel, attr: { for: ques\"].sv_q_m_cell_label')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"attr: { headers: $data.locText.renderedHtml }\"]').find('label').nth(1)"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('fieldset').withText('Strongly Disagree').find('table').find('tbody').find('tr').find('td').nth(1).find('label').nth(1)"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_100').find('div').nth(2).find('fieldset').find('table').find('tbody').find('tr').find('td').nth(1).find('label').nth(1)"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"css: question.koCss().cellLabel, attr: { for: ques\"].sv_q_m_cell_label').nth(0)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_100').find('[data-bind^=\"css: question.koCss().cellLabel, attr: { for: ques\"].sv_q_m_cell_label').nth(0)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('fieldset').withText('Strongly Disagree').find('[data-bind^=\"css: question.koCss().cellLabel, attr: { for: ques\"].sv_q_m_cell_label').nth(0)"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('fieldset').find('table').find('tbody').find('tr').find('td').nth(1).find('label').nth(1)"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 15,
+                                "offsetY": 28
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "4"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('#sq_100').find('div').nth(2).find('fieldset').find('table').find('tbody').find('tr').nth(1).find('td').nth(2).find('label').nth(1)"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"attr: { headers: $data.locText.renderedHtml }\"]').nth(6).find('[data-bind^=\"css: question.koCss().cellLabel, attr: { for: ques\"].sv_q_m_cell_label')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"attr: { headers: $data.locText.renderedHtml }\"]').nth(6).nth(6).find('label').nth(1)"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('fieldset').withText('Strongly Disagree').find('table').find('tbody').find('tr').nth(1).find('td').nth(2).find('label').nth(1)"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"css: question.koCss().cellLabel, attr: { for: ques\"].sv_q_m_cell_label').nth(6)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_100').find('[data-bind^=\"css: question.koCss().cellLabel, attr: { for: ques\"].sv_q_m_cell_label').nth(6)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('fieldset').withText('Strongly Disagree').find('[data-bind^=\"css: question.koCss().cellLabel, attr: { for: ques\"].sv_q_m_cell_label').nth(6)"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_100').find('div').nth(2).find('fieldset').find('table').find('tbody').find('tr').nth(1).find('td').nth(2).find('label').nth(1)"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('fieldset').find('table').find('tbody').find('tr').nth(1).find('td').nth(2).find('label').nth(1)"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 16,
+                                "offsetY": 28
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "5"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('#sq_100').find('div').nth(2).find('fieldset').find('table').find('tbody').find('tr').nth(2).find('td').nth(3).find('label').nth(1)"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"attr: { headers: $data.locText.renderedHtml }\"]').nth(12).find('[data-bind^=\"css: question.koCss().cellLabel, attr: { for: ques\"].sv_q_m_cell_label')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"attr: { headers: $data.locText.renderedHtml }\"]').nth(12).nth(12).find('label').nth(1)"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('fieldset').withText('Strongly Disagree').find('table').find('tbody').find('tr').nth(2).find('td').nth(3).find('label').nth(1)"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"css: question.koCss().cellLabel, attr: { for: ques\"].sv_q_m_cell_label').nth(12)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_100').find('[data-bind^=\"css: question.koCss().cellLabel, attr: { for: ques\"].sv_q_m_cell_label').nth(12)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('fieldset').withText('Strongly Disagree').find('[data-bind^=\"css: question.koCss().cellLabel, attr: { for: ques\"].sv_q_m_cell_label').nth(12)"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_100').find('div').nth(2).find('fieldset').find('table').find('tbody').find('tr').nth(2).find('td').nth(3).find('label').nth(1)"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('fieldset').find('table').find('tbody').find('tr').nth(2).find('td').nth(3).find('label').nth(1)"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 15,
+                                "offsetY": 37
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "6"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('#sq_100').find('div').nth(2).find('fieldset').find('table').find('tbody').find('tr').nth(3).find('td').nth(4).find('label').nth(1)"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"attr: { headers: $data.locText.renderedHtml }\"]').nth(18).find('[data-bind^=\"css: question.koCss().cellLabel, attr: { for: ques\"].sv_q_m_cell_label')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"attr: { headers: $data.locText.renderedHtml }\"]').nth(18).nth(18).find('label').nth(1)"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('fieldset').withText('Strongly Disagree').find('table').find('tbody').find('tr').nth(3).find('td').nth(4).find('label').nth(1)"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"css: question.koCss().cellLabel, attr: { for: ques\"].sv_q_m_cell_label').nth(18)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_100').find('[data-bind^=\"css: question.koCss().cellLabel, attr: { for: ques\"].sv_q_m_cell_label').nth(18)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('fieldset').withText('Strongly Disagree').find('[data-bind^=\"css: question.koCss().cellLabel, attr: { for: ques\"].sv_q_m_cell_label').nth(18)"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_100').find('div').nth(2).find('fieldset').find('table').find('tbody').find('tr').nth(3).find('td').nth(4).find('label').nth(1)"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('fieldset').find('table').find('tbody').find('tr').nth(3).find('td').nth(4).find('label').nth(1)"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 10,
+                                "offsetY": 29
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "7"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('#surveyElement').find('.sv_complete_btn')"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyElement').find('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"visible: koIsNavigationButtonsShowing, css: css.fo\"].sv_nav').find('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(20).find('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"visible: koIsNavigationButtonsShowing, css: css.fo\"].sv_nav').find('input').nth(2)"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(20).nth(20).find('div').nth(18).find('input').nth(2)"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyElement').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(18).find('input').nth(2)"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(18).find('input').nth(2)"
+                                        },
+                                        "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyElement').find('.sv_complete_btn')"
+                                        },
+                                        "ruleType": "cust"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 35,
+                                "offsetY": 19
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "8"
+                        },
+                        {
+                            "type": "assertion",
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyResult').textContent"
+                                        },
+                                        "ruleType": "id"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#content-result').find('div').withText('result').nth(1).textContent"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.tab-pane.fade.in.active').find('div').withText('result').nth(1).textContent"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#content-result').find('div').find('div').nth(8).textContent"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Thank you for completing the survey').nth(14).find('div').nth(8).textContent"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.tab-pane.fade.in.active').find('div').find('div').nth(8).textContent"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('result').nth(20).textContent"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(8).textContent"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ]
+                            },
+                            "callsite": "9",
+                            "assertionType": "eql",
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('#surveyResult').textContent"
+                            },
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "\"result: {\\\"Quality\\\":{\\\"affordable\\\":\\\"1\\\",\\\"does what it claims\\\":\\\"2\\\",\\\"better then others\\\":\\\"3\\\",\\\"easy to use\\\":\\\"4\\\"}}\""
+                            },
+                            "options": {}
                         }
                     ]
                 }
