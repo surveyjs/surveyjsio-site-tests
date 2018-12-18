@@ -1,0 +1,435 @@
+{
+    "fixtures": [
+        {
+            "name": "BasicTests",
+            "pageUrl": "https://surveyjsio-stage.azurewebsites.net/",
+            "tests": [
+                {
+                    "name": "Menu Items Clickable",
+                    "commands": [
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('a').withText('LIBRARY')"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('a').withText('LIBRARY')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.menu-item-center').find('a').withText('LIBRARY')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('LIBRARY').find('.product-link')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.menu-item-center').find('.product-link')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.product-link').nth(0)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('LIBRARY').find('a')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.menu-item-center').find('a')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('nav').find('div').find('div').find('ul').find('div').nth(1).find('li').find('a')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 33,
+                                "offsetY": 12
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "1"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('a').withText('BUILDER')"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('a').withText('BUILDER')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('BUILDER').find('.product-link')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.menu-item-center').nth(1).find('a').withText('BUILDER')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.menu-item-center').nth(1).nth(1).find('.product-link')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.product-link').nth(1)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('BUILDER').find('a')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.menu-item-center').nth(1).nth(1).nth(1).find('a')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('nav').find('div').find('div').find('ul').find('div').nth(1).find('li').nth(1).find('a')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 33,
+                                "offsetY": 8
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "2"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('a').withText('SERVICE')"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('a').withText('SERVICE')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('SERVICE').find('.product-link')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.menu-item-center').nth(2).find('a').withText('SERVICE')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.menu-item-center').nth(2).nth(2).find('.product-link')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.product-link').nth(2)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('SERVICE').find('a')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.menu-item-center').nth(2).nth(2).nth(2).find('a')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('nav').find('div').find('div').find('ul').find('div').nth(1).find('li').nth(2).find('a')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 20,
+                                "offsetY": 7
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "3"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('a').withText('Licenses')"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('a').withText('Licenses')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.pull-right').nth(5).find('a').withText('Licenses')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('Licenses').find('a')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.pull-right').nth(5).nth(5).find('a')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('nav').find('div').find('div').find('ul').find('li').nth(9).find('a')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 34,
+                                "offsetY": 25
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "4"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('a').withText('Buy')"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('a').withText('Buy')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.pull-right').nth(4).find('a').withText('Buy')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('Buy').find('a')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.pull-right').nth(4).nth(4).find('a')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('nav').find('div').find('div').find('ul').find('li').nth(8).find('a')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 13,
+                                "offsetY": 24
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "5"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.pull-right').nth(3).find('a').withText('Contact')"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.pull-right').nth(3).find('a').withText('Contact')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('a').withText('Contact').nth(0)"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('Contact').find('a')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.pull-right').nth(3).nth(3).find('a')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('nav').find('div').find('div').find('ul').find('li').nth(7).find('a')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 23,
+                                "offsetY": 28
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "6"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('h2').withText('SURVEYJS')"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('h2').withText('SURVEYJS')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.brand-link').find('h2').withText('SURVEYJS')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('a').withText('SURVEYJS').find('h2')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.brand-link').find('h2')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('nav').find('div').find('div').find('ul').find('li').find('a').find('h2')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 50,
+                                "offsetY": 12
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "7"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

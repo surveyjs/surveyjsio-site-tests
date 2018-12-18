@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "name": "surveyjs.io.tests",
+  "scripts": {
+    "test": "testcafe chrome surveyjsio"
+  },
+  "dependencies": {
+    "testcafe": "^0.23.2"
+  },
+  "devDependencies": {}
+}
