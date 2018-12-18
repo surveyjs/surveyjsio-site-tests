@@ -10,7 +10,6 @@ sudo: required
 env:
 
 addons:
-  firefox: latest
   apt:
     sources:
       - google-chrome
@@ -24,4 +23,3 @@ before_script:
   - fluxbox >/dev/null 2>&1 &
 script:
   - testcafe chrome surveyjsio --reporter minimal
-  - testcafe firefox surveyjsio --reporter minimal
