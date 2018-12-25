@@ -15,6 +15,15 @@
                         {
                             "selector": {
                                 "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
                                 "value": "Selector('span').withText('Question Types')"
                             },
                             "studio": {
@@ -1105,6 +1114,15 @@
                             "callsite": "0",
                             "studio": {},
                             "type": "maximize-window"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
                         },
                         {
                             "selector": {
@@ -2382,6 +2400,15 @@
                         {
                             "selector": {
                                 "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
                                 "value": "Selector('span').withText('Question Types')"
                             },
                             "studio": {
@@ -2964,6 +2991,15 @@
                             "type": "maximize-window",
                             "studio": {},
                             "callsite": "0"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
                         },
                         {
                             "selector": {

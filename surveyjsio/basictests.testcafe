@@ -13,6 +13,15 @@
                             "type": "maximize-window"
                         },
                         {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },
+                        {
                             "callsite": "1",
                             "options": {},
                             "selector": {

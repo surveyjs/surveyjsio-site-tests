@@ -12,6 +12,7 @@
                             "studio": {},
                             "type": "maximize-window"
                         },
+                        
                         {
                             "selector": {
                                 "type": "js-expr",
