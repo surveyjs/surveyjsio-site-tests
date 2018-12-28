@@ -15,6 +15,15 @@
                         {
                             "selector": {
                                 "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
                                 "value": "Selector('[data-bind=\"attr: { headers: $data.locText.renderedHtml }\"]').find('[data-bind^=\"css: question.koCss().cellLabel, attr: { for: ques\"].sv_q_m_cell_label')"
                             },
                             "studio": {
@@ -1156,6 +1165,15 @@
                             "type": "maximize-window",
                             "studio": {},
                             "callsite": "170"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
                         },
                         {
                             "selector": {

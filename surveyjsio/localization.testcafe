@@ -15,6 +15,15 @@
                         {
                             "selector": {
                                 "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
                                 "value": "Selector('a').withText('Localization').nth(0)"
                             },
                             "studio": {
@@ -1390,6 +1399,15 @@
                             "type": "maximize-window",
                             "studio": {},
                             "callsite": "0"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
                         },
                         {
                             "selector": {
