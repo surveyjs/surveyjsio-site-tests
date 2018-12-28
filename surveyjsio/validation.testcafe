@@ -2274,79 +2274,56 @@
                     "name": "ValidateOnServer",
                     "commands": [
                         {
-                            "type": "maximize-window",
+                            "callsite": "0",
                             "studio": {},
-                            "callsite": "0"
+                            "type": "maximize-window"
                         },
                         {
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('.surveyjs-cookie-info').find('span')"
-                            },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "16"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('a').withText('Question Types')"
+                                "value": "Selector('span').withText('I understand')"
                             },
                             "studio": {
                                 "selectors": [
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('a').withText('Question Types')"
+                                            "value": "Selector('span').withText('I understand')"
                                         },
                                         "ruleType": "text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('#category-types').find('a').withText('Question Types')"
-                                        },
-                                        "ruleType": "id-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('.active.category-name').find('a').withText('Question Types')"
+                                            "value": "Selector('.surveyjs-cookie-info').find('span').withText('I understand')"
                                         },
                                         "ruleType": "attr-text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('#category-types').find('a')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('li').withText('Question Types').find('a')"
+                                            "value": "Selector('div').withText('I understand').find('span')"
                                         },
                                         "ruleType": "text-dom"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('.active.category-name').find('a')"
+                                            "value": "Selector('.surveyjs-cookie-info').find('span')"
                                         },
                                         "ruleType": "attr-dom"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('nav').find('div').find('ul').find('li').find('a')"
+                                            "value": "Selector('body').find('div').nth(257).find('span')"
                                         },
                                         "ruleType": "dom"
                                     }
                                 ],
                                 "useOffsets": false,
-                                "offsetX": 72,
-                                "offsetY": 14
+                                "offsetX": 67,
+                                "offsetY": 19
                             },
                             "options": {},
                             "type": "click",
@@ -2355,63 +2332,63 @@
                         {
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('span').withText('Validation')"
+                                "value": "Selector('a').withText('Validation')"
                             },
                             "studio": {
                                 "selectors": [
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('span').withText('Validation')"
+                                            "value": "Selector('a').withText('Validation')"
                                         },
                                         "ruleType": "text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('#category-validation').find('span').withText('Validation')"
+                                            "value": "Selector('#category-validation').find('a').withText('Validation')"
                                         },
                                         "ruleType": "id-text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('.category-name').nth(6).find('span').withText('Validation')"
+                                            "value": "Selector('.category-name').nth(7).find('a').withText('Validation')"
                                         },
                                         "ruleType": "attr-text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('a').withText('Validation').find('span')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#category-validation').find('a').find('span')"
+                                            "value": "Selector('#category-validation').find('a')"
                                         },
                                         "ruleType": "id-dom"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('.category-name').nth(6).nth(6).find('a').find('span')"
+                                            "value": "Selector('li').withText('Validation').find('a')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.category-name').nth(7).nth(7).find('a')"
                                         },
                                         "ruleType": "attr-dom"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('nav').find('div').find('ul').find('li').nth(81).find('a').find('span')"
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('nav').find('div').find('ul').find('li').nth(81).find('a')"
                                         },
                                         "ruleType": "dom"
                                     }
                                 ],
                                 "useOffsets": false,
-                                "offsetX": 48,
-                                "offsetY": 11
+                                "offsetX": 110,
+                                "offsetY": 25
                             },
                             "options": {},
                             "type": "click",
@@ -2475,8 +2452,8 @@
                                     }
                                 ],
                                 "useOffsets": false,
-                                "offsetX": 67,
-                                "offsetY": 17
+                                "offsetX": 44,
+                                "offsetY": 16
                             },
                             "options": {},
                             "type": "click",
@@ -2548,98 +2525,19 @@
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('input')"
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('input')"
                                         },
                                         "ruleType": "dom"
                                     }
                                 ],
                                 "useOffsets": false,
-                                "offsetX": 169,
-                                "offsetY": 16
+                                "offsetX": 94,
+                                "offsetY": 20
                             },
-                            "text": "some",
+                            "text": "Au",
                             "options": {},
                             "type": "type-text",
                             "callsite": "4"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('[data-bind=\"css: css.body\"].sv_body')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: css.body\"].sv_body')"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#surveyElement').find('[data-bind=\"css: css.body\"].sv_body')"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('.sv_container').find('[data-bind=\"css: css.body\"].sv_body')"
-                                        },
-                                        "ruleType": "attr-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('1').nth(19).find('[data-bind=\"css: css.body\"].sv_body')"
-                                        },
-                                        "ruleType": "text-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('1').nth(19).nth(19).find('div').nth(1)"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#surveyElement').find('div').withText('1').nth(2)"
-                                        },
-                                        "ruleType": "id-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#surveyElement').find('div').find('form').find('div').nth(1).find('div').nth(1)"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('1').nth(20)"
-                                        },
-                                        "ruleType": "text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1)"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": false,
-                                "offsetX": 1409,
-                                "offsetY": 193
-                            },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "5"
                         },
                         {
                             "selector": {
@@ -2700,88 +2598,99 @@
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(18).find('input').nth(2)"
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(18).find('input').nth(2)"
                                         },
                                         "ruleType": "dom"
                                     }
                                 ],
                                 "useOffsets": false,
-                                "offsetX": 31,
-                                "offsetY": 14
+                                "offsetX": 33,
+                                "offsetY": 15
                             },
                             "options": {},
                             "type": "click",
-                            "callsite": "6"
+                            "callsite": "5"
                         },
                         {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('[data-bind^=\"visible: errors.length > 0, foreach: { data: error\"].sv_q_erbox').find('div').withText('The country name')"
-                            },
+                            "type": "assertion",
                             "studio": {
                                 "selectors": [
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('[data-bind^=\"visible: errors.length > 0, foreach: { data: error\"].sv_q_erbox').find('div').withText('The country name')"
+                                            "value": "Selector('[data-bind=\"css: question.koCss().error.item\"]').find('span').withText('The country name').textContent"
                                         },
                                         "ruleType": "attr-text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('div').withText('The country name').nth(2)"
+                                            "value": "Selector('span').withText('The country name').find('[data-bind=\"text: koRenderedHtml\"]').textContent"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_100').find('span').withText('The country name').nth(1).textContent"
                                         },
                                         "ruleType": "id-text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('[data-bind^=\"visible: errors.length > 0, foreach: { data: error\"].sv_q_erbox').find('div')"
-                                        },
-                                        "ruleType": "attr-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('The country name').nth(24).find('div')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('div').nth(2).find('div').find('div')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('The country name').nth(25)"
+                                            "value": "Selector('span').withText('The country name').nth(1).textContent"
                                         },
                                         "ruleType": "text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').find('div')"
+                                            "value": "Selector('#sq_100').find('[data-bind=\"text: koRenderedHtml\"]').nth(2).textContent"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"text: koRenderedHtml\"]').nth(5).textContent"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('The country name').find('span').textContent"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_100').find('div').nth(2).find('div').find('div').find('span').nth(1).find('span').textContent"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').find('div').find('span').nth(1).find('span').textContent"
                                         },
                                         "ruleType": "dom"
                                     }
-                                ],
-                                "useOffsets": true,
-                                "offsetX": 484,
-                                "offsetY": 6
+                                ]
                             },
-                            "dragOffsetX": -486,
-                            "dragOffsetY": 2,
-                            "options": {
-                                "offsetX": 484,
-                                "offsetY": 6
+                            "callsite": "6",
+                            "assertionType": "eql",
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('[data-bind=\"css: question.koCss().error.item\"]').find('span').withText('The country name').textContent"
                             },
-                            "type": "drag",
-                            "callsite": "7"
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "\"The country name 'Au' is not in this list: https://restcountries.eu/rest/v2/all\""
+                            },
+                            "options": {}
                         },
                         {
                             "selector": {
@@ -2849,19 +2758,19 @@
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('input')"
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('input')"
                                         },
                                         "ruleType": "dom"
                                     }
                                 ],
                                 "useOffsets": false,
-                                "offsetX": 119,
-                                "offsetY": 20
+                                "offsetX": 271,
+                                "offsetY": 19
                             },
-                            "text": "Australia",
+                            "text": "stralia",
                             "options": {},
                             "type": "type-text",
-                            "callsite": "8"
+                            "callsite": "7"
                         },
                         {
                             "selector": {
@@ -2922,18 +2831,18 @@
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(19).find('input').nth(2)"
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(19).find('input').nth(2)"
                                         },
                                         "ruleType": "dom"
                                     }
                                 ],
                                 "useOffsets": false,
-                                "offsetX": 36,
-                                "offsetY": 6
+                                "offsetX": 27,
+                                "offsetY": 5
                             },
                             "options": {},
                             "type": "click",
-                            "callsite": "9"
+                            "callsite": "8"
                         },
                         {
                             "type": "assertion",
@@ -2991,13 +2900,13 @@
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(8).textContent"
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(8).textContent"
                                         },
                                         "ruleType": "dom"
                                     }
                                 ]
                             },
-                            "callsite": "10",
+                            "callsite": "9",
                             "assertionType": "eql",
                             "actual": {
                                 "type": "js-expr",
