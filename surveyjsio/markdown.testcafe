@@ -1109,6 +1109,15 @@
                         {
                             "selector": {
                                 "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
+                        {
+                            "selector": {
+                                "type": "js-expr",
                                 "value": "Selector('span').withText('Markdown and Text Processing')"
                             },
                             "studio": {

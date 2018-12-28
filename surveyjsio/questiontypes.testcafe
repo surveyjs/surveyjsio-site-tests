@@ -13,6 +13,15 @@
                             "type": "maximize-window"
                         },
                         {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
+                        {
                             "callsite": "1",
                             "options": {},
                             "selector": {
@@ -509,6 +518,15 @@
                             "type": "maximize-window"
                         },
                         {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
+                        {
                             "callsite": "1",
                             "options": {},
                             "selector": {
@@ -966,6 +984,15 @@
                             "studio": {},
                             "type": "maximize-window"
                         },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
@@ -1503,6 +1530,15 @@
                             "studio": {},
                             "type": "maximize-window"
                         },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
@@ -2357,6 +2393,15 @@
                             "type": "maximize-window"
                         },
                         {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
+                        {
                             "callsite": "1",
                             "options": {},
                             "selector": {
@@ -2894,6 +2939,15 @@
                             "type": "maximize-window"
                         },
                         {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
+                        {
                             "callsite": "1",
                             "options": {},
                             "selector": {
@@ -3344,6 +3398,15 @@
                             "studio": {},
                             "type": "maximize-window"
                         },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
@@ -3802,6 +3865,15 @@
                             "studio": {},
                             "callsite": "10"
                         },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -4469,6 +4541,15 @@
                             "studio": {},
                             "callsite": "10"
                         },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -5159,6 +5240,20 @@
                 {
                     "name": "Matrix Dropdown Question Type",
                     "commands": [
+                        {
+                            "type": "maximize-window",
+                            "studio": {},
+                            "callsite": "10"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -6817,6 +6912,20 @@
                 {
                     "name": "Matrix Dynamic Question Type",
                     "commands": [
+                        {
+                            "type": "maximize-window",
+                            "studio": {},
+                            "callsite": "10"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -9161,6 +9270,15 @@
                             "type": "maximize-window"
                         },
                         {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
+                        {
                             "callsite": "1",
                             "options": {},
                             "selector": {
@@ -10103,6 +10221,15 @@
                         {
                             "selector": {
                                 "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
+                        {
+                            "selector": {
+                                "type": "js-expr",
                                 "value": "Selector('a').withText('LIBRARY')"
                             },
                             "studio": {
@@ -10711,6 +10838,15 @@
                             "type": "maximize-window"
                         },
                         {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
+                        {
                             "callsite": "1",
                             "options": {},
                             "selector": {
@@ -11252,6 +11388,15 @@
                         {
                             "selector": {
                                 "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
+                        {
+                            "selector": {
+                                "type": "js-expr",
                                 "value": "Selector('a').withText('LIBRARY')"
                             },
                             "studio": {
@@ -11707,6 +11852,15 @@
                             "studio": {},
                             "callsite": "0"
                         },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -12169,6 +12323,15 @@
                             "type": "maximize-window"
                         },
                         {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
+                        {
                             "callsite": "1",
                             "options": {},
                             "selector": {
@@ -12614,6 +12777,15 @@
                             "studio": {},
                             "type": "maximize-window"
                         },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
@@ -13154,6 +13326,15 @@
                             "studio": {},
                             "type": "maximize-window"
                         },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
@@ -14611,6 +14792,15 @@
                             "studio": {},
                             "type": "maximize-window"
                         },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
