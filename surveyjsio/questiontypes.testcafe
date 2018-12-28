@@ -20,7 +20,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
@@ -525,7 +525,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
@@ -992,7 +992,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
@@ -1538,7 +1538,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
@@ -2400,7 +2400,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
@@ -2946,7 +2946,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
@@ -3406,7 +3406,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
@@ -3873,7 +3873,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -4549,7 +4549,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -5240,6 +5240,20 @@
                 {
                     "name": "Matrix Dropdown Question Type",
                     "commands": [
+                        {
+                            "type": "maximize-window",
+                            "studio": {},
+                            "callsite": "10"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -6898,6 +6912,20 @@
                 {
                     "name": "Matrix Dynamic Question Type",
                     "commands": [
+                        {
+                            "type": "maximize-window",
+                            "studio": {},
+                            "callsite": "10"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-cookie-info').find('span')"
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "16"
+                        },                        
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -9249,7 +9277,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
@@ -10198,7 +10226,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -10817,7 +10845,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
@@ -11365,7 +11393,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -11832,7 +11860,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -12302,7 +12330,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
@@ -12757,7 +12785,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
@@ -13306,7 +13334,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},
@@ -14772,7 +14800,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "callsite": "1",
                             "options": {},

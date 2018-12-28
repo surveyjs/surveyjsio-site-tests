@@ -1123,7 +1123,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },
+                        },                        
                         {
                             "selector": {
                                 "type": "js-expr",
