@@ -2660,11 +2660,15 @@
                             "type": "maximize-window"
                         },
                         {
+                            "callsite": "1",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('span').withText('I understand')"
                             },
                             "studio": {
+                                "offsetX": 36,
+                                "offsetY": 27,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -2702,20 +2706,20 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 36,
-                                "offsetY": 27
+                                "useOffsets": false
                             },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "1"
+                            "type": "click"
                         },
                         {
+                            "callsite": "2",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('a').withText('Custom Widgets')"
                             },
                             "studio": {
+                                "offsetX": 81,
+                                "offsetY": 15,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -2767,20 +2771,20 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 81,
-                                "offsetY": 15
+                                "useOffsets": false
                             },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "2"
+                            "type": "click"
                         },
                         {
+                            "callsite": "3",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('small').withText('JavaScript range slider')"
                             },
                             "studio": {
+                                "offsetX": 39,
+                                "offsetY": 9,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -2832,18 +2836,14 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 39,
-                                "offsetY": 9
+                                "useOffsets": false
                             },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "3"
+                            "type": "click"
                         },
                         {
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('#sq_100').find('.noUi-handle.noUi-handle-lower[data-handle=\"0\"]')"
+                                "value": "Selector('.noUi-handle.noUi-handle-lower[data-handle=\"0\"]')"
                             },
                             "studio": {
                                 "selectors": [
@@ -2912,12 +2912,84 @@
                                     }
                                 ],
                                 "useOffsets": false,
-                                "offsetX": 15,
-                                "offsetY": 15
+                                "offsetX": 6,
+                                "offsetY": 13
                             },
                             "options": {},
                             "type": "click",
                             "callsite": "4"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.noUi-connect')"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.noUi-connect')"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_100').find('.noUi-connect')"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.noUi-base').find('.noUi-connect')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('50').nth(25).find('.noUi-connect')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.noUi-base').find('div')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('50').nth(25).nth(25).find('div')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_100').find('div').nth(2).find('div').nth(1).find('div').find('div')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(1).find('div').find('div')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 343,
+                                "offsetY": 4
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "5"
                         },
                         {
                             "selector": {
@@ -2984,86 +3056,12 @@
                                     }
                                 ],
                                 "useOffsets": false,
-                                "offsetX": 22,
-                                "offsetY": 7
+                                "offsetX": 50,
+                                "offsetY": 16
                             },
                             "options": {},
                             "type": "click",
-                            "callsite": "5"
-                        },
-                        {
-                            "type": "assertion",
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#surveyResult').textContent"
-                                        },
-                                        "ruleType": "id"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#content-result').find('div').withText('result').nth(1).textContent"
-                                        },
-                                        "ruleType": "id-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('.tab-pane.fade.in.active').find('div').withText('result').nth(1).textContent"
-                                        },
-                                        "ruleType": "attr-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#content-result').find('div').find('div').nth(8).textContent"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Thank you for completing the survey').nth(14).find('div').nth(8).textContent"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('.tab-pane.fade.in.active').find('div').find('div').nth(8).textContent"
-                                        },
-                                        "ruleType": "attr-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('result').nth(20).textContent"
-                                        },
-                                        "ruleType": "text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(8).textContent"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ]
-                            },
-                            "callsite": "6",
-                            "assertionType": "eql",
-                            "actual": {
-                                "type": "js-expr",
-                                "value": "Selector('#surveyResult').textContent"
-                            },
-                            "expected": {
-                                "type": "js-expr",
-                                "value": "\"result: {\\\"range\\\":\\\"50.00\\\"}\""
-                            },
-                            "options": {}
+                            "callsite": "6"
                         }
                     ]
                 },
