@@ -1225,83 +1225,125 @@
                     "name": "Multi Languages",
                     "commands": [
                         {
-                            "type": "maximize-window",
+                            "callsite": "0",
                             "studio": {},
-                            "callsite": "0"
+                            "type": "maximize-window"
                         },
                         {
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('.surveyjs-cookie-info').find('span')"
-                            },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "16"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('span').withText('Localization')"
+                                "value": "Selector('span').withText('I understand')"
                             },
                             "studio": {
                                 "selectors": [
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('span').withText('Localization')"
+                                            "value": "Selector('span').withText('I understand')"
                                         },
                                         "ruleType": "text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('#category-localization').find('span').withText('Localization')"
-                                        },
-                                        "ruleType": "id-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('.category-name').nth(6).find('span').withText('Localization')"
+                                            "value": "Selector('.surveyjs-cookie-info').find('span').withText('I understand')"
                                         },
                                         "ruleType": "attr-text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('a').withText('Localization').find('span')"
+                                            "value": "Selector('div').withText('I understand').find('span')"
                                         },
                                         "ruleType": "text-dom"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('#category-localization').find('a').find('span')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('.category-name').nth(6).nth(6).find('a').find('span')"
+                                            "value": "Selector('.surveyjs-cookie-info').find('span')"
                                         },
                                         "ruleType": "attr-dom"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('nav').find('div').find('ul').find('li').nth(78).find('a').find('span')"
+                                            "value": "Selector('body').find('div').nth(257).find('span')"
                                         },
                                         "ruleType": "dom"
                                     }
                                 ],
                                 "useOffsets": false,
-                                "offsetX": 16,
-                                "offsetY": 10
+                                "offsetX": 32,
+                                "offsetY": 24
                             },
                             "options": {},
                             "type": "click",
                             "callsite": "1"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('a').withText('Localization').nth(0)"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('a').withText('Localization').nth(0)"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#category-localization').find('a').withText('Localization').nth(0)"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.category-name').nth(6).find('a').withText('Localization').nth(0)"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#category-localization').find('a')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('Localization').find('a')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.category-name').nth(6).nth(6).find('a')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('nav').find('div').find('ul').find('li').nth(78).find('a')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 110,
+                                "offsetY": 14
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "2"
                         },
                         {
                             "selector": {
@@ -1361,87 +1403,8 @@
                                     }
                                 ],
                                 "useOffsets": false,
-                                "offsetX": 29,
-                                "offsetY": 1
-                            },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "2"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('#sq_104i')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_104i')"
-                                        },
-                                        "ruleType": "id"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: question.koCss().selectWrapper\"].sv_select_wrapper').nth(2).find('[data-bind^=\"attr: {id: question.inputId, \\\\\\'aria-label\\\\\\': questio\"].sv_q_dropdown_control')"
-                                        },
-                                        "ruleType": "attr-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind^=\"attr: {id: question.inputId, \\\\\\'aria-label\\\\\\': questio\"].sv_q_dropdown_control').nth(2)"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('[data-bind^=\"attr: {id: question.inputId, \\\\\\'aria-label\\\\\\': questio\"].sv_q_dropdown_control').nth(2)"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Bewertung').nth(24).find('[data-bind^=\"attr: {id: question.inputId, \\\\\\'aria-label\\\\\\': questio\"].sv_q_dropdown_control').nth(2)"
-                                        },
-                                        "ruleType": "text-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: question.koCss().selectWrapper\"].sv_select_wrapper').nth(2).nth(2).find('select')"
-                                        },
-                                        "ruleType": "attr-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Bewertung').nth(24).nth(24).find('table').find('tbody').find('tr').nth(2).find('td').nth(1).find('div').find('div').nth(1).find('select')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('div').nth(2).find('div').nth(2).find('table').find('tbody').find('tr').nth(2).find('td').nth(1).find('div').find('div').nth(1).find('select')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(2).find('table').find('tbody').find('tr').nth(2).find('td').nth(1).find('div').find('div').nth(1).find('select')"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": false,
-                                "offsetX": 98,
-                                "offsetY": 16
+                                "offsetX": 52,
+                                "offsetY": 12
                             },
                             "options": {},
                             "type": "click",
@@ -1450,77 +1413,84 @@
                         {
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('#sq_104i').find('option').withText('5')"
+                                "value": "Selector('span').withText('1. Bitte bewerten Sie diese Filme')"
                             },
                             "studio": {
                                 "selectors": [
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('#sq_104i').find('option').withText('5')"
+                                            "value": "Selector('#sq_100').find('span').withText('1')"
                                         },
                                         "ruleType": "id-text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('[data-bind^=\"attr: {id: question.inputId, \\\\\\'aria-label\\\\\\': questio\"].sv_q_dropdown_control').nth(2).find('option').withText('5')"
+                                            "value": "Selector('[data-bind=\"css: koCss().title\"].sv_q_title').find('span').withText('1')"
                                         },
                                         "ruleType": "attr-text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('option').withText('5').nth(2)"
-                                        },
-                                        "ruleType": "text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_104i').find('[data-bind^=\"value: $data.value, text: $data.text, attr: { disa\"]').nth(0)"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_104i').find('option').nth(1)"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Bewertung').nth(24).nth(24).find('table').find('tbody').find('tr').nth(2).find('td').nth(1).find('div').find('div').nth(1).find('select').find('option').nth(1)"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind^=\"value: $data.value, text: $data.text, attr: { disa\"]').nth(10)"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Bewertung').nth(24).find('[data-bind^=\"value: $data.value, text: $data.text, attr: { disa\"]').nth(10)"
+                                            "value": "Selector('h5').withText('1').find('[data-bind=\"text: koRenderedHtml\"]')"
                                         },
                                         "ruleType": "text-attr"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(2).find('table').find('tbody').find('tr').nth(2).find('td').nth(1).find('div').find('div').nth(1).find('select').find('option').nth(1)"
+                                            "value": "Selector('#sq_100').find('[data-bind=\"text: koRenderedHtml\"]').nth(0)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('h5').withText('1').find('span')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"text: koRenderedHtml\"]').nth(3)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_100').find('div').find('h5').find('span')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('1').nth(2)"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').find('h5').find('span')"
                                         },
                                         "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('1. Bitte bewerten Sie diese Filme')"
+                                        },
+                                        "ruleType": "cust"
                                     }
                                 ],
                                 "useOffsets": false,
-                                "offsetX": null,
-                                "offsetY": null
+                                "offsetX": 68,
+                                "offsetY": 11
                             },
                             "options": {},
                             "type": "click",
@@ -1529,85 +1499,80 @@
                         {
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('#sq_104i')"
+                                "value": "Selector('#sq_100').find('span').withText('Bewertung')"
                             },
                             "studio": {
                                 "selectors": [
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('#sq_104i')"
+                                            "value": "Selector('#sq_100').find('span').withText('Bewertung')"
                                         },
-                                        "ruleType": "id"
+                                        "ruleType": "id-text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: question.koCss().selectWrapper\"].sv_select_wrapper').nth(2).find('[data-bind^=\"attr: {id: question.inputId, \\\\\\'aria-label\\\\\\': questio\"].sv_q_dropdown_control')"
+                                            "value": "Selector('[data-bind^=\"style: { minWidth: question.getColumnWidth($data) \"]').find('span').withText('Bewertung')"
                                         },
-                                        "ruleType": "attr-attr"
+                                        "ruleType": "attr-text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('[data-bind^=\"attr: {id: question.inputId, \\\\\\'aria-label\\\\\\': questio\"].sv_q_dropdown_control').nth(2)"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('[data-bind^=\"attr: {id: question.inputId, \\\\\\'aria-label\\\\\\': questio\"].sv_q_dropdown_control').nth(2)"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Bewertung').nth(24).find('[data-bind^=\"attr: {id: question.inputId, \\\\\\'aria-label\\\\\\': questio\"].sv_q_dropdown_control').nth(2)"
+                                            "value": "Selector('th').withText('Bewertung').find('[data-bind=\"text: koRenderedHtml\"]')"
                                         },
                                         "ruleType": "text-attr"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: question.koCss().selectWrapper\"].sv_select_wrapper').nth(2).nth(2).find('select')"
+                                            "value": "Selector('span').withText('Bewertung').nth(0)"
                                         },
-                                        "ruleType": "attr-dom"
+                                        "ruleType": "text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('div').withText('Bewertung').nth(24).nth(24).find('table').find('tbody').find('tr').nth(2).find('td').nth(1).find('div').find('div').nth(1).find('select')"
+                                            "value": "Selector('#sq_100').find('[data-bind=\"text: koRenderedHtml\"]').nth(2)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('th').withText('Bewertung').find('span')"
                                         },
                                         "ruleType": "text-dom"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('div').nth(2).find('div').nth(2).find('table').find('tbody').find('tr').nth(2).find('td').nth(1).find('div').find('div').nth(1).find('select')"
+                                            "value": "Selector('[data-bind=\"text: koRenderedHtml\"]').nth(5)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_100').find('div').nth(2).find('div').nth(2).find('table').find('thead').find('tr').find('th').find('span')"
                                         },
                                         "ruleType": "id-dom"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(2).find('table').find('tbody').find('tr').nth(2).find('td').nth(1).find('div').find('div').nth(1).find('select')"
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(2).find('table').find('thead').find('tr').find('th').find('span')"
                                         },
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": true,
-                                "offsetX": 107,
-                                "offsetY": 14
+                                "useOffsets": false,
+                                "offsetX": 41,
+                                "offsetY": 10
                             },
-                            "dragOffsetX": -163,
-                            "dragOffsetY": -137,
-                            "options": {
-                                "offsetX": 107,
-                                "offsetY": 14
-                            },
-                            "type": "drag",
+                            "options": {},
+                            "type": "click",
                             "callsite": "5"
                         },
                         {
@@ -1676,14 +1641,14 @@
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(2).find('table').find('tbody').find('tr').find('td').nth(1).find('div').find('div').nth(1).find('select')"
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(2).find('table').find('tbody').find('tr').find('td').nth(1).find('div').find('div').nth(1).find('select')"
                                         },
                                         "ruleType": "dom"
                                     }
                                 ],
                                 "useOffsets": false,
-                                "offsetX": 66,
-                                "offsetY": 15
+                                "offsetX": 68,
+                                "offsetY": 17
                             },
                             "options": {},
                             "type": "click",
@@ -1692,72 +1657,79 @@
                         {
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('#sq_102i').find('option').withText('1')"
+                                "value": "Selector('#sq_102i').find('option').withText('5 (Das beste)')"
                             },
                             "studio": {
                                 "selectors": [
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('#sq_102i').find('option').withText('1')"
+                                            "value": "Selector('#sq_102i').find('option').withText('5')"
                                         },
                                         "ruleType": "id-text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('[data-bind^=\"attr: {id: question.inputId, \\\\\\'aria-label\\\\\\': questio\"].sv_q_dropdown_control').find('option').withText('1')"
+                                            "value": "Selector('[data-bind^=\"attr: {id: question.inputId, \\\\\\'aria-label\\\\\\': questio\"].sv_q_dropdown_control').find('option').withText('5')"
                                         },
                                         "ruleType": "attr-text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('option').withText('1').nth(0)"
+                                            "value": "Selector('option').withText('5').nth(0)"
                                         },
                                         "ruleType": "text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('#sq_102i').find('[data-bind^=\"value: $data.value, text: $data.text, attr: { disa\"]').nth(4)"
+                                            "value": "Selector('#sq_102i').find('[data-bind^=\"value: $data.value, text: $data.text, attr: { disa\"]').nth(0)"
                                         },
                                         "ruleType": "id-attr"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('#sq_102i').find('option').nth(5)"
+                                            "value": "Selector('#sq_102i').find('option').nth(1)"
                                         },
                                         "ruleType": "id-dom"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('div').withText('Bewertung').nth(24).nth(24).find('table').find('tbody').find('tr').find('td').nth(1).find('div').find('div').nth(1).find('select').find('option').nth(5)"
+                                            "value": "Selector('div').withText('Bewertung').nth(24).nth(24).find('table').find('tbody').find('tr').find('td').nth(1).find('div').find('div').nth(1).find('select').find('option').nth(1)"
                                         },
                                         "ruleType": "text-dom"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('[data-bind^=\"value: $data.value, text: $data.text, attr: { disa\"]').nth(4)"
+                                            "value": "Selector('[data-bind^=\"value: $data.value, text: $data.text, attr: { disa\"]').nth(0)"
                                         },
                                         "ruleType": "attr"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('div').withText('Bewertung').nth(24).find('[data-bind^=\"value: $data.value, text: $data.text, attr: { disa\"]').nth(4)"
+                                            "value": "Selector('div').withText('Bewertung').nth(24).find('[data-bind^=\"value: $data.value, text: $data.text, attr: { disa\"]').nth(0)"
                                         },
                                         "ruleType": "text-attr"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(2).find('table').find('tbody').find('tr').find('td').nth(1).find('div').find('div').nth(1).find('select').find('option').nth(5)"
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(2).find('table').find('tbody').find('tr').find('td').nth(1).find('div').find('div').nth(1).find('select').find('option').nth(1)"
                                         },
                                         "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_102i').find('option').withText('5 (Das beste)')"
+                                        },
+                                        "ruleType": "cust"
                                     }
                                 ],
                                 "useOffsets": false,
@@ -1767,609 +1739,6 @@
                             "options": {},
                             "type": "click",
                             "callsite": "7"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('h5').withText('1')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('h5').withText('1')"
-                                        },
-                                        "ruleType": "text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: koCss().title\"].sv_q_title')"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('h5').withText('1')"
-                                        },
-                                        "ruleType": "id-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('[data-bind=\"css: koCss().title\"].sv_q_title')"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: {\\\\\\'title-left\\\\\\': question.hasTitleOnLeft}\"]').find('h5').withText('1')"
-                                        },
-                                        "ruleType": "attr-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('1').nth(28).find('[data-bind=\"css: koCss().title\"].sv_q_title')"
-                                        },
-                                        "ruleType": "text-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('div').find('h5')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('1').nth(28).nth(28).find('h5')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').find('h5')"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": true,
-                                "offsetX": 252,
-                                "offsetY": 5
-                            },
-                            "dragOffsetX": -235,
-                            "dragOffsetY": -6,
-                            "options": {
-                                "offsetX": 252,
-                                "offsetY": 5
-                            },
-                            "type": "drag",
-                            "callsite": "8"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('th').withText('Bewertung')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('th').withText('Bewertung')"
-                                        },
-                                        "ruleType": "text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind^=\"style: { minWidth: question.getColumnWidth($data) \"]')"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('th').withText('Bewertung')"
-                                        },
-                                        "ruleType": "id-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('[data-bind^=\"style: { minWidth: question.getColumnWidth($data) \"]')"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"visible: question.showHeader\"]').find('th').withText('Bewertung')"
-                                        },
-                                        "ruleType": "attr-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Bewertung').nth(24).find('[data-bind^=\"style: { minWidth: question.getColumnWidth($data) \"]')"
-                                        },
-                                        "ruleType": "text-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Bewertung').nth(24).nth(24).find('table').find('thead').find('tr').find('th')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('div').nth(2).find('div').nth(2).find('table').find('thead').find('tr').find('th')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(2).find('table').find('thead').find('tr').find('th')"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": true,
-                                "offsetX": 95,
-                                "offsetY": 14
-                            },
-                            "dragOffsetX": -94,
-                            "dragOffsetY": 0,
-                            "options": {
-                                "offsetX": 95,
-                                "offsetY": 14
-                            },
-                            "type": "drag",
-                            "callsite": "9"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('#selLocales')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#selLocales')"
-                                        },
-                                        "ruleType": "id"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('p').withText('Locale').find('empty').find('select')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('.propertyitem').find('p').find('empty').find('select')"
-                                        },
-                                        "ruleType": "attr-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').nth(60).find('div').find('div').find('p').find('empty').find('select')"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": false,
-                                "offsetX": 57,
-                                "offsetY": 10
-                            },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "10"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('option').withText('en')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('option').withText('en')"
-                                        },
-                                        "ruleType": "text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#selLocales').find('option').withText('en')"
-                                        },
-                                        "ruleType": "id-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('.propertyitem').find('option').withText('en')"
-                                        },
-                                        "ruleType": "attr-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#selLocales').find('option').nth(1)"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('p').withText('Locale').find('empty').find('select').find('option').nth(1)"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('.propertyitem').find('p').find('empty').find('select').find('option').nth(1)"
-                                        },
-                                        "ruleType": "attr-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').nth(60).find('div').find('div').find('p').find('empty').find('select').find('option').nth(1)"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": false,
-                                "offsetX": null,
-                                "offsetY": null
-                            },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "11"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('h5').withText('1')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('h5').withText('1')"
-                                        },
-                                        "ruleType": "text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: koCss().title\"].sv_q_title')"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('h5').withText('1')"
-                                        },
-                                        "ruleType": "id-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('[data-bind=\"css: koCss().title\"].sv_q_title')"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: {\\\\\\'title-left\\\\\\': question.hasTitleOnLeft}\"]').find('h5').withText('1')"
-                                        },
-                                        "ruleType": "attr-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('1').nth(28).find('[data-bind=\"css: koCss().title\"].sv_q_title')"
-                                        },
-                                        "ruleType": "text-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('div').find('h5')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('1').nth(28).nth(28).find('h5')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').find('h5')"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": true,
-                                "offsetX": 205,
-                                "offsetY": 8
-                            },
-                            "dragOffsetX": -189,
-                            "dragOffsetY": -3,
-                            "options": {
-                                "offsetX": 205,
-                                "offsetY": 8
-                            },
-                            "type": "drag",
-                            "callsite": "12"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('th').withText('Rating')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('th').withText('Rating')"
-                                        },
-                                        "ruleType": "text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind^=\"style: { minWidth: question.getColumnWidth($data) \"]')"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('th').withText('Rating')"
-                                        },
-                                        "ruleType": "id-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('[data-bind^=\"style: { minWidth: question.getColumnWidth($data) \"]')"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"visible: question.showHeader\"]').find('th').withText('Rating')"
-                                        },
-                                        "ruleType": "attr-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Rating').nth(28).find('[data-bind^=\"style: { minWidth: question.getColumnWidth($data) \"]')"
-                                        },
-                                        "ruleType": "text-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Rating').nth(28).nth(28).find('table').find('thead').find('tr').find('th')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('div').nth(2).find('div').nth(2).find('table').find('thead').find('tr').find('th')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(2).find('table').find('thead').find('tr').find('th')"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": true,
-                                "offsetX": 93,
-                                "offsetY": 11
-                            },
-                            "dragOffsetX": -89,
-                            "dragOffsetY": 7,
-                            "options": {
-                                "offsetX": 93,
-                                "offsetY": 11
-                            },
-                            "type": "drag",
-                            "callsite": "13"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('#sq_103i')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_103i')"
-                                        },
-                                        "ruleType": "id"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: question.koCss().selectWrapper\"].sv_select_wrapper').nth(1).find('[data-bind^=\"attr: {id: question.inputId, \\\\\\'aria-label\\\\\\': questio\"].sv_q_dropdown_control')"
-                                        },
-                                        "ruleType": "attr-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind^=\"attr: {id: question.inputId, \\\\\\'aria-label\\\\\\': questio\"].sv_q_dropdown_control').nth(1)"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('[data-bind^=\"attr: {id: question.inputId, \\\\\\'aria-label\\\\\\': questio\"].sv_q_dropdown_control').nth(1)"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Rating').nth(28).find('[data-bind^=\"attr: {id: question.inputId, \\\\\\'aria-label\\\\\\': questio\"].sv_q_dropdown_control').nth(1)"
-                                        },
-                                        "ruleType": "text-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: question.koCss().selectWrapper\"].sv_select_wrapper').nth(1).nth(1).find('select')"
-                                        },
-                                        "ruleType": "attr-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Rating').nth(28).nth(28).find('table').find('tbody').find('tr').nth(1).find('td').nth(1).find('div').find('div').nth(1).find('select')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('div').nth(2).find('div').nth(2).find('table').find('tbody').find('tr').nth(1).find('td').nth(1).find('div').find('div').nth(1).find('select')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(2).find('table').find('tbody').find('tr').nth(1).find('td').nth(1).find('div').find('div').nth(1).find('select')"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": false,
-                                "offsetX": 96,
-                                "offsetY": 18
-                            },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "14"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('#sq_103i').find('option').withText('5')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_103i').find('option').withText('5')"
-                                        },
-                                        "ruleType": "id-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind^=\"attr: {id: question.inputId, \\\\\\'aria-label\\\\\\': questio\"].sv_q_dropdown_control').nth(1).find('option').withText('5')"
-                                        },
-                                        "ruleType": "attr-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('option').withText('5').nth(1)"
-                                        },
-                                        "ruleType": "text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_103i').find('[data-bind^=\"value: $data.value, text: $data.text, attr: { disa\"]').nth(0)"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_103i').find('option').nth(1)"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Rating').nth(28).nth(28).find('table').find('tbody').find('tr').nth(1).find('td').nth(1).find('div').find('div').nth(1).find('select').find('option').nth(1)"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind^=\"value: $data.value, text: $data.text, attr: { disa\"]').nth(5)"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Rating').nth(28).find('[data-bind^=\"value: $data.value, text: $data.text, attr: { disa\"]').nth(5)"
-                                        },
-                                        "ruleType": "text-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(2).find('table').find('tbody').find('tr').nth(1).find('td').nth(1).find('div').find('div').nth(1).find('select').find('option').nth(1)"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": false,
-                                "offsetX": null,
-                                "offsetY": null
-                            },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "15"
                         },
                         {
                             "selector": {
@@ -2430,18 +1799,83 @@
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(41).find('input').nth(2)"
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(41).find('input').nth(2)"
                                         },
                                         "ruleType": "dom"
                                     }
                                 ],
                                 "useOffsets": false,
-                                "offsetX": 72,
-                                "offsetY": 15
+                                "offsetX": 49,
+                                "offsetY": 12
                             },
                             "options": {},
                             "type": "click",
-                            "callsite": "16"
+                            "callsite": "8"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('h3').withText('Vielen Dank für die Beantwortung des Fragebogens')"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('h3').withText('Vielen Dank für die Beantwortung des Fragebogens')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyElement').find('h3').withText('Vielen Dank für die Beantwortung des Fragebogens')"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"html: processedCompletedHtml, css: completedCss\"].sv_body.sv_completed_page').find('h3').withText('Vielen Dank für die Beantwortung des Fragebogens')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"html: processedCompletedHtml, css: completedCss\"].sv_body.sv_completed_page').find('h3')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Vielen Dank für die Beantwortung des Fragebogens').nth(18).find('h3')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyElement').find('div').find('form').find('div').nth(1).find('div').nth(1).find('h3')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('h3')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 256,
+                                "offsetY": 21
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "9"
                         },
                         {
                             "type": "assertion",
@@ -2478,7 +1912,7 @@
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('div').withText('Thank you for completing the survey').nth(14).find('div').nth(8).textContent"
+                                            "value": "Selector('div').withText('Vielen Dank für die Beantwortung des Fragebogens').nth(14).find('div').nth(8).textContent"
                                         },
                                         "ruleType": "text-dom"
                                     },
@@ -2499,13 +1933,13 @@
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(8).textContent"
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(8).textContent"
                                         },
                                         "ruleType": "dom"
                                     }
                                 ]
                             },
-                            "callsite": "17",
+                            "callsite": "10",
                             "assertionType": "eql",
                             "actual": {
                                 "type": "js-expr",
@@ -2513,7 +1947,7 @@
                             },
                             "expected": {
                                 "type": "js-expr",
-                                "value": "\"result: {\\\"favoriteMovie\\\":{\\\"water\\\":{\\\"rate\\\":5},\\\"moonlight\\\":{\\\"rate\\\":1},\\\"zootopia\\\":{\\\"rate\\\":5}}}\""
+                                "value": "\"result: {\\\"favoriteMovie\\\":{\\\"moonlight\\\":{\\\"rate\\\":5}}}\""
                             },
                             "options": {}
                         }
