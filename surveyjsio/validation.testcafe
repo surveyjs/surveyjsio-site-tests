@@ -3572,7 +3572,7 @@
                         {
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('[data-bind=\"css: question.koCss().error.item\"]').find('span').withText('The')"
+                                "value": "Selector('span').withText(\"The 'most amount' should be more 'less amount'\")"
                             },
                             "studio": {
                                 "selectors": [
@@ -3638,6 +3638,13 @@
                                             "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').find('div').find('span').nth(1).find('span')"
                                         },
                                         "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText(\"The 'most amount' should be more 'less amount'\")"
+                                        },
+                                        "ruleType": "cust"
                                     }
                                 ],
                                 "useOffsets": false,
