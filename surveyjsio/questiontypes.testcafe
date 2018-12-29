@@ -20,7 +20,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "callsite": "1",
                             "options": {},
@@ -525,7 +525,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "callsite": "1",
                             "options": {},
@@ -992,7 +992,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "callsite": "1",
                             "options": {},
@@ -1538,7 +1538,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "callsite": "1",
                             "options": {},
@@ -2400,7 +2400,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "callsite": "1",
                             "options": {},
@@ -2946,7 +2946,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "callsite": "1",
                             "options": {},
@@ -3406,7 +3406,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "callsite": "1",
                             "options": {},
@@ -3873,7 +3873,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -4549,7 +4549,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -5253,7 +5253,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -6925,7 +6925,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -9277,7 +9277,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "callsite": "1",
                             "options": {},
@@ -10226,7 +10226,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -10845,7 +10845,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "callsite": "1",
                             "options": {},
@@ -11393,7 +11393,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -11860,7 +11860,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "selector": {
                                 "type": "js-expr",
@@ -12330,7 +12330,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "callsite": "1",
                             "options": {},
@@ -12785,7 +12785,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "callsite": "1",
                             "options": {},
@@ -13334,7 +13334,7 @@
                             "options": {},
                             "type": "click",
                             "callsite": "16"
-                        },                        
+                        },
                         {
                             "callsite": "1",
                             "options": {},
@@ -14799,8 +14799,8 @@
                             },
                             "options": {},
                             "type": "click",
-                            "callsite": "16"
-                        },                        
+                            "callsite": "161"
+                        },
                         {
                             "callsite": "1",
                             "options": {},
@@ -15178,95 +15178,6 @@
                             "type": "type-text"
                         },
                         {
-                            "callsite": "9",
-                            "options": {},
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('#sq_110i')"
-                            },
-                            "studio": {
-                                "offsetX": null,
-                                "offsetY": null,
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_110i')"
-                                        },
-                                        "ruleType": "id"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_110').find('[data-bind^=\"disable: question.isReadOnly, attr: {type: questio\"].sv_q_text_root')"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('2').nth(31).find('[data-bind^=\"disable: question.isReadOnly, attr: {type: questio\"].sv_q_text_root')"
-                                        },
-                                        "ruleType": "text-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: {\\\\\\'content-left\\\\\\': question.hasTitleOnLeft}\"]').nth(2).find('[data-bind^=\"disable: question.isReadOnly, attr: {type: questio\"].sv_q_text_root')"
-                                        },
-                                        "ruleType": "attr-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind^=\"disable: question.isReadOnly, attr: {type: questio\"].sv_q_text_root').nth(1)"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_110').find('div').nth(2).find('input')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: {\\\\\\'content-left\\\\\\': question.hasTitleOnLeft}\"]').nth(2).nth(2).find('input')"
-                                        },
-                                        "ruleType": "attr-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('2').nth(31).nth(31).find('div').nth(2).find('input')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(1).find('div').find('div').nth(2).find('div').find('div').nth(8).find('div').nth(2).find('input')"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": false
-                            },
-                            "text": "12",
-                            "type": "type-text"
-                        },
-                        {
-                            "callsite": "10",
-                            "keys": "2",
-                            "selector": null,
-                            "studio": {
-                                "selectors": null
-                            },
-                            "type": "press-key"
-                        },
-                        {
                             "callsite": "11",
                             "options": {},
                             "selector": {
@@ -15344,6 +15255,93 @@
                                 "useOffsets": false
                             },
                             "text": "B",
+                            "type": "type-text"
+                        },
+                        {
+                            "callsite": "17",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('#sq_112i')"
+                            },
+                            "studio": {
+                                "offsetX": 80,
+                                "offsetY": 9,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_125i')"
+                                        },
+                                        "ruleType": "id"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_125').find('[data-bind^=\"disable: question.isReadOnly, attr: {type: questio\"].sv_q_text_root')"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Link').nth(33).find('[data-bind^=\"disable: question.isReadOnly, attr: {type: questio\"].sv_q_text_root')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"css: {\\\\\\'content-left\\\\\\': question.hasTitleOnLeft}\"]').nth(11).find('[data-bind^=\"disable: question.isReadOnly, attr: {type: questio\"].sv_q_text_root')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"disable: question.isReadOnly, attr: {type: questio\"].sv_q_text_root').nth(9)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_125').find('div').nth(2).find('input')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"css: {\\\\\\'content-left\\\\\\': question.hasTitleOnLeft}\"]').nth(11).nth(11).find('input')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Link').nth(33).nth(33).find('div').nth(2).find('input')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(1).find('div').nth(56).find('div').nth(2).find('div').nth(34).find('div').find('div').nth(2).find('input')"
+                                        },
+                                        "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_112i')"
+                                        },
+                                        "ruleType": "cust"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "text": "3",
                             "type": "type-text"
                         },
                         {
@@ -15579,6 +15577,17 @@
                             "type": "type-text"
                         },
                         {
+                            "type": "type-text",
+                            "studio": {},
+                            "callsite": "26",
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('#sq_122i')"
+                            },
+                            "options": {},
+                            "text": "3"
+                        },
+                        {
                             "callsite": "15",
                             "options": {},
                             "selector": {
@@ -15659,175 +15668,6 @@
                             "type": "type-text"
                         },
                         {
-                            "callsite": "16",
-                            "options": {},
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('#sq_125i')"
-                            },
-                            "studio": {
-                                "offsetX": 80,
-                                "offsetY": 9,
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_125i')"
-                                        },
-                                        "ruleType": "id"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_125').find('[data-bind^=\"disable: question.isReadOnly, attr: {type: questio\"].sv_q_text_root')"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Link').nth(33).find('[data-bind^=\"disable: question.isReadOnly, attr: {type: questio\"].sv_q_text_root')"
-                                        },
-                                        "ruleType": "text-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: {\\\\\\'content-left\\\\\\': question.hasTitleOnLeft}\"]').nth(11).find('[data-bind^=\"disable: question.isReadOnly, attr: {type: questio\"].sv_q_text_root')"
-                                        },
-                                        "ruleType": "attr-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind^=\"disable: question.isReadOnly, attr: {type: questio\"].sv_q_text_root').nth(9)"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_125').find('div').nth(2).find('input')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: {\\\\\\'content-left\\\\\\': question.hasTitleOnLeft}\"]').nth(11).nth(11).find('input')"
-                                        },
-                                        "ruleType": "attr-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Link').nth(33).nth(33).find('div').nth(2).find('input')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(1).find('div').nth(56).find('div').nth(2).find('div').nth(34).find('div').find('div').nth(2).find('input')"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": false
-                            },
-                            "text": "F",
-                            "type": "type-text"
-                        },
-                        {
-                            "callsite": "17",
-                            "options": {},
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('#sq_125i')"
-                            },
-                            "studio": {
-                                "offsetX": 80,
-                                "offsetY": 9,
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_125i')"
-                                        },
-                                        "ruleType": "id"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_125').find('[data-bind^=\"disable: question.isReadOnly, attr: {type: questio\"].sv_q_text_root')"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Link').nth(33).find('[data-bind^=\"disable: question.isReadOnly, attr: {type: questio\"].sv_q_text_root')"
-                                        },
-                                        "ruleType": "text-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: {\\\\\\'content-left\\\\\\': question.hasTitleOnLeft}\"]').nth(11).find('[data-bind^=\"disable: question.isReadOnly, attr: {type: questio\"].sv_q_text_root')"
-                                        },
-                                        "ruleType": "attr-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind^=\"disable: question.isReadOnly, attr: {type: questio\"].sv_q_text_root').nth(9)"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_125').find('div').nth(2).find('input')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: {\\\\\\'content-left\\\\\\': question.hasTitleOnLeft}\"]').nth(11).nth(11).find('input')"
-                                        },
-                                        "ruleType": "attr-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Link').nth(33).nth(33).find('div').nth(2).find('input')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(1).find('div').nth(56).find('div').nth(2).find('div').nth(34).find('div').find('div').nth(2).find('input')"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": false
-                            },
-                            "text": "F3",
-                            "type": "type-text"
-                        },
-                        {
-                            "callsite": "18",
-                            "keys": "3",
-                            "selector": null,
-                            "studio": {
-                                "selectors": null
-                            },
-                            "type": "press-key"
-                        },
-                        {
                             "callsite": "19",
                             "options": {},
                             "selector": {
@@ -15906,6 +15746,17 @@
                             },
                             "text": "5",
                             "type": "type-text"
+                        },
+                        {
+                            "type": "type-text",
+                            "studio": {},
+                            "callsite": "27",
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('#sq_125i')"
+                            },
+                            "options": {},
+                            "text": "L"
                         },
                         {
                             "callsite": "20",
@@ -15995,7 +15846,7 @@
                             "callsite": "21",
                             "expected": {
                                 "type": "js-expr",
-                                "value": "\"7\""
+                                "value": "\"8\""
                             },
                             "options": {},
                             "studio": {
@@ -16076,7 +15927,7 @@
                             "callsite": "22",
                             "expected": {
                                 "type": "js-expr",
-                                "value": "\"€17.00\""
+                                "value": "\"€18.00\""
                             },
                             "options": {},
                             "studio": {
@@ -16228,17 +16079,7 @@
                             "type": "click"
                         },
                         {
-                            "actual": {
-                                "type": "js-expr",
-                                "value": "Selector('#surveyResult').textContent"
-                            },
-                            "assertionType": "eql",
-                            "callsite": "24",
-                            "expected": {
-                                "type": "js-expr",
-                                "value": "\"result: {\\\"items\\\":[{\\\"total\\\":2,\\\"name\\\":\\\"A\\\",\\\"cost\\\":1,\\\"quantity\\\":2,\\\"vendor\\\":\\\"B\\\",\\\"link\\\":\\\"C\\\"},{\\\"total\\\":15,\\\"name\\\":\\\"D\\\",\\\"vendor\\\":\\\"E\\\",\\\"link\\\":\\\"F\\\",\\\"cost\\\":3,\\\"quantity\\\":5}],\\\"totalQuantity\\\":7,\\\"totalCost\\\":17}\""
-                            },
-                            "options": {},
+                            "type": "assertion",
                             "studio": {
                                 "selectors": [
                                     {
@@ -16293,13 +16134,23 @@
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(8).textContent"
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(8).textContent"
                                         },
                                         "ruleType": "dom"
                                     }
                                 ]
                             },
-                            "type": "assertion"
+                            "callsite": "28",
+                            "assertionType": "eql",
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('#surveyResult').textContent"
+                            },
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "\"result: {\\\"items\\\":[{\\\"total\\\":3,\\\"name\\\":\\\"A\\\",\\\"cost\\\":1,\\\"vendor\\\":\\\"B\\\",\\\"quantity\\\":3,\\\"link\\\":\\\"C\\\"},{\\\"total\\\":15,\\\"name\\\":\\\"D\\\",\\\"cost\\\":3,\\\"vendor\\\":\\\"E\\\",\\\"quantity\\\":5,\\\"link\\\":\\\"L\\\"}],\\\"totalQuantity\\\":8,\\\"totalCost\\\":18}\""
+                            },
+                            "options": {}
                         }
                     ]
                 }
