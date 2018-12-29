@@ -3073,25 +3073,29 @@
                     "name": "signaturepad",
                     "commands": [
                         {
-                            "type": "maximize-window",
+                            "callsite": "0",
                             "studio": {},
-                            "callsite": "0"
+                            "type": "maximize-window"
                         },
                         {
+                            "callsite": "16",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('.surveyjs-cookie-info').find('span')"
                             },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "16"
+                            "type": "click"
                         },
                         {
+                            "callsite": "1",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('span').withText('Custom Widgets')"
                             },
                             "studio": {
+                                "offsetX": 68,
+                                "offsetY": 15,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -3143,20 +3147,20 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 68,
-                                "offsetY": 15
+                                "useOffsets": false
                             },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "1"
+                            "type": "click"
                         },
                         {
+                            "callsite": "2",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('#item-custom-widgets').find('div').withText('SignaturePad')"
                             },
                             "studio": {
+                                "offsetX": 82,
+                                "offsetY": 1,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -3208,13 +3212,9 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 82,
-                                "offsetY": 1
+                                "useOffsets": false
                             },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "2"
+                            "type": "click"
                         },
                         {
                             "selector": {
@@ -3247,150 +3247,18 @@
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(1).find('div').find('canvas')"
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(1).find('div').find('canvas')"
                                         },
                                         "ruleType": "dom"
                                     }
                                 ],
                                 "useOffsets": false,
-                                "offsetX": 40,
-                                "offsetY": 78
+                                "offsetX": 83,
+                                "offsetY": 88
                             },
                             "options": {},
                             "type": "click",
-                            "callsite": "3"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('.sjs_sp_container').find('div').find('canvas')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('.sjs_sp_container').find('div').find('canvas')"
-                                        },
-                                        "ruleType": "attr-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('div').nth(2).find('div').nth(1).find('div').find('canvas')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('1').nth(27).find('div').nth(2).find('div').nth(1).find('div').find('canvas')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(1).find('div').find('canvas')"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": false,
-                                "offsetX": 94,
-                                "offsetY": 61
-                            },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "4"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('.sjs_sp_container').find('div').find('canvas')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('.sjs_sp_container').find('div').find('canvas')"
-                                        },
-                                        "ruleType": "attr-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('div').nth(2).find('div').nth(1).find('div').find('canvas')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('1').nth(27).find('div').nth(2).find('div').nth(1).find('div').find('canvas')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(1).find('div').find('canvas')"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": false,
-                                "offsetX": 104,
-                                "offsetY": 99
-                            },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "5"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('.sjs_sp_container').find('div').find('canvas')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('.sjs_sp_container').find('div').find('canvas')"
-                                        },
-                                        "ruleType": "attr-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100').find('div').nth(2).find('div').nth(1).find('div').find('canvas')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('1').nth(27).find('div').nth(2).find('div').nth(1).find('div').find('canvas')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(1).find('div').find('canvas')"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": false,
-                                "offsetX": 69,
-                                "offsetY": 36
-                            },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "6"
+                            "callsite": "17"
                         },
                         {
                             "selector": {
@@ -3451,92 +3319,155 @@
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(21).find('input').nth(2)"
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(21).find('input').nth(2)"
                                         },
                                         "ruleType": "dom"
                                     }
                                 ],
                                 "useOffsets": false,
-                                "offsetX": 46,
+                                "offsetX": 33,
                                 "offsetY": 9
                             },
                             "options": {},
                             "type": "click",
-                            "callsite": "7"
+                            "callsite": "18"
                         },
                         {
-                            "type": "assertion",
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('h3').withText('Thank you for completing the survey')"
+                            },
                             "studio": {
                                 "selectors": [
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('#surveyResult').textContent"
-                                        },
-                                        "ruleType": "id"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#content-result').find('div').withText('result').nth(1).textContent"
-                                        },
-                                        "ruleType": "id-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('.tab-pane.fade.in.active').find('div').withText('result').nth(1).textContent"
-                                        },
-                                        "ruleType": "attr-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#content-result').find('div').find('div').nth(8).textContent"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('Thank you for completing the survey').nth(14).find('div').nth(8).textContent"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('.tab-pane.fade.in.active').find('div').find('div').nth(8).textContent"
-                                        },
-                                        "ruleType": "attr-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('result').nth(20).textContent"
+                                            "value": "Selector('h3').withText('Thank you for completing the survey')"
                                         },
                                         "ruleType": "text"
                                     },
                                     {
                                         "rawSelector": {
                                             "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(8).textContent"
+                                            "value": "Selector('#surveyElement').find('h3').withText('Thank you for completing the survey')"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"html: processedCompletedHtml, css: completedCss\"].sv_body.sv_completed_page').find('h3').withText('Thank you for completing the survey')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"html: processedCompletedHtml, css: completedCss\"].sv_body.sv_completed_page').find('h3')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Thank you for completing the survey').nth(18).find('h3')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyElement').find('div').find('form').find('div').nth(1).find('div').nth(1).find('h3')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('h3')"
                                         },
                                         "ruleType": "dom"
                                     }
-                                ]
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 731,
+                                "offsetY": 21
                             },
-                            "callsite": "8",
-                            "assertionType": "eql",
-                            "actual": {
+                            "options": {},
+                            "type": "click",
+                            "callsite": "19"
+                        },
+                        {
+                            "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('#surveyResult').textContent"
+                                "value": "Selector('#surveyResult')"
                             },
-                            "expected": {
-                                "type": "js-expr",
-                                "value": "\"result: {\\\"sign\\\":\\\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADICAYAAABS39xVAAAIJUlEQVR4Xu3UPYvcVRTA4cz8Nwi+goSshegnsBOtbRMYQYTYaKuuZLXR7yBYuLso2mqjYprF1dJW0MpvoFiYJQi+gmRnRgabbcNZDnPOfVIuuXPufc6f3+ySfwQIECgiMCtyT9ckQIDAJcHyERAgUEZAsMqsykUJEBAs3wABAmUEBKvMqlyUAAHB8g0QIFBGQLDKrMpFCRAQLN8AAQJlBASrzKpclAABwfINECBQRkCwyqzKRQkQECzfAAECZQQEq8yqXJQAAcHyDRAgUEZAsMqsykUJEBAs3wABAmUEBKvMqlyUAAHB8g0QIFBGQLDKrMpFCRAQLN8AAQJlBASrzKpclAABwfINECBQRkCwyqzKRQkQECzfAAECZQQEq8yqXJQAAcHyDRAgUEZAsMqsykUJEBAs3wABAmUEBKvMqlyUAAHB8g0QIFBGQLDKrMpFCRAQLN8AAQJlBASrzKpclAABwfINECBQRkCwzq3q0a8PH7/vbP7l5k//7qxe/O3a/i9lNumiBAYQEKxzS37s+GhvPpt9sPnTar1+49fFzQ8H+AY8kUAZAcE6t6rdk6OnptXsm82fzlbza6fP7/1YZpMuSmAAAcEaYMmeSKCLgGB12aR3EBhAQLAGWLInEugiIFhdNukdBAYQEKwBluyJBLoICFaXTXoHgQEEBGuAJXsigS4CgtVlk95BYAABwRpgyZ5IoIuAYHXZpHcQGEBAsAZYsicS6CIgWF026R0EBhAQrAGW7IkEuggIVpdNegeBAQQEa4AleyKBLgKC1WWT3kFgAAHBGmDJnkigi4BgddmkdxAYQECwBliyJxLoIiBYXTbpHQQGEBCsAZbsiQS6CAhWl016B4EBBAQreckPnxy8/MBy+mQz9u9p+cof19/8NPkKxhEoKyBYyavbPT78aZrNn9iMXa5XP99e7D+ZfAXjCJQVEKzk1V05OXj38mp6ZzP27nr+3p3F3tvJVzCOQFkBwSq7OhcnMJ6AYI23cy8mUFZAsMquzsUJjCcgWOPt3IsJlBUQrLKrc3EC4wkI1ng792ICZQUEq+zqXJzAeAKCNd7OvZhAWQHBKrs6FycwnoBgjbdzLyZQVkCwyq7OxQmMJyBY4+3ciwmUFRCssqtzcQLjCQjWeDv3YgJlBbY2WA+dvP/Rg8udVzeyf01nH/95/a3Xyiq7OAECFyKwtcG6enx4tjObT5tXnq1Xy9PF/s6FvNiPECBQVmBrg3Xl5OC7y6vp2Y3s3fX8+zuLvWfKKrs4AQIXIrC1wbqQ1/kRAgRaCQhWq3V6DIHeAoLVe79eR6CVgGC1WqfHEOgtIFi99+t1BFoJCFardXoMgd4CgtV7v15HoJWAYLVap8cQ6C0gWL3363UEWgkIVqt1egyB3gKC1Xu/XkeglYBgtVqnxxDoLSBYvffrdQRaCQhWq3V6DIHeAoLVe79eR6CVgGC1WqfHEOgtIFi99+t1BFoJCFardXoMgd4CgrWl+33k5Ojp+5ezbzfX+2daP/f79Zs/bOlVXYtAmoBgpVHf26Dd48PPptn8xubUcr36/PZi/6V7+wX/m0A/AcHa0p1e/erwhWk9/+L/YE03Thev39rSq7oWgTQBwUqjNogAgaiAYEUFnSdAIE1AsNKoDSJAICogWFFB5wkQSBMQrDRqgwgQiAoIVlTQeQIE0gQEK43aIAIEogKCFRV0ngCBNAHBSqM2iACBqIBgRQWdJ0AgTUCw0qgNIkAgKiBYUUHnCRBIExCsNGqDCBCICghWVNB5AgTSBAQrjdogAgSiAoIVFXSeAIE0AcFKozaIAIGogGBFBZ0nQCBNQLDSqA0iQCAqIFhRQecJEEgTEKw0aoMIEIgKCFZU0HkCBNIEBCuN2iACBKICghUVdJ4AgTQBwUqjNogAgaiAYEUFnSdAIE1AsNKoDSJAICogWFFB5wkQSBMQrDRqgwgQiAoIVlTQeQIE0gQEK43aIAIEogKCFRV0ngCBNAHBSqM2iACBqIBgRQWdJ0AgTUCw0qgNIkAgKiBYUUHnCRBIExCsNGqDCBCICghWVNB5AgTSBAQrjdogAgSiAoIVFXSeAIE0AcFKozaIAIGogGBFBZ0nQCBNQLDSqA0iQCAqIFhRQecJEEgTEKw0aoMIEIgKCFZU0HkCBNIEBCuN2iACBKICghUVdJ4AgTQBwUqjNogAgaiAYEUFnSdAIE1AsNKoDSJAICogWFFB5wkQSBMQrDRqgwgQiAoIVlTQeQIE0gQEK43aIAIEogKCFRV0ngCBNAHBSqM2iACBqIBgRQWdJ0AgTUCw0qgNIkAgKiBYUUHnCRBIExCsNGqDCBCICghWVNB5AgTSBAQrjdogAgSiAoIVFXSeAIE0AcFKozaIAIGogGBFBZ0nQCBNQLDSqA0iQCAqIFhRQecJEEgTEKw0aoMIEIgKCFZU0HkCBNIEBCuN2iACBKICghUVdJ4AgTQBwUqjNogAgaiAYEUFnSdAIE1AsNKoDSJAICogWFFB5wkQSBMQrDRqgwgQiAoIVlTQeQIE0gQEK43aIAIEogKCFRV0ngCBNAHBSqM2iACBqIBgRQWdJ0AgTUCw0qgNIkAgKiBYUUHnCRBIExCsNGqDCBCICghWVNB5AgTSBAQrjdogAgSiAoIVFXSeAIE0AcFKozaIAIGogGBFBZ0nQCBNQLDSqA0iQCAqIFhRQecJEEgTEKw0aoMIEIgKCFZU0HkCBNIEBCuN2iACBKICghUVdJ4AgTQBwUqjNogAgaiAYEUFnSdAIE1AsNKoDSJAICrwH3f7YMk8n5NQAAAAAElFTkSuQmCC\\\"}\""
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyResult')"
+                                        },
+                                        "ruleType": "id"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#content-result').find('div').withText('result').nth(1)"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.tab-pane.fade.in.active').find('div').withText('result').nth(1)"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#content-result').find('div').find('div').nth(8)"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Thank you for completing the survey').nth(14).find('div').nth(8)"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.tab-pane.fade.in.active').find('div').find('div').nth(8)"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('result').nth(20)"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(8)"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 19,
+                                "offsetY": 4
                             },
-                            "options": {}
+                            "options": {},
+                            "type": "click",
+                            "callsite": "20"
                         }
                     ]
                 },
