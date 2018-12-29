@@ -2417,7 +2417,10 @@
                             "type": "click"
                         },
                         {
-                            "type": "drag-to-element",
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('[data-value=\"family\"]').find('div').withText('family')"
+                            },
                             "studio": {
                                 "selectors": [
                                     {
@@ -2482,28 +2485,20 @@
                                             "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(1).find('div').nth(1).find('div').find('div')"
                                         },
                                         "ruleType": "dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('.sjs-sortablejs-result')"
-                                        },
-                                        "ruleType": "cust"
                                     }
                                 ],
-                                "offsetX": 490,
-                                "offsetY": 14
+                                "useOffsets": true,
+                                "offsetX": 67,
+                                "offsetY": 19
                             },
-                            "callsite": "4",
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('[data-value=\"family\"]').find('div').withText('family')"
+                            "dragOffsetX": 32,
+                            "dragOffsetY": -60,
+                            "options": {
+                                "offsetX": 67,
+                                "offsetY": 19
                             },
-                            "destinationSelector": {
-                                "type": "js-expr",
-                                "value": "Selector('.sjs-sortablejs-result')"
-                            },
-                            "options": {}
+                            "type": "drag",
+                            "callsite": "4"
                         },
                         {
                             "selector": {
@@ -2570,8 +2565,8 @@
                                     }
                                 ],
                                 "useOffsets": false,
-                                "offsetX": 86,
-                                "offsetY": 16
+                                "offsetX": 43,
+                                "offsetY": 12
                             },
                             "options": {},
                             "type": "click",
@@ -2580,6 +2575,7 @@
                         {
                             "type": "assertion",
                             "studio": {
+                                "assertionMode": "checkElement",
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -2637,7 +2633,9 @@
                                         },
                                         "ruleType": "dom"
                                     }
-                                ]
+                                ],
+                                "selectorType": "CSS Selector",
+                                "selectorPostfix": ".textContent"
                             },
                             "callsite": "6",
                             "assertionType": "eql",
@@ -2645,11 +2643,11 @@
                                 "type": "js-expr",
                                 "value": "Selector('#surveyResult').textContent"
                             },
+                            "options": {},
                             "expected": {
                                 "type": "js-expr",
                                 "value": "\"result: {\\\"lifepriority\\\":[\\\"family\\\"]}\""
-                            },
-                            "options": {}
+                            }
                         }
                     ]
                 },
