@@ -3574,7 +3574,7 @@
                             "options": {},
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('span').withText('The \\'most amount\\' should be more \\'less amount\\'')"
+                                "value": "Selector('#sq_100').find('span').withText('The').nth(1)"
                             },
                             "studio": {
                                 "offsetX": 73,
