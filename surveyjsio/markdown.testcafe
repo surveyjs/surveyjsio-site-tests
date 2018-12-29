@@ -1116,20 +1116,24 @@
                             "type": "maximize-window"
                         },
                         {
+                            "callsite": "16",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('.surveyjs-cookie-info').find('span')"
                             },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "16"
-                        },                        
+                            "type": "click"
+                        },
                         {
+                            "callsite": "1",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('span').withText('Markdown and Text Processing')"
                             },
                             "studio": {
+                                "offsetX": 120,
+                                "offsetY": 10,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -1181,20 +1185,20 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 120,
-                                "offsetY": 10
+                                "useOffsets": false
                             },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "1"
+                            "type": "click"
                         },
                         {
+                            "callsite": "2",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('small').withText('Change dynamically text in choices')"
                             },
                             "studio": {
+                                "offsetX": 118,
+                                "offsetY": 12,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -1246,99 +1250,20 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 118,
-                                "offsetY": 12
+                                "useOffsets": false
                             },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "2"
+                            "type": "click"
                         },
                         {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('#sq_100')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_100')"
-                                        },
-                                        "ruleType": "id"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('1').nth(29).find('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"].sv_q.sv_qstn')"
-                                        },
-                                        "ruleType": "text-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: panel.cssClasses.row\"].sv_row').nth(1).nth(1).find('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"].sv_q.sv_qstn')"
-                                        },
-                                        "ruleType": "attr-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"].sv_q.sv_qstn').nth(0)"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sp_101').find('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"].sv_q.sv_qstn').nth(0)"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sp_101').find('div').withText('1').nth(2)"
-                                        },
-                                        "ruleType": "id-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sp_101').find('div').nth(2).find('div').find('div')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('div').withText('1').nth(30)"
-                                        },
-                                        "ruleType": "text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').find('div')"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": false,
-                                "offsetX": 124,
-                                "offsetY": 32
-                            },
+                            "callsite": "4",
                             "options": {},
-                            "type": "click",
-                            "callsite": "3"
-                        },
-                        {
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('#sq_100i')"
                             },
                             "studio": {
+                                "offsetX": null,
+                                "offsetY": null,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -1404,21 +1329,21 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": null,
-                                "offsetY": null
+                                "useOffsets": false
                             },
                             "text": "asd@asd.asd",
-                            "options": {},
-                            "type": "type-text",
-                            "callsite": "4"
+                            "type": "type-text"
                         },
                         {
+                            "callsite": "5",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('#sq_101i')"
                             },
                             "studio": {
+                                "offsetX": 138,
+                                "offsetY": 3,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -1484,21 +1409,21 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 138,
-                                "offsetY": 3
+                                "useOffsets": false
                             },
                             "text": "1234",
-                            "options": {},
-                            "type": "type-text",
-                            "callsite": "5"
+                            "type": "type-text"
                         },
                         {
+                            "callsite": "6",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('#sq_102i')"
                             },
                             "studio": {
+                                "offsetX": 113,
+                                "offsetY": 6,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -1564,373 +1489,21 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 113,
-                                "offsetY": 6
+                                "useOffsets": false
                             },
                             "text": "12354s",
+                            "type": "type-text"
+                        },
+                        {
+                            "callsite": "13",
                             "options": {},
-                            "type": "type-text",
-                            "callsite": "6"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('[data-bind=\"css: question.koCss().controlLabel\"].sv_q_checkbox_control_label').find('span').withText('asd@asd.asd')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: question.koCss().controlLabel\"].sv_q_checkbox_control_label').find('span').withText('By e')"
-                                        },
-                                        "ruleType": "attr-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('span').withText('By e').find('[data-bind=\"text: koRenderedHtml\"]')"
-                                        },
-                                        "ruleType": "text-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_103').find('span').withText('By e').nth(1)"
-                                        },
-                                        "ruleType": "id-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('span').withText('By e').nth(1)"
-                                        },
-                                        "ruleType": "text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_103').find('[data-bind=\"text: koRenderedHtml\"]').nth(2)"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('span').withText('By e').find('span')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"text: koRenderedHtml\"]').nth(13)"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_103').find('div').nth(2).find('fieldset').find('div').find('label').find('span').nth(2).find('span')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(33).find('div').find('div').nth(2).find('fieldset').find('div').find('label').find('span').nth(2).find('span')"
-                                        },
-                                        "ruleType": "dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: question.koCss().controlLabel\"].sv_q_checkbox_control_label').find('span').withText('asd@asd.asd')"
-                                        },
-                                        "ruleType": "cust"
-                                    }
-                                ],
-                                "useOffsets": true,
-                                "offsetX": 68,
-                                "offsetY": 11
-                            },
-                            "dragOffsetX": 78,
-                            "dragOffsetY": -1,
-                            "options": {
-                                "offsetX": 68,
-                                "offsetY": 11
-                            },
-                            "type": "drag",
-                            "callsite": "7"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('span').withText('1234').find('[data-bind=\"text: koRenderedHtml\"]')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('span').withText('By phone').find('[data-bind=\"text: koRenderedHtml\"]')"
-                                        },
-                                        "ruleType": "text-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: question.koCss().controlLabel\"].sv_q_checkbox_control_label').nth(1).find('span').withText('By phone')"
-                                        },
-                                        "ruleType": "attr-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_103').find('span').withText('By phone').nth(1)"
-                                        },
-                                        "ruleType": "id-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('span').withText('By phone').nth(1)"
-                                        },
-                                        "ruleType": "text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_103').find('[data-bind=\"text: koRenderedHtml\"]').nth(3)"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('span').withText('By phone').find('span')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"text: koRenderedHtml\"]').nth(14)"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_103').find('div').nth(2).find('fieldset').find('div').nth(1).find('label').find('span').nth(2).find('span')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(33).find('div').find('div').nth(2).find('fieldset').find('div').nth(1).find('label').find('span').nth(2).find('span')"
-                                        },
-                                        "ruleType": "dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('span').withText('1234').find('[data-bind=\"text: koRenderedHtml\"]')"
-                                        },
-                                        "ruleType": "cust"
-                                    }
-                                ],
-                                "useOffsets": true,
-                                "offsetX": 112,
-                                "offsetY": 14
-                            },
-                            "dragOffsetX": 29,
-                            "dragOffsetY": 0,
-                            "options": {
-                                "offsetX": 112,
-                                "offsetY": 14
-                            },
-                            "type": "drag",
-                            "callsite": "8"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('span').withText('12354s').find('[data-bind=\"text: koRenderedHtml\"]')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('span').withText('By skype').find('[data-bind=\"text: koRenderedHtml\"]')"
-                                        },
-                                        "ruleType": "text-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: question.koCss().controlLabel\"].sv_q_checkbox_control_label').nth(3).find('span').withText('By skype')"
-                                        },
-                                        "ruleType": "attr-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_103').find('span').withText('By skype').nth(1)"
-                                        },
-                                        "ruleType": "id-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('span').withText('By skype').nth(1)"
-                                        },
-                                        "ruleType": "text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_103').find('[data-bind=\"text: koRenderedHtml\"]').nth(5)"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('span').withText('By skype').find('span')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"text: koRenderedHtml\"]').nth(16)"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_103').find('div').nth(2).find('fieldset').find('div').nth(3).find('label').find('span').nth(2).find('span')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(33).find('div').find('div').nth(2).find('fieldset').find('div').nth(3).find('label').find('span').nth(2).find('span')"
-                                        },
-                                        "ruleType": "dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('span').withText('12354s').find('[data-bind=\"text: koRenderedHtml\"]')"
-                                        },
-                                        "ruleType": "cust"
-                                    }
-                                ],
-                                "useOffsets": true,
-                                "offsetX": 65,
-                                "offsetY": 10
-                            },
-                            "dragOffsetX": 38,
-                            "dragOffsetY": 0,
-                            "options": {
-                                "offsetX": 65,
-                                "offsetY": 10
-                            },
-                            "type": "drag",
-                            "callsite": "9"
-                        },
-                        {
-                            "selector": {
-                                "type": "js-expr",
-                                "value": "Selector('span').withText('By skype').find('[data-bind=\"text: koRenderedHtml\"]')"
-                            },
-                            "studio": {
-                                "selectors": [
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('span').withText('By skype').find('[data-bind=\"text: koRenderedHtml\"]')"
-                                        },
-                                        "ruleType": "text-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"css: question.koCss().controlLabel\"].sv_q_checkbox_control_label').nth(3).find('span').withText('By skype')"
-                                        },
-                                        "ruleType": "attr-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_103').find('span').withText('By skype').nth(1)"
-                                        },
-                                        "ruleType": "id-text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('span').withText('By skype').nth(1)"
-                                        },
-                                        "ruleType": "text"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_103').find('[data-bind=\"text: koRenderedHtml\"]').nth(5)"
-                                        },
-                                        "ruleType": "id-attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('span').withText('By skype').find('span')"
-                                        },
-                                        "ruleType": "text-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('[data-bind=\"text: koRenderedHtml\"]').nth(16)"
-                                        },
-                                        "ruleType": "attr"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('#sq_103').find('div').nth(2).find('fieldset').find('div').nth(3).find('label').find('span').nth(2).find('span')"
-                                        },
-                                        "ruleType": "id-dom"
-                                    },
-                                    {
-                                        "rawSelector": {
-                                            "type": "js-expr",
-                                            "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(3).find('div').find('div').nth(33).find('div').find('div').nth(2).find('fieldset').find('div').nth(3).find('label').find('span').nth(2).find('span')"
-                                        },
-                                        "ruleType": "dom"
-                                    }
-                                ],
-                                "useOffsets": false,
-                                "offsetX": null,
-                                "offsetY": 12
-                            },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "10"
-                        },
-                        {
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('#sq_103i_0')"
                             },
                             "studio": {
+                                "offsetX": 5,
+                                "offsetY": 2,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -1996,20 +1569,20 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 5,
-                                "offsetY": 2
+                                "useOffsets": false
                             },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "13"
+                            "type": "click"
                         },
                         {
+                            "callsite": "14",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('#sq_103i_1')"
                             },
                             "studio": {
+                                "offsetX": 7,
+                                "offsetY": 9,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -2075,20 +1648,20 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 7,
-                                "offsetY": 9
+                                "useOffsets": false
                             },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "14"
+                            "type": "click"
                         },
                         {
+                            "callsite": "15",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('#sq_103i_2')"
                             },
                             "studio": {
+                                "offsetX": 6,
+                                "offsetY": 8,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -2154,20 +1727,20 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 6,
-                                "offsetY": 8
+                                "useOffsets": false
                             },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "15"
+                            "type": "click"
                         },
                         {
+                            "callsite": "16",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
                                 "value": "Selector('#sq_103i_3')"
                             },
                             "studio": {
+                                "offsetX": 7,
+                                "offsetY": 7,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -2233,20 +1806,20 @@
                                         "ruleType": "dom"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 7,
-                                "offsetY": 7
+                                "useOffsets": false
                             },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "16"
+                            "type": "click"
                         },
                         {
+                            "callsite": "11",
+                            "options": {},
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                                "value": "Selector('#surveyElement').find('.sv_complete_btn')"
                             },
                             "studio": {
+                                "offsetX": 27,
+                                "offsetY": 7,
                                 "selectors": [
                                     {
                                         "rawSelector": {
@@ -2303,18 +1876,31 @@
                                             "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(175).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(56).find('input').nth(2)"
                                         },
                                         "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyElement').find('.sv_complete_btn')"
+                                        },
+                                        "ruleType": "cust"
                                     }
                                 ],
-                                "useOffsets": false,
-                                "offsetX": 27,
-                                "offsetY": 7
+                                "useOffsets": false
                             },
-                            "options": {},
-                            "type": "click",
-                            "callsite": "11"
+                            "type": "click"
                         },
                         {
-                            "type": "assertion",
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('#surveyResult').textContent"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "17",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "\"result: {\\\"email\\\":\\\"asd@asd.asd\\\",\\\"phone\\\":\\\"1234\\\",\\\"skype\\\":\\\"12354s\\\",\\\"contactby\\\":[\\\"email\\\",\\\"phone_voice\\\",\\\"phone_sms\\\",\\\"skype\\\"]}\""
+                            },
+                            "options": {},
                             "studio": {
                                 "selectors": [
                                     {
@@ -2375,17 +1961,7 @@
                                     }
                                 ]
                             },
-                            "callsite": "17",
-                            "assertionType": "eql",
-                            "actual": {
-                                "type": "js-expr",
-                                "value": "Selector('#surveyResult').textContent"
-                            },
-                            "expected": {
-                                "type": "js-expr",
-                                "value": "\"result: {\\\"email\\\":\\\"asd@asd.asd\\\",\\\"phone\\\":\\\"1234\\\",\\\"skype\\\":\\\"12354s\\\",\\\"contactby\\\":[\\\"email\\\",\\\"phone_voice\\\",\\\"phone_sms\\\",\\\"skype\\\"]}\""
-                            },
-                            "options": {}
+                            "type": "assertion"
                         }
                     ]
                 },
