@@ -387,7 +387,7 @@
                             "options": {},
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                                "value": "Selector('input').withAttribute('value', 'Complete')"
                             },
                             "studio": {
                                 "offsetX": 42,
@@ -448,6 +448,13 @@
                                             "value": "Selector('body').find('div').find('div').find('div').nth(4).find('div').find('div').nth(1).find('div').find('div').nth(173).find('div').find('div').nth(2).find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('form').find('div').nth(1).find('div').nth(1).find('div').nth(29).find('input').nth(2)"
                                         },
                                         "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('input').withAttribute('value', 'Complete')"
+                                        },
+                                        "ruleType": "cust"
                                     }
                                 ],
                                 "useOffsets": false
