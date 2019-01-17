@@ -13,6 +13,16 @@
                             "type": "maximize-window"
                         },
                         {
+                            "type": "click",
+                            "studio": {},
+                            "callsite": "17",
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('span').withText('I understand')"
+                            },
+                            "options": {}
+                        },
+                        {
                             "callsite": "1",
                             "options": {},
                             "selector": {
