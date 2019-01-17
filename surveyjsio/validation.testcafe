@@ -472,21 +472,6 @@
                             "type": "click"
                         },
                         {
-                            "type": "assertion",
-                            "studio": {},
-                            "callsite": "16",
-                            "assertionType": "eql",
-                            "actual": {
-                                "type": "js-expr",
-                                "value": "Selector('span').withText('Please enter at least 20 characters.').exists"
-                            },
-                            "expected": {
-                                "type": "js-expr",
-                                "value": "true"
-                            },
-                            "options": {}
-                        },
-                        {
                             "callsite": "7",
                             "options": {},
                             "selector": {
