@@ -2,11 +2,11 @@
   "version": "0.0.1",
   "name": "surveyjs.io.tests",
   "scripts": {
-    "test": "testcafe chrome surveyjsio",
-    "test_ci": "testcafe chrome:headless surveyjsio"
+    "test": "testcafe chrome surveyjstest",
+    "test_ci": "testcafe chrome:headless surveyjstest"
   },
   "dependencies": {
-    "testcafe": "^0.23.2"
+    "testcafe": "^1.3.2"
   },
   "devDependencies": {}
 }
