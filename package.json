@@ -3,7 +3,7 @@
   "name": "surveyjs.io.tests",
   "scripts": {
     "test": "testcafe chrome surveyjstest",
-    "test_ci": "testcafe chrome:headless surveyjstest --reporter junit"
+    "test_ci": "testcafe chrome:headless surveyjstest --reporter junit >> TESTS-TestSuites.xml"
   },
   "dependencies": {
     "testcafe": "^1.3.2",
