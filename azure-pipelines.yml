@@ -25,3 +25,8 @@ steps:
 - script: |
     npm run test_ci
   displayName: 'run TestCafe tests'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/TEST-*.xml'
