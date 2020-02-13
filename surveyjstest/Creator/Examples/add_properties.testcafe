@@ -5508,6 +5508,7 @@
                 },
                 {
                     "name": "Check validators property",
+                    "skip": true,
                     "commands": [
                         {
                             "callsite": "3",

@@ -6,6 +6,7 @@
             "tests": [
                 {
                     "name": "Check bar rating in creator",
+                    "skip": true,
                     "commands": [
                         {
                             "callsite": "1",
