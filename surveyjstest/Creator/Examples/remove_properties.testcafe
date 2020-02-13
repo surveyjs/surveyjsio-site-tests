@@ -1,1 +1,1154 @@
-{"fixtures":[{"name":"remove_properties","pageUrl":"https://surveyjstest.azurewebsites.net//Examples/CreatorSinglePage?id=options&theme=default","tests":[{"name":"Remove property","commands":[{"callsite":"3","studio":{},"type":"maximize-window"},{"callsite":"0","expression":"ClientFunction(() => {\n    Survey.Serializer.removeProperty('question', 'description');\n    var creatorOptions = {};\n    new SurveyCreator.SurveyCreator('creatorElement', creatorOptions);\n    return 'dummy';\n})","resultVariableName":"dummy","studio":{"expressionCommandType":"define-function"},"type":"execute-expression"},{"actual":{"type":"js-expr","value":"dummy()"},"assertionType":"eql","callsite":"11","expected":{"type":"js-expr","value":"'dummy'"},"options":{},"studio":{"assertionMode":"checkFunction","selectorPostfix":"","selectorType":"Function","selectors":[]},"type":"assertion"},{"callsite":"12","options":{},"selector":{"type":"js-expr","value":"Selector('.svd_toolbox').find('div').withText('Single Input')"},"studio":{"offsetX":137,"offsetY":26,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('[class^=\"col-lg-2 col-md-2 col-sm-1 col-xs-1 svd_toolbox sv\"]').find('div').withText('Single Input')"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').withText('Single Input').nth(5)"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Single Input').nth(7)"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('TOOLBOX').nth(6).nth(6).find('div').nth(1)"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(1)"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('TOOLBOX').nth(6).find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(1)"},"ruleType":"dom"},{"rawSelector":{"type":"js-expr","value":"Selector('.svd_toolbox').find('div').withText('Single Input')"},"ruleType":"cust"}],"useOffsets":false},"type":"click"},{"actual":{"type":"js-expr","value":"Selector('#creatorElement').find('[data-bind^=\"text: displayName, attr: {title: title || displayN\"][title=\"Description\"]').exists"},"assertionType":"eql","callsite":"13","expected":{"type":"js-expr","value":"false"},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".exists","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('Description').exists"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"text: displayName, attr: {title: title || displayN\"][title=\"Description\"]').exists"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('span').withText('Description').exists"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('[data-bind^=\"text: displayName, attr: {title: title || displayN\"][title=\"Description\"]').exists"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('td').withText('Description').find('[data-bind^=\"text: displayName, attr: {title: title || displayN\"][title=\"Description\"]').exists"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"visible: koVisible, click: $parent.changeActivePro\"]').nth(2).find('span').withText('Description').exists"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('td').withText('Description').find('span').exists"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(71).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(2).find('td').find('span').exists"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(71).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(2).find('td').find('span').exists"},"ruleType":"dom"}]},"type":"assertion"},{"callsite":"14","options":{},"selector":{"type":"js-expr","value":"Selector('a').withText('JSON Editor')"},"studio":{"offsetX":32,"offsetY":16,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('a').withText('JSON Editor')"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('a').withText('JSON Editor')"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('li').withText('JSON Editor').find('.nav-link[data-bind=\"click: action, text: title\"]')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.nav-item[data-bind=\"css: {active: $parent.koViewType() == name}\"]').nth(2).find('a').withText('JSON Editor')"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('.nav-link[data-bind=\"click: action, text: title\"]').nth(2)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('.nav-link[data-bind=\"click: action, text: title\"]').nth(2)"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('li').withText('JSON Editor').find('a')"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('ul').find('li').nth(2).find('a')"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('ul').find('li').nth(2).find('a')"},"ruleType":"dom"}],"useOffsets":false},"type":"click"},{"callsite":"15","options":{"offsetX":173,"offsetY":98},"selector":{"type":"js-expr","value":"Selector('#surveyjsJSONEditor').find('.ace_content')"},"studio":{"offsetX":173,"offsetY":98,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('#surveyjsJSONEditor').find('.ace_content')"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1').nth(60).find('.ace_content')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.ace_scroller').nth(3).find('.ace_content')"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.ace_content').nth(3)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#surveyjsJSONEditor').find('div').nth(16).find('div')"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('.ace_scroller').nth(3).nth(3).find('div')"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1').nth(60).nth(60).find('div').nth(16).find('div')"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').nth(317).find('div').nth(1).find('div').nth(16).find('div')"},"ruleType":"dom"}],"useOffsets":true},"type":"click"},{"callsite":"16","options":{"caretPos":1},"selector":{"type":"js-expr","value":"Selector('#surveyjsJSONEditor').find('.ace_text-input')"},"studio":{"offsetX":null,"offsetY":null,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('#surveyjsJSONEditor').find('.ace_text-input')"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.svd_json_editor.ace_editor.ace-tm.ace_focus').find('.ace_text-input')"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1').nth(60).find('.ace_text-input')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.ace_text-input').nth(3)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#surveyjsJSONEditor').find('textarea')"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('.svd_json_editor.ace_editor.ace-tm.ace_focus').find('textarea')"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1').nth(60).nth(60).find('textarea')"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').nth(317).find('div').nth(1).find('textarea')"},"ruleType":"dom"}],"useOffsets":false},"text":",\rdescription: 'desc'","type":"type-text"},{"actual":{"type":"js-expr","value":"Selector('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).classNames"},"assertionType":"contains","callsite":"17","expected":{"type":"js-expr","value":"'ace_error'"},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".classNames","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).classNames"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#surveyjsJSONEditor').find('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).classNames"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1').nth(62).find('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).classNames"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.ace_layer.ace_gutter-layer.ace_folding-enabled').nth(3).nth(3).find('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).classNames"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#surveyjsJSONEditor').find('div').find('div').find('div').classNames"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1').nth(62).nth(62).find('div').classNames"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#surveyjsJSONEditor').find('div').withText('1').nth(2).classNames"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').nth(317).find('div').nth(1).find('div').find('div').find('div').classNames"},"ruleType":"dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1').nth(63).classNames"},"ruleType":"text"}]},"type":"assertion"}]},{"name":"Hide property in designer","commands":[{"callsite":"3","studio":{},"type":"maximize-window"},{"callsite":"0","expression":"ClientFunction(() => {\n    Survey.Serializer.findProperty('question', 'description').visible = false;\n    var creatorOptions = {};\n    new SurveyCreator.SurveyCreator('creatorElement', creatorOptions);\n    return 'dummy';\n})","resultVariableName":"dummy","studio":{"expressionCommandType":"define-function"},"type":"execute-expression"},{"actual":{"type":"js-expr","value":"dummy()"},"assertionType":"eql","callsite":"11","expected":{"type":"js-expr","value":"'dummy'"},"options":{},"studio":{"assertionMode":"checkFunction","selectorPostfix":"","selectorType":"Function","selectors":[]},"type":"assertion"},{"callsite":"12","options":{},"selector":{"type":"js-expr","value":"Selector('.svd_toolbox').find('div').withText('Single Input')"},"studio":{"offsetX":137,"offsetY":26,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('[class^=\"col-lg-2 col-md-2 col-sm-1 col-xs-1 svd_toolbox sv\"]').find('div').withText('Single Input')"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').withText('Single Input').nth(5)"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Single Input').nth(7)"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('TOOLBOX').nth(6).nth(6).find('div').nth(1)"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(1)"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('TOOLBOX').nth(6).find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(1)"},"ruleType":"dom"},{"rawSelector":{"type":"js-expr","value":"Selector('.svd_toolbox').find('div').withText('Single Input')"},"ruleType":"cust"}],"useOffsets":false},"type":"click"},{"actual":{"type":"js-expr","value":"Selector('[data-bind^=\"text: displayName, attr: {title: title || displayN\"][title=\"Description\"]').exists"},"assertionType":"eql","callsite":"13","expected":{"type":"js-expr","value":"false"},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".exists","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('Description').exists"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"text: displayName, attr: {title: title || displayN\"][title=\"Description\"]').exists"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('span').withText('Description').exists"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('[data-bind^=\"text: displayName, attr: {title: title || displayN\"][title=\"Description\"]').exists"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('td').withText('Description').find('[data-bind^=\"text: displayName, attr: {title: title || displayN\"][title=\"Description\"]').exists"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"visible: koVisible, click: $parent.changeActivePro\"]').nth(2).find('span').withText('Description').exists"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('td').withText('Description').find('span').exists"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(71).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(2).find('td').find('span').exists"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(71).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(2).find('td').find('span').exists"},"ruleType":"dom"}]},"type":"assertion"},{"callsite":"14","options":{},"selector":{"type":"js-expr","value":"Selector('a').withText('JSON Editor')"},"studio":{"offsetX":32,"offsetY":16,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('a').withText('JSON Editor')"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('a').withText('JSON Editor')"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('li').withText('JSON Editor').find('.nav-link[data-bind=\"click: action, text: title\"]')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.nav-item[data-bind=\"css: {active: $parent.koViewType() == name}\"]').nth(2).find('a').withText('JSON Editor')"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('.nav-link[data-bind=\"click: action, text: title\"]').nth(2)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('.nav-link[data-bind=\"click: action, text: title\"]').nth(2)"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('li').withText('JSON Editor').find('a')"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('ul').find('li').nth(2).find('a')"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('ul').find('li').nth(2).find('a')"},"ruleType":"dom"}],"useOffsets":false},"type":"click"},{"callsite":"21","keys":"backspace","selector":null,"studio":{"selectors":null},"type":"press-key"},{"callsite":"22","options":{"caretPos":1},"selector":{"type":"js-expr","value":"Selector('#surveyjsJSONEditor').find('.ace_text-input')"},"studio":{"offsetX":null,"offsetY":null,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('#surveyjsJSONEditor').find('.ace_text-input')"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.svd_json_editor.ace_editor.ace-tm.ace_focus').find('.ace_text-input')"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1').nth(60).find('.ace_text-input')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.ace_text-input').nth(3)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#surveyjsJSONEditor').find('textarea')"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('.svd_json_editor.ace_editor.ace-tm.ace_focus').find('textarea')"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1').nth(60).nth(60).find('textarea')"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').nth(317).find('div').nth(1).find('textarea')"},"ruleType":"dom"}],"useOffsets":false},"text":"{  \"pages\": [   {    \"name\": \"page1\",    \"elements\": [     {      \"type\": \"text\",      \"name\": \"question1\",      \"description\": \"desc\"     }    ]   }  ] }","type":"type-text"},{"actual":{"type":"js-expr","value":"Selector('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).exists"},"assertionType":"eql","callsite":"17","expected":{"type":"js-expr","value":"false"},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".exists","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).exists"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#surveyjsJSONEditor').find('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).exists"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1').nth(62).find('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).exists"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.ace_layer.ace_gutter-layer.ace_folding-enabled').nth(3).nth(3).find('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).exists"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#surveyjsJSONEditor').find('div').find('div').find('div').exists"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1').nth(62).nth(62).find('div').exists"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#surveyjsJSONEditor').find('div').withText('1').nth(2).exists"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').nth(317).find('div').nth(1).find('div').find('div').find('div').exists"},"ruleType":"dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1').nth(63).exists"},"ruleType":"text"}]},"type":"assertion"},{"callsite":"23","options":{},"selector":{"type":"js-expr","value":"Selector('a').withText('Test Survey')"},"studio":{"offsetX":48,"offsetY":16,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('a').withText('Test Survey')"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('a').withText('Test Survey')"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('li').withText('Test Survey').find('.nav-link[data-bind=\"click: action, text: title\"]')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.nav-item[data-bind=\"css: {active: $parent.koViewType() == name}\"]').nth(1).find('a').withText('Test Survey')"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('.nav-link[data-bind=\"click: action, text: title\"]').nth(1)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('.nav-link[data-bind=\"click: action, text: title\"]').nth(1)"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('li').withText('Test Survey').find('a')"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('ul').find('li').nth(1).find('a')"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('ul').find('li').nth(1).find('a')"},"ruleType":"dom"}],"useOffsets":false},"type":"click"},{"actual":{"type":"js-expr","value":"Selector('span').withText('desc').nth(1).textContent"},"assertionType":"eql","callsite":"19","expected":{"type":"js-expr","value":"'desc'"},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".textContent","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('#sq_154').find('span').withText('desc').textContent"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"css: koCss().description\"].sv_q_description').nth(1).find('span').withText('desc').textContent"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('desc').nth(30).find('[data-bind=\"text: koRenderedHtml\"]').textContent"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('desc').nth(1).textContent"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('#sq_154').find('[data-bind=\"text: koRenderedHtml\"]').nth(1).textContent"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"text: koRenderedHtml\"]').nth(7).textContent"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#sq_154').find('div').find('div').find('span').textContent"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('desc').nth(30).nth(30).find('span').textContent"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').nth(188).find('div').find('div').find('div').nth(2).find('survey-widget').find('div').find('form').find('div').nth(1).find('div').find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').find('div').find('span').textContent"},"ruleType":"dom"}]},"type":"assertion"}]}]}]}
+{
+    "fixtures": [
+        {
+            "name": "remove_properties",
+            "pageUrl": "https://surveyjstest.azurewebsites.net//Examples/CreatorSinglePage?id=options&theme=default",
+            "tests": [
+                {
+                    "name": "Remove property",
+                    "skip": true,
+                    "commands": [
+                        {
+                            "callsite": "3",
+                            "studio": {},
+                            "type": "maximize-window"
+                        },
+                        {
+                            "callsite": "0",
+                            "expression": "ClientFunction(() => {\n    Survey.Serializer.removeProperty('question', 'description');\n    var creatorOptions = {};\n    new SurveyCreator.SurveyCreator('creatorElement', creatorOptions);\n    return 'dummy';\n})",
+                            "resultVariableName": "dummy",
+                            "studio": {
+                                "expressionCommandType": "define-function"
+                            },
+                            "type": "execute-expression"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "dummy()"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "11",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "'dummy'"
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkFunction",
+                                "selectorPostfix": "",
+                                "selectorType": "Function",
+                                "selectors": []
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "callsite": "12",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.svd_toolbox').find('div').withText('Single Input')"
+                            },
+                            "studio": {
+                                "offsetX": 137,
+                                "offsetY": 26,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[class^=\"col-lg-2 col-md-2 col-sm-1 col-xs-1 svd_toolbox sv\"]').find('div').withText('Single Input')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').withText('Single Input').nth(5)"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Single Input').nth(7)"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('TOOLBOX').nth(6).nth(6).find('div').nth(1)"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(1)"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('TOOLBOX').nth(6).find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(1)"
+                                        },
+                                        "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svd_toolbox').find('div').withText('Single Input')"
+                                        },
+                                        "ruleType": "cust"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('#creatorElement').find('[data-bind^=\"text: displayName, attr: {title: title || displayN\"][title=\"Description\"]').exists"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "13",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "false"
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".exists",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('Description').exists"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"text: displayName, attr: {title: title || displayN\"][title=\"Description\"]').exists"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('span').withText('Description').exists"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('[data-bind^=\"text: displayName, attr: {title: title || displayN\"][title=\"Description\"]').exists"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('td').withText('Description').find('[data-bind^=\"text: displayName, attr: {title: title || displayN\"][title=\"Description\"]').exists"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"visible: koVisible, click: $parent.changeActivePro\"]').nth(2).find('span').withText('Description').exists"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('td').withText('Description').find('span').exists"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(71).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(2).find('td').find('span').exists"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(71).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(2).find('td').find('span').exists"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "callsite": "14",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('a').withText('JSON Editor')"
+                            },
+                            "studio": {
+                                "offsetX": 32,
+                                "offsetY": 16,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('a').withText('JSON Editor')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('a').withText('JSON Editor')"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('JSON Editor').find('.nav-link[data-bind=\"click: action, text: title\"]')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.nav-item[data-bind=\"css: {active: $parent.koViewType() == name}\"]').nth(2).find('a').withText('JSON Editor')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.nav-link[data-bind=\"click: action, text: title\"]').nth(2)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('.nav-link[data-bind=\"click: action, text: title\"]').nth(2)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('JSON Editor').find('a')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('ul').find('li').nth(2).find('a')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('ul').find('li').nth(2).find('a')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "callsite": "15",
+                            "options": {
+                                "offsetX": 173,
+                                "offsetY": 98
+                            },
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('#surveyjsJSONEditor').find('.ace_content')"
+                            },
+                            "studio": {
+                                "offsetX": 173,
+                                "offsetY": 98,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyjsJSONEditor').find('.ace_content')"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(60).find('.ace_content')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.ace_scroller').nth(3).find('.ace_content')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.ace_content').nth(3)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyjsJSONEditor').find('div').nth(16).find('div')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.ace_scroller').nth(3).nth(3).find('div')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(60).nth(60).find('div').nth(16).find('div')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').nth(317).find('div').nth(1).find('div').nth(16).find('div')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": true
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "callsite": "16",
+                            "options": {
+                                "caretPos": 1
+                            },
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('#surveyjsJSONEditor').find('.ace_text-input')"
+                            },
+                            "studio": {
+                                "offsetX": null,
+                                "offsetY": null,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyjsJSONEditor').find('.ace_text-input')"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svd_json_editor.ace_editor.ace-tm.ace_focus').find('.ace_text-input')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(60).find('.ace_text-input')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.ace_text-input').nth(3)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyjsJSONEditor').find('textarea')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svd_json_editor.ace_editor.ace-tm.ace_focus').find('textarea')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(60).nth(60).find('textarea')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').nth(317).find('div').nth(1).find('textarea')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "text": ",\rdescription: 'desc'",
+                            "type": "type-text"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).classNames"
+                            },
+                            "assertionType": "contains",
+                            "callsite": "17",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "'ace_error'"
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".classNames",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).classNames"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyjsJSONEditor').find('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).classNames"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(62).find('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).classNames"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.ace_layer.ace_gutter-layer.ace_folding-enabled').nth(3).nth(3).find('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).classNames"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyjsJSONEditor').find('div').find('div').find('div').classNames"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(62).nth(62).find('div').classNames"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyjsJSONEditor').find('div').withText('1').nth(2).classNames"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').nth(317).find('div').nth(1).find('div').find('div').find('div').classNames"
+                                        },
+                                        "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(63).classNames"
+                                        },
+                                        "ruleType": "text"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        }
+                    ]
+                },
+                {
+                    "name": "Hide property in designer",
+                    "skip": true,
+                    "commands": [
+                        {
+                            "callsite": "3",
+                            "studio": {},
+                            "type": "maximize-window"
+                        },
+                        {
+                            "callsite": "0",
+                            "expression": "ClientFunction(() => {\n    Survey.Serializer.findProperty('question', 'description').visible = false;\n    var creatorOptions = {};\n    new SurveyCreator.SurveyCreator('creatorElement', creatorOptions);\n    return 'dummy';\n})",
+                            "resultVariableName": "dummy",
+                            "studio": {
+                                "expressionCommandType": "define-function"
+                            },
+                            "type": "execute-expression"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "dummy()"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "11",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "'dummy'"
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkFunction",
+                                "selectorPostfix": "",
+                                "selectorType": "Function",
+                                "selectors": []
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "callsite": "12",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.svd_toolbox').find('div').withText('Single Input')"
+                            },
+                            "studio": {
+                                "offsetX": 137,
+                                "offsetY": 26,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[class^=\"col-lg-2 col-md-2 col-sm-1 col-xs-1 svd_toolbox sv\"]').find('div').withText('Single Input')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').withText('Single Input').nth(5)"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Single Input').nth(7)"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('TOOLBOX').nth(6).nth(6).find('div').nth(1)"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(1)"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('TOOLBOX').nth(6).find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(1)"
+                                        },
+                                        "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svd_toolbox').find('div').withText('Single Input')"
+                                        },
+                                        "ruleType": "cust"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('[data-bind^=\"text: displayName, attr: {title: title || displayN\"][title=\"Description\"]').exists"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "13",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "false"
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".exists",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('Description').exists"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"text: displayName, attr: {title: title || displayN\"][title=\"Description\"]').exists"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('span').withText('Description').exists"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('[data-bind^=\"text: displayName, attr: {title: title || displayN\"][title=\"Description\"]').exists"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('td').withText('Description').find('[data-bind^=\"text: displayName, attr: {title: title || displayN\"][title=\"Description\"]').exists"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"visible: koVisible, click: $parent.changeActivePro\"]').nth(2).find('span').withText('Description').exists"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('td').withText('Description').find('span').exists"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(71).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(2).find('td').find('span').exists"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(71).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(2).find('td').find('span').exists"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "callsite": "14",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('a').withText('JSON Editor')"
+                            },
+                            "studio": {
+                                "offsetX": 32,
+                                "offsetY": 16,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('a').withText('JSON Editor')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('a').withText('JSON Editor')"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('JSON Editor').find('.nav-link[data-bind=\"click: action, text: title\"]')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.nav-item[data-bind=\"css: {active: $parent.koViewType() == name}\"]').nth(2).find('a').withText('JSON Editor')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.nav-link[data-bind=\"click: action, text: title\"]').nth(2)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('.nav-link[data-bind=\"click: action, text: title\"]').nth(2)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('JSON Editor').find('a')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('ul').find('li').nth(2).find('a')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('ul').find('li').nth(2).find('a')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "callsite": "21",
+                            "keys": "backspace",
+                            "selector": null,
+                            "studio": {
+                                "selectors": null
+                            },
+                            "type": "press-key"
+                        },
+                        {
+                            "callsite": "22",
+                            "options": {
+                                "caretPos": 1
+                            },
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('#surveyjsJSONEditor').find('.ace_text-input')"
+                            },
+                            "studio": {
+                                "offsetX": null,
+                                "offsetY": null,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyjsJSONEditor').find('.ace_text-input')"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svd_json_editor.ace_editor.ace-tm.ace_focus').find('.ace_text-input')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(60).find('.ace_text-input')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.ace_text-input').nth(3)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyjsJSONEditor').find('textarea')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svd_json_editor.ace_editor.ace-tm.ace_focus').find('textarea')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(60).nth(60).find('textarea')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').nth(317).find('div').nth(1).find('textarea')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "text": "{  \"pages\": [   {    \"name\": \"page1\",    \"elements\": [     {      \"type\": \"text\",      \"name\": \"question1\",      \"description\": \"desc\"     }    ]   }  ] }",
+                            "type": "type-text"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).exists"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "17",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "false"
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".exists",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).exists"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyjsJSONEditor').find('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).exists"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(62).find('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).exists"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.ace_layer.ace_gutter-layer.ace_folding-enabled').nth(3).nth(3).find('div').withAttribute('class', /ace_gutter\\-cell\\s+ace_error/).exists"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyjsJSONEditor').find('div').find('div').find('div').exists"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(62).nth(62).find('div').exists"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyjsJSONEditor').find('div').withText('1').nth(2).exists"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').nth(317).find('div').nth(1).find('div').find('div').find('div').exists"
+                                        },
+                                        "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(63).exists"
+                                        },
+                                        "ruleType": "text"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "callsite": "23",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('a').withText('Test Survey')"
+                            },
+                            "studio": {
+                                "offsetX": 48,
+                                "offsetY": 16,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('a').withText('Test Survey')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('a').withText('Test Survey')"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('Test Survey').find('.nav-link[data-bind=\"click: action, text: title\"]')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.nav-item[data-bind=\"css: {active: $parent.koViewType() == name}\"]').nth(1).find('a').withText('Test Survey')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.nav-link[data-bind=\"click: action, text: title\"]').nth(1)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('.nav-link[data-bind=\"click: action, text: title\"]').nth(1)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('Test Survey').find('a')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('ul').find('li').nth(1).find('a')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('ul').find('li').nth(1).find('a')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('span').withText('desc').nth(1).textContent"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "19",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "'desc'"
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".textContent",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_154').find('span').withText('desc').textContent"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"css: koCss().description\"].sv_q_description').nth(1).find('span').withText('desc').textContent"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('desc').nth(30).find('[data-bind=\"text: koRenderedHtml\"]').textContent"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('desc').nth(1).textContent"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_154').find('[data-bind=\"text: koRenderedHtml\"]').nth(1).textContent"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"text: koRenderedHtml\"]').nth(7).textContent"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_154').find('div').find('div').find('span').textContent"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('desc').nth(30).nth(30).find('span').textContent"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').nth(188).find('div').find('div').find('div').nth(2).find('survey-widget').find('div').find('form').find('div').nth(1).find('div').find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').find('div').find('span').textContent"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+}

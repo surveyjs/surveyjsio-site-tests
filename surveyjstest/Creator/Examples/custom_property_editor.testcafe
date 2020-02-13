@@ -1,1 +1,485 @@
-{"fixtures":[{"name":"custom_property_editor","pageUrl":"https://surveyjstest.azurewebsites.net//Examples/CreatorSinglePage?id=custompropertyeditor&theme=default","tests":[{"name":"Check shortname property","commands":[{"callsite":"3","studio":{},"type":"maximize-window"},{"callsite":"4","options":{},"selector":{"type":"js-expr","value":"Selector('span').withText('Single Input')"},"studio":{"offsetX":37,"offsetY":9,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('Single Input')"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('span').withText('Single Input')"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').find('span').withText('Single Input')"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Single Input').nth(7).find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Single Input').nth(7).nth(7).find('span').nth(1)"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]').nth(0)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]').nth(0)"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(1).find('span').nth(1)"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(1).find('span').nth(1)"},"ruleType":"dom"}],"useOffsets":false},"type":"click"},{"callsite":"5","options":{},"selector":{"type":"js-expr","value":"Selector('.svda_question_action.svd-main-color[data-bind^=\"key2click, clickNoFocus: function() { onClick($par\"][title=\"Edit\"]').find('span').withText('Edit')"},"studio":{"offsetX":12,"offsetY":14,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('.svda_question_action.svd-main-color[data-bind^=\"key2click, clickNoFocus: function() { onClick($par\"][title=\"Edit\"]').find('span').withText('Edit')"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('Edit').nth(2).find('[data-bind=\"text: $data.hasTitle ? text: \\\\\\'\\\\\\'\"]')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#sq_148').find('span').withText('Edit').nth(1)"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"text: $data.hasTitle ? text: \\\\\\'\\\\\\'\"]').nth(0)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#sq_148').find('[data-bind=\"text: $data.hasTitle ? text: \\\\\\'\\\\\\'\"]').nth(0)"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('Edit').nth(2).nth(2).find('span').nth(1)"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#sq_148').find('div').nth(6).find('question-actions').find('div').find('span').find('span').nth(1)"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('Edit').nth(3)"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(20).find('div').nth(24).find('div').find('div').find('form').find('div').nth(1).find('div').find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(6).find('question-actions').find('div').find('span').find('span').nth(1)"},"ruleType":"dom"}],"useOffsets":false},"type":"click"},{"actual":{"type":"js-expr","value":"Selector('#editor_tab_id_general').find('label').withText('Shortname').innerText"},"assertionType":"eql","callsite":"6","expected":{"type":"js-expr","value":"'Shortname'"},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".innerText","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('label').withText('Shortname').innerText"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('#editor_tab_id_general').find('label').withText('Shortname').innerText"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"visible: objectProperty.koVisible, event: { keydow\"][data-property=\"shortname\"]').find('label').withText('Shortname').innerText"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Shortname').nth(19).find('[data-bind=\"text:displayName, visible: showDisplayNameOnTop\"]').innerText"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"text:displayName, visible: showDisplayNameOnTop\"]').nth(6).innerText"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#editor_tab_id_general').find('[data-bind=\"text:displayName, visible: showDisplayNameOnTop\"]').nth(6).innerText"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Shortname').nth(19).nth(19).find('label').innerText"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#editor_tab_id_general').find('div').find('div').nth(26).find('div').find('label').innerText"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(360).find('div').find('div').find('div').find('div').nth(1).find('svd-accordion').find('div').find('div').nth(1).find('div').find('div').find('div').nth(26).find('div').find('label').innerText"},"ruleType":"dom"}]},"type":"assertion"},{"callsite":"7","options":{},"selector":{"type":"js-expr","value":"Selector('div').withText('Shortname').nth(19).find('.form-control.svd_editor_control')"},"studio":{"offsetX":151,"offsetY":24,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Shortname').nth(19).find('.form-control.svd_editor_control')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"visible: objectProperty.koVisible, event: { keydow\"]').nth(5).find('.form-control.svd_editor_control')"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#editor_tab_id_general').find('.form-control.svd_editor_control').nth(1)"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Shortname').nth(19).nth(19).find('div').nth(1).find('input')"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"visible: objectProperty.koVisible, event: { keydow\"]').nth(5).nth(5).find('div').nth(1).find('input')"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#editor_tab_id_general').find('div').find('div').nth(21).find('div').find('div').nth(1).find('input')"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('.form-control.svd_editor_control').nth(21)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(357).find('div').find('div').find('div').find('div').nth(1).find('svd-accordion').find('div').find('div').nth(1).find('div').find('div').find('div').nth(21).find('div').find('div').nth(1).find('input')"},"ruleType":"dom"}],"useOffsets":false},"type":"click"},{"callsite":"8","options":{},"selector":{"type":"js-expr","value":"Selector('div').withText('Shortname').nth(19).find('.form-control.svd_editor_control')"},"studio":{"offsetX":null,"offsetY":null,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Shortname').nth(19).find('.form-control.svd_editor_control')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"visible: objectProperty.koVisible, event: { keydow\"]').nth(5).find('.form-control.svd_editor_control')"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#editor_tab_id_general').find('.form-control.svd_editor_control').nth(1)"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Shortname').nth(19).nth(19).find('div').nth(1).find('input')"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"visible: objectProperty.koVisible, event: { keydow\"]').nth(5).nth(5).find('div').nth(1).find('input')"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#editor_tab_id_general').find('div').find('div').nth(21).find('div').find('div').nth(1).find('input')"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('.form-control.svd_editor_control').nth(21)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(357).find('div').find('div').find('div').find('div').nth(1).find('svd-accordion').find('div').find('div').nth(1).find('div').find('div').find('div').nth(21).find('div').find('div').nth(1).find('input')"},"ruleType":"dom"}],"useOffsets":false},"text":"123456789","type":"type-text"},{"actual":{"type":"js-expr","value":"Selector('div').withText('Shortname').nth(19).find('.form-control.svd_editor_control').value"},"assertionType":"eql","callsite":"9","expected":{"type":"js-expr","value":"'12345'"},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".value","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Shortname').nth(19).find('.form-control.svd_editor_control').value"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"visible: objectProperty.koVisible, event: { keydow\"]').nth(5).find('.form-control.svd_editor_control').value"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#editor_tab_id_general').find('.form-control.svd_editor_control').nth(1).value"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Shortname').nth(19).nth(19).find('div').nth(1).find('input').value"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"visible: objectProperty.koVisible, event: { keydow\"]').nth(5).nth(5).find('div').nth(1).find('input').value"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#editor_tab_id_general').find('div').find('div').nth(21).find('div').find('div').nth(1).find('input').value"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('.form-control.svd_editor_control').nth(21).value"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(357).find('div').find('div').find('div').find('div').nth(1).find('svd-accordion').find('div').find('div').nth(1).find('div').find('div').find('div').nth(21).find('div').find('div').nth(1).find('input').value"},"ruleType":"dom"}]},"type":"assertion"}]}]}]}
+{
+    "fixtures": [
+        {
+            "name": "custom_property_editor",
+            "pageUrl": "https://surveyjstest.azurewebsites.net//Examples/CreatorSinglePage?id=custompropertyeditor&theme=default",
+            "tests": [
+                {
+                    "name": "Check shortname property",
+                    "skip": true,
+                    "commands": [
+                        {
+                            "callsite": "3",
+                            "studio": {},
+                            "type": "maximize-window"
+                        },
+                        {
+                            "callsite": "4",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('span').withText('Single Input')"
+                            },
+                            "studio": {
+                                "offsetX": 37,
+                                "offsetY": 9,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('Single Input')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('span').withText('Single Input')"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').find('span').withText('Single Input')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Single Input').nth(7).find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Single Input').nth(7).nth(7).find('span').nth(1)"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]').nth(0)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]').nth(0)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(1).find('span').nth(1)"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(1).find('span').nth(1)"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "callsite": "5",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.svda_question_action.svd-main-color[data-bind^=\"key2click, clickNoFocus: function() { onClick($par\"][title=\"Edit\"]').find('span').withText('Edit')"
+                            },
+                            "studio": {
+                                "offsetX": 12,
+                                "offsetY": 14,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svda_question_action.svd-main-color[data-bind^=\"key2click, clickNoFocus: function() { onClick($par\"][title=\"Edit\"]').find('span').withText('Edit')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('Edit').nth(2).find('[data-bind=\"text: $data.hasTitle ? text: \\\\\\'\\\\\\'\"]')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_148').find('span').withText('Edit').nth(1)"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"text: $data.hasTitle ? text: \\\\\\'\\\\\\'\"]').nth(0)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_148').find('[data-bind=\"text: $data.hasTitle ? text: \\\\\\'\\\\\\'\"]').nth(0)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('Edit').nth(2).nth(2).find('span').nth(1)"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_148').find('div').nth(6).find('question-actions').find('div').find('span').find('span').nth(1)"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('Edit').nth(3)"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(20).find('div').nth(24).find('div').find('div').find('form').find('div').nth(1).find('div').find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(6).find('question-actions').find('div').find('span').find('span').nth(1)"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('#editor_tab_id_general').find('label').withText('Shortname').innerText"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "6",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "'Shortname'"
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".innerText",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('label').withText('Shortname').innerText"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#editor_tab_id_general').find('label').withText('Shortname').innerText"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"visible: objectProperty.koVisible, event: { keydow\"][data-property=\"shortname\"]').find('label').withText('Shortname').innerText"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Shortname').nth(19).find('[data-bind=\"text:displayName, visible: showDisplayNameOnTop\"]').innerText"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"text:displayName, visible: showDisplayNameOnTop\"]').nth(6).innerText"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#editor_tab_id_general').find('[data-bind=\"text:displayName, visible: showDisplayNameOnTop\"]').nth(6).innerText"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Shortname').nth(19).nth(19).find('label').innerText"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#editor_tab_id_general').find('div').find('div').nth(26).find('div').find('label').innerText"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(360).find('div').find('div').find('div').find('div').nth(1).find('svd-accordion').find('div').find('div').nth(1).find('div').find('div').find('div').nth(26).find('div').find('label').innerText"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "callsite": "7",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('div').withText('Shortname').nth(19).find('.form-control.svd_editor_control')"
+                            },
+                            "studio": {
+                                "offsetX": 151,
+                                "offsetY": 24,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Shortname').nth(19).find('.form-control.svd_editor_control')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"visible: objectProperty.koVisible, event: { keydow\"]').nth(5).find('.form-control.svd_editor_control')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#editor_tab_id_general').find('.form-control.svd_editor_control').nth(1)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Shortname').nth(19).nth(19).find('div').nth(1).find('input')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"visible: objectProperty.koVisible, event: { keydow\"]').nth(5).nth(5).find('div').nth(1).find('input')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#editor_tab_id_general').find('div').find('div').nth(21).find('div').find('div').nth(1).find('input')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.form-control.svd_editor_control').nth(21)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(357).find('div').find('div').find('div').find('div').nth(1).find('svd-accordion').find('div').find('div').nth(1).find('div').find('div').find('div').nth(21).find('div').find('div').nth(1).find('input')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "callsite": "8",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('div').withText('Shortname').nth(19).find('.form-control.svd_editor_control')"
+                            },
+                            "studio": {
+                                "offsetX": null,
+                                "offsetY": null,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Shortname').nth(19).find('.form-control.svd_editor_control')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"visible: objectProperty.koVisible, event: { keydow\"]').nth(5).find('.form-control.svd_editor_control')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#editor_tab_id_general').find('.form-control.svd_editor_control').nth(1)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Shortname').nth(19).nth(19).find('div').nth(1).find('input')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"visible: objectProperty.koVisible, event: { keydow\"]').nth(5).nth(5).find('div').nth(1).find('input')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#editor_tab_id_general').find('div').find('div').nth(21).find('div').find('div').nth(1).find('input')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.form-control.svd_editor_control').nth(21)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(357).find('div').find('div').find('div').find('div').nth(1).find('svd-accordion').find('div').find('div').nth(1).find('div').find('div').find('div').nth(21).find('div').find('div').nth(1).find('input')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "text": "123456789",
+                            "type": "type-text"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('div').withText('Shortname').nth(19).find('.form-control.svd_editor_control').value"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "9",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "'12345'"
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".value",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Shortname').nth(19).find('.form-control.svd_editor_control').value"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"visible: objectProperty.koVisible, event: { keydow\"]').nth(5).find('.form-control.svd_editor_control').value"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#editor_tab_id_general').find('.form-control.svd_editor_control').nth(1).value"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Shortname').nth(19).nth(19).find('div').nth(1).find('input').value"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"visible: objectProperty.koVisible, event: { keydow\"]').nth(5).nth(5).find('div').nth(1).find('input').value"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#editor_tab_id_general').find('div').find('div').nth(21).find('div').find('div').nth(1).find('input').value"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.form-control.svd_editor_control').nth(21).value"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(357).find('div').find('div').find('div').find('div').nth(1).find('svd-accordion').find('div').find('div').nth(1).find('div').find('div').find('div').nth(21).find('div').find('div').nth(1).find('input').value"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

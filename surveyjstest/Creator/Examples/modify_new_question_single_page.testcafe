@@ -1,1 +1,869 @@
-{"fixtures":[{"name":"modify_new_question_single_page","pageUrl":"https://surveyjstest.azurewebsites.net//Examples/CreatorSinglePage?id=oncreatequestion&theme=default","tests":[{"name":"Check question properties","commands":[{"callsite":"0","studio":{},"type":"maximize-window"},{"callsite":"1","expression":"ClientFunction(() => {\n    window.guid = function (){\n        return window.questionCounter;\n    }   \n    return 'dummy'\n})","resultVariableName":"guid","studio":{"expressionCommandType":"define-function"},"type":"execute-expression"},{"actual":{"type":"js-expr","value":"guid()"},"assertionType":"eql","callsite":"2","expected":{"type":"js-expr","value":"'dummy'"},"options":{},"studio":{"assertionMode":"checkFunction","selectorPostfix":"","selectorType":"Function","selectors":[]},"type":"assertion"},{"callsite":"3","options":{},"selector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').withText('Single Input').nth(5)"},"studio":{"offsetX":40,"offsetY":19,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('[class^=\"col-lg-2 col-md-2 col-sm-1 col-xs-1 svd_toolbox sv\"]').find('div').withText('Single Input')"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').withText('Single Input').nth(5)"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Single Input').nth(7)"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('TOOLBOX').nth(6).nth(6).find('div').nth(1)"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(1)"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('TOOLBOX').nth(6).find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(1)"},"ruleType":"dom"}],"useOffsets":false},"type":"click"},{"actual":{"type":"js-expr","value":"Selector('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).value"},"assertionType":"eql","callsite":"4","expected":{"type":"js-expr","value":"\"QuestionText1\""},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".value","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(8).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').value"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).value"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).value"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Correct Answer').nth(8).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).value"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(8).nth(8).find('input').value"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Correct Answer').nth(8).nth(8).find('table').find('tbody').find('tr').nth(8).find('td').nth(1).find('div').find('input').value"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(71).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(8).find('td').nth(1).find('div').find('input').value"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(71).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(8).find('td').nth(1).find('div').find('input').value"},"ruleType":"dom"}]},"type":"assertion"},{"actual":{"type":"js-expr","value":"Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(17).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').value"},"assertionType":"eql","callsite":"5","expected":{"type":"js-expr","value":"\"1\""},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".value","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(16).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').value"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(2).value"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(2).value"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Correct Answer').nth(8).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(2).value"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(16).nth(16).find('input').value"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Correct Answer').nth(8).nth(8).find('table').find('tbody').find('tr').nth(16).find('td').nth(1).find('div').find('input').value"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(71).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(16).find('td').nth(1).find('div').find('input').value"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(71).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(16).find('td').nth(1).find('div').find('input').value"},"ruleType":"dom"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(17).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').value"},"ruleType":"cust"}]},"type":"assertion"},{"callsite":"6","options":{},"selector":{"type":"js-expr","value":"Selector('span').withText('Checkbox')"},"studio":{"offsetX":60,"offsetY":13,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('Checkbox')"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('span').withText('Checkbox')"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(1).find('span').withText('Checkbox')"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Checkbox').nth(7).find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Checkbox').nth(7).nth(7).find('span').nth(1)"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]').nth(1)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]').nth(1)"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(2).find('span').nth(1)"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(2).find('span').nth(1)"},"ruleType":"dom"}],"useOffsets":false},"type":"click"},{"actual":{"type":"js-expr","value":"Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(19).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').value"},"assertionType":"eql","callsite":"7","expected":{"type":"js-expr","value":"\"QuestionCheckbox2\""},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".value","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(18).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').value"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(1).value"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(1).value"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Choices').nth(8).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(1).value"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(18).nth(18).find('input').value"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Choices').nth(8).nth(8).find('table').find('tbody').find('tr').nth(19).find('td').nth(1).find('div').find('input').value"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(91).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(19).find('td').nth(1).find('div').find('input').value"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(91).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(19).find('td').nth(1).find('div').find('input').value"},"ruleType":"dom"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(19).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').value"},"ruleType":"cust"}]},"type":"assertion"},{"actual":{"type":"js-expr","value":"Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(30).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').value"},"assertionType":"eql","callsite":"8","expected":{"type":"js-expr","value":"\"2\""},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".value","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(29).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').value"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(7).value"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(7).value"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Choices').nth(8).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(7).value"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(29).nth(29).find('input').value"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Choices').nth(8).nth(8).find('table').find('tbody').find('tr').nth(30).find('td').nth(1).find('div').find('input').value"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(91).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(30).find('td').nth(1).find('div').find('input').value"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(91).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(30).find('td').nth(1).find('div').find('input').value"},"ruleType":"dom"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(30).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').value"},"ruleType":"cust"}]},"type":"assertion"},{"callsite":"9","options":{},"selector":{"type":"js-expr","value":"Selector('[class^=\"col-lg-2 col-md-2 col-sm-1 col-xs-1 svd_toolbox sv\"]').find('div').withText('Matrix').nth(0)"},"studio":{"offsetX":106,"offsetY":32,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('[class^=\"col-lg-2 col-md-2 col-sm-1 col-xs-1 svd_toolbox sv\"]').find('div').withText('Matrix').nth(0)"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').withText('Matrix').nth(5)"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Matrix').nth(7)"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('TOOLBOX').nth(6).nth(6).find('div').nth(12)"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(11)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(11)"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(12)"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('TOOLBOX').nth(6).find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(11)"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(12)"},"ruleType":"dom"}],"useOffsets":false},"type":"click"},{"actual":{"type":"js-expr","value":"Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(11).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').value"},"assertionType":"eql","callsite":"10","expected":{"type":"js-expr","value":"\"QuestionMatrix3\""},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".value","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(10).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').value"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).value"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).value"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Cells').nth(8).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).value"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(10).nth(10).find('input').value"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Cells').nth(8).nth(8).find('table').find('tbody').find('tr').nth(12).find('td').nth(1).find('div').find('input').value"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(101).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(12).find('td').nth(1).find('div').find('input').value"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(101).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(12).find('td').nth(1).find('div').find('input').value"},"ruleType":"dom"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(11).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').value"},"ruleType":"cust"}]},"type":"assertion"},{"actual":{"type":"js-expr","value":"Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(11).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').getAttribute('disabled')"},"assertionType":"eql","callsite":"11","expected":{"type":"js-expr","value":"\"\""},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".getAttribute('disabled')","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(10).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').getAttribute('disabled')"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).getAttribute('disabled')"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).getAttribute('disabled')"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Cells').nth(8).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).getAttribute('disabled')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(10).nth(10).find('input').getAttribute('disabled')"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Cells').nth(8).nth(8).find('table').find('tbody').find('tr').nth(12).find('td').nth(1).find('div').find('input').getAttribute('disabled')"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(101).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(12).find('td').nth(1).find('div').find('input').getAttribute('disabled')"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(101).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(12).find('td').nth(1).find('div').find('input').getAttribute('disabled')"},"ruleType":"dom"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(11).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').getAttribute('disabled')"},"ruleType":"cust"}]},"type":"assertion"},{"actual":{"type":"js-expr","value":"Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(21).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').getAttribute('disabled')"},"assertionType":"eql","callsite":"12","expected":{"type":"js-expr","value":"\"\""},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".getAttribute('disabled')","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(20).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').getAttribute('disabled')"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(1).getAttribute('disabled')"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(1).getAttribute('disabled')"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Cells').nth(8).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(1).getAttribute('disabled')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(20).nth(20).find('input').getAttribute('disabled')"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Cells').nth(8).nth(8).find('table').find('tbody').find('tr').nth(23).find('td').nth(1).find('div').find('input').getAttribute('disabled')"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(101).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(23).find('td').nth(1).find('div').find('input').getAttribute('disabled')"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(101).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(23).find('td').nth(1).find('div').find('input').getAttribute('disabled')"},"ruleType":"dom"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(21).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').getAttribute('disabled')"},"ruleType":"cust"}]},"type":"assertion"}]}]}]}
+{
+    "fixtures": [
+        {
+            "name": "modify_new_question_single_page",
+            "pageUrl": "https://surveyjstest.azurewebsites.net//Examples/CreatorSinglePage?id=oncreatequestion&theme=default",
+            "tests": [
+                {
+                    "name": "Check question properties",
+                    "skip": true,
+                    "commands": [
+                        {
+                            "callsite": "0",
+                            "studio": {},
+                            "type": "maximize-window"
+                        },
+                        {
+                            "callsite": "1",
+                            "expression": "ClientFunction(() => {\n    window.guid = function (){\n        return window.questionCounter;\n    }   \n    return 'dummy'\n})",
+                            "resultVariableName": "guid",
+                            "studio": {
+                                "expressionCommandType": "define-function"
+                            },
+                            "type": "execute-expression"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "guid()"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "2",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "'dummy'"
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkFunction",
+                                "selectorPostfix": "",
+                                "selectorType": "Function",
+                                "selectors": []
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "callsite": "3",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('#creatorElement').find('div').withText('Single Input').nth(5)"
+                            },
+                            "studio": {
+                                "offsetX": 40,
+                                "offsetY": 19,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[class^=\"col-lg-2 col-md-2 col-sm-1 col-xs-1 svd_toolbox sv\"]').find('div').withText('Single Input')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').withText('Single Input').nth(5)"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Single Input').nth(7)"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('TOOLBOX').nth(6).nth(6).find('div').nth(1)"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(1)"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('TOOLBOX').nth(6).find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(0)"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(1)"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).value"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "4",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "\"QuestionText1\""
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".value",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(8).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').value"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).value"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).value"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Correct Answer').nth(8).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).value"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(8).nth(8).find('input').value"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Correct Answer').nth(8).nth(8).find('table').find('tbody').find('tr').nth(8).find('td').nth(1).find('div').find('input').value"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(71).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(8).find('td').nth(1).find('div').find('input').value"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(71).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(8).find('td').nth(1).find('div').find('input').value"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(17).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').value"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "5",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "\"1\""
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".value",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(16).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').value"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(2).value"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(2).value"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Correct Answer').nth(8).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(2).value"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(16).nth(16).find('input').value"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Correct Answer').nth(8).nth(8).find('table').find('tbody').find('tr').nth(16).find('td').nth(1).find('div').find('input').value"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(71).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(16).find('td').nth(1).find('div').find('input').value"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(71).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(16).find('td').nth(1).find('div').find('input').value"
+                                        },
+                                        "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(17).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').value"
+                                        },
+                                        "ruleType": "cust"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "callsite": "6",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('span').withText('Checkbox')"
+                            },
+                            "studio": {
+                                "offsetX": 60,
+                                "offsetY": 13,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('Checkbox')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('span').withText('Checkbox')"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(1).find('span').withText('Checkbox')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Checkbox').nth(7).find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Checkbox').nth(7).nth(7).find('span').nth(1)"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]').nth(1)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]').nth(1)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(2).find('span').nth(1)"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(2).find('span').nth(1)"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(19).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').value"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "7",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "\"QuestionCheckbox2\""
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".value",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(18).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').value"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(1).value"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(1).value"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Choices').nth(8).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(1).value"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(18).nth(18).find('input').value"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Choices').nth(8).nth(8).find('table').find('tbody').find('tr').nth(19).find('td').nth(1).find('div').find('input').value"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(91).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(19).find('td').nth(1).find('div').find('input').value"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(91).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(19).find('td').nth(1).find('div').find('input').value"
+                                        },
+                                        "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(19).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').value"
+                                        },
+                                        "ruleType": "cust"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(30).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').value"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "8",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "\"2\""
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".value",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(29).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').value"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(7).value"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(7).value"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Choices').nth(8).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(7).value"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(29).nth(29).find('input').value"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Choices').nth(8).nth(8).find('table').find('tbody').find('tr').nth(30).find('td').nth(1).find('div').find('input').value"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(91).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(30).find('td').nth(1).find('div').find('input').value"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(91).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(30).find('td').nth(1).find('div').find('input').value"
+                                        },
+                                        "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(30).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').value"
+                                        },
+                                        "ruleType": "cust"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "callsite": "9",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('[class^=\"col-lg-2 col-md-2 col-sm-1 col-xs-1 svd_toolbox sv\"]').find('div').withText('Matrix').nth(0)"
+                            },
+                            "studio": {
+                                "offsetX": 106,
+                                "offsetY": 32,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[class^=\"col-lg-2 col-md-2 col-sm-1 col-xs-1 svd_toolbox sv\"]').find('div').withText('Matrix').nth(0)"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').withText('Matrix').nth(5)"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Matrix').nth(7)"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('TOOLBOX').nth(6).nth(6).find('div').nth(12)"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(11)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(11)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(12)"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('TOOLBOX').nth(6).find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(11)"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').nth(12)"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(11).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').value"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "10",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "\"QuestionMatrix3\""
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".value",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(10).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').value"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).value"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).value"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Cells').nth(8).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).value"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(10).nth(10).find('input').value"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Cells').nth(8).nth(8).find('table').find('tbody').find('tr').nth(12).find('td').nth(1).find('div').find('input').value"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(101).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(12).find('td').nth(1).find('div').find('input').value"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(101).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(12).find('td').nth(1).find('div').find('input').value"
+                                        },
+                                        "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(11).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').value"
+                                        },
+                                        "ruleType": "cust"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(11).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').getAttribute('disabled')"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "11",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "\"\""
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".getAttribute('disabled')",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(10).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').getAttribute('disabled')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).getAttribute('disabled')"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).getAttribute('disabled')"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Cells').nth(8).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(0).getAttribute('disabled')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(10).nth(10).find('input').getAttribute('disabled')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Cells').nth(8).nth(8).find('table').find('tbody').find('tr').nth(12).find('td').nth(1).find('div').find('input').getAttribute('disabled')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(101).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(12).find('td').nth(1).find('div').find('input').getAttribute('disabled')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(101).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(12).find('td').nth(1).find('div').find('input').getAttribute('disabled')"
+                                        },
+                                        "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(11).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').getAttribute('disabled')"
+                                        },
+                                        "ruleType": "cust"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(21).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').getAttribute('disabled')"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "12",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "\"\""
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".getAttribute('disabled')",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(20).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').getAttribute('disabled')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(1).getAttribute('disabled')"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(1).getAttribute('disabled')"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Cells').nth(8).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').nth(1).getAttribute('disabled')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(20).nth(20).find('input').getAttribute('disabled')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Cells').nth(8).nth(8).find('table').find('tbody').find('tr').nth(23).find('td').nth(1).find('div').find('input').getAttribute('disabled')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').nth(101).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(23).find('td').nth(1).find('div').find('input').getAttribute('disabled')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(101).find('div').nth(3).find('div').find('table').find('tbody').find('tr').nth(23).find('td').nth(1).find('div').find('input').getAttribute('disabled')"
+                                        },
+                                        "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\\\"event: { keydown: $data.editor.keyDownHandler }\\\"]').nth(21).find('.form-control.svd_editor_control[data-bind^=\\\"value: koValue, disable: readOnly, attr: {placehol\\\"]').getAttribute('disabled')"
+                                        },
+                                        "ruleType": "cust"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+}
