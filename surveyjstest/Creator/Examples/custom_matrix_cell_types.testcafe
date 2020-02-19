@@ -1,1 +1,685 @@
-{"fixtures":[{"name":"custom_matrix_cell_types","pageUrl":"https://surveyjstest.azurewebsites.net/Examples/Builder?id=matrixcustomcelltypes&theme=default","tests":[{"name":"File and tagbox cell types in matrix","commands":[{"callsite":"0","studio":{},"type":"maximize-window"},{"callsite":"1","options":{},"selector":{"type":"js-expr","value":"Selector('a').withText('Test Survey')"},"studio":{"offsetX":32,"offsetY":11,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('a').withText('Test Survey')"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('a').withText('Test Survey')"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('li').withText('Test Survey').find('.nav-link[data-bind=\"click: action, text: title\"]')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.nav-item[data-bind=\"css: {active: $parent.koViewType() == name}\"]').nth(1).find('a').withText('Test Survey')"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('.nav-link[data-bind=\"click: action, text: title\"]').nth(1)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('.nav-link[data-bind=\"click: action, text: title\"]').nth(1)"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('li').withText('Test Survey').find('a')"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('ul').find('li').nth(1).find('a')"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').nth(6).find('div').find('div').nth(41).find('div').nth(5).find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('ul').find('li').nth(1).find('a')"},"ruleType":"dom"}],"useOffsets":false},"type":"click"},{"actual":{"type":"js-expr","value":"Selector('#sq_148').find('td').withText('English').textContent"},"assertionType":"contains","callsite":"2","expected":{"type":"js-expr","value":"'LiteratureMath'"},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".textContent","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('#sq_148').find('td').withText('English').textContent"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"css: question.koCss().root\"].sv_q_matrix_dynamic').nth(1).find('td').withText('English').textContent"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('td').withText('English').nth(1).textContent"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('#sq_148').find('[data-bind^=\"css: question.koCss().itemValue + (question.errors\"].undefined').nth(0).textContent"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Select a subject').nth(40).find('[data-bind^=\"css: question.koCss().itemValue + (question.errors\"].undefined').nth(0).textContent"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"css: question.koCss().itemValue + (question.errors\"].undefined').nth(3).textContent"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Select a subject').nth(40).nth(40).find('table').find('tbody').find('tr').find('td').textContent"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#sq_148').find('div').nth(2).find('div').nth(3).find('table').find('tbody').find('tr').find('td').textContent"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').nth(6).find('div').find('div').nth(41).find('div').nth(5).find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').nth(1).find('div').nth(204).find('div').find('div').find('div').nth(2).find('survey-widget').find('div').find('form').find('div').nth(1).find('div').find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(3).find('table').find('tbody').find('tr').find('td').textContent"},"ruleType":"dom"}]},"type":"assertion"},{"actual":{"type":"js-expr","value":"Selector('div').withText('Select a subject').nth(40).find('[data-bind^=\"css: question.cssClasses.fileInput, attr: {id: que\"].sv_q_file_input[title=\"Choose file(s)...\"]').tagName"},"assertionType":"eql","callsite":"3","expected":{"type":"js-expr","value":"'input'"},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".tagName","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('#sq_156i').tagName"},"ruleType":"id"},{"rawSelector":{"type":"js-expr","value":"Selector('#sq_148').find('[data-bind^=\"css: question.cssClasses.fileInput, attr: {id: que\"].sv_q_file_input[title=\"Choose file(s)...\"]').tagName"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Select a subject').nth(40).find('[data-bind^=\"css: question.cssClasses.fileInput, attr: {id: que\"].sv_q_file_input[title=\"Choose file(s)...\"]').tagName"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"css: question.cssClasses.root\"].sv_q_file').nth(1).find('[data-bind^=\"css: question.cssClasses.fileInput, attr: {id: que\"].sv_q_file_input[title=\"Choose file(s)...\"]').tagName"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"css: question.cssClasses.fileInput, attr: {id: que\"].sv_q_file_input[title=\"Choose file(s)...\"]').nth(1).tagName"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"css: question.cssClasses.root\"].sv_q_file').nth(1).nth(1).find('input').tagName"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Select a subject').nth(40).nth(40).find('table').find('tbody').find('tr').find('td').nth(1).find('div').find('div').nth(2).find('input').tagName"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#sq_148').find('div').nth(2).find('div').nth(3).find('table').find('tbody').find('tr').find('td').nth(1).find('div').find('div').nth(2).find('input').tagName"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').nth(6).find('div').find('div').nth(41).find('div').nth(5).find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').nth(1).find('div').nth(204).find('div').find('div').find('div').nth(2).find('survey-widget').find('div').find('form').find('div').nth(1).find('div').find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(3).find('table').find('tbody').find('tr').find('td').nth(1).find('div').find('div').nth(2).find('input').tagName"},"ruleType":"dom"}]},"type":"assertion"},{"callsite":"4","options":{},"selector":{"type":"js-expr","value":"Selector('div').withText('English').nth(42).find('.select2-selection__rendered')"},"studio":{"offsetX":113,"offsetY":3,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('#sq_148').find('.select2-selection__rendered')"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('English').nth(42).find('.select2-selection__rendered')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.select2-selection.select2-selection--multiple').nth(1).find('.select2-selection__rendered')"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.select2-selection__rendered').nth(2)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.select2-selection.select2-selection--multiple').nth(1).nth(1).find('ul')"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('English').nth(42).nth(42).find('span').find('span').find('span').find('ul')"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#sq_148').find('div').nth(2).find('div').nth(3).find('table').find('tbody').find('tr').find('td').find('div').find('span').find('span').find('span').find('ul')"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').nth(6).find('div').find('div').nth(41).find('div').nth(5).find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').nth(1).find('div').nth(204).find('div').find('div').find('div').nth(2).find('survey-widget').find('div').find('form').find('div').nth(1).find('div').find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(3).find('table').find('tbody').find('tr').find('td').find('div').find('span').find('span').find('span').find('ul')"},"ruleType":"dom"}],"useOffsets":false},"type":"click"},{"callsite":"5","options":{},"selector":{"type":"js-expr","value":"Selector('[class^=\"select2-results__option select2-results__option--h\"]')"},"studio":{"offsetX":56,"offsetY":30,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('[class^=\"select2-results__option select2-results__option--h\"]')"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#select2-xt3j-results').find('[class^=\"select2-results__option select2-results__option--h\"]')"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.select2-results__options').find('[class^=\"select2-results__option select2-results__option--h\"]')"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('English').nth(4).find('[class^=\"select2-results__option select2-results__option--h\"]')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('li').withText('English').nth(0)"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('#select2-xt3j-results').find('li').withText('English').nth(0)"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('#select2-xt3j-results').find('li')"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('English').nth(4).nth(4).find('ul').find('li')"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('span').nth(805).find('span').find('span').find('ul').find('li')"},"ruleType":"dom"}],"useOffsets":false},"type":"click"},{"callsite":"8","options":{},"selector":{"type":"js-expr","value":"Selector('span').withText('I understand')"},"studio":{"offsetX":72,"offsetY":24,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('I understand')"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('.surveyjs-cookie-info__span')"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.surveyjs-cookie-info.page__survey-cookie-info').find('span').withText('I understand')"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('I understand').find('.surveyjs-cookie-info__span')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.surveyjs-cookie-info.page__survey-cookie-info').find('.surveyjs-cookie-info__span')"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('I understand').find('span')"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('.surveyjs-cookie-info.page__survey-cookie-info').find('span')"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').nth(349).find('span')"},"ruleType":"dom"}],"useOffsets":false},"type":"click"},{"selector":{"type":"js-expr","value":"Selector('.surveyjs-customer-survey-close[title=\"Hide this panel\"]').find('img')"},"studio":{"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('.surveyjs-customer-survey-close[title=\"Hide this panel\"]').find('img')"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Please help us to improve our product').find('div').find('img')"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').nth(322).find('div').find('img')"},"ruleType":"dom"}],"useOffsets":false,"offsetX":3,"offsetY":7},"options":{},"type":"click","callsite":"11"},{"callsite":"9","options":{},"selector":{"type":"js-expr","value":"Selector('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"},"studio":{"offsetX":104,"offsetY":17,"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#surveyjsExample').find('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"css: css.footer\"].sv_nav').find('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1 .  Please send your homework').nth(20).find('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"css: css.footer\"].sv_nav').find('input').nth(2)"},"ruleType":"attr-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1 .  Please send your homework').nth(20).nth(20).find('div').nth(31).find('input').nth(2)"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#surveyjsExample').find('div').nth(2).find('survey-widget').find('div').find('form').find('div').nth(1).find('div').find('div').nth(31).find('input').nth(2)"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').nth(6).find('div').find('div').nth(41).find('div').nth(5).find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').nth(1).find('div').nth(205).find('div').find('div').find('div').nth(2).find('survey-widget').find('div').find('form').find('div').nth(1).find('div').find('div').nth(31).find('input').nth(2)"},"ruleType":"dom"}],"useOffsets":false,"selectorType":"CSS Selector"},"type":"click"},{"actual":{"type":"js-expr","value":"Selector('div').withText('[{\\\"subjects\\\":[\\\"English: American Literature\\\"]}').textContent"},"assertionType":"match","callsite":"10","expected":{"type":"js-expr","value":"/Literature/"},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".textContent","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('[{\\\"subjects\\\":[\\\"English: American Literature\\\"]}').textContent"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('#surveyjsExample').find('div').withText('[{\\\"subjects\\\":[\\\"English: American Literature\\\"]}').textContent"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('.survey-result-value[data-bind=\"text: getString(value)\"]').textContent"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#surveyjsExample').find('.survey-result-value[data-bind=\"text: getString(value)\"]').textContent"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.svd-dark-border-color').nth(10).find('div').withText('[{\\\"subjects\\\":[\\\"English: American Literature\\\"]}').textContent"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('td').withText('[{\\\"subjects\\\":[\\\"English: American Literature\\\"]}').find('.survey-result-value[data-bind=\"text: getString(value)\"]').textContent"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('td').withText('[{\\\"subjects\\\":[\\\"English: American Literature\\\"]}').find('div').textContent"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#surveyjsExample').find('div').nth(9).find('div').nth(3).find('table').find('tbody').find('tr').find('td').nth(2).find('div').textContent"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').nth(6).find('div').find('div').nth(41).find('div').nth(5).find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').nth(1).find('div').nth(205).find('div').find('div').find('div').nth(9).find('div').nth(3).find('table').find('tbody').find('tr').find('td').nth(2).find('div').textContent"},"ruleType":"dom"}]},"type":"assertion"}]}]}]}
+{
+    "fixtures": [
+        {
+            "name": "custom_matrix_cell_types",
+            "pageUrl": "https://surveyjstest.azurewebsites.net/Examples/Builder?id=matrixcustomcelltypes&theme=default",
+            "tests": [
+                {
+                    "name": "File and tagbox cell types in matrix",
+                    "skip": true,
+                    "commands": [
+                        {
+                            "callsite": "0",
+                            "studio": {},
+                            "type": "maximize-window"
+                        },
+                        {
+                            "callsite": "1",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('a').withText('Test Survey')"
+                            },
+                            "studio": {
+                                "offsetX": 32,
+                                "offsetY": 11,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('a').withText('Test Survey')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('a').withText('Test Survey')"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('Test Survey').find('.nav-link[data-bind=\"click: action, text: title\"]')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.nav-item[data-bind=\"css: {active: $parent.koViewType() == name}\"]').nth(1).find('a').withText('Test Survey')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.nav-link[data-bind=\"click: action, text: title\"]').nth(1)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('.nav-link[data-bind=\"click: action, text: title\"]').nth(1)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('Test Survey').find('a')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('ul').find('li').nth(1).find('a')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').nth(6).find('div').find('div').nth(41).find('div').nth(5).find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('ul').find('li').nth(1).find('a')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('#sq_148').find('td').withText('English').textContent"
+                            },
+                            "assertionType": "contains",
+                            "callsite": "2",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "'LiteratureMath'"
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".textContent",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_148').find('td').withText('English').textContent"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"css: question.koCss().root\"].sv_q_matrix_dynamic').nth(1).find('td').withText('English').textContent"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('td').withText('English').nth(1).textContent"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_148').find('[data-bind^=\"css: question.koCss().itemValue + (question.errors\"].undefined').nth(0).textContent"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Select a subject').nth(40).find('[data-bind^=\"css: question.koCss().itemValue + (question.errors\"].undefined').nth(0).textContent"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"css: question.koCss().itemValue + (question.errors\"].undefined').nth(3).textContent"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Select a subject').nth(40).nth(40).find('table').find('tbody').find('tr').find('td').textContent"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_148').find('div').nth(2).find('div').nth(3).find('table').find('tbody').find('tr').find('td').textContent"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').nth(6).find('div').find('div').nth(41).find('div').nth(5).find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').nth(1).find('div').nth(204).find('div').find('div').find('div').nth(2).find('survey-widget').find('div').find('form').find('div').nth(1).find('div').find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(3).find('table').find('tbody').find('tr').find('td').textContent"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('div').withText('Select a subject').nth(40).find('[data-bind^=\"css: question.cssClasses.fileInput, attr: {id: que\"].sv_q_file_input[title=\"Choose file(s)...\"]').tagName"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "3",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "'input'"
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".tagName",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_156i').tagName"
+                                        },
+                                        "ruleType": "id"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_148').find('[data-bind^=\"css: question.cssClasses.fileInput, attr: {id: que\"].sv_q_file_input[title=\"Choose file(s)...\"]').tagName"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Select a subject').nth(40).find('[data-bind^=\"css: question.cssClasses.fileInput, attr: {id: que\"].sv_q_file_input[title=\"Choose file(s)...\"]').tagName"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"css: question.cssClasses.root\"].sv_q_file').nth(1).find('[data-bind^=\"css: question.cssClasses.fileInput, attr: {id: que\"].sv_q_file_input[title=\"Choose file(s)...\"]').tagName"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"css: question.cssClasses.fileInput, attr: {id: que\"].sv_q_file_input[title=\"Choose file(s)...\"]').nth(1).tagName"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"css: question.cssClasses.root\"].sv_q_file').nth(1).nth(1).find('input').tagName"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Select a subject').nth(40).nth(40).find('table').find('tbody').find('tr').find('td').nth(1).find('div').find('div').nth(2).find('input').tagName"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_148').find('div').nth(2).find('div').nth(3).find('table').find('tbody').find('tr').find('td').nth(1).find('div').find('div').nth(2).find('input').tagName"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').nth(6).find('div').find('div').nth(41).find('div').nth(5).find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').nth(1).find('div').nth(204).find('div').find('div').find('div').nth(2).find('survey-widget').find('div').find('form').find('div').nth(1).find('div').find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(3).find('table').find('tbody').find('tr').find('td').nth(1).find('div').find('div').nth(2).find('input').tagName"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "callsite": "4",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('div').withText('English').nth(42).find('.select2-selection__rendered')"
+                            },
+                            "studio": {
+                                "offsetX": 113,
+                                "offsetY": 3,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_148').find('.select2-selection__rendered')"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('English').nth(42).find('.select2-selection__rendered')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.select2-selection.select2-selection--multiple').nth(1).find('.select2-selection__rendered')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.select2-selection__rendered').nth(2)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.select2-selection.select2-selection--multiple').nth(1).nth(1).find('ul')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('English').nth(42).nth(42).find('span').find('span').find('span').find('ul')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_148').find('div').nth(2).find('div').nth(3).find('table').find('tbody').find('tr').find('td').find('div').find('span').find('span').find('span').find('ul')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').nth(6).find('div').find('div').nth(41).find('div').nth(5).find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').nth(1).find('div').nth(204).find('div').find('div').find('div').nth(2).find('survey-widget').find('div').find('form').find('div').nth(1).find('div').find('div').nth(3).find('div').find('div').nth(1).find('div').find('div').nth(2).find('div').nth(3).find('table').find('tbody').find('tr').find('td').find('div').find('span').find('span').find('span').find('ul')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "callsite": "5",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('[class^=\"select2-results__option select2-results__option--h\"]')"
+                            },
+                            "studio": {
+                                "offsetX": 56,
+                                "offsetY": 30,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[class^=\"select2-results__option select2-results__option--h\"]')"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#select2-xt3j-results').find('[class^=\"select2-results__option select2-results__option--h\"]')"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.select2-results__options').find('[class^=\"select2-results__option select2-results__option--h\"]')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('English').nth(4).find('[class^=\"select2-results__option select2-results__option--h\"]')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('li').withText('English').nth(0)"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#select2-xt3j-results').find('li').withText('English').nth(0)"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#select2-xt3j-results').find('li')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('English').nth(4).nth(4).find('ul').find('li')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('span').nth(805).find('span').find('span').find('ul').find('li')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "callsite": "8",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('span').withText('I understand')"
+                            },
+                            "studio": {
+                                "offsetX": 72,
+                                "offsetY": 24,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('I understand')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.surveyjs-cookie-info__span')"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.surveyjs-cookie-info.page__survey-cookie-info').find('span').withText('I understand')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('I understand').find('.surveyjs-cookie-info__span')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.surveyjs-cookie-info.page__survey-cookie-info').find('.surveyjs-cookie-info__span')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('I understand').find('span')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.surveyjs-cookie-info.page__survey-cookie-info').find('span')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').nth(349).find('span')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.surveyjs-customer-survey-close[title=\"Hide this panel\"]').find('img')"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.surveyjs-customer-survey-close[title=\"Hide this panel\"]').find('img')"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Please help us to improve our product').find('div').find('img')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').nth(322).find('div').find('img')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 3,
+                                "offsetY": 7
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "11"
+                        },
+                        {
+                            "callsite": "9",
+                            "options": {},
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                            },
+                            "studio": {
+                                "offsetX": 104,
+                                "offsetY": 17,
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyjsExample').find('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"css: css.footer\"].sv_nav').find('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1 .  Please send your homework').nth(20).find('[data-bind^=\"value: completeText, click: completeLastPage, visi\"].sv_complete_btn')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"css: css.footer\"].sv_nav').find('input').nth(2)"
+                                        },
+                                        "ruleType": "attr-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1 .  Please send your homework').nth(20).nth(20).find('div').nth(31).find('input').nth(2)"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyjsExample').find('div').nth(2).find('survey-widget').find('div').find('form').find('div').nth(1).find('div').find('div').nth(31).find('input').nth(2)"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').nth(6).find('div').find('div').nth(41).find('div').nth(5).find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').nth(1).find('div').nth(205).find('div').find('div').find('div').nth(2).find('survey-widget').find('div').find('form').find('div').nth(1).find('div').find('div').nth(31).find('input').nth(2)"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "selectorType": "CSS Selector"
+                            },
+                            "type": "click"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('div').withText('[{\\\"subjects\\\":[\\\"English: American Literature\\\"]}').textContent"
+                            },
+                            "assertionType": "match",
+                            "callsite": "10",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "/Literature/"
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".textContent",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('[{\\\"subjects\\\":[\\\"English: American Literature\\\"]}').textContent"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyjsExample').find('div').withText('[{\\\"subjects\\\":[\\\"English: American Literature\\\"]}').textContent"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.survey-result-value[data-bind=\"text: getString(value)\"]').textContent"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyjsExample').find('.survey-result-value[data-bind=\"text: getString(value)\"]').textContent"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svd-dark-border-color').nth(10).find('div').withText('[{\\\"subjects\\\":[\\\"English: American Literature\\\"]}').textContent"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('td').withText('[{\\\"subjects\\\":[\\\"English: American Literature\\\"]}').find('.survey-result-value[data-bind=\"text: getString(value)\"]').textContent"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('td').withText('[{\\\"subjects\\\":[\\\"English: American Literature\\\"]}').find('div').textContent"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#surveyjsExample').find('div').nth(9).find('div').nth(3).find('table').find('tbody').find('tr').find('td').nth(2).find('div').textContent"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').nth(6).find('div').find('div').nth(41).find('div').nth(5).find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').find('div').nth(1).find('div').nth(205).find('div').find('div').find('div').nth(9).find('div').nth(3).find('table').find('tbody').find('tr').find('td').nth(2).find('div').textContent"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
