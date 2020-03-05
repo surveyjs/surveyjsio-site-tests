@@ -1,1 +1,1084 @@
-{"fixtures":[{"name":"toolbox_categories","pageUrl":"https://surveyjstest.azurewebsites.net//Examples/CreatorSinglePage?id=toolboxcategories&theme=default","tests":[{"name":"Change category","commands":[{"type":"maximize-window","studio":{},"callsite":"3"},{"callsite":"0","expression":"ClientFunction(() => {\n    var creatorOptions = { };\n    creator = new SurveyCreator.SurveyCreator('creatorElement', creatorOptions);\n    creator\n        .toolbox\n        .changeCategories([\n        {\n            name: 'rating',\n            category: 'Rating'\n        }\n    ]);\n    return 'dummy';\n})","resultVariableName":"dummy","studio":{"expressionCommandType":"define-function"},"type":"execute-expression"},{"actual":{"type":"js-expr","value":"dummy()"},"assertionType":"eql","callsite":"2","expected":{"type":"js-expr","value":"'dummy'"},"options":{},"studio":{"assertionMode":"checkFunction","selectorPostfix":"","selectors":[]},"type":"assertion"},{"type":"assertion","studio":{"assertionMode":"checkElement","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('GENERAL').exists"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"].svd-main-color').exists"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('span').withText('GENERAL').exists"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"].svd-main-color').exists"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.svd-toolbox-category-header[data-bind=\"click: expand\"]').find('span').withText('GENERAL').exists"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('GENERAL').nth(9).find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"].svd-main-color').exists"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('GENERAL').nth(9).nth(9).find('span').exists"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('span').exists"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('span').exists"},"ruleType":"dom"}],"selectorType":"CSS Selector","selectorPostfix":".exists"},"callsite":"4","assertionType":"eql","actual":{"type":"js-expr","value":"Selector('span').withText('GENERAL').exists"},"options":{},"expected":{"type":"js-expr","value":"true"}},{"type":"assertion","studio":{"assertionMode":"checkElement","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('RATING').exists"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('span').withText('RATING').exists"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('.svd-toolbox-category-header[data-bind=\"click: expand\"]').nth(1).find('span').withText('RATING').exists"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('RATING').nth(9).find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]').exists"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]').nth(1).exists"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]').nth(1).exists"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('RATING').nth(9).nth(9).find('span').exists"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').find('span').exists"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').find('span').exists"},"ruleType":"dom"}],"selectorType":"CSS Selector","selectorPostfix":".exists"},"callsite":"5","assertionType":"eql","actual":{"type":"js-expr","value":"Selector('span').withText('RATING').exists"},"options":{},"expected":{"type":"js-expr","value":"true"}},{"selector":{"type":"js-expr","value":"Selector('span').withText('RATING')"},"studio":{"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('RATING')"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('span').withText('RATING')"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('.svd-toolbox-category-header[data-bind=\"click: expand\"]').nth(1).find('span').withText('RATING')"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('RATING').nth(9).find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]').nth(1)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]').nth(1)"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('RATING').nth(9).nth(9).find('span')"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').find('span')"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').find('span')"},"ruleType":"dom"}],"useOffsets":false,"offsetX":57,"offsetY":12},"options":{},"type":"click","callsite":"6"},{"type":"assertion","studio":{"assertionMode":"checkElement","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"css: { \\\\\\'panel-collapse collapse\\\\\\': koCollapsed}\"]').nth(1).find('div').withText('Rating').exists"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Rating').nth(9).find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').exists"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').withText('Rating').nth(8).exists"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Rating').nth(10).exists"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Rating').nth(9).nth(9).find('div').exists"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(16).exists"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(16).exists"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').nth(1).find('div').exists"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').nth(1).find('div').exists"},"ruleType":"dom"}],"selectorType":"CSS Selector","selectorPostfix":".exists"},"callsite":"7","assertionType":"eql","actual":{"type":"js-expr","value":"Selector('[data-bind=\"css: { \\\\\\'panel-collapse collapse\\\\\\': koCollapsed}\"]').nth(1).find('div').withText('Rating').exists"},"options":{},"expected":{"type":"js-expr","value":"true"}},{"selector":{"type":"js-expr","value":"Selector('span').withText('Rating')"},"studio":{"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('Rating')"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('span').withText('Rating')"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(16).find('span').withText('Rating')"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Rating').nth(10).find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('Rating').nth(10).nth(10).find('span').nth(1)"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]').nth(16)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]').nth(16)"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').nth(1).find('div').find('span').nth(1)"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').nth(1).find('div').find('span').nth(1)"},"ruleType":"dom"}],"useOffsets":false,"offsetX":17,"offsetY":3},"options":{},"type":"click","callsite":"8"},{"type":"assertion","studio":{"assertionMode":"checkElement","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('#sq_148').exists"},"ruleType":"id"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"][class^=\"sv_qstn question_actions svd_question svd-dark-bg-\"]').exists"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#sp_107').find('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"][class^=\"sv_qstn question_actions svd_question svd-dark-bg-\"]').exists"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"css: panel.cssClasses.row\"].sv_row').find('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"][class^=\"sv_qstn question_actions svd_question svd-dark-bg-\"]').exists"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1').nth(22).find('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"][class^=\"sv_qstn question_actions svd_question svd-dark-bg-\"]').exists"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#sp_107').find('div').withText('1').nth(2).exists"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('#sp_107').find('div').find('div').nth(1).find('div').exists"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(26).find('div').nth(24).find('div').find('div').find('form').find('div').nth(1).find('div').find('div').nth(3).find('div').find('div').nth(1).find('div').exists"},"ruleType":"dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1').nth(23).exists"},"ruleType":"text"}],"selectorType":"CSS Selector","selectorPostfix":".exists"},"callsite":"9","assertionType":"eql","actual":{"type":"js-expr","value":"Selector('#sq_148').exists"},"options":{},"expected":{"type":"js-expr","value":"true"}}]},{"name":"Add toolbox item to new category","commands":[{"callsite":"3","studio":{},"type":"maximize-window"},{"callsite":"0","expression":"ClientFunction(() => {\n    var creatorOptions = { };\n    creator = new SurveyCreator.SurveyCreator('creatorElement', creatorOptions);\n    creator\n        .toolbox\n        .addItem({\n            name: 'countries',\n            isCopied: true,\n            iconName: 'icon-default',\n            title: 'All countries',\n            category: 'Custom',\n            json: {\n                type: 'dropdown',\n                optionsCaption: 'Select a country...',\n                choicesByUrl: {\n                    url: 'https://restcountries.eu/rest/v2/all'\n                }\n            }\n        });\n    return 'dummy';\n})","resultVariableName":"dummy","studio":{"expressionCommandType":"define-function"},"type":"execute-expression"},{"actual":{"type":"js-expr","value":"dummy()"},"assertionType":"eql","callsite":"2","expected":{"type":"js-expr","value":"'dummy'"},"options":{},"studio":{"assertionMode":"checkFunction","selectorPostfix":"","selectors":[]},"type":"assertion"},{"actual":{"type":"js-expr","value":"Selector('span').withText('GENERAL').exists"},"assertionType":"eql","callsite":"4","expected":{"type":"js-expr","value":"true"},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".exists","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('GENERAL').exists"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"].svd-main-color').exists"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('span').withText('GENERAL').exists"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"].svd-main-color').exists"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.svd-toolbox-category-header[data-bind=\"click: expand\"]').find('span').withText('GENERAL').exists"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('GENERAL').nth(9).find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"].svd-main-color').exists"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('GENERAL').nth(9).nth(9).find('span').exists"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('span').exists"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('span').exists"},"ruleType":"dom"}]},"type":"assertion"},{"actual":{"type":"js-expr","value":"Selector('span').withText('CUSTOM').exists"},"assertionType":"eql","callsite":"5","expected":{"type":"js-expr","value":"true"},"options":{},"studio":{"assertionMode":"checkElement","selectorPostfix":".exists","selectorType":"CSS Selector","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('RATING').exists"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('span').withText('RATING').exists"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('.svd-toolbox-category-header[data-bind=\"click: expand\"]').nth(1).find('span').withText('RATING').exists"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('RATING').nth(9).find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]').exists"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]').nth(1).exists"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]').nth(1).exists"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('RATING').nth(9).nth(9).find('span').exists"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').find('span').exists"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').find('span').exists"},"ruleType":"dom"},{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('CUSTOM').exists"},"ruleType":"cust"}]},"type":"assertion"},{"selector":{"type":"js-expr","value":"Selector('.panel.panel-info').nth(1).find('div').withText('CUSTOM')"},"studio":{"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('.panel.panel-info').nth(1).find('div').withText('CUSTOM')"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('CUSTOM').nth(8).find('.svd-toolbox-category-header[data-bind=\"click: expand\"]')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('.svd-toolbox-category-header[data-bind=\"click: expand\"]').nth(1)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('.svd-toolbox-category-header[data-bind=\"click: expand\"]').nth(1)"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').withText('CUSTOM').nth(7)"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('CUSTOM').nth(9)"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('CUSTOM').nth(8).nth(8).find('div')"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(20).find('div')"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(20).find('div')"},"ruleType":"dom"}],"useOffsets":false,"offsetX":46,"offsetY":35},"options":{},"type":"click","callsite":"6"},{"type":"assertion","studio":{"assertionMode":"checkElement","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"css: { \\\\\\'panel-collapse collapse\\\\\\': koCollapsed}\"]').nth(1).find('div').withText('All countries').exists"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('All countries').nth(9).find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').exists"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').withText('All countries').nth(8).exists"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('All countries').nth(10).exists"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('All countries').nth(9).nth(9).find('div').exists"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(17).exists"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(17).exists"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(20).find('div').nth(1).find('div').exists"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(20).find('div').nth(1).find('div').exists"},"ruleType":"dom"}],"selectorType":"CSS Selector","selectorPostfix":".exists"},"callsite":"7","assertionType":"eql","actual":{"type":"js-expr","value":"Selector('[data-bind=\"css: { \\\\\\'panel-collapse collapse\\\\\\': koCollapsed}\"]').nth(1).find('div').withText('All countries').exists"},"options":{},"expected":{"type":"js-expr","value":"true"}},{"selector":{"type":"js-expr","value":"Selector('span').withText('All countries')"},"studio":{"selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('span').withText('All countries')"},"ruleType":"text"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('span').withText('All countries')"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(17).find('span').withText('All countries')"},"ruleType":"attr-text"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('All countries').nth(10).find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]')"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('All countries').nth(10).nth(10).find('span').nth(1)"},"ruleType":"text-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]').nth(17)"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]').nth(17)"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(20).find('div').nth(1).find('div').find('span').nth(1)"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(20).find('div').nth(1).find('div').find('span').nth(1)"},"ruleType":"dom"}],"useOffsets":false,"offsetX":37,"offsetY":16},"options":{},"type":"click","callsite":"8"},{"type":"assertion","studio":{"assertionMode":"checkElement","selectors":[{"rawSelector":{"type":"js-expr","value":"Selector('#sq_148').exists"},"ruleType":"id"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"][class^=\"sv_qstn question_actions svd_question svd-dark-bg-\"]').exists"},"ruleType":"attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#sp_107').find('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"][class^=\"sv_qstn question_actions svd_question svd-dark-bg-\"]').exists"},"ruleType":"id-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('[data-bind=\"css: panel.cssClasses.row\"].sv_row').find('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"][class^=\"sv_qstn question_actions svd_question svd-dark-bg-\"]').exists"},"ruleType":"attr-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1').nth(22).find('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"][class^=\"sv_qstn question_actions svd_question svd-dark-bg-\"]').exists"},"ruleType":"text-attr"},{"rawSelector":{"type":"js-expr","value":"Selector('#sp_107').find('div').withText('1').nth(2).exists"},"ruleType":"id-text"},{"rawSelector":{"type":"js-expr","value":"Selector('#sp_107').find('div').find('div').nth(1).find('div').exists"},"ruleType":"id-dom"},{"rawSelector":{"type":"js-expr","value":"Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(27).find('div').nth(24).find('div').find('div').find('form').find('div').nth(1).find('div').find('div').nth(3).find('div').find('div').nth(1).find('div').exists"},"ruleType":"dom"},{"rawSelector":{"type":"js-expr","value":"Selector('div').withText('1').nth(23).exists"},"ruleType":"text"}],"selectorType":"CSS Selector","selectorPostfix":".exists"},"callsite":"9","assertionType":"eql","actual":{"type":"js-expr","value":"Selector('#sq_148').exists"},"options":{},"expected":{"type":"js-expr","value":"true"}}]}]}]}
+{
+    "fixtures": [
+        {
+            "name": "toolbox_categories",
+            "pageUrl": "https://surveyjstest.azurewebsites.net//Examples/CreatorSinglePage?id=toolboxcategories&theme=default",
+            "tests": [
+                {
+                    "name": "Change category",
+                    "skip": true,
+                    "commands": [
+                        {
+                            "type": "maximize-window",
+                            "studio": {},
+                            "callsite": "3"
+                        },
+                        {
+                            "callsite": "0",
+                            "expression": "ClientFunction(() => {\n    var creatorOptions = { };\n    creator = new SurveyCreator.SurveyCreator('creatorElement', creatorOptions);\n    creator\n        .toolbox\n        .changeCategories([\n        {\n            name: 'rating',\n            category: 'Rating'\n        }\n    ]);\n    return 'dummy';\n})",
+                            "resultVariableName": "dummy",
+                            "studio": {
+                                "expressionCommandType": "define-function"
+                            },
+                            "type": "execute-expression"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "dummy()"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "2",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "'dummy'"
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkFunction",
+                                "selectorPostfix": "",
+                                "selectors": []
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "type": "assertion",
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('GENERAL').exists"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"].svd-main-color').exists"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('span').withText('GENERAL').exists"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"].svd-main-color').exists"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svd-toolbox-category-header[data-bind=\"click: expand\"]').find('span').withText('GENERAL').exists"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('GENERAL').nth(9).find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"].svd-main-color').exists"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('GENERAL').nth(9).nth(9).find('span').exists"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('span').exists"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('span').exists"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "selectorType": "CSS Selector",
+                                "selectorPostfix": ".exists"
+                            },
+                            "callsite": "4",
+                            "assertionType": "eql",
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('span').withText('GENERAL').exists"
+                            },
+                            "options": {},
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "true"
+                            }
+                        },
+                        {
+                            "type": "assertion",
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('RATING').exists"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('span').withText('RATING').exists"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svd-toolbox-category-header[data-bind=\"click: expand\"]').nth(1).find('span').withText('RATING').exists"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('RATING').nth(9).find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]').exists"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]').nth(1).exists"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]').nth(1).exists"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('RATING').nth(9).nth(9).find('span').exists"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').find('span').exists"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').find('span').exists"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "selectorType": "CSS Selector",
+                                "selectorPostfix": ".exists"
+                            },
+                            "callsite": "5",
+                            "assertionType": "eql",
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('span').withText('RATING').exists"
+                            },
+                            "options": {},
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "true"
+                            }
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('span').withText('RATING')"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('RATING')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('span').withText('RATING')"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svd-toolbox-category-header[data-bind=\"click: expand\"]').nth(1).find('span').withText('RATING')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('RATING').nth(9).find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]').nth(1)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]').nth(1)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('RATING').nth(9).nth(9).find('span')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').find('span')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').find('span')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 57,
+                                "offsetY": 12
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "6"
+                        },
+                        {
+                            "type": "assertion",
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"css: { \\\\\\'panel-collapse collapse\\\\\\': koCollapsed}\"]').nth(1).find('div').withText('Rating').exists"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Rating').nth(9).find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').exists"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').withText('Rating').nth(8).exists"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Rating').nth(10).exists"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Rating').nth(9).nth(9).find('div').exists"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(16).exists"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(16).exists"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').nth(1).find('div').exists"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').nth(1).find('div').exists"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "selectorType": "CSS Selector",
+                                "selectorPostfix": ".exists"
+                            },
+                            "callsite": "7",
+                            "assertionType": "eql",
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('[data-bind=\"css: { \\\\\\'panel-collapse collapse\\\\\\': koCollapsed}\"]').nth(1).find('div').withText('Rating').exists"
+                            },
+                            "options": {},
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "true"
+                            }
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('span').withText('Rating')"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('Rating')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('span').withText('Rating')"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(16).find('span').withText('Rating')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Rating').nth(10).find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('Rating').nth(10).nth(10).find('span').nth(1)"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]').nth(16)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]').nth(16)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').nth(1).find('div').find('span').nth(1)"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').nth(1).find('div').find('span').nth(1)"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 17,
+                                "offsetY": 3
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "8"
+                        },
+                        {
+                            "type": "assertion",
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_148').exists"
+                                        },
+                                        "ruleType": "id"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"][class^=\"sv_qstn question_actions svd_question svd-dark-bg-\"]').exists"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sp_107').find('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"][class^=\"sv_qstn question_actions svd_question svd-dark-bg-\"]').exists"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"css: panel.cssClasses.row\"].sv_row').find('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"][class^=\"sv_qstn question_actions svd_question svd-dark-bg-\"]').exists"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(22).find('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"][class^=\"sv_qstn question_actions svd_question svd-dark-bg-\"]').exists"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sp_107').find('div').withText('1').nth(2).exists"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sp_107').find('div').find('div').nth(1).find('div').exists"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(26).find('div').nth(24).find('div').find('div').find('form').find('div').nth(1).find('div').find('div').nth(3).find('div').find('div').nth(1).find('div').exists"
+                                        },
+                                        "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(23).exists"
+                                        },
+                                        "ruleType": "text"
+                                    }
+                                ],
+                                "selectorType": "CSS Selector",
+                                "selectorPostfix": ".exists"
+                            },
+                            "callsite": "9",
+                            "assertionType": "eql",
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('#sq_148').exists"
+                            },
+                            "options": {},
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "true"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Add toolbox item to new category",
+                    "skip": true,
+                    "commands": [
+                        {
+                            "callsite": "3",
+                            "studio": {},
+                            "type": "maximize-window"
+                        },
+                        {
+                            "callsite": "0",
+                            "expression": "ClientFunction(() => {\n    var creatorOptions = { };\n    creator = new SurveyCreator.SurveyCreator('creatorElement', creatorOptions);\n    creator\n        .toolbox\n        .addItem({\n            name: 'countries',\n            isCopied: true,\n            iconName: 'icon-default',\n            title: 'All countries',\n            category: 'Custom',\n            json: {\n                type: 'dropdown',\n                optionsCaption: 'Select a country...',\n                choicesByUrl: {\n                    url: 'https://restcountries.eu/rest/v2/all'\n                }\n            }\n        });\n    return 'dummy';\n})",
+                            "resultVariableName": "dummy",
+                            "studio": {
+                                "expressionCommandType": "define-function"
+                            },
+                            "type": "execute-expression"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "dummy()"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "2",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "'dummy'"
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkFunction",
+                                "selectorPostfix": "",
+                                "selectors": []
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('span').withText('GENERAL').exists"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "4",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "true"
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".exists",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('GENERAL').exists"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"].svd-main-color').exists"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('span').withText('GENERAL').exists"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"].svd-main-color').exists"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svd-toolbox-category-header[data-bind=\"click: expand\"]').find('span').withText('GENERAL').exists"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('GENERAL').nth(9).find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"].svd-main-color').exists"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('GENERAL').nth(9).nth(9).find('span').exists"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('span').exists"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').find('div').find('span').exists"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('span').withText('CUSTOM').exists"
+                            },
+                            "assertionType": "eql",
+                            "callsite": "5",
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "true"
+                            },
+                            "options": {},
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectorPostfix": ".exists",
+                                "selectorType": "CSS Selector",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('RATING').exists"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('span').withText('RATING').exists"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svd-toolbox-category-header[data-bind=\"click: expand\"]').nth(1).find('span').withText('RATING').exists"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('RATING').nth(9).find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]').exists"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]').nth(1).exists"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('[data-bind^=\"css: { \\\\\\'svd-main-color\\\\\\': !koCollapsed() }, text: n\"]').nth(1).exists"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('RATING').nth(9).nth(9).find('span').exists"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').find('span').exists"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(19).find('div').find('span').exists"
+                                        },
+                                        "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('CUSTOM').exists"
+                                        },
+                                        "ruleType": "cust"
+                                    }
+                                ]
+                            },
+                            "type": "assertion"
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('.panel.panel-info').nth(1).find('div').withText('CUSTOM')"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.panel.panel-info').nth(1).find('div').withText('CUSTOM')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('CUSTOM').nth(8).find('.svd-toolbox-category-header[data-bind=\"click: expand\"]')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svd-toolbox-category-header[data-bind=\"click: expand\"]').nth(1)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('.svd-toolbox-category-header[data-bind=\"click: expand\"]').nth(1)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').withText('CUSTOM').nth(7)"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('CUSTOM').nth(9)"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('CUSTOM').nth(8).nth(8).find('div')"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(20).find('div')"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(20).find('div')"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 46,
+                                "offsetY": 35
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "6"
+                        },
+                        {
+                            "type": "assertion",
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"css: { \\\\\\'panel-collapse collapse\\\\\\': koCollapsed}\"]').nth(1).find('div').withText('All countries').exists"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('All countries').nth(9).find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').exists"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').withText('All countries').nth(8).exists"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('All countries').nth(10).exists"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('All countries').nth(9).nth(9).find('div').exists"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(17).exists"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(17).exists"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(20).find('div').nth(1).find('div').exists"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(20).find('div').nth(1).find('div').exists"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "selectorType": "CSS Selector",
+                                "selectorPostfix": ".exists"
+                            },
+                            "callsite": "7",
+                            "assertionType": "eql",
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('[data-bind=\"css: { \\\\\\'panel-collapse collapse\\\\\\': koCollapsed}\"]').nth(1).find('div').withText('All countries').exists"
+                            },
+                            "options": {},
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "true"
+                            }
+                        },
+                        {
+                            "selector": {
+                                "type": "js-expr",
+                                "value": "Selector('span').withText('All countries')"
+                            },
+                            "studio": {
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('span').withText('All countries')"
+                                        },
+                                        "ruleType": "text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('span').withText('All countries')"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[class^=\"svd_toolbox_item svd-light-border-color svd_toolbo\"][data-bind^=\"css: \\\\\\'svd_toolbox_item_\\\\\\' + iconName, key2click, cl\"]').nth(17).find('span').withText('All countries')"
+                                        },
+                                        "ruleType": "attr-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('All countries').nth(10).find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]')"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('All countries').nth(10).nth(10).find('span').nth(1)"
+                                        },
+                                        "ruleType": "text-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]').nth(17)"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind=\"text:title\"]').nth(17)"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#creatorElement').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(20).find('div').nth(1).find('div').find('span').nth(1)"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').find('div').find('div').nth(20).find('div').nth(1).find('div').find('span').nth(1)"
+                                        },
+                                        "ruleType": "dom"
+                                    }
+                                ],
+                                "useOffsets": false,
+                                "offsetX": 37,
+                                "offsetY": 16
+                            },
+                            "options": {},
+                            "type": "click",
+                            "callsite": "8"
+                        },
+                        {
+                            "type": "assertion",
+                            "studio": {
+                                "assertionMode": "checkElement",
+                                "selectors": [
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sq_148').exists"
+                                        },
+                                        "ruleType": "id"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"][class^=\"sv_qstn question_actions svd_question svd-dark-bg-\"]').exists"
+                                        },
+                                        "ruleType": "attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sp_107').find('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"][class^=\"sv_qstn question_actions svd_question svd-dark-bg-\"]').exists"
+                                        },
+                                        "ruleType": "id-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('[data-bind=\"css: panel.cssClasses.row\"].sv_row').find('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"][class^=\"sv_qstn question_actions svd_question svd-dark-bg-\"]').exists"
+                                        },
+                                        "ruleType": "attr-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(22).find('[data-bind^=\"css: question.koRootClass, style: { paddingLeft: q\"][class^=\"sv_qstn question_actions svd_question svd-dark-bg-\"]').exists"
+                                        },
+                                        "ruleType": "text-attr"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sp_107').find('div').withText('1').nth(2).exists"
+                                        },
+                                        "ruleType": "id-text"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('#sp_107').find('div').find('div').nth(1).find('div').exists"
+                                        },
+                                        "ruleType": "id-dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('body').find('div').find('div').find('div').find('div').nth(1).find('div').find('div').find('div').nth(27).find('div').nth(24).find('div').find('div').find('form').find('div').nth(1).find('div').find('div').nth(3).find('div').find('div').nth(1).find('div').exists"
+                                        },
+                                        "ruleType": "dom"
+                                    },
+                                    {
+                                        "rawSelector": {
+                                            "type": "js-expr",
+                                            "value": "Selector('div').withText('1').nth(23).exists"
+                                        },
+                                        "ruleType": "text"
+                                    }
+                                ],
+                                "selectorType": "CSS Selector",
+                                "selectorPostfix": ".exists"
+                            },
+                            "callsite": "9",
+                            "assertionType": "eql",
+                            "actual": {
+                                "type": "js-expr",
+                                "value": "Selector('#sq_148').exists"
+                            },
+                            "options": {},
+                            "expected": {
+                                "type": "js-expr",
+                                "value": "true"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+}
