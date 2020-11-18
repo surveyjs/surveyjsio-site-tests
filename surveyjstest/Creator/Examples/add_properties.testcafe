@@ -334,7 +334,7 @@
                             "options": {},
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('a').withText('JSON Editor')"
+                                "value": "Selector('span.nav-link').withText('JSON Editor')"
                             },
                             "studio": {
                                 "offsetX": 60,
@@ -622,7 +622,7 @@
                             "options": {},
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('a').withText('JSON Editor')"
+                                "value": "Selector('span.nav-link').withText('JSON Editor')"
                             },
                             "studio": {
                                 "offsetX": 60,
@@ -710,7 +710,7 @@
                         {
                             "selector": {
                                 "type": "js-expr",
-                                "value": "Selector('a').withText('Survey Designer')"
+                                "value": "Selector('span.nav-link').withText('Survey Designer')"
                             },
                             "studio": {
                                 "selectors": [

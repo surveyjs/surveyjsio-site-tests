@@ -100,7 +100,7 @@
                         {
                             "actual": {
                                 "type": "js-expr",
-                                "value": "Selector('a').withText('Survey Designer').getStyleProperty('color')"
+                                "value": "Selector('span.nav-link').withText('Survey Designer').getStyleProperty('color')"
                             },
                             "assertionType": "eql",
                             "callsite": "2",
