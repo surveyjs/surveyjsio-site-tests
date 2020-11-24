@@ -33,13 +33,13 @@ steps:
 
 # create build artifact file
 - powershell: |
-    New-Item "ItegrationTestsIsOk.txt"
-    Set-Content Itegration Tests Is Ok
+    New-Item "IntegrationTestsIsOk.txt"
+    Set-Content Integration Tests Is Ok
   displayName: 'create file as build artifact'
 
 - task: CopyFiles@2
   inputs:
-    contents: 'ItegrationTestsIsOk.txt'
+    contents: 'IntegrationTestsIsOk.txt'
     targetFolder: $(Build.ArtifactStagingDirectory)
   displayName: 'copy artifact to Build.ArtifactStagingDirectory'
 
