@@ -31,21 +31,21 @@ steps:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/TEST-*.xml'
 
-# create build artifact file
-- powershell: |
-    New-Item "IntegrationTestsIsOk.txt"
-    Set-Content Integration Tests Is Ok
-  displayName: 'create file as build artifact'
+# # create build artifact file
+# - powershell: |
+#     New-Item "IntegrationTestsIsOk.txt"
+#     Set-Content "Integration Tests Is Ok"
+#   displayName: 'create file as build artifact'
 
-- task: CopyFiles@2
-  inputs:
-    contents: 'IntegrationTestsIsOk.txt'
-    targetFolder: $(Build.ArtifactStagingDirectory)
-  displayName: 'copy artifact to Build.ArtifactStagingDirectory'
+# - task: CopyFiles@2
+#   inputs:
+#     contents: 'IntegrationTestsIsOk.txt'
+#     targetFolder: $(Build.ArtifactStagingDirectory)
+#   displayName: 'copy artifact to Build.ArtifactStagingDirectory'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'SurveyJSIntegrationTests'
-    publishLocation: 'Container'
-  displayName: 'Publish Build Artifact'
+# - task: PublishBuildArtifacts@1
+#   inputs:
+#     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+#     ArtifactName: 'SurveyJSIntegrationTests'
+#     publishLocation: 'Container'
+#   displayName: 'Publish Build Artifact'
