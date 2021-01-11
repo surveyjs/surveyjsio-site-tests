@@ -171,7 +171,7 @@ test('Check html property', async t => {
         .expect(Selector('div').withText('Foo').find('textarea').value).eql('Bar');
 });
 
-test('Check choices property', async t => {
+test.skip('Check choices property', async t => {
     await t
         .maximizeWindow();
 
