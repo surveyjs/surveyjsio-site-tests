@@ -23,8 +23,10 @@ test('Check custom widgets default tabs ', async t => {
         .expect(Selector('[name="content-docs"][class^="tabs__tab-panel example-tab tabs__tab-panel--activ"]').exists).eql(true)
         .expect(Selector('a').withText('this repo to find out more').getAttribute('href')).eql('https://github.com/surveyjs/widgets')
         .expect(Selector('a').withText('create a new issue').getAttribute('href')).eql('https://github.com/surveyjs/widgets/issues')
-        .click(Selector('a').withText('Result'))
-        .switchToIframe(Selector('[name="content-result"][class^="tabs__tab-panel example-tab tabs__tab-panel--activ"]').find('iframe'))
+        .click(Selector('a').withText('Result'));
+    const iFrameSelector = Selector('[name="content-result"][class^="tabs__tab-panel example-tab tabs__tab-panel--activ"] > iframe', { timeout: 15000 });
+    await t
+        .switchToIframe(iFrameSelector)
         .expect(Selector('span.nav-link').withText('Survey Designer').textContent).eql("Survey Designer")
         .expect(Selector('span.nav-link').withText('Test Survey').textContent).eql("Test Survey")
         .expect(Selector('span.nav-link').withText('JSON Editor').textContent).eql("JSON Editor");
