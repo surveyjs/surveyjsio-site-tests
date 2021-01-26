@@ -28,8 +28,8 @@ steps:
 
 - task: PublishTestResults@2
   inputs:
+    testResultsFiles: '**/report.xml'
     testResultsFormat: 'JUnit'
-    testResultsFiles: '**/TEST-*.xml'
 
 # # create build artifact file
 # - powershell: |

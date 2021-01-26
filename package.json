@@ -3,10 +3,11 @@
   "name": "surveyjs.io.tests",
   "scripts": {
     "test": "testcafe chrome surveyjstest --selector-timeout 1500",
-    "test_ci": "bash -co pipefail 'testcafe chrome:headless surveyjstest --selector-timeout 1500 --reporter minimal | tee TEST-AllTestSuites.xml'"
+    "test_ci": "testcafe chrome:headless tests/**/* --selector-timeout 1500 --reporter spec,xunit:report.xml"
   },
   "dependencies": {
-    "testcafe": "^1.3.2"
+    "testcafe": "^1.3.2",
+    "testcafe-reporter-xunit": "*"
   },
   "devDependencies": {}
 }
