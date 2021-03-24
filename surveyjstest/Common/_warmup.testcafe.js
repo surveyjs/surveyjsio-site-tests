@@ -1,4 +1,4 @@
-fixture `warmpup`
+fixture `warmup`
     .page `https://surveyjstest.azurewebsites.net/Account/Login`;
 
 test('WarmupForLogin', async t => {
