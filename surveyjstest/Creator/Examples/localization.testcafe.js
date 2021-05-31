@@ -13,7 +13,7 @@ test('Check tabs', async t => {
         .click(Selector('a').withText('HTML'))
         .expect(Selector('pre').withText('DOCTYPE html').textContent).contains("survey-creator.js")
         .click(Selector('a').withText('Documentation'))
-        .expect(Selector('a').withText('Editor Localization Files').getAttribute('href')).eql("https://github.com/surveyjs/editor/tree/master/src/localization")
+        .expect(Selector('a').withText('Editor Localization Files').getAttribute('href')).eql("https://github.com/surveyjs/survey-creator/tree/master/packages/survey-creator/src/localization")
         .expect(Selector('a').withText('english').getAttribute('href')).eql("https://github.com/surveyjs/editor/blob/master/src/localization/english.ts")
         .expect(Selector('a').withText('here').getAttribute('href')).eql("/Examples/Library/survey-localization")
         .click(Selector('a').withText('Result'))
