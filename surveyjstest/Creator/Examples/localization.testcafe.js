@@ -14,7 +14,7 @@ test('Check tabs', async t => {
         .expect(Selector('pre').withText('DOCTYPE html').textContent).contains("survey-creator.js")
         .click(Selector('a').withText('Documentation'))
         .expect(Selector('a').withText('Editor Localization Files').getAttribute('href')).eql("https://github.com/surveyjs/survey-creator/tree/master/packages/survey-creator/src/localization")
-        .expect(Selector('a').withText('english').getAttribute('href')).eql("https://github.com/surveyjs/survey-creator/blob/master/packages/survey-creator/src/localization/english.ts")
+        .expect(Selector('a').withText('english').getAttribute('href')).eql("https://github.com/surveyjs/survey-creator/tree/master/packages/survey-creator/src/localization/english.ts")
         .expect(Selector('a').withText('here').getAttribute('href')).eql("/Examples/Library/survey-localization")
         .click(Selector('a').withText('Result'))
         .expect(Selector('span.nav-link').withText('Éditeur de questionnaire').textContent).eql("Éditeur de questionnaire");
