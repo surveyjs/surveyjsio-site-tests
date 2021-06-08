@@ -5,8 +5,6 @@ fixture`Basics`.page`http://surveyjstest.azurewebsites.net`;
 test("Menu Examples test", async (t) => {
   await t.maximizeWindow();
 
-  await t.debug();
-
   const ProductsMenuLibrary = Selector("a").withText("LIBRARY");
   const ProductsMenuLibraryExamples = Selector("a")
     .withText("Examples")
