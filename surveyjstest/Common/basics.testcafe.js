@@ -1,26 +1,37 @@
-import { Selector, ClientFunction } from 'testcafe';
+import { Selector, ClientFunction } from "testcafe";
 
-fixture `Basics`
-    .page `http://surveyjstest.azurewebsites.net`;
+fixture`Basics`.page`http://surveyjstest.azurewebsites.net`;
 
-test('Menu Examples test', async t => {
-    await t
-        .maximizeWindow();
+test("Menu Examples test", async (t) => {
+  await t.maximizeWindow();
 
-    const expandMenu = ClientFunction(() => {
-        window.i = 2;
-        $('div.products-menu__item-library.popup-menu.popup-menu--collapsed').addClass('popup-menu--expanded').removeClass('popup-menu--collapsed');
-        return 'dummy';
-    });
+  await t.debug();
 
-    await t
-        .expect(expandMenu()).eql('dummy')
-        .click(Selector('[class^="products-menu__item-library popup-menu popup-menu-"]').find('a').withText('Examples'))
-        .expect(Selector('[class^="product-menu__item-text product-menu__item-text--a"]').textContent).eql("Examples");
+  const ProductsMenuLibrary = Selector("a").withText("LIBRARY");
+  const ProductsMenuLibraryExamples = Selector("a")
+    .withText("Examples")
+    .filterVisible();
+  const LibraryExamplesMenuItem = Selector(
+    ".product-menu__item-text--active"
+  ).withText("Examples");
+
+  await t.hover(ProductsMenuLibrary, { speed: 0.5, offsetX: 30, offsetY: 30 });
+  await t.hover(ProductsMenuLibraryExamples, {
+    speed: 0.5,
+    offsetX: 30,
+    offsetY: 30,
+  });
+  await t.click(ProductsMenuLibraryExamples, {
+    speed: 0.5,
+    offsetX: 30,
+    offsetY: 30,
+  });
+  await t.hover(LibraryExamplesMenuItem, { speed: 0.5 });
 });
 
-test('Logo Test', async t => {
-    await t
-        .maximizeWindow()
-        .expect(Selector('h3').withText('Survey Creator').innerText).eql('Survey Creator');
+test("Logo Test", async (t) => {
+  await t
+    .maximizeWindow()
+    .expect(Selector("h3").withText("Survey Creator").innerText)
+    .eql("Survey Creator");
 });
