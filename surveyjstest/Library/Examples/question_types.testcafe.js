@@ -40,7 +40,7 @@ test('signaturepad', async t => {
         .maximizeWindow()
         .click(Selector('span').withText('Simple Questions'))
         .click(Selector('.sidebar__subitem-content').find('div').withText('Signature pad').nth(0))
-        .expect(Selector('[data-bind="css: question.koCss().root"].sv-signaturepad.sjs_sp_container').find('div').find('canvas').visible).ok()
+        .expect(Selector('.sv-signaturepad.sjs_sp_container').find('div').find('canvas').visible).ok()
         .expect(Selector('button').withText('✖').visible).ok()
         .click(Selector('.form-element').find('.form-element__input.form-element--inverse'))
         .pressKey('ctrl+a')
@@ -52,6 +52,6 @@ test('signaturepad', async t => {
         .typeText(Selector('div').withText('Height: (default is empty)').nth(7).find('.form-element__input.form-element--inverse'), '700', {
             caretPos: 0
         })
-        .expect(Selector('[data-bind="css: question.koCss().root"].sv-signaturepad.sjs_sp_container').find('div').find('canvas').scrollWidth).ok()
-        .expect(Selector('[data-bind="css: question.koCss().root"].sv-signaturepad.sjs_sp_container').find('div').find('canvas').clientHeight).ok();
+        .expect(Selector('.sv-signaturepad.sjs_sp_container').find('div').find('canvas').scrollWidth).ok()
+        .expect(Selector('.sv-signaturepad.sjs_sp_container').find('div').find('canvas').clientHeight).ok();
 });
