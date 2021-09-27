@@ -1,7 +1,7 @@
 import { Selector, ClientFunction } from 'testcafe';
 
-fixture `account`
-    .page `https://surveyjstest.azurewebsites.net/Account/Login`;
+fixture`account`
+    .page`https://surveyjstest.azurewebsites.net/Account/Login`;
 
 test('FormElements', async t => {
     const overrideConsoleErrorAndWarn = ClientFunction(() => {
@@ -36,82 +36,95 @@ test('FormElements', async t => {
 });
 
 test('RegisterRemove', async t => {
+    await t.maximizeWindow();
+
+    const randomNumber1 = Math.round(Math.random() * 100);
+    const randomNumber2 = Math.round(Math.random() * 100);
+    const email = `${randomNumber1}test${randomNumber2}@tester.org`;
+    const password = 'Test71';
+    const displayName = 'Test71 Name';
+
+    const emailInput = Selector('#Email');
+    const passwordInput = Selector('#Password');
+    const loginButton = Selector("[value='LOGIN']");
+    const acceptTermsCheckboxLogin = Selector('.login-page__login label').withText('I have read, understand and accept the surveyjs.io')
+        .find('.custom-checkbox__checkmark');
+    const menuAccountLink = Selector('a').withText('Account');
+    const menuLogInLink = Selector('a').withText('Login/Register');
+    const invalidLoginAttemptMessage = Selector('li').withText('Invalid login attempt.');
+
+
+    //#region invalid login attempt
     await t
-        .maximizeWindow()
-        .typeText('#Email', 'test@tester.org')
-        .typeText('#Password', 'Test71')
-        .click(Selector('label').withText('I have read, understand and accept the surveyjs.io').find('.custom-checkbox__checkmark'))
-        .click(Selector('.mod-mt-120').find('.rounded-button.rounded-button--auxiliary-color'))
-        .expect(Selector('li').withText('Invalid login attempt.').visible).ok('See invalid login message')
-        .click(Selector('.mod-mt-10.mod-ml-30').find('a').withText('Register'))
-        .typeText('#DisplayName', 'Test71')
-        .typeText('#RegisterEmail', 'test@tester.org')
-        .typeText('#RegisterPassword', 'Test71')
-        .typeText('#ConfirmPassword', 'Test71')
-        .click(Selector('label').withText('I have read, understand and accept the surveyjs.io').nth(2).find('.custom-checkbox__checkmark'))
-        .click(Selector('div').withText('Login instead').nth(2).find('.rounded-button.rounded-button--auxiliary-color'))
-        .expect(Selector('a').withText('Account').visible).ok('Logged in and see Account')
-        .click(Selector('a').withText('Account'))
-        .click(Selector('h3').withText('Remove Account'))
-        .typeText('#Email', 'test@tester.org')
+        .typeText(emailInput, email)
+        .typeText(passwordInput, password)
+        .click(acceptTermsCheckboxLogin)
+        .click(loginButton)
+        .expect(invalidLoginAttemptMessage.visible).ok('See invalid login message');
+    //#endregion invalid login attempt
+
+    //#region register user
+    const goToRegisterLink = Selector("a").withExactText('Register');
+    await t.click(goToRegisterLink);
+
+    const displayNameInput = Selector("[name='DisplayName']");
+    const registerEmailInput = Selector("[name='RegisterEmail']");
+    const registerPasswordInput = Selector("[name='RegisterPassword']");
+    const confirmPassword = Selector("[name='ConfirmPassword']");
+    const acceptTermsCheckboxRegister = Selector('.login-page__register label').withText('I have read, understand and accept the surveyjs.io')
+    .find('.custom-checkbox__checkmark');
+    const registerButton = Selector("[value='REGISTER']");
+
+    await t
+        .typeText(displayNameInput, displayName)
+        .typeText(registerEmailInput, email)
+        .typeText(registerPasswordInput, password)
+        .typeText(confirmPassword, password)
+        .click(acceptTermsCheckboxRegister)
+        .click(registerButton);
+
+    await t.expect(menuAccountLink.visible).ok('Logged in and see Account');
+    //#endregion register user
+
+    //#region logoff and login again
+    const menuLogOffLink = Selector('a').withText('Log off');
+
+    await t
+        .expect(menuLogOffLink.visible).ok('Logoff available')
+        .click(menuLogOffLink)
+        .expect(menuLogInLink.visible).ok('Logoff successful, login enabled')
+        .click(menuLogInLink)
+        .typeText(emailInput, email)
+        .typeText(passwordInput, password)
+        .click(acceptTermsCheckboxLogin)
+        .click(loginButton)
+        .expect(menuAccountLink.visible).ok(`We've logged in, account available`)
+    //#endregion logoff and login again
+
+    //#region remove user
+    const removeAccountTab = Selector('h3').withText('Remove Account');
+    const deleteAccountEmailInput = Selector('[placeholder="Please enter your Email to confirm account removal"]');
+    const deleteUserButton = Selector('[value="Delete User"]');
+
+    await t
+        .click(menuAccountLink)
+        .click(removeAccountTab)
+        .typeText(deleteAccountEmailInput, email)
         .setNativeDialogHandler((dialogType, message, url) => {
             if (dialogType === 'confirm')
                 return true;
 
             throw Error(`An unexpected ${dialogType} dialog with the message "${message}" appeared on ${url}.`);
         })
-        .click('.rounded-button.rounded-button--danger')
-        .expect(Selector('#loginLink').visible).ok('Login link is visible')
-        .click('#loginLink')
-        .typeText('#Email', 'test@tester.org')
-        .typeText('#Password', 'Test71')
-        .click(Selector('label').withText('I have read, understand and accept the surveyjs.io').find('.custom-checkbox__checkmark'))
-        .click(Selector('.mod-mt-120').find('.rounded-button.rounded-button--auxiliary-color'))
-        .expect(Selector('li').withText('Invalid login attempt.').visible).ok('See invalid login message - no such user');
-});
-
-test('RegisterLoginRemove', async t => {
-    await t
-        .maximizeWindow()
-        .typeText('#Email', 'test@tester.org')
-        .typeText('#Password', 'Test71')
-        .click(Selector('label').withText('I have read, understand and accept the surveyjs.io').find('.custom-checkbox__checkmark'))
-        .click(Selector('.mod-mt-120').find('.rounded-button.rounded-button--auxiliary-color'))
-        .expect(Selector('li').withText('Invalid login attempt.').visible).ok('See invalid login message')
-        .click(Selector('.mod-mt-10.mod-ml-30').find('a').withText('Register'))
-        .typeText('#DisplayName', 'Test71')
-        .typeText('#RegisterEmail', 'test@tester.org')
-        .typeText('#RegisterPassword', 'Test71')
-        .typeText('#ConfirmPassword', 'Test71')
-        .click(Selector('label').withText('I have read, understand and accept the surveyjs.io').nth(2).find('.custom-checkbox__checkmark'))
-        .click(Selector('div').withText('Login instead').nth(2).find('.rounded-button.rounded-button--auxiliary-color'))
-        .expect(Selector('a').withText('Account').visible).ok('Logged in and see Account')
-        .expect(Selector('a').withText('Log off').visible).ok('Logoff available')
-        .click(Selector('a').withText('Log off'))
-        .expect(Selector('#loginLink').visible).ok('Logoff successful, login enabled')
-        .click('#loginLink')
-        .typeText('#Email', 'test@tester.org')
-        .typeText('#Password', 'Test71')
-        .click(Selector('label').withText('I have read, understand and accept the surveyjs.io').find('.custom-checkbox__checkmark'))
-        .click(Selector('.mod-mt-120').find('.rounded-button.rounded-button--auxiliary-color'))
-        .expect(Selector('a').withText('Account').visible).ok(`We've logged in, account available`)
-        .click(Selector('a').withText('Account'))
-        .click(Selector('h3').withText('Remove Account'))
-        .typeText('#Email', 'test@tester.org')
-        .setNativeDialogHandler((dialogType, message, url) => {
-            if (dialogType === 'confirm')
-                return true;
-
-            throw Error(`An unexpected ${dialogType} dialog with the message "${message}" appeared on ${url}.`);
-        })
-        .click('.rounded-button.rounded-button--danger')
-        .expect(Selector('#loginLink').visible).ok('Logout succeed, login enabled')
-        .click('#loginLink')
-        .typeText('#Email', 'test@tester.org')
-        .typeText('#Password', 'Test71')
-        .click(Selector('label').withText('I have read, understand and accept the surveyjs.io').find('.custom-checkbox__checkmark'))
-        .click(Selector('.mod-mt-120').find('.rounded-button.rounded-button--auxiliary-color'))
-        .expect(Selector('li').withText('Invalid login attempt.').visible).ok('Invalid login - no such user');
+        .click(deleteUserButton)
+        .expect(menuLogInLink.visible).ok('Login link is visible')
+        .click(menuLogInLink)
+        .typeText(emailInput, email)
+        .typeText(passwordInput, password)
+        .click(acceptTermsCheckboxLogin)
+        .click(loginButton)
+        .expect(invalidLoginAttemptMessage.visible).ok('See invalid login message - no such user');
+    //#endregion remove user
 });
 
 test('ForgotPasswordForm', async t => {
