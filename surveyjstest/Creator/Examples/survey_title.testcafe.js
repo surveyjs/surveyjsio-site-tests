@@ -1,12 +1,14 @@
 import { Selector } from 'testcafe';
+import { getSideBarGroupItem, getSideBarItem } from '../../helpers';
 
-fixture `survey_title`
-    .page `https://surveyjstest.azurewebsites.net/Examples/Survey-Creator`;
+fixture`survey_title`
+    .page`https://surveyjstest.azurewebsites.net/Examples/Survey-Creator`;
 
 test('title_adorners', async t => {
     await t
         .maximizeWindow()
-        .click(Selector('.sidebar__subitem-content').nth(34).find('div').withText('Survey and page titles'))
+        .click(getSideBarGroupItem("Customization"))
+        .click(getSideBarItem('Survey and page titles'))
         .switchToIframe(Selector('[name="content-result"][class^="tabs__tab-panel example-tab tabs__tab-panel--activ"]').find('iframe'))
         .expect(Selector('span').withText('Input page title here').nth(2).visible).eql(true, 'Page title is visible')
         .expect(Selector('span').withText('Enter a page description').nth(2).visible).eql(true)

@@ -1,4 +1,5 @@
 import { Selector } from 'testcafe';
+import { getSideBarGroupItem, getSideBarItem } from '../../helpers';
 
 fixture `question_types`
     .page `https://surveyjstest.azurewebsites.net/Examples/Library`;
@@ -6,8 +7,8 @@ fixture `question_types`
 test('text', async t => {
     await t
         .maximizeWindow()
-        .click(Selector('span').withText('Simple Questions'))
-        .click(Selector('.sidebar__subitem-content').find('div').withText('Text'))
+        .click(getSideBarGroupItem('Simple Questions'))
+        .click(getSideBarItem('Text'))
         .typeText('#sq_100i', 'Test', {
             caretPos: 0
         })
@@ -20,8 +21,8 @@ test('text', async t => {
 test('imagepicker', async t => {
     await t
         .maximizeWindow()
-        .click(Selector('span').withText('Simple Questions'))
-        .click(Selector('.sidebar__subitem-content').find('div').withText('Image picker').nth(0))
+        .click(getSideBarGroupItem('Simple Questions'))
+        .click(getSideBarItem('Image picker'))
         .click('input[value="giraffe"]+div')
         .click('.sv-btn.sv-footer__complete-btn')
         .expect(Selector('#content-result-json-code').textContent).ok();
@@ -30,7 +31,7 @@ test('imagepicker', async t => {
 test('image', async t => {
     await t
         .maximizeWindow()
-        .click(Selector('span').withText('Simple Questions'))
+        .click(getSideBarGroupItem('Simple Questions'))
         .click(Selector('#item-questions div').withExactText('Image'))
         .expect(Selector('.sv_image_image').getAttribute('src')).ok('Image added and has default image');
 });
@@ -38,8 +39,8 @@ test('image', async t => {
 test('signaturepad', async t => {
     await t
         .maximizeWindow()
-        .click(Selector('span').withText('Simple Questions'))
-        .click(Selector('.sidebar__subitem-content').find('div').withText('Signature pad').nth(0))
+        .click(getSideBarGroupItem('Simple Questions'))
+        .click(getSideBarItem('Signature pad'))
         .expect(Selector('.sv-signaturepad.sjs_sp_container').find('div').find('canvas').visible).ok()
         .expect(Selector('button').withText('✖').visible).ok()
         .click(Selector('.form-element').find('.form-element__input.form-element--inverse'))
