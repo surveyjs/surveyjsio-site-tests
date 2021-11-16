@@ -11,7 +11,6 @@ test('Check custom widgets default tabs ', async t => {
         .click(Selector('a').withText('HTML'))
         .expect(Selector('pre').withText('DOCTYPE html').textContent).contains('Sortable.js')
         .expect(Selector('code').withText('DOCTYPE html').textContent).contains('select2')
-        .expect(Selector('code').withText('DOCTYPE html').textContent).contains('signature_pad')
         .expect(Selector('pre').withText('DOCTYPE html').textContent).contains('nouislider')
         .expect(Selector('code').withText('DOCTYPE html').textContent).contains('inputmask')
         .expect(Selector('code').withText('DOCTYPE html').textContent).contains('ckeditor')
