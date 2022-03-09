@@ -1,7 +1,7 @@
 import { Selector } from 'testcafe';
 
 fixture `load_survey_from_service`
-    .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=loadfromservice&theme=default`;
+    .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=loadfromservice&platform=Knockoutjs&theme=default`;
 
 test('Load survey from service', async t => {
     await t

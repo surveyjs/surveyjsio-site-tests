@@ -1,7 +1,7 @@
 import { Selector } from 'testcafe';
 
 fixture `Custom Adorner`
-    .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=customadorner&theme=default`;
+    .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=customadorner&platform=Knockoutjs&theme=default`;
 
 test('Adorner exists', async t => {
     await t

@@ -1,7 +1,7 @@
 import { Selector, ClientFunction } from 'testcafe';
 
 fixture `add_properties`
-    .page `https://surveyjstest.azurewebsites.net//Examples/CreatorSinglePage?id=addproperties&theme=default`;
+    .page `https://surveyjstest.azurewebsites.net//Examples/CreatorSinglePage?id=addproperties&platform=Knockoutjs&theme=default`;
 
 test.skip('Survey property with default string type', async t => {
     await t

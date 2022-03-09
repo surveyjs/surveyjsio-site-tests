@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 
 fixture`open_close_edit_question`
-  .page`https://surveyjstest.azurewebsites.net/Examples/CreatorSinglePage?id=options&theme=default`;
+  .page`https://surveyjstest.azurewebsites.net/Examples/CreatorSinglePage?id=options&platform=Knockoutjs&theme=default`;
 
 test("Open close check question title", async (t) => {
   await t

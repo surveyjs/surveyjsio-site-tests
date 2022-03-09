@@ -1,15 +1,12 @@
 import { Selector } from 'testcafe';
-import { getSideBarGroupItem, getSideBarItem } from '../../helpers';
 
 fixture`survey_title`
-    .page`https://surveyjstest.azurewebsites.net/Examples/Survey-Creator`;
+    .page`https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=titleadorner&platform=Knockoutjs`;
 
 test('title_adorners', async t => {
     await t
         .maximizeWindow()
-        .click(getSideBarGroupItem("Customization"))
-        .click(getSideBarItem('Survey and page titles'))
-        .switchToIframe(Selector('[name="content-result"][class^="tabs__tab-panel example-tab tabs__tab-panel--activ"]').find('iframe'))
+        .switchToIframe(Selector('[name="content-result"][class^="tabs__tab-panel example-tab tabs__tab-panel--active"]').find('iframe'))
         .expect(Selector('span').withText('Input page title here').nth(2).visible).eql(true, 'Page title is visible')
         .expect(Selector('span').withText('Enter a page description').nth(2).visible).eql(true)
         .expect(Selector('#scrollableDiv').find('span').withText('Input survey title here').nth(2).visible).eql(false)

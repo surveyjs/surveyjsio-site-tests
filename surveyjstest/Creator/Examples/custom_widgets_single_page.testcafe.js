@@ -1,7 +1,7 @@
 import { Selector } from 'testcafe';
 
 fixture `custom_widgets_single_page`
-    .page `https://surveyjstest.azurewebsites.net//Examples/BuilderSinglePage?id=customwidgets&theme=default`;
+    .page `https://surveyjstest.azurewebsites.net//Examples/BuilderSinglePage?id=customwidgets&platform=Knockoutjs&theme=default`;
 
 test.skip('Check bar rating in creator', async t => {
     await t

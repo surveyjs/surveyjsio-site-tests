@@ -1,7 +1,7 @@
 import { Selector, ClientFunction } from 'testcafe';
 
 fixture `editor_options_singlepage`
-    .page `https://surveyjstest.azurewebsites.net//Examples/CreatorSinglePage?id=options&theme=default`;
+    .page `https://surveyjstest.azurewebsites.net//Examples/CreatorSinglePage?id=options&platform=Knockoutjs&theme=default`;
 
 test('Check editor works after JSON Editor tab hidden', async t => {
     const dummy = ClientFunction(() => {

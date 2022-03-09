@@ -1,7 +1,7 @@
 import { Selector } from 'testcafe';
 
 fixture `depends_on_properties`
-    .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=dependsonproperties&theme=default`;
+    .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=dependsonproperties&platform=Knockoutjs&theme=default`;
 
 test('Check default tabs', async t => {
     await t

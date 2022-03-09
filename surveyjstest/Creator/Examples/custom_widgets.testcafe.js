@@ -1,13 +1,13 @@
 import { Selector } from 'testcafe';
 
 fixture `custom_widgets`
-    .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=customwidgets&theme=default`;
+    .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=customwidgets&platform=Knockoutjs&theme=default`;
 
 test('Check custom widgets default tabs ', async t => {
     await t
         .maximizeWindow()
         .click(Selector('a').withText('JavaScript'))
-        .expect(Selector('pre').withText('var creatorOptions').exists).eql(true)
+        .expect(Selector('pre').withText('const options').exists).eql(true)
         .click(Selector('a').withText('HTML'))
         .expect(Selector('pre').withText('DOCTYPE html').textContent).contains('Sortable.js')
         .expect(Selector('code').withText('DOCTYPE html').textContent).contains('select2')

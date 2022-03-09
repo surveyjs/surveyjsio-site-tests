@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 
 fixture`element_menu_customization`
-  .page`https://surveyjstest.azurewebsites.net/Examples/Builder?id=elementmenu&theme=default`;
+  .page`https://surveyjstest.azurewebsites.net/Examples/Builder?id=elementmenu&platform=Knockoutjs&theme=default`;
 
 test("Check default tabs", async (t) => {
   await t

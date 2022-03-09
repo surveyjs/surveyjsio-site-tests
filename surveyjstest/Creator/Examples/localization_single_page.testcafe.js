@@ -1,7 +1,7 @@
 import { Selector, ClientFunction } from 'testcafe';
 
 fixture `localization_single_page`
-    .page `https://surveyjstest.azurewebsites.net/Examples/CreatorSinglePage?id=localization&theme=default`;
+    .page `https://surveyjstest.azurewebsites.net/Examples/CreatorSinglePage?id=localization&platform=Knockoutjs&theme=default`;
 
 test.skip('Check tab names with french', async t => {
     await t

@@ -1,7 +1,7 @@
 import { Selector } from 'testcafe';
 
 fixture `localization`
-    .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=localization&theme=default`;
+    .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=localization&platform=Knockoutjs&theme=default`;
 
 test('Check tabs', async t => {
     await t
