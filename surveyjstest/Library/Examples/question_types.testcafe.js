@@ -37,12 +37,13 @@ test('text', async t => {
 //         .expect(Selector('.sv_image_image').getAttribute('src')).ok('Image added and has default image');
 // });
 
+//TODO REMOVE TEST.ONLY
 test.only('signaturepad', async t => {
     await t
         .maximizeWindow()
         .click(getSideBarGroupItem('Simple Questions'))
         .click(getSideBarItem('Signature pad'))
-        .expect(Selector('.sv-signaturepad.sjs_sp_container').find('div').find('canvas').visible).ok()
+        .expect(Selector('.sd-signaturepad').find('div').find('canvas').visible).ok()
         .expect(Selector('button').withText('✖').visible).ok()
         .click(Selector('.form-element').find('.form-element__input.form-element--inverse'))
         .pressKey('ctrl+a')
@@ -54,6 +55,6 @@ test.only('signaturepad', async t => {
         .typeText(Selector('div').withText('Height: (default is empty)').nth(7).find('.form-element__input.form-element--inverse'), '700', {
             caretPos: 0
         })
-        .expect(Selector('.sv-signaturepad.sjs_sp_container').find('div').find('canvas').scrollWidth).ok()
-        .expect(Selector('.sv-signaturepad.sjs_sp_container').find('div').find('canvas').clientHeight).ok();
+        .expect(Selector('.sd-signaturepad').find('div').find('canvas').scrollWidth).ok()
+        .expect(Selector('.sd-signaturepad').find('div').find('canvas').clientHeight).ok();
 });
