@@ -14,7 +14,7 @@ test('text', async t => {
         })
         .typeText('#sq_101i', '01012001')
         .typeText('#sq_103i', 'test@test.org')
-        .click('.sv-btn.sv-footer__complete-btn')
+        .click('.sd-navigation__complete-btn')
         .expect(Selector('#content-result-json-code').innerText).ok();
 });
 
@@ -37,7 +37,7 @@ test('text', async t => {
 //         .expect(Selector('.sv_image_image').getAttribute('src')).ok('Image added and has default image');
 // });
 
-test('signaturepad', async t => {
+test.only('signaturepad', async t => {
     await t
         .maximizeWindow()
         .click(getSideBarGroupItem('Simple Questions'))
