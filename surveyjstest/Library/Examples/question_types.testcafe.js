@@ -37,8 +37,7 @@ test('text', async t => {
 //         .expect(Selector('.sv_image_image').getAttribute('src')).ok('Image added and has default image');
 // });
 
-//TODO REMOVE TEST.ONLY
-test.only('signaturepad', async t => {
+test('signaturepad', async t => {
     await t
         .maximizeWindow()
         .click(getSideBarGroupItem('Simple Questions'))
