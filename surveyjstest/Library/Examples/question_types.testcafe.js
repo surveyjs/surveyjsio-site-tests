@@ -37,13 +37,14 @@ test('text', async t => {
 //         .expect(Selector('.sv_image_image').getAttribute('src')).ok('Image added and has default image');
 // });
 
+
 test('signaturepad', async t => {
     await t
         .maximizeWindow()
         .click(getSideBarGroupItem('Simple Questions'))
         .click(getSideBarItem('Signature pad'))
         .expect(Selector('.sd-signaturepad').find('div').find('canvas').visible).ok()
-        .expect(Selector('button').withText('✖').visible).ok()
+        .expect(Selector('[title="Clear"]').visible).ok()
         .click(Selector('.form-element').find('.form-element__input.form-element--inverse'))
         .pressKey('ctrl+a')
         .typeText(Selector('.form-element').find('.form-element__input.form-element--inverse'), '600', {
