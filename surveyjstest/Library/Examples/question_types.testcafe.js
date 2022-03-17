@@ -44,7 +44,7 @@ test('signaturepad', async t => {
         .click(getSideBarGroupItem('Simple Questions'))
         .click(getSideBarItem('Signature pad'))
         .expect(Selector('.sd-signaturepad').find('div').find('canvas').visible).ok()
-        .expect(Selector('[title="Clear"]').visible).ok()
+        //.expect(Selector('[title="Clear"]').visible).ok()
         .click(Selector('.form-element').find('.form-element__input.form-element--inverse'))
         .pressKey('ctrl+a')
         .typeText(Selector('.form-element').find('.form-element__input.form-element--inverse'), '600', {
