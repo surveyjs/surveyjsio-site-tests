@@ -1,8 +1,9 @@
 import { Selector } from 'testcafe';
-import { getSideBarGroupItem, getSideBarItem } from '../../helpers';
+import { explicitErrorHandler, getSideBarGroupItem, getSideBarItem } from '../../helpers';
 
-fixture `question_types`
-    .page `https://surveyjstest.azurewebsites.net/Examples/Library`;
+fixture `question_types`.page `https://surveyjstest.azurewebsites.net/Examples/Library`.clientScripts({
+    content: `(${explicitErrorHandler.toString()})()`
+});
 
 test('text', async t => {
     await t

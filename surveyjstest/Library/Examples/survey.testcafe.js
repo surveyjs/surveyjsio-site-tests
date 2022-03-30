@@ -1,8 +1,10 @@
 import { Selector } from 'testcafe';
-import { getSideBarGroupItem, getSideBarItem } from '../../helpers';
+import { getSideBarGroupItem, getSideBarItem, explicitErrorHandler } from '../../helpers';
 
 fixture `survey`
-    .page `https://surveyjstest.azurewebsites.net/Examples/Library`;
+    .page `https://surveyjstest.azurewebsites.net/Examples/Library`.clientScripts({
+        content: `(${explicitErrorHandler.toString()})()`
+    });
 
 test('title_logo', async t => {
     await t
