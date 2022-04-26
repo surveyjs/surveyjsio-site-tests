@@ -1,66 +1,66 @@
 import { Selector, ClientFunction } from 'testcafe';
 
-fixture `localization_single_page`
-    .page `https://surveyjstest.azurewebsites.net/Examples/CreatorSinglePage?id=localization&platform=Knockoutjs&theme=default`;
+fixture`localization_single_page`
+    .page`https://surveyjstest.azurewebsites.net/Examples/CreatorSinglePage?id=localization&platform=Knockoutjs&theme=default`;
 
-test.skip('Check tab names with french', async t => {
+test('Check tab names with deutsch', async t => {
     await t
         .maximizeWindow()
-        .expect(Selector('a').withText('Éditeur de questionnaire').textContent).eql("Éditeur de questionnaire")
-        .expect(Selector('a').withText('Tester le questionnaire').textContent).eql("Tester le questionnaire")
-        .expect(Selector('a').withText('Éditer JSON').textContent).eql("Éditer JSON")
-        .expect(Selector('.empty-message[data-bind="text: $root.getLocString(\\\'survey.dropQuestion\\\')"]').textContent).eql("Déposer votre question ici.")
-        .expect(Selector('[data-bind^="options: pagesSelection, value: pageSelection, opt"]').textContent).eql("page1Ajouter une page");
+        .expect(Selector(".nav-tabs.svd-tabs ").innerText).eql("Mein Designer Umfrage testen Umfragelogik JSON-Editor")
+        .expect(Selector('.svd-tab-text').withText('Mein Designer').visible).ok()
+        .expect(Selector('.svd-tab-text').withText('Umfrage testen').visible).ok()
+        .expect(Selector('.svd-tab-text').withText('Umfragelogik').visible).ok()
+        .expect(Selector('.svd-tab-text').withText('JSON-Editor').visible).ok()
+        .expect(Selector('.svd-empty-message').textContent).eql("Frage bitte hier platzieren.")
+        .expect(Selector(".svd-toolbar-dropdown__select").filterVisible().nth(0).textContent).contains("Seite1Neue Seite hinzufügen");
 });
 
-test('Check toolbox names with french', async t => {
+test('Check toolbox names with deutsch', async t => {
     await t
         .maximizeWindow()
-        .expect(Selector('span').withText('Cases à cocher').textContent).eql("Cases à cocher")
-        .expect(Selector('span').withText('Liste déroulante').textContent).eql("Liste déroulante")
-        .expect(Selector('span').withText('Panneau (panneaux dynamiques)').textContent).eql("Panneau (panneaux dynamiques)");
+        .expect(Selector('.svd_toolbox span').withText('Auswahl').visible).ok()
+        .expect(Selector('.svd_toolbox span').withText('Kommentar').visible).ok()
+        .expect(Selector('.svd_toolbox span').withText('Panel (dynamisch)').visible).ok()
 });
 
-test.skip('Check property names with french', async t => {
+test('Check property names with deutsch', async t => {
     await t
         .maximizeWindow()
-        .rightClick('[data-bind^="text: displayName, attr: {title: title || displayN"][title="Mode d\'affichage du panneau chronomètre"]')
-        .expect(Selector('[data-bind^="text: displayName, attr: {title: title || displayN"][title="Mode d\\\'affichage du panneau chronomètre"]').innerText).eql("Mode d'affichage du panneau chronomètre")
-        .expect(Selector('span').withText('Numérotation des questions').innerText).eql("Numérotation des questions")
-        .expect(Selector('div').withText('activé').nth(12).find('.form-control.svd_editor_control[data-bind^="value: koValue, disable: readOnly, options: koChoi"]').textContent).eql("activépagedésactivé");
+
+        .click(Selector(".svd-designer-tabbed-container__tab-header").withText("EIGENSCHAFTEN")) // properties
+        .click(Selector(".svd-accordion-tab-header").withText("Timer"))
+        .expect(Selector(".svd-control-label").withText("Modus des Timers").visible).ok()
+
+        .click(Selector(".svd-accordion-tab-header").withText("Fragen"))
+        .expect(Selector(".svd-control-label").withText("Fragennummern anzeigen").visible).ok()
+
+        const options = await Selector(".svd-control-label").withText("Fragennummern anzeigen").parent(".form-group").find(".svd-toolbar-dropdown__select").innerText;
+        await t.expect(options.replace(/\n/g, '_')).eql("an_an (unabhängig für jede Seite)_aus");
 });
 
-test.skip('Check custom translation', async t => {
+test('Check custom translation', async t => {
     await t
         .maximizeWindow();
 
     const changeCurrentLocale = ClientFunction(() => {
-            //Create your translation
-        var deutschStrings = {
-            qt: {
-            comment: "Kommentar"
-            },
-            p: {
-                isRequired: "Wird bentigt"
-            },
-            ed:{
-                designer: "Umfrage Designer"
-            }
+        //Create your translation
+        var frenchStrings = {
+            qt: { comment: "Commentaire" },
+            pe: { isRequired: "Est obligatoire ?" },
+            ed: { designer: "Éditeur de questionnaire" }
         };
 
-    //Set the your translation to the locale
-        SurveyCreator
-            .localization
-            .locales["de"] = deutschStrings;
-        SurveyCreator.localization.currentLocale = "de";
-        new SurveyCreator.SurveyCreator("creatorElement", creatorOptions);
+        //Set the your translation to the locale
+        SurveyCreator.localization.locales["fr"] = frenchStrings;
+        SurveyCreator.localization.currentLocale = "fr";
+        new SurveyCreator.SurveyCreator("creatorElement");
         return "dummy";
     });
 
     await t
         .expect(changeCurrentLocale()).eql('dummy')
-        .expect(Selector('a').withText('Umfrage Designer').innerText).eql("Umfrage Designer")
-        .expect(Selector('span').withText('Kommentar').innerText).eql("Kommentar")
-        .click(Selector('.svd-svg-icon').nth(1).find('use'))
-        .expect(Selector('td').withText('Wird bentigt').innerText).eql("Wird bentigt");
+        .expect(Selector('.svd-tab-text').withText('Éditeur de questionnaire').visible).ok()
+        .expect(Selector('span').withText('Commentaire').visible).ok()
+        .click(Selector('.svd_toolbox_item').filterVisible().nth(0))
+        .expect(Selector('.svda_question_action[title="Est obligatoire ?"]').visible).ok();
 });
