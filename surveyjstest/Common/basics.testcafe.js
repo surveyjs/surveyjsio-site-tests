@@ -2,7 +2,7 @@ import { Selector } from "testcafe";
 
 fixture`Basics`.page`http://surveyjstest.azurewebsites.net`;
 
-test.only("Menu Examples test", async (t) => {
+test("Menu Examples test", async (t) => {
   await t.maximizeWindow();
 
   const menuItems = Selector(".page-menu-bar:not(.page-menu-bar--sticky) .popup-menu__item.popup-menu__item--active");
