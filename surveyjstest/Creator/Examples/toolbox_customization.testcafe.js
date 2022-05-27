@@ -8,7 +8,7 @@ test('Check tabs', async t => {
         .maximizeWindow()
         .switchToMainWindow()
         .click(Selector('a').withText('JavaScript'))
-        .expect(Selector('[name="content-js"][class^="tabs__tab-panel example-tab fade codesnippet tabs_"]').find('pre').withText('const options').exists).eql(true)
+        .expect(Selector('[name="content-js"].tabs__tab-panel.example-tab.fade.codesnippet.tabs__tab-panel--active').find('pre').withText('const options').exists).eql(true)
         .click(Selector('a').withText('HTML'))
         .expect(Selector('pre').withText('DOCTYPE html').exists).eql(true)
         .click(Selector('a').withText('Documentation'))
