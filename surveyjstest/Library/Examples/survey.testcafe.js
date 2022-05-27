@@ -1,8 +1,8 @@
 import { Selector } from 'testcafe';
 import { getSideBarGroupItem, getSideBarItem, explicitErrorHandler } from '../../helpers';
 
-fixture `survey`
-    .page `https://surveyjstest.azurewebsites.net/Examples/Library`.clientScripts({
+fixture`survey`
+    .page`https://surveyjstest.azurewebsites.net/Examples/Library`.clientScripts({
         content: `(${explicitErrorHandler.toString()})()`
     });
 
@@ -17,8 +17,8 @@ test('title_logo', async t => {
         .expect(Selector('#surveyElement').find('span').withText('Please take look at the survey title and logo. Tes').visible).ok('Description is visible')
         .expect(Selector('.sd-logo.sv-logo--left').exists).eql(true)
         .expect(Selector('.sd-logo.sv-logo--right').exists).eql(false)
-        .click('.select2-selection__rendered[title="left"]')
-        .click(Selector('#select2-selColCount-results').find('li').withText('right'))
+        .click('#selColCount')
+        .click(Selector('#selColCount').find('option').withText('right'))
         .expect(Selector('.sd-logo.sv-logo--left').exists).eql(false)
         .expect(Selector('.sd-logo.sv-logo--right').exists).eql(true);
 });
