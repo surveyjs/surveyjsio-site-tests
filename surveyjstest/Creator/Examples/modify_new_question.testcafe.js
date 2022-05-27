@@ -1,7 +1,7 @@
 import { Selector } from 'testcafe';
 
-fixture `modify_new_question`
-    .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=oncreatequestion&platform=Knockoutjs&theme=default`;
+fixture`modify_new_question`
+    .page`https://surveyjstest.azurewebsites.net/Examples/Builder?id=oncreatequestion&platform=Knockoutjs&theme=default`;
 
 test('Check default tabs', async t => {
     await t
@@ -12,6 +12,6 @@ test('Check default tabs', async t => {
         .click(Selector('a').withText('HTML'))
         .expect(Selector('pre').withText('DOCTYPE html').exists).eql(true)
         .click(Selector('a').withText('Documentation'))
-        .expect(Selector('[name="content-docs"][class^="tabs__tab-panel example-tab tabs__tab-panel--activ"]').exists).eql(true)
+        .expect(Selector('[name="content-docs"][class^="tabs__tab-panel example-tab tabs__tab-panel--active"]').exists).eql(true)
         .click(Selector('span').withText('I understand'));
 });
