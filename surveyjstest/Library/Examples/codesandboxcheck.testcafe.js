@@ -9,6 +9,5 @@ fixture`question_types`
 test('text', async t => {
     await t
         .maximizeWindow()
-        .click(Selector('select#edit-in'))
-        .click(Selector('option').withText('CodeSandbox (Reactjs)'));
+        .click(Selector('.edit-in__buttons button').withText('Edit in CodeSandbox'));
 });
