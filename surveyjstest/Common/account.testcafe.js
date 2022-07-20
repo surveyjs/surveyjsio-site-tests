@@ -23,7 +23,7 @@ test('FormElements', async t => {
         .expect(Selector('#Google').find('.external-logins__image').visible).ok('Google login button should be visible')
         .expect(Selector('#Facebook').find('.external-logins__image').visible).ok('Facebook login button should be visible')
         .expect(Selector('#Twitter').find('.external-logins__image').visible).ok('Twitter login button should be visible')
-        .expect(Selector('input[value=\'LOGIN\']').visible).ok('Login button should be visible')
+        .expect(Selector('input[value=\'LOG IN\']').visible).ok('Login button should be visible')
         .expect(Selector('.mod-mt-10.mod-ml-30').find('a').withText('Register').visible).ok('Register link should be visible')
         .click(Selector('.mod-mt-10.mod-ml-30').find('a').withText('Register'))
         .expect(Selector('#DisplayName').visible).ok('Display name should be visible')
@@ -46,7 +46,7 @@ test('RegisterRemove', async t => {
 
     const emailInput = Selector('#Email');
     const passwordInput = Selector('#Password');
-    const loginButton = Selector("[value='LOGIN']");
+    const loginButton = Selector("[value='LOG IN']");
     const acceptTermsCheckboxLogin = Selector('.login-page__login label').withText('I have read, understand and accept the surveyjs.io')
         .find('.custom-checkbox__checkmark');
     const menuAccountLink = Selector('a').withText('Account');
