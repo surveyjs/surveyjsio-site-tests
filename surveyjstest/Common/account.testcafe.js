@@ -32,7 +32,7 @@ test('FormElements', async t => {
         .expect(Selector('#ConfirmPassword').visible).ok('Confirm password should be visible')
         .expect(Selector('label').withText('I have read, understand and accept the surveyjs.io').visible).ok('Agree with terms checkbox should be visible')
         .expect(Selector('input[value=\'REGISTER\']').visible).ok('Register button should be visible')
-        .expect(Selector('a').withText('Login instead').visible).ok('Login instead (back to login) link should be visible');
+        .expect(Selector('a').withText('Log in').visible).ok('Login instead (back to login) link should be visible');
 });
 
 test('RegisterRemove', async t => {
@@ -87,7 +87,7 @@ test('RegisterRemove', async t => {
     //#endregion register user
 
     //#region logoff and login again
-    const menuLogOffLink = Selector('a').withText('Log off');
+    const menuLogOffLink = Selector('a').withText('Log out');
 
     await t
         .expect(menuLogOffLink.visible).ok('Logoff available')
