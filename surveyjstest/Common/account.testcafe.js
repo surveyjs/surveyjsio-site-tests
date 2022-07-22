@@ -50,7 +50,7 @@ test('RegisterRemove', async t => {
     const acceptTermsCheckboxLogin = Selector('.login-page__login label').withText('I have read, understand and accept the surveyjs.io')
         .find('.custom-checkbox__checkmark');
     const menuAccountLink = Selector('a').withText('Account');
-    const menuLogInLink = Selector('a').withText('Login/Register');
+    const menuLogInLink = Selector('a').withText('Log in/Register');
     const invalidLoginAttemptMessage = Selector('li').withText('Invalid login attempt.');
 
 
