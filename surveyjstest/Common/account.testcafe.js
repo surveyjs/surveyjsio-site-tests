@@ -102,9 +102,9 @@ test('RegisterRemove', async t => {
     //#endregion logoff and login again
 
     //#region remove user
-    const removeAccountTab = Selector('h3').withText('Remove Account');
-    const deleteAccountEmailInput = Selector('[placeholder="Please enter your Email to confirm account removal"]');
-    const deleteUserButton = Selector('[value="Delete User"]');
+    const removeAccountTab = Selector('h3').withText('Delete Account');
+    const deleteAccountEmailInput = Selector('[placeholder="Enter your email address to confirm"]');
+    const deleteUserButton = Selector('[value="Delete Account"]');
 
     await t
         .click(menuAccountLink)
