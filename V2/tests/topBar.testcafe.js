@@ -1,12 +1,24 @@
 import { Selector } from "testcafe";
-import {url, checkElementScreenshot} from "../helper";
+import {url, checkElementScreenshot, screens} from "../helper";
 
 fixture`TopBar`.page`${url}`;
 
-test("Sizes", async (t) => {
-  await t.resizeWindow(1920, 1400);
+screens.forEach((screen)=> {
+  test("Usual", async (t) => {
+    await t.resizeWindow(screen.width, screen.height);
 
-  const TopBar = Selector(".v2-class---top-bar");
+    const TopBar = Selector(".v2-class---top-bar");
+  
+    await checkElementScreenshot(`TopBar--${screen.name}.png`, TopBar, t);
+  });
 
-  await checkElementScreenshot("Top-Bar--Large-Desktop.png", TopBar, t);
+  // test("Fixed", async (t) => {
+  //   await t.resizeWindow(screen.width, screen.height);
+
+  //   await t.scrollBy(0, 500);
+
+  //   const TopBar = Selector(".v2-class---top-bar");
+  
+  //   await checkElementScreenshot(`TopBar--Fixed--${screen.name}.png`, TopBar, t);
+  // });
 });
