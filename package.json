@@ -5,11 +5,12 @@
     "test:test": "testcafe chrome surveyjstest/Library/Examples/question_types.testcafe.js -t \"signaturepad\" --selector-timeout 1500",
     "test": "testcafe chrome surveyjstest --selector-timeout 1500",
     "test:file": "testcafe chrome surveyjstest/Creator/Main/open_close_edit_question.testcafe.js --selector-timeout 1500",
-    "test_ci": "testcafe chrome:headless surveyjstest --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000"
+    "test_ci": "testcafe chrome:headless surveyjstest --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000",
+    "v2": "testcafe chrome:headless ./V2/ --screenshots ./ --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000"
   },
   "dependencies": {
+    "devextreme-screenshot-comparer": "^2.0.12",
     "testcafe": "^1.14.2",
     "testcafe-reporter-xunit": "^2.1.0"
-  },
-  "devDependencies": {}
+  }
 }
