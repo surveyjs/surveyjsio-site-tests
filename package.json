@@ -6,10 +6,13 @@
     "test": "testcafe chrome surveyjstest --selector-timeout 1500",
     "test:file": "testcafe chrome surveyjstest/Creator/Main/open_close_edit_question.testcafe.js --selector-timeout 1500",
     "test_ci": "testcafe chrome:headless surveyjstest --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000",
-    "v2": "testcafe chrome:headless ./V2/ --screenshots ./ --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000"
+    "v2:ci": "testcafe chrome:headless ./V2/ --screenshots ./ --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000",
+    "v2:dev": "testcafe chrome ./V2/ --screenshots ./ --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000 --env-dev=true",
+    "v2:dev:new": "testcafe chrome ./V2/ --screenshots ./ --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000 --env-dev=true --env-new=true"
   },
   "dependencies": {
     "devextreme-screenshot-comparer": "^2.0.12",
+    "minimist": "^1.2.6",
     "testcafe": "^1.14.2",
     "testcafe-reporter-xunit": "^2.1.0"
   }
