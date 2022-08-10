@@ -9,7 +9,10 @@ const args = minimist(process.argv.slice(2));
 const envDev = args["env-dev"];
 const envNew = args["env-new"];
 
-export const url = envDev ? "https://localhost:44388/" : "http://surveyjstest.azurewebsites.net";
+// TODO change urls after release V2
+//const productionURL = "http://surveyjstest.azurewebsites.net";
+const productionURL = "https://sjsnewlandings.azurewebsites.net/";
+export const url = envDev ? "https://localhost:44388/" : productionURL;
 
 export async function checkElementScreenshot(screenshotName, element, t) {
   const comparer = createScreenshotsComparer(t);
@@ -51,30 +54,10 @@ export const screenshotComparerOptions = {
   highlightColor: { r: 0xff, g: 0, b: 0xff },
 };
 
-export const screens = [
-  {
-    name: "Large-Desktop",
-    width: 1920,
-    height: 1080
-  },
-  {
-    name: "Desktop",
-    width: 1366,
-    height: 768
-  },
-  {
-    name: "Tablet",
-    width: 1024,
-    height: 744
-  },
-  {
-    name: "Vertical-Tablet",
-    width: 744,
-    height: 1024
-  },
-  {
-    name: "Mobile",
-    width: 375,
-    height: 667
-  }
-]
+export const screens = {
+  "Large-Desktop": { width: 1920, height: 1080 },
+  "Desktop": { width: 1366, height: 768 },
+  "Tablet": { width: 1024, height: 744 },
+  "Vertical-Tablet": { width: 744, height: 1024 },
+  "Mobile": { width: 375, height: 667 }
+};
