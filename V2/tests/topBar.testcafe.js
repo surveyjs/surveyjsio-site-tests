@@ -55,20 +55,29 @@ test("DropDown Menus", async (t) => {
   await checkElementScreenshot(`TopBar--MenuDevelopers.png`, MenuDevelopers, t);
 });
 
-test("Mobile Menu", async (t) => {
-  const srceen = screens["Desktop"];
+test.only("Mobile Menu", async (t) => {
+  const height = 1500;
 
-  await t.resizeWindow(srceen.width, srceen.height);
   const TopBar = Selector(".v2-class---top-bar").filterVisible();
+  const TopBarMenuItemMenu = TopBar.find(".v2-class---top-menu-item--menu");
+  const MobileMenu = Selector(".v2-class---mobile-menu");
+  const MobileMenuOpened = Selector(".v2-class---mobile-menu--opened .v2-class---drop-down-menu--mobile-menu");
 
-  const TopBarMenuItemProducts = TopBar.find(".v2-class---top-menu-item--drop-down").withText("Products");
-  const MenuProducts = TopBarMenuItemProducts.find(".v2-class---drop-down-menu");
-  await t.hover(TopBarMenuItemProducts);
-  await checkElementScreenshot(`TopBar--MenuProducts.png`, MenuProducts, t);
+  // Vertical-Tablet
+  let srceen = screens["Vertical-Tablet"];
+  await t.resizeWindow(srceen.width, height);
+  await t.click(TopBarMenuItemMenu);
+  await checkElementScreenshot(`TopBar--MobileMenuTablet.png`, MobileMenuOpened, t);
+  const overlay = Selector(".v2-class---mobile-menu-overlay");
+  await t.click(overlay);
+  await await t.expect(MobileMenu.visible).notOk("Mobile Menu closed by overlay");
 
-
-  const TopBarMenuItemDevelopers = TopBar.find(".v2-class---top-menu-item--drop-down").withText("Developers");
-  const MenuDevelopers = TopBarMenuItemDevelopers.find(".v2-class---drop-down-menu");
-  await t.hover(TopBarMenuItemDevelopers);
-  await checkElementScreenshot(`TopBar--MenuDevelopers.png`, MenuDevelopers, t);
+  // Mobile
+  srceen = screens["Mobile"];
+  await t.resizeWindow(srceen.width, height);
+  await t.click(TopBarMenuItemMenu);
+  await checkElementScreenshot(`TopBar--MobileMenu.png`, MobileMenuOpened, t);
+  const closeButton = Selector(".v2-class---mobile-menu--opened .v2-class---drop-down-menu__group-header--mobile");
+  await t.click(closeButton);
+  await await t.expect(MobileMenu.visible).notOk("Mobile Menu closed by cross icon");
 });
