@@ -6,13 +6,13 @@ fixture`TopBar`.page`${url}`;
 for (const screenName in screens) {
   const screen = screens[screenName];
 
-  test("Usual", async (t) => {
+  test(`Usual--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, screen.height);
     const TopBar = Selector(".v2-class---top-bar").filterVisible();
     await checkElementScreenshot(`TopBar--${screenName}.png`, TopBar, t);
   });
 
-  test("Fixed", async (t) => {
+  test(`Fixed--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, screen.height);
     await t.scrollBy(0, 500);
 
@@ -55,7 +55,7 @@ test("DropDown Menus", async (t) => {
   await checkElementScreenshot(`TopBar--MenuDevelopers.png`, MenuDevelopers, t);
 });
 
-test.only("Mobile Menu", async (t) => {
+test("Mobile Menu", async (t) => {
   const height = 1500;
 
   const TopBar = Selector(".v2-class---top-bar").filterVisible();
