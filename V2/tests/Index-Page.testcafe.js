@@ -7,6 +7,14 @@ for (const screenName in screens) {
   const screen = screens[screenName];
   const height = 2000;
 
+  test.only(`Use-Cases-Section--${screenName}`, async (t) => {
+    await t.resizeWindow(screen.width, height);
+    await t.click(Selector(".surveyjs-cookie-info__span")); // close cookie msg
+
+    const TopBar = Selector(".v2-class---index-page__use-cases-section").filterVisible();
+    await checkElementScreenshot(`Index-Page-Use-Cases-Section--${screenName}.png`, TopBar, t);
+  });
+
   test(`Testimonials-Section--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
     await t.click(Selector(".surveyjs-cookie-info__span")); // close cookie msg
