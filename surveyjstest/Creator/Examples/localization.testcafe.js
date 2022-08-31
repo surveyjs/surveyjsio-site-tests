@@ -6,17 +6,20 @@ fixture `localization`
 test('Check tabs', async t => {
     await t
         .maximizeWindow()
-        .expect(Selector(".nav-tabs.svd-tabs ").innerText).eql("Mein Designer Umfrage testen Umfragelogik JSON-Editor")
-        .expect(Selector('span.nav-link').withText('JSON-Editor').visible).ok()
+        .expect(Selector(".nav-tabs.svd-tabs ").innerText).eql("Umfrage entwerfen Umfrage testen Umfragelogik JSON")
+        .expect(Selector('span.nav-link').withText('JSON').visible).ok()
         .switchToMainWindow()
+
         .click(Selector('a').withText('JavaScript'))
-        .expect(Selector('pre').withText('You can modify the default translation').visible).eql(true)
+        .expect(Selector('pre').withText(' Override individual translations in an existing locale').visible).ok()
+        
         .click(Selector('a').withText('HTML'))
         .expect(Selector('pre').withText('DOCTYPE html').textContent).contains("survey-creator")
+        
         .click(Selector('a').withText('Documentation'))
-        .expect(Selector('a').withText('Editor Localization Files').getAttribute('href')).eql("https://github.com/surveyjs/survey-creator/tree/master/packages/survey-creator/src/localization")
-        .expect(Selector('a').withText('english').getAttribute('href')).eql("https://github.com/surveyjs/survey-creator/tree/master/packages/survey-creator/src/localization/english.ts")
-        .expect(Selector('a').withText('here').getAttribute('href')).eql("/Examples/Library/survey-localization")
+        .expect(Selector('a').withText('dictionary files').getAttribute('href')).eql("https://github.com/surveyjs/survey-creator/tree/master/packages/survey-creator-core/src/localization")
+        .expect(Selector('a').withText('English dictionary').getAttribute('href')).eql("https://github.com/surveyjs/survey-creator/blob/master/packages/survey-creator-core/src/localization/english.ts")
+        
         .click(Selector('a').withText('Result'))
-        .expect(Selector('span.nav-link').withText('Mein Designer').visible).ok();
+        .expect(Selector('span.nav-link').withText('Umfrage entwerfen').visible).ok();
 });
