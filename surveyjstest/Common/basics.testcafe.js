@@ -2,7 +2,7 @@ import { Selector } from "testcafe";
 
 fixture`Basics`.page`http://surveyjstest.azurewebsites.net`;
 
-// test.only("Menu Examples test", async (t) => {
+// test("Menu Examples test", async (t) => {
 //   await t.maximizeWindow();
 
 //   const menuItems = Selector(".v2-class---top-bar:not(.v2-class---top-bar--fixed) .v2-class---top-menu-item");
