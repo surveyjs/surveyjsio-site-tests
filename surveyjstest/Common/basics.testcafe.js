@@ -5,12 +5,12 @@ fixture`Basics`.page`http://surveyjstest.azurewebsites.net`;
 test("Menu Examples test", async (t) => {
   await t.maximizeWindow();
 
-  const menuItems = Selector(".page-menu-bar:not(.page-menu-bar--sticky) .popup-menu__item.popup-menu__item--active");
-  const visiblePopup = Selector(".page-menu-bar:not(.page-menu-bar--sticky) .popup-menu--expanded .popup-menu-content").filterVisible();
-  const visiblePopupItems = Selector(".page-menu-bar:not(.page-menu-bar--sticky) .popup-menu--expanded .popup-menu-content .popup-menu__item").filterVisible();
+  const menuItems = Selector(".v2-class---top-bar:not(.v2-class---top-bar--fixed) .v2-class---top-menu-item");
+  const visiblePopup = Selector(".v2-class---top-bar:not(.v2-class---top-bar--fixed) .v2-class---drop-down-menu--popup-menu.v2-class---top-menu-item--drop-down-hovered");
+  const visiblePopupItems = Selector(".v2-class---top-bar:not(.v2-class---top-bar--fixed) .v2-class---drop-down-menu--popup-menu.v2-class---top-menu-item--drop-down-hovered .v2-class---drop-down-menu-item");
 
   await t
-    .expect(menuItems.count).eql(3)
+    .expect(menuItems.count).eql(9)
     .expect(visiblePopup.count).eql(0)
     .expect(visiblePopupItems.count).eql(0)
 
@@ -30,5 +30,5 @@ test("Menu Examples test", async (t) => {
 test("Logo Test", async (t) => {
   await t
     .maximizeWindow()
-    .expect(Selector("h3").withText("Survey Creation").exists).ok();
+    .expect(Selector(".v2-class---logo").exists).ok();
 });

@@ -1,4 +1,5 @@
 import { Selector } from 'testcafe';
+import { getIUnderstandButton } from '../../helpers';
 
 fixture `ck_editor`
     .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=ckeditorpropertyeditor&theme=default`;
@@ -15,7 +16,7 @@ test.skip('CK editor', async t => {
         .click(Selector('body').find('p'))
         .typeText(Selector('body').find('p'), 'hello')
         .switchToMainWindow()
-        .click(Selector('span').withText('I understand'))
+        .click(getIUnderstandButton())
         .switchToIframe('.cke_wysiwyg_frame.cke_reset[title="Rich Text Editor, modalEditorCustomWidget12"]')
         .expect(Selector('strong').withText('hello').textContent).eql("​hello")
         .switchToMainWindow()

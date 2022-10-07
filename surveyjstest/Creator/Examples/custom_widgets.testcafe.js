@@ -1,4 +1,5 @@
 import { Selector } from 'testcafe';
+import { getExampleTabSelector } from '../../helpers';
 
 fixture`custom_widgets`
     .page`https://surveyjstest.azurewebsites.net/Examples/Builder?id=customwidgets&platform=Knockoutjs&theme=default`;
@@ -6,9 +7,9 @@ fixture`custom_widgets`
 test('Check custom widgets default tabs ', async t => {
     await t
         .maximizeWindow()
-        .click(Selector('a').withText('JavaScript'))
+        .click(getExampleTabSelector('JavaScript'))
         .expect(Selector('pre').withText('const options').exists).eql(true)
-        .click(Selector('a').withText('HTML'))
+        .click(getExampleTabSelector('HTML'))
         .expect(Selector('pre').withText('DOCTYPE html').textContent).contains('Sortable.js')
         .expect(Selector('code').withText('DOCTYPE html').textContent).contains('select2')
         .expect(Selector('pre').withText('DOCTYPE html').textContent).contains('nouislider')
@@ -18,11 +19,11 @@ test('Check custom widgets default tabs ', async t => {
         .expect(Selector('code').withText('DOCTYPE html').textContent).contains('bars-pill.css')
         .expect(Selector('code').withText('DOCTYPE html').textContent).contains('bootstrap-datepicker')
         .expect(Selector('code').withText('DOCTYPE html').textContent).contains('surveyjs-widgets')
-        .click(Selector('a').withText('Documentation'))
-        .expect(Selector('[name="content-docs"].tabs__tab-panel.example-tab.tabs__tab-panel--active').exists).eql(true)
+        .click(getExampleTabSelector('Documentation'))
+        .expect(getExampleTabSelector('Documentation').classNames).contains('tabs__tab--active')
         .expect(Selector('a').withText('this repo to find out more').getAttribute('href')).eql('https://github.com/surveyjs/widgets')
         .expect(Selector('a').withText('create a new issue').getAttribute('href')).eql('https://github.com/surveyjs/widgets/issues')
-        .click(Selector('a').withText('Result'));
+        .click(getExampleTabSelector('Result'));
     const iFrameSelector = Selector('[name="content-result"].tabs__tab-panel.example-tab.tabs__tab-panel--active > iframe', { timeout: 15000 });
     await t
         .switchToIframe(iFrameSelector)
