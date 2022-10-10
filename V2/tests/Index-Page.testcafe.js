@@ -7,7 +7,7 @@ for (const screenName in screens) {
   const screen = screens[screenName];
   const height = 2000;
 
-  test.only(`Title-Section--${screenName}`, async (t) => {
+  test(`Title-Section--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
     await t.click(Selector(".surveyjs-cookie-info__span")); // close cookie msg
 
@@ -15,7 +15,7 @@ for (const screenName in screens) {
     await checkElementScreenshot(`Index-Page-Title-Section--${screenName}.png`, TopBar, t);
   });
 
-  test.only(`Title-Image-Section--${screenName}`, async (t) => {
+  test(`Title-Image-Section--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
     await t.click(Selector(".surveyjs-cookie-info__span")); // close cookie msg
 
@@ -23,7 +23,7 @@ for (const screenName in screens) {
     await checkElementScreenshot(`Index-Page-Title-Image-Section--${screenName}.png`, TopBar, t);
   });
 
-  test.only(`Customers-Section--${screenName}`, async (t) => {
+  test(`Customers-Section--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
     await t.click(Selector(".surveyjs-cookie-info__span")); // close cookie msg
 
@@ -31,7 +31,7 @@ for (const screenName in screens) {
     await checkElementScreenshot(`Index-Page-Customers-Section--${screenName}.png`, TopBar, t);
   });
 
-  test.only(`Features-Section--${screenName}`, async (t) => {
+  test(`Features-Section--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
     await t.click(Selector(".surveyjs-cookie-info__span")); // close cookie msg
 
@@ -39,7 +39,7 @@ for (const screenName in screens) {
     await checkElementScreenshot(`Index-Page-Features-Section--${screenName}.png`, TopBar, t);
   });
 
-  test.only(`Gallery-Section--${screenName}`, async (t) => {
+  test(`Gallery-Section--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
     await t.click(Selector(".surveyjs-cookie-info__span")); // close cookie msg
 
