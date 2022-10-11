@@ -1,7 +1,7 @@
-fixture `ExamplesCheck`
-    .page `https://surveyjstest.azurewebsites.net/`;
+fixture`ExamplesCheck`
+    .page`https://surveyjstest.azurewebsites.net/`;
 
-test.skip('Library', async t => {
+test('Library', async t => {
     await t
         .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-text&platform=Knockoutjs&theme=default')
         .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-radiogroup&platform=Knockoutjs&theme=default')
