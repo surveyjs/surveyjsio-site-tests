@@ -1,3 +1,4 @@
+import {  ClientFunction } from "testcafe";
 import { createScreenshotsComparer } from "devextreme-screenshot-comparer";
 
 
@@ -9,9 +10,7 @@ const args = minimist(process.argv.slice(2));
 const envDev = args["env-dev"];
 const envNew = args["env-new"];
 
-// TODO change urls after release V2
-//const productionURL = "http://surveyjstest.azurewebsites.net";
-const productionURL = "https://sjsnewlandings.azurewebsites.net/";
+const productionURL = "https://surveyjs.io/";
 export const url = envDev ? "https://localhost:44388/" : productionURL;
 
 export async function checkElementScreenshot(screenshotName, element, t) {
@@ -61,3 +60,13 @@ export const screens = {
   "Vertical-Tablet": { width: 744, height: 1024 },
   "Mobile": { width: 375, height: 667 }
 };
+
+export const explicitErrorHandler = ClientFunction(() => {
+  window.addEventListener("error", e => {
+    if (e.message === "ResizeObserver loop completed with undelivered notifications." ||
+      e.message === "ResizeObserver loop limit exceeded") {
+      e.stopImmediatePropagation();
+    }
+  });
+});
+
