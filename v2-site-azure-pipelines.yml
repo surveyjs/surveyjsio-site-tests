@@ -22,3 +22,20 @@ steps:
   inputs:
     testResultsFiles: '**/report.xml'
     testResultsFormat: 'JUnit'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/V2/artifacts'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/V2-Site-VRT-Artifacts'
+    OverWrite: true
+  condition: always()
+  displayName: 'copy vrt artifacts'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/V2-Site-VRT-Artifacts/'
+    ArtifactName: 'V2-Site-VRT-Artifacts'
+    publishLocation: 'Container'
+  condition: always()
+  displayName: 'publish vrt artifacts'
