@@ -2,7 +2,7 @@ trigger: none
 pr: none
 
 pool:
-  vmImage: 'Ubuntu-20.04'
+  vmImage: 'windows-latest'
 
 steps:
 - task: NodeTool@0
@@ -10,11 +10,11 @@ steps:
     versionSpec: '14.x'
   displayName: 'Install Node.js'
 
-- bash: |
+- script: |
     npm install
   displayName: 'npm install'
 
-- bash: |
+- script: |
     npm run v2:ci
   displayName: 'run Site V2 VRT tests'
 
