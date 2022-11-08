@@ -10,7 +10,7 @@ test('Check custom widgets default tabs ', async t => {
         .expect(Selector('pre').withText('const options').exists).eql(true)
         .click(Selector('a').withText('HTML'))
         .expect(Selector('pre').withText('DOCTYPE html').textContent).contains('Sortable.js')
-        .expect(Selector('code').withText('DOCTYPE html').textContent).contains('select2')
+        //.expect(Selector('code').withText('DOCTYPE html').textContent).contains('select2')
         .expect(Selector('pre').withText('DOCTYPE html').textContent).contains('nouislider')
         .expect(Selector('code').withText('DOCTYPE html').textContent).contains('inputmask')
         .expect(Selector('code').withText('DOCTYPE html').textContent).contains('ckeditor')
