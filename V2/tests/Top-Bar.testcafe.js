@@ -1,7 +1,10 @@
 import { Selector } from "testcafe";
-import { url, checkElementScreenshot, screens } from "../helper";
+import { url, checkElementScreenshot, screens, explicitErrorHandler } from "../helper";
 
-fixture`TopBar`.page`${url}`;
+fixture`TopBar`.page`${url}`.beforeEach(async t => {
+  await explicitErrorHandler();
+  await t.click(Selector(".v2-class---cookies-popup__button-container a")); // close cookie msg
+});
 
 for (const screenName in screens) {
   const screen = screens[screenName];

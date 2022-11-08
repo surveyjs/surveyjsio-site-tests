@@ -10,7 +10,6 @@ test('title_logo', async t => {
     await t
         .maximizeWindow()
         .click('#category-survey')
-        .click(getSideBarGroupItem('Survey'))
         .click(getSideBarItem('Title and Logo'))
         .expect(Selector('.sd-logo__image').getAttribute('src')).ok('Logo is visible')
         .expect(Selector('#surveyElement').find('span').withText('Survey Title&Logo demo').visible).ok('Title is visible')

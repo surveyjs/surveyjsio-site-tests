@@ -1,4 +1,5 @@
 import { Selector } from 'testcafe';
+import { getIUnderstandButton } from './helpers';
 
 fixture `Index Page`
     .page `https://surveyjsio-stage.azurewebsites.net/`;
@@ -6,7 +7,7 @@ fixture `Index Page`
 test('Index', async t => {
     await t
         .resizeWindow(850, 800)
-        .click(Selector('span').withText('I understand'))
+        .click(getIUnderstandButton())
         .click(Selector('span').withText('LIBRARY'))
         .navigateTo('https://surveyjsio-stage.azurewebsites.net/')
         .click(Selector('span').withText('CREATOR'))

@@ -43,19 +43,19 @@ test('signaturepad', async t => {
     await t
         .maximizeWindow()
         .click(getSideBarGroupItem('Simple Questions'))
-        .click(getSideBarItem('Signature pad'))
+        .click(getSideBarItem('Signature Pad'))
         .expect(Selector('.sd-signaturepad').find('div').find('canvas').visible).ok()
         //.expect(Selector('[title="Clear"]').visible).ok()
-        .click(Selector('.form-element').find('.form-element__input.form-element--inverse'))
-        .pressKey('ctrl+a')
-        .typeText(Selector('.form-element').find('.form-element__input.form-element--inverse'), '600', {
-            caretPos: 0
-        })
-        .click(Selector('div').withText('Height: (default is empty)').nth(7).find('.form-element__input.form-element--inverse'))
-        .pressKey('ctrl+a')
-        .typeText(Selector('div').withText('Height: (default is empty)').nth(7).find('.form-element__input.form-element--inverse'), '700', {
-            caretPos: 0
-        })
+        // .click(Selector('.form-element').find('.form-element__input.form-element--inverse'))
+        // .pressKey('ctrl+a')
+        // .typeText(Selector('.form-element').find('.form-element__input.form-element--inverse'), '600', {
+        //     caretPos: 0
+        // })
+        // .click(Selector('div').withText('Height: (default is empty)').nth(7).find('.form-element__input.form-element--inverse'))
+        // .pressKey('ctrl+a')
+        // .typeText(Selector('div').withText('Height: (default is empty)').nth(7).find('.form-element__input.form-element--inverse'), '700', {
+        //     caretPos: 0
+        // })
         .expect(Selector('.sd-signaturepad').find('div').find('canvas').scrollWidth).ok()
         .expect(Selector('.sd-signaturepad').find('div').find('canvas').clientHeight).ok();
 });

@@ -1,0 +1,41 @@
+trigger: none
+pr: none
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+  displayName: 'npm install'
+
+- script: |
+    npm run v2:ci
+  displayName: 'run Site V2 VRT tests'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFiles: '**/report.xml'
+    testResultsFormat: 'JUnit'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/V2'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/V2-Site-VRT-Artifacts'
+    OverWrite: true
+  condition: always()
+  displayName: 'copy vrt artifacts'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/V2-Site-VRT-Artifacts/'
+    ArtifactName: 'V2-Site-VRT-Artifacts'
+    publishLocation: 'Container'
+  condition: always()
+  displayName: 'publish vrt artifacts'

@@ -1,7 +1,10 @@
 import { Selector } from "testcafe";
-import { url, checkElementScreenshot, screens } from "../helper";
+import { url, checkElementScreenshot, screens, explicitErrorHandler } from "../helper";
 
-fixture`Footer`.page`${url}`;
+fixture`Footer`.page`${url}`.beforeEach(async t => {
+    await explicitErrorHandler();
+    await t.click(Selector(".v2-class---cookies-popup__button-container a")); // close cookie msg
+});
 
 for (const screenName in screens) {
   const screen = screens[screenName];
@@ -9,10 +12,11 @@ for (const screenName in screens) {
 
   test(`Footer--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
-    await t.click(Selector(".surveyjs-cookie-info__span")); // close cookie msg
+    
+    await t.debug();
 
-    const TopBar = Selector(".v2-class---footer").filterVisible();
-    await checkElementScreenshot(`Footer--${screenName}.png`, TopBar, t);
+    const Footer = Selector(".v2-class---footer").filterVisible();
+    await checkElementScreenshot(`Footer--${screenName}.png`, Footer, t);
   });
 }
 
@@ -20,11 +24,11 @@ test("Hovers", async (t) => {
   const srceen = screens["Desktop"];
 
   await t.resizeWindow(srceen.width, srceen.height);
-  await t.click(Selector(".surveyjs-cookie-info__span")); // close cookie msg
-  const TopBar = Selector(".v2-class---footer").filterVisible();
 
-  const Link = TopBar.find(".v2-class---footer__link-group-item__link");
-  const SocialLink = TopBar.find(".v2-class---footer__social-link");
+  const Footer = Selector(".v2-class---footer").filterVisible();
+
+  const Link = Footer.find(".v2-class---footer__link-group-item__link");
+  const SocialLink = Footer.find(".v2-class---footer__social-link");
 
   await t.hover(Link);
   await checkElementScreenshot(`Footer--Link-Hover.png`, Link, t);

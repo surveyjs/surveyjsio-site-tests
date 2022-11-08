@@ -1,4 +1,5 @@
 import { Selector, ClientFunction } from 'testcafe';
+import { getIUnderstandButton } from '../helpers';
 
 fixture`account`
     .page`https://surveyjstest.azurewebsites.net/Account/Login`;
@@ -13,7 +14,7 @@ test('FormElements', async t => {
     await t
         .expect(overrideConsoleErrorAndWarn()).eql()
         .maximizeWindow()
-        .click(Selector('span').withText('I understand'))
+        .click(getIUnderstandButton())
         .expect(Selector('#Email').visible).ok('Email input should be visible')
         .expect(Selector('#Password').visible).ok('Password input should be visible')
         .expect(Selector('a').withText('Forgot your password? Click here to restore').visible).ok('Forgot password link should be visible')
@@ -49,8 +50,8 @@ test('RegisterRemove', async t => {
     const loginButton = Selector("[value='LOG IN']");
     const acceptTermsCheckboxLogin = Selector('.login-page__login label').withText('I have read, understand and accept the surveyjs.io')
         .find('.custom-checkbox__checkmark');
-    const menuAccountLink = Selector('a').withText('Account');
-    const menuLogInLink = Selector('a').withText('Log in/Register');
+    const menuAccountLink = Selector('span').withText('Account');
+    const menuLogInLink = Selector('a').withText('Sign Up');
     const invalidLoginAttemptMessage = Selector('li').withText('Invalid login attempt.');
 
 
@@ -71,9 +72,9 @@ test('RegisterRemove', async t => {
     const registerEmailInput = Selector("[name='RegisterEmail']");
     const registerPasswordInput = Selector("[name='RegisterPassword']");
     const confirmPassword = Selector("[name='ConfirmPassword']");
-    const acceptTermsCheckboxRegister = Selector('.login-page__register label').withText('I have read, understand and accept the surveyjs.io')
+    const acceptTermsCheckboxRegister = Selector('.login-page__register label').withText('I have read, understand and accept the surveyjs.io website')
     .find('.custom-checkbox__checkmark');
-    const registerButton = Selector("[value='REGISTER']");
+    const registerButton = Selector("input[value='REGISTER']");
 
     await t
         .typeText(displayNameInput, displayName)
@@ -87,9 +88,10 @@ test('RegisterRemove', async t => {
     //#endregion register user
 
     //#region logoff and login again
-    const menuLogOffLink = Selector('a').withText('Log out');
+    const menuLogOffLink = Selector('span').withText('Sign Out');
 
     await t
+        .hover(menuAccountLink)
         .expect(menuLogOffLink.visible).ok('Logoff available')
         .click(menuLogOffLink)
         .expect(menuLogInLink.visible).ok('Logoff successful, login enabled')
@@ -102,12 +104,14 @@ test('RegisterRemove', async t => {
     //#endregion logoff and login again
 
     //#region remove user
-    const removeAccountTab = Selector('h3').withText('Delete Account');
+    const removeAccountTab = Selector('h3').withText('Delete your Account');
+    const menuManageLink = Selector('span').withText('Manage');
     const deleteAccountEmailInput = Selector('[placeholder="Enter your email address to confirm"]');
     const deleteUserButton = Selector('[value="Delete Account"]');
 
     await t
-        .click(menuAccountLink)
+        .hover(menuAccountLink)
+        .click(menuManageLink)
         .click(removeAccountTab)
         .typeText(deleteAccountEmailInput, email)
         .setNativeDialogHandler((dialogType, message, url) => {

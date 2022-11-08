@@ -1,4 +1,5 @@
 import { Selector } from 'testcafe';
+import { getIUnderstandButton } from './helpers';
 
 fixture `Mobile Menu`
     .page `https://surveyjstest.azurewebsites.net`;
@@ -6,7 +7,7 @@ fixture `Mobile Menu`
 test('Index', async t => {
     await t
         .resizeWindow(850, 800)
-        .click(Selector('span').withText('I understand'))
+        .click(getIUnderstandButton())
         .click('.mobile-menu__button')
         .click(Selector('.mobile-menu__product-title').withText('LIBRARY').nextSibling(0).find('a').withText('Overview'))
         .click('.mobile-menu__button')
