@@ -7,9 +7,9 @@ fixture`custom_widgets`
 test('Check custom widgets default tabs ', async t => {
     await t
         .maximizeWindow()
-        .click(getExampleTabSelector('JavaScript'))
+        .click(getExampleTabSelector('Code'))
         .expect(Selector('pre').withText('const options').exists).eql(true)
-        .click(getExampleTabSelector('HTML'))
+        .click(Selector('span').withText('index.html'))
         .expect(Selector('pre').withText('DOCTYPE html').textContent).contains('Sortable.js')
         //.expect(Selector('code').withText('DOCTYPE html').textContent).contains('select2')
         .expect(Selector('pre').withText('DOCTYPE html').textContent).contains('nouislider')

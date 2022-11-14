@@ -10,8 +10,8 @@ test('Check default tabs', async t => {
         .expect(Selector('#creatorElement span.nav-link').withText('Survey Designer').textContent).eql("Survey Designer")
         .expect(Selector('#creatorElement span.nav-link').withText('Test Survey').textContent).eql("Test Survey")
         .expect(Selector('span.nav-link').withText('JSON Editor').textContent).eql("JSON Editor")
-        .click(getExampleTabSelector('JavaScript'))
+        .click(getExampleTabSelector('Code'))
         .expect(Selector('pre').withText('Populate countries depending on the selected region').exists).eql(true)
-        .click(getExampleTabSelector('HTML'))
+        .click(Selector('span').withText('index.html'))
         .expect(Selector('pre').withText('DOCTYPE html').exists).eql(true);
 });

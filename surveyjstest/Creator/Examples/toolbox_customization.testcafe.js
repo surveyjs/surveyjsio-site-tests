@@ -8,9 +8,9 @@ test('Check tabs', async t => {
     await t
         .maximizeWindow()
         .switchToMainWindow()
-        .click(getExampleTabSelector('JavaScript'))
-        .expect(Selector('[name="content-js"].tabs__tab-panel.example-tab.fade.codesnippet.tabs__tab-panel--active').find('pre').withText('const options').exists).eql(true)
-        .click(getExampleTabSelector('HTML'))
+        .click(getExampleTabSelector('Code'))
+        .expect(Selector('[name="content-code"].tabs__tab-panel.example-tab.fade.codesnippet.tabs__tab-panel--active').find('pre').withText('const creatorOptions').exists).eql(true)
+        .click(Selector('span').withText('index.html'))
         .expect(Selector('pre').withText('DOCTYPE html').exists).eql(true)
         .click(getExampleTabSelector('Documentation'))
         .expect(getExampleTabSelector('Documentation').classNames).contains('tabs__tab--active')

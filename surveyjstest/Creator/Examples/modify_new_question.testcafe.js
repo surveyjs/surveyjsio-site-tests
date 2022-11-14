@@ -8,9 +8,9 @@ test('Check default tabs', async t => {
     await t
         .maximizeWindow()
         .expect(Selector('#creatorElement span.nav-link').withText('Test Survey').textContent).eql("Test Survey")
-        .click(getExampleTabSelector('JavaScript'))
+        .click(getExampleTabSelector('Code'))
         .expect(Selector('pre').withText('Add a tag property').exists).eql(true)
-        .click(getExampleTabSelector('HTML'))
+        .click(Selector('span').withText('index.html'))
         .expect(Selector('pre').withText('DOCTYPE html').exists).eql(true)
         .click(getExampleTabSelector('Documentation'))
         .expect(getExampleTabSelector('Documentation').classNames).contains('tabs__tab--active')

@@ -1,19 +1,21 @@
 import { Selector } from 'testcafe';
 
 fixture `localization`
-    .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=localization&platform=Knockoutjs&theme=default`;
+    .page `https://surveyjstest.azurewebsites.net/survey-creator/examples/survey-creator-interface-localization/knockoutjs  `;
 
 test('Check tabs', async t => {
     await t
         .maximizeWindow()
-        .expect(Selector(".nav-tabs.svd-tabs ").innerText).eql("Umfrage entwerfen Umfrage testen Umfragelogik JSON")
-        .expect(Selector('span.nav-link').withText('JSON').visible).ok()
+        .expect(Selector('span').withText('Wahrheitswert').visible).ok()
+        .expect(Selector('span').withText('JSON').visible).ok()
+        .expect(Selector('span').withText('Logik').visible).ok()
         .switchToMainWindow()
 
-        .click(Selector('a').withText('JavaScript'))
-        .expect(Selector('pre').withText(' Override individual translations in an existing locale').visible).ok()
+        .expect(Selector('.example-tab').withText('Code').visible).ok()
+        .click(Selector('.example-tab').withText('Code'))
+        .expect(Selector('span').withText(' Override individual translations in an existing locale').visible).ok()
         
-        .click(Selector('a').withText('HTML'))
+        .click(Selector('span').withText('index.html'))
         .expect(Selector('pre').withText('DOCTYPE html').textContent).contains("survey-creator")
         
         .click(Selector('a').withText('Documentation'))
@@ -21,5 +23,5 @@ test('Check tabs', async t => {
         .expect(Selector('a').withText('English dictionary').getAttribute('href')).eql("https://github.com/surveyjs/survey-creator/blob/master/packages/survey-creator-core/src/localization/english.ts")
         
         .click(Selector('a').withText('Result'))
-        .expect(Selector('span.nav-link').withText('Umfrage entwerfen').visible).ok();
+        .expect(Selector('span').withText('Wahrheitswert').visible).ok();
 });

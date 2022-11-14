@@ -8,7 +8,7 @@ test('Click example tabs', async t => {
     await t
         .maximizeWindow()
         .expect(Selector('.tabs__tab.example-tab.tabs__tab--active').classNames).contains('tabs__tab--active')
-        .click(Selector('.tabs__tab-wrapper').nth(1).find('a').withText('JavaScript'))
+        .click(Selector('.tabs__tab-wrapper').nth(1).find('a').withText('Code'))
         .expect(Selector('.tabs__tab-wrapper').find('a').withText('Result').classNames).notContains('tabs__tab--active')
         .expect(Selector('.tabs__tab.example-tab.tabs__tab--active').classNames).contains('tabs__tab--active');
 });
