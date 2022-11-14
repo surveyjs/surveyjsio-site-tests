@@ -13,15 +13,11 @@ test("Check default tabs", async (t) => {
         .textContent
     )
     .eql("Test Survey")
-    .expect(Selector("span.nav-link").withText("JSON Editor").textContent)
-    .eql("JSON Editor")
-    .click(Selector(".tabs a").withExactText("JavaScript"))
-    .expect(Selector("pre").withText("SurveyCreator").visible)
-    .eql(true)
-    .click(Selector(".tabs a").withExactText("HTML"))
-    .expect(Selector("code").withText("DOCTYPE html").visible)
-    .eql(true)
-    .click(Selector(".tabs a").withExactText("CSS"))
-    .expect(Selector(".source-code.language-css").visible)
-    .eql(true);
+    .expect(Selector("span.nav-link").withText("JSON Editor").textContent).eql("JSON Editor")
+    .click(Selector(".tabs a").withExactText("Code"))
+    .expect(Selector("span").withText("SurveyCreator").visible).ok()
+    .click(Selector('span').withText('index.html'))
+    .expect(Selector("span").withText("<!doctype html>").visible).ok()
+    .click(Selector('span').withText('index.css'))
+    .expect(Selector(".source-code.language-css").visible).ok()
 });
