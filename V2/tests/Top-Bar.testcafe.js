@@ -1,9 +1,15 @@
 import { Selector } from "testcafe";
-import { url, checkElementScreenshot, screens, explicitErrorHandler } from "../helper";
+import { url, checkElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll } from "../helper";
 
 fixture`TopBar`.page`${url}`.beforeEach(async t => {
   await explicitErrorHandler();
-  await t.click(Selector(".v2-class---cookies-popup__button-container a")); // close cookie msg
+  await disableSmoothScroll();
+
+
+  const cookiePopupAccept = Selector(".v2-class---cookies-popup__button-container a");
+  if(await cookiePopupAccept.exists) {
+    await t.click(cookiePopupAccept); // close cookie msg
+  } 
 });
 
 for (const screenName in screens) {

@@ -9,6 +9,7 @@
     "v2:ci": "testcafe chrome:headless ./V2/ --screenshots ./ --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000",
     "v2:ci:new": "testcafe chrome:headless ./V2/ --screenshots ./ --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000 --env-new=true",
     "v2:dev": "testcafe chrome ./V2/ --screenshots ./ --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000 --env-dev=true",
+    "v2:dev:ci": "testcafe chrome:headless ./V2/ --screenshots ./ --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000 --env-dev=true",
     "v2:dev:new": "testcafe chrome:headless ./V2/ --screenshots ./ --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000 --env-dev=true --env-new=true"
   },
   "dependencies": {
