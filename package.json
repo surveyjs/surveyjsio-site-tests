@@ -13,9 +13,9 @@
     "v2:dev:new": "testcafe chrome:headless ./V2/ --screenshots ./ --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000 --env-dev=true --env-new=true"
   },
   "dependencies": {
-    "devextreme-screenshot-comparer": "^2.0.12",
+    "devextreme-screenshot-comparer": "^2.0.14",
     "minimist": "^1.2.6",
-    "testcafe": "^1.14.2",
-    "testcafe-reporter-xunit": "^2.1.0"
+    "testcafe": "^1.20.1",
+    "testcafe-reporter-xunit": "^2.2.1"
   }
 }
