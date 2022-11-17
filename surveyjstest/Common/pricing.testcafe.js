@@ -4,7 +4,7 @@ import { getIUnderstandButton } from '../helpers';
 fixture`account`
     .page`https://surveyjstest.azurewebsites.net/Account/Login`;
 
-test.only('Remove the non-commercial usage text', async t => {
+test('Pricing buy test', async t => {
     await t.maximizeWindow();
 
     const email = `surveyjstest@gmail.com`;
