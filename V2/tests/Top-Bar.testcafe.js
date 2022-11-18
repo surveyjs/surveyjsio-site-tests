@@ -29,14 +29,14 @@ for (const screenName in screens) {
     await checkElementScreenshot(`TopBar--Fixed--${screenName}.png`, TopBar, t);
   });
 
-  test.only(`Doc-Usual--${screenName}`, async (t) => {
+  test(`Doc-Usual--${screenName}`, async (t) => {
     await t.navigateTo("/documentation");
     await t.resizeWindow(screen.width, screen.height);
     const TopBar = Selector(".v2-class---top-bar").filterVisible();
     await checkElementScreenshot(`TopBar--Doc--${screenName}.png`, TopBar, t);
   });
   
-  test.only(`Doc-Fixed--${screenName}`, async (t) => {
+  test(`Doc-Fixed--${screenName}`, async (t) => {
     await t.navigateTo("/documentation");
     await t.resizeWindow(screen.width, screen.height);
     await t.scrollBy(0, 500);
