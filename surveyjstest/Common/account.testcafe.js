@@ -19,7 +19,6 @@ test('FormElements', async t => {
     await t
         .expect(overrideConsoleErrorAndWarn()).eql()
         .maximizeWindow()
-        .click(getIUnderstandButton())
         .expect(Selector('#Email').visible).ok('Email input should be visible')
         .expect(Selector('#Password').visible).ok('Password input should be visible')
         .expect(Selector('a').withText('Forgot your password? Click here to restore').visible).ok('Forgot password link should be visible')
