@@ -2,9 +2,15 @@ import { Selector } from 'testcafe';
 import { getIUnderstandButton, getExampleTabSelector } from '../../helpers';
 
 fixture`modify_new_question`
-    .page`https://surveyjstest.azurewebsites.net/Examples/Builder?id=oncreatequestion&platform=Knockoutjs&theme=default`;
+    .page`https://surveyjstest.azurewebsites.net/Examples/Builder?id=oncreatequestion&platform=Knockoutjs&theme=default`
+    .beforeEach(async t => {
+        const cookiePopupAccept = Selector(".v2-class---cookies-popup__button-container a");
+        if(await cookiePopupAccept.exists) {
+            await t.click(cookiePopupAccept); // close cookie msg
+        } 
+    });
 
-test('Check default tabs', async t => {
+test.only('Check default tabs', async t => {
     await t
         .maximizeWindow()
         .expect(Selector('#creatorElement span.nav-link').withText('Test Survey').textContent).eql("Test Survey")
