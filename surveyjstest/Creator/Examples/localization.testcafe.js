@@ -3,7 +3,7 @@ import { Selector } from 'testcafe';
 fixture `localization`
     .page `https://surveyjstest.azurewebsites.net/survey-creator/examples/survey-creator-interface-localization/knockoutjs  `;
 
-test('Check tabs', async t => {
+test.only('Check tabs', async t => {
     await t
         .maximizeWindow()
         .expect(Selector('span').withText('Wahrheitswert').visible).ok()
@@ -18,7 +18,7 @@ test('Check tabs', async t => {
         .click(Selector('span').withText('index.html'))
         .expect(Selector('pre').withText('DOCTYPE html').textContent).contains("survey-creator")
         
-        .click(Selector('a').withText('Documentation'))
+        .click(Selector('a.example-tab').withText('Documentation'))
         .expect(Selector('a').withText('dictionary files').getAttribute('href')).eql("https://github.com/surveyjs/survey-creator/tree/master/packages/survey-creator-core/src/localization")
         .expect(Selector('a').withText('English dictionary').getAttribute('href')).eql("https://github.com/surveyjs/survey-creator/blob/master/packages/survey-creator-core/src/localization/english.ts")
         

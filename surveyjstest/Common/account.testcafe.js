@@ -2,7 +2,12 @@ import { Selector, ClientFunction } from 'testcafe';
 import { getIUnderstandButton } from '../helpers';
 
 fixture`account`
-    .page`https://surveyjstest.azurewebsites.net/Account/Login`;
+    .page`https://surveyjstest.azurewebsites.net/Account/Login`.beforeEach(async t => {
+        const cookiePopupAccept = Selector(".v2-class---cookies-popup__button-container a");
+        if(await cookiePopupAccept.exists) {
+            await t.click(cookiePopupAccept); // close cookie msg
+        } 
+    });
 
 test('FormElements', async t => {
     const overrideConsoleErrorAndWarn = ClientFunction(() => {
@@ -61,6 +66,7 @@ test('RegisterRemove', async t => {
         .typeText(passwordInput, password)
         .click(acceptTermsCheckboxLogin)
         .click(loginButton)
+
         .expect(invalidLoginAttemptMessage.visible).ok('See invalid login message');
     //#endregion invalid login attempt
 
