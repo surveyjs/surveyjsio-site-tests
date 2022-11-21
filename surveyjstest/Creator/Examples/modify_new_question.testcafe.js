@@ -10,7 +10,7 @@ fixture`modify_new_question`
         } 
     });
 
-test.only('Check default tabs', async t => {
+test('Check default tabs', async t => {
     await t
         .maximizeWindow()
         .expect(Selector('#creatorElement span.nav-link').withText('Test Survey').textContent).eql("Test Survey")
@@ -19,6 +19,5 @@ test.only('Check default tabs', async t => {
         .click(Selector('span').withText('index.html'))
         .expect(Selector('pre').withText('DOCTYPE html').exists).eql(true)
         .click(getExampleTabSelector('Documentation'))
-        .expect(getExampleTabSelector('Documentation').classNames).contains('tabs__tab--active')
-        .click(getIUnderstandButton());
+        .expect(getExampleTabSelector('Documentation').classNames).contains('tabs__tab--active');
 });
