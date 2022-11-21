@@ -3,7 +3,7 @@ import { Selector } from 'testcafe';
 fixture `localization`
     .page `https://surveyjstest.azurewebsites.net/survey-creator/examples/survey-creator-interface-localization/knockoutjs  `;
 
-test.only('Check tabs', async t => {
+test('Check tabs', async t => {
     await t
         .maximizeWindow()
         .expect(Selector('span').withText('Wahrheitswert').visible).ok()
