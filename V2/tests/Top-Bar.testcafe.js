@@ -1,4 +1,4 @@
-import { Selector } from "testcafe";
+import { ClientFunction, Selector } from "testcafe";
 import { url, checkElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll } from "../helper";
 
 fixture`TopBar`.page`${url}`.beforeEach(async t => {
@@ -40,6 +40,7 @@ for (const screenName in screens) {
     await t.navigateTo("/documentation");
     await t.resizeWindow(screen.width, screen.height);
     await t.scrollBy(0, 500);
+    await ClientFunction(() => { document.querySelector("main").style.visibility = "hidden"})();
     const TopBar = Selector(".v2-class---top-bar--fixed-shown");
     await checkElementScreenshot(`TopBar--Doc-Fixed--${screenName}.png`, TopBar, t);
   });
