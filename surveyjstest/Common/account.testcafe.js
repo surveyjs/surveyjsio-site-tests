@@ -2,7 +2,12 @@ import { Selector, ClientFunction } from 'testcafe';
 import { getIUnderstandButton } from '../helpers';
 
 fixture`account`
-    .page`https://surveyjstest.azurewebsites.net/Account/Login`;
+    .page`https://surveyjstest.azurewebsites.net/Account/Login`.beforeEach(async t => {
+        const cookiePopupAccept = Selector(".v2-class---cookies-popup__button-container a");
+        if(await cookiePopupAccept.exists) {
+            await t.click(cookiePopupAccept); // close cookie msg
+        } 
+    });
 
 test('FormElements', async t => {
     const overrideConsoleErrorAndWarn = ClientFunction(() => {
@@ -14,7 +19,6 @@ test('FormElements', async t => {
     await t
         .expect(overrideConsoleErrorAndWarn()).eql()
         .maximizeWindow()
-        .click(getIUnderstandButton())
         .expect(Selector('#Email').visible).ok('Email input should be visible')
         .expect(Selector('#Password').visible).ok('Password input should be visible')
         .expect(Selector('a').withText('Forgot your password? Click here to restore').visible).ok('Forgot password link should be visible')
@@ -61,6 +65,7 @@ test('RegisterRemove', async t => {
         .typeText(passwordInput, password)
         .click(acceptTermsCheckboxLogin)
         .click(loginButton)
+
         .expect(invalidLoginAttemptMessage.visible).ok('See invalid login message');
     //#endregion invalid login attempt
 

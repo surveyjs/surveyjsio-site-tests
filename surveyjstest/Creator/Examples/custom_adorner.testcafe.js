@@ -33,7 +33,7 @@ fixture `Custom Adorner`
     .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=customadorner&platform=Knockoutjs&theme=default`;
     //.page `https://surveyjs.io/Examples/Builder?id=customadorner&platform=Knockoutjs&theme=default`;
 
-test.only('Adorner exists', async t => {
+test('Adorner exists', async t => {
     await t
         .maximizeWindow()
         .click(Selector('span').withText('Single Input'))
