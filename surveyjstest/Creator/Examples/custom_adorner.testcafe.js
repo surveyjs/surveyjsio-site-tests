@@ -12,6 +12,7 @@ test('Adorner exists', async t => {
         .click(Selector('span').withText('Designer'))
         .expect(Selector('span').withText('On new line').visible).notOk()
         .click(Selector('span').withText('Single Input'))
+        .wait(1000)
         .expect(Selector('span').withText('On new line').visible).ok();
 });
 
