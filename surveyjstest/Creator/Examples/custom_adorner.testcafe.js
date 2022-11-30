@@ -1,9 +1,9 @@
 import { Selector } from 'testcafe';
 
 fixture `Custom Adorner`
-    .page `https://surveyjstest.azurewebsites.net/survey-creator/examples/customadorner/knockoutjs`;
+    .page `https://surveyjstest.azurewebsites.net/survey-creator/examples/customadorner/reactjs`;
 
-test('Adorner exists', async t => {
+test.only('Adorner exists', async t => {
     await t
         .maximizeWindow()
         .click(Selector('span').withText('JSON Editor'))
@@ -12,7 +12,6 @@ test('Adorner exists', async t => {
         .click(Selector('span').withText('Designer'))
         .expect(Selector('span').withText('On new line').visible).notOk()
         .click(Selector('span').withText('Single Input'))
-        .wait(1000)
         .expect(Selector('span').withText('On new line').visible).ok();
 });
 
