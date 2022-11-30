@@ -3,7 +3,7 @@ import { Selector } from 'testcafe';
 fixture `Custom Adorner`
     .page `https://surveyjstest.azurewebsites.net/survey-creator/examples/customadorner/reactjs`;
 
-test.only('Adorner exists', async t => {
+test('Adorner exists', async t => {
     await t
         .maximizeWindow()
         .click(Selector('span').withText('JSON Editor'))
