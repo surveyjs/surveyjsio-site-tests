@@ -5,7 +5,8 @@ fixture`account`
     .page`https://surveyjstest.azurewebsites.net/Account/Login`;
 
 test('Remove the non-commercial usage text', async t => {
-    await t.maximizeWindow();
+    await t.maximizeWindow()
+        .click(getIUnderstandButton());
 
     const email = `surveyjstest@gmail.com`;
     const password = 'Surveyjstest1';
