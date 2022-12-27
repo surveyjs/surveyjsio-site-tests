@@ -18,8 +18,8 @@ test('text', async t => {
         .typeText('#sq_100i', 'Test', {
             caretPos: 0
         })
-        .typeText('#sq_101i', '01012001')
-        .typeText('#sq_103i', 'test@test.org')
+        .typeText('#sq_102i', '01012001')
+        .typeText('#sq_101i', 'test@test.org')
         .click('.sd-navigation__complete-btn')
         .expect(Selector('#content-result-json-code').innerText).ok();
 });
