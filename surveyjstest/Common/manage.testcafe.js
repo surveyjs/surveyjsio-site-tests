@@ -31,7 +31,7 @@ test('Remove the non-commercial usage text', async t => {
     const menuAccountLink = Selector('span').withText('Account');
     const menuManageLink = Selector('span').withText('Manage');
     await t
-        .hover(menuAccountLink)
+        .hover(menuAccountLink, {speed: 0.5})
         .click(menuManageLink)
         .click(removeNonCommercialTab);
 });
