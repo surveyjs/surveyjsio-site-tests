@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite name="TestCafe Tests: Chrome 108.0.5359.125 / Windows 10" tests="5" failures="0" skipped="0" errors="0" time="37.378" timestamp="Tue, 03 Jan 2023 07:38:19 GMT" >
+  <testcase classname="LicensingPage" file="C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\tests\Licensing-Page.testcafe.js" name="Licensing-Page--Large-Desktop (screenshots: C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\screenshots\Licensing-Page--Large-Desktop.png)" time="10.975">
+  </testcase>
+  <testcase classname="LicensingPage" file="C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\tests\Licensing-Page.testcafe.js" name="Licensing-Page--Desktop (screenshots: C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\screenshots\Licensing-Page--Desktop.png)" time="7.337">
+  </testcase>
+  <testcase classname="LicensingPage" file="C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\tests\Licensing-Page.testcafe.js" name="Licensing-Page--Tablet (screenshots: C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\screenshots\Licensing-Page--Tablet.png)" time="6.61">
+  </testcase>
+  <testcase classname="LicensingPage" file="C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\tests\Licensing-Page.testcafe.js" name="Licensing-Page--Vertical-Tablet (screenshots: C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\screenshots\Licensing-Page--Vertical-Tablet.png)" time="6.488">
+  </testcase>
+  <testcase classname="LicensingPage" file="C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\tests\Licensing-Page.testcafe.js" name="Licensing-Page--Mobile (screenshots: C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\screenshots\Licensing-Page--Mobile.png)" time="5.922">
+  </testcase>
+</testsuite>

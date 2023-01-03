@@ -16,7 +16,7 @@ fixture`LicensingPage`.page`${url}${route}`.beforeEach(async t => {
 for (const screenName in screens) {
   const screen = screens[screenName];
   const height = 5000;
-  test(`Licensing-Page--${screenName}`, async (t) => {
+  test.only(`Licensing-Page--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
 
     const TopBar = Selector(".v2-class---licensing-page").filterVisible();
