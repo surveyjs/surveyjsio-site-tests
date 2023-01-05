@@ -5,7 +5,8 @@ fixture`account`
     .page`https://surveyjstest.azurewebsites.net/Account/Login`;
 
 test('Remove the non-commercial usage text', async t => {
-    await t.maximizeWindow();
+    await t.maximizeWindow()
+        .click(getIUnderstandButton());
 
     const email = `surveyjstest@gmail.com`;
     const password = 'Surveyjstest1';
@@ -27,10 +28,7 @@ test('Remove the non-commercial usage text', async t => {
 
     // test
     const removeNonCommercialTab = Selector('h3').withText('Remove the non-commercial usage text');
-    const menuAccountLink = Selector('span').withText('Account');
-    const menuManageLink = Selector('span').withText('Manage');
     await t
-        .hover(menuAccountLink)
-        .click(menuManageLink)
+        .navigateTo('https://surveyjstest.azurewebsites.net/manage')
         .click(removeNonCommercialTab);
 });
