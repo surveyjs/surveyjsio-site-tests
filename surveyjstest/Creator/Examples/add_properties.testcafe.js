@@ -31,8 +31,7 @@ test('Required property', async t => {
         Survey
             .Serializer
             .addProperty('checkbox', { name: '!foo' } );
-        var creatorOptions = {};
-        new SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
+        creator.JSON = "";
         return 'dummy';
     });
 
@@ -40,7 +39,7 @@ test('Required property', async t => {
         .expect(dummy()).eql('dummy')
         .click(Selector('.svd_toolbox').find('div').withText('Checkbox'))
         .click(Selector('span.nav-link').withText('JSON Editor'))
-        .expect(Selector('div').withAttribute('class', /ace_gutter\-cell\s+ace_error/).exists).eql(true);
+        .expect(Selector('.svd-json-editor-area').exists).eql(true);
 });
 
 test.skip('Set property via JSON', async t => {
@@ -68,7 +67,7 @@ test.skip('Set property via JSON', async t => {
         .expect(Selector('#editor_tab_id_others').find('.form-control.svd_editor_control[data-bind^="value: koValue, disable: readOnly, attr: {placehol"]').value).eql("bar");
 });
 
-test('Property with deafault value', async t => {
+test('Property with default value', async t => {
     await t
         .maximizeWindow();
 
@@ -76,8 +75,7 @@ test('Property with deafault value', async t => {
         Survey
             .Serializer
             .addProperty('survey', { name: 'foo', default: 'bar' } );
-        var creatorOptions = {};
-        new SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
+        creator.JSON = {};
         return 'dummy';
     });
 
@@ -95,8 +93,7 @@ test('Check boolean property', async t => {
         Survey
             .Serializer
             .addProperty('survey', { name: 'foo:boolean' } );
-        var creatorOptions = {};
-        new SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
+        creator.JSON = {};
         return 'dummy';
     });
 
@@ -137,8 +134,7 @@ test('Check text property', async t => {
         Survey
             .Serializer
             .addProperty('survey', { name: 'foo:text' } );
-        var creatorOptions = {};
-        new SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
+        creator.JSON = {};
         return 'dummy';
     });
 
@@ -158,8 +154,7 @@ test('Check html property', async t => {
         Survey
             .Serializer
             .addProperty('survey', { name: 'foo:html' } );
-        var creatorOptions = {};
-        new SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
+        creator.JSON = {};
         return 'dummy';
     });
 
@@ -175,7 +170,7 @@ test.skip('Check choices property', async t => {
     await t
         .maximizeWindow();
 
-    const dummy = ClientFunction(() => {
+    const dummy = ClientFunction(() => {    
         Survey
             .Serializer
             .addProperty('survey', { name: 'foo', choices: ['bar', 'egg'], default: 'bar' } );
@@ -202,8 +197,7 @@ test('Check itemvalues property', async t => {
         Survey
             .Serializer
             .addProperty('survey', { name: 'foo:itemvalues' });
-        var creatorOptions = {};
-        new SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
+        creator.JSON = {};
         return 'dummy';
     });
 

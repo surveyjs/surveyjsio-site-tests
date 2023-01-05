@@ -27,7 +27,7 @@ test('Check property names with deutsch', async t => {
     await t
         .maximizeWindow()
 
-        .click(Selector(".svd-designer-tabbed-container__tab-header").withText("EIGENSCHAFTEN")) // properties
+        .click(Selector(".svd-accordion-tab-header").withText("Allgemein"))
         .click(Selector(".svd-accordion-tab-header").withText("Timer"))
         .expect(Selector(".svd-control-label").withText("Modus des Timers").visible).ok()
 
@@ -38,7 +38,9 @@ test('Check property names with deutsch', async t => {
         await t.expect(options.replace(/\n/g, '_')).eql("an_an (unabhängig für jede Seite)_aus");
 });
 
-test('Check custom translation', async t => {
+//You can't recreate the creator, you should do it for the new creator change the locale
+//creator.locale = "fr";
+test.skip('Check custom translation', async t => {
     await t
         .maximizeWindow();
 
