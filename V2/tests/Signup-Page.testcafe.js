@@ -16,7 +16,7 @@ fixture`SignupPage`.page`${url}${route}`.beforeEach(async t => {
 for (const screenName in screens) {
   const screen = screens[screenName];
   const height = 10000;
-  tesе(`Signup-Page--${screenName}`, async (t) => {
+  test(`Signup-Page--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
 
     const TopBar = Selector(".v2-class---signup-page").filterVisible();
