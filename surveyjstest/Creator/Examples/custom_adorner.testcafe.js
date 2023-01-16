@@ -6,13 +6,14 @@ fixture `Custom Adorner`
 test('Adorner exists', async t => {
     await t
         .maximizeWindow()
+        .expect(Selector('span').withText('On new line').visible).ok()
         .click(Selector('span').withText('JSON Editor'))
         .pressKey('ctrl+a')
         .pressKey('delete')
         .click(Selector('span').withText('Designer'))
         .wait(2000)
         .expect(Selector('span').withText('On new line').visible).notOk()
-        .click(Selector('span').withText('Single Input'))
+        .click(Selector('span').withText('Radiogroup'))
         .wait(2000)
         .expect(Selector('span').withText('On new line').visible).ok();
 });

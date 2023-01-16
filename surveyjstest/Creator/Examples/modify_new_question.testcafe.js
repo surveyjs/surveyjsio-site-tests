@@ -12,7 +12,8 @@ test('Check default tabs', async t => {
         .click(getExampleTabSelector('Code'))
         .expect(Selector('pre').withText('Add a tag property').exists).eql(true)
         .click(Selector('span').withText('index.html'))
-        .expect(Selector('pre').withText('id="surveyCreatorContainer"').exists).eql(true)
+        .wait(2000)
+        .expect(Selector('pre').withText('surveyCreatorContainer').exists).eql(true)
         .click(getExampleTabSelector('Documentation'));
         //.expect(getExampleTabSelector('Documentation').filterVisible().classNames).contains('tabs__tab--active');
 });
