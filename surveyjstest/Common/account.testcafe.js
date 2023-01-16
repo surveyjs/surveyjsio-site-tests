@@ -9,7 +9,7 @@ fixture`account`
         } 
     });
 
-test.only('FormElements', async t => {
+test('FormElements', async t => {
     const overrideConsoleErrorAndWarn = ClientFunction(() => {
         console.error = msg => {throw new Error(msg)};
         console.warn = msg => {throw new Error(msg)};
