@@ -1,9 +1,9 @@
 import { Selector } from "testcafe";
 import { url, checkElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll } from "../helper";
 
-const route = "/licensing";
+const route = "/signup";
 
-fixture`LicensingPage`.page`${url}${route}`.beforeEach(async t => {
+fixture`SignupPage`.page`${url}${route}`.beforeEach(async t => {
     await explicitErrorHandler();
     await disableSmoothScroll();
     
@@ -15,11 +15,11 @@ fixture`LicensingPage`.page`${url}${route}`.beforeEach(async t => {
 
 for (const screenName in screens) {
   const screen = screens[screenName];
-  const height = 5000;
-  test(`Licensing-Page--${screenName}`, async (t) => {
+  const height = 10000;
+  test(`Signup-Page--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
 
-    const TopBar = Selector(".v2-class---licensing-page").filterVisible();
-    await checkElementScreenshot(`Licensing-Page--${screenName}.png`, TopBar, t);
+    const TopBar = Selector(".v2-class---signup-page").filterVisible();
+    await checkElementScreenshot(`Signup-Page--${screenName}.png`, TopBar, t);
   });
 }

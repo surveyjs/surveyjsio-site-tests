@@ -2,7 +2,7 @@ import { Selector, ClientFunction } from 'testcafe';
 import { getIUnderstandButton } from '../helpers';
 
 fixture`account`
-    .page`https://surveyjstest.azurewebsites.net/Account/Login`;
+    .page`https://surveyjstest.azurewebsites.net/login`;
 
 test('Remove the non-commercial usage text', async t => {
     await t.maximizeWindow()
@@ -16,9 +16,9 @@ test('Remove the non-commercial usage text', async t => {
     // login
     const emailInput = Selector('#Email');
     const passwordInput = Selector('#Password');
-    const loginButton = Selector("[value='LOG IN']");
-    const acceptTermsCheckboxLogin = Selector('.login-page__login label').withText('I have read, understand and accept the surveyjs.io')
-        .find('.custom-checkbox__checkmark');
+    const loginButton = Selector("main a").withText("Log In");
+    const acceptTermsCheckboxLogin = Selector('label').withText('I have read, understand and accept the surveyjs.io')
+        .find('.v2-class---checkbox__checkmark');
     await t
         .typeText(emailInput, email)
         .typeText(passwordInput, password)

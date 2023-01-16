@@ -13,9 +13,9 @@ test('Pricing buy test', async t => {
     // login
     const emailInput = Selector('#Email');
     const passwordInput = Selector('#Password');
-    const loginButton = Selector("[value='LOG IN']");
-    const acceptTermsCheckboxLogin = Selector('.login-page__login label').withText('I have read, understand and accept the surveyjs.io')
-        .find('.custom-checkbox__checkmark');
+    const loginButton = Selector("main a").withText("Log In");
+    const acceptTermsCheckboxLogin = Selector('label').withText('I have read, understand and accept the surveyjs.io')
+        .find('.v2-class---checkbox__checkmark');
     await t
         .typeText(emailInput, email)
         .typeText(passwordInput, password)
