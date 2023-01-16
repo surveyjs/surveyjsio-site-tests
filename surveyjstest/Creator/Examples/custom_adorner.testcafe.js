@@ -1,7 +1,7 @@
 import { Selector } from 'testcafe';
 
 fixture `Custom Adorner`
-    .page `https://surveyjstest.azurewebsites.net/survey-creator/examples/customadorner/reactjs`;
+    .page `https://surveyjstest.azurewebsites.net/survey-creator/examples/s/create-custom-adorners/reactjs`;
 
 test('Adorner exists', async t => {
     await t
@@ -11,10 +11,10 @@ test('Adorner exists', async t => {
         .pressKey('ctrl+a')
         .pressKey('delete')
         .click(Selector('span').withText('Designer'))
-        .wait(2000)
+        //.wait(2000)
         .expect(Selector('span').withText('On new line').visible).notOk()
-        .click(Selector('span').withText('Radiogroup'))
-        .wait(2000)
+        .click(Selector('span').withText('Single Input'))
+        //.wait(2000)
         .expect(Selector('span').withText('On new line').visible).ok();
 });
 
