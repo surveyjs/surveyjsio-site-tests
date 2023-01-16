@@ -8,11 +8,11 @@ fixture`modify_new_question`
 test('Check default tabs', async t => {
     await t
         .maximizeWindow()
-        .expect(Selector('#creatorElement span.nav-link').withText('Test Survey').textContent).eql("Test Survey")
+        .expect(Selector('span.nav-link').withText('Test Survey').textContent).eql("Test Survey")
         .click(getExampleTabSelector('Code'))
         .expect(Selector('pre').withText('Add a tag property').exists).eql(true)
         .click(Selector('span').withText('index.html'))
-        .expect(Selector('pre').withText('DOCTYPE html').exists).eql(true)
+        .expect(Selector('pre').withText('id="surveyCreatorContainer"').exists).eql(true)
         .click(getExampleTabSelector('Documentation'));
         //.expect(getExampleTabSelector('Documentation').filterVisible().classNames).contains('tabs__tab--active');
 });

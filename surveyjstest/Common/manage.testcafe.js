@@ -28,10 +28,7 @@ test('Remove the non-commercial usage text', async t => {
 
     // test
     const removeNonCommercialTab = Selector('h3').withText('Remove the non-commercial usage text');
-    const menuAccountLink = Selector('span').withText('Account');
-    const menuManageLink = Selector('span').withText('Manage');
     await t
-        .hover(menuAccountLink, {speed: 0.5})
-        .click(menuManageLink)
+        .navigateTo('https://surveyjstest.azurewebsites.net/manage')
         .click(removeNonCommercialTab);
 });

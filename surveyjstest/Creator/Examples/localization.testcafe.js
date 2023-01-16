@@ -16,7 +16,7 @@ test('Check tabs', async t => {
         .expect(Selector('span').withText(' Override individual translations in an existing locale').visible).ok()
         
         .click(Selector('span').withText('index.html'))
-        .expect(Selector('pre').withText('DOCTYPE html').textContent).contains("survey-creator")
+        .expect(Selector('pre').withText('id="surveyCreatorContainer"').textContent).contains("<div")
         
         .click(Selector('a.example-tab').withText('Documentation'))
         .expect(Selector('a').withText('dictionary files').getAttribute('href')).eql("https://github.com/surveyjs/survey-creator/tree/master/packages/survey-creator-core/src/localization")
