@@ -1,6 +1,7 @@
 import { Selector } from 'testcafe';
 
-const domain = 'http://localhost:62946';
+//const domain = 'http://localhost:62946';
+const domain = "https://surveyjstest.azurewebsites.net";
 
 fixture`account`
     .page(domain + '/pricing').beforeEach(async t => {
@@ -37,7 +38,7 @@ test('Full buy cart cycle', async t => {
 
     await t.expect(Selector("input[aria-label='Company VAT Number (EU companies only)']").visible).notOk("no vat", { timeout: 500 });
 
-    await t.typeText(Selector("input[aria-label=Name]"), "Tester Name");
+    await t.typeText(Selector("input[aria-label='Full Name']"), "Tester Name");
     await t.typeText(Selector("input[aria-label=Email]"), "tester@surveyjs.io");
     await t.typeText(Selector("input[aria-label='Country']"), "Argentina");
     await t.pressKey("Enter");

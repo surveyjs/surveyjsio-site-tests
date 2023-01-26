@@ -3,7 +3,8 @@
   "name": "surveyjs.io.tests",
   "scripts": {
     "test:test": "testcafe chrome surveyjstest/Library/Examples/question_types.testcafe.js -t \"signaturepad\" --selector-timeout 1500",
-    "test": "testcafe chrome surveyjstest --selector-timeout 5000",
+    "test": "npm run test:pay && npm run test:all",
+    "test:all": "testcafe chrome surveyjstest --selector-timeout 5000",
     "test:pay": "testcafe -e chrome payment --selector-timeout 5000",
     "test:file": "testcafe chrome surveyjstest/Common/cart.testcafe.js --selector-timeout 1500",
     "test_ci": "testcafe chrome:headless surveyjstest --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000",
