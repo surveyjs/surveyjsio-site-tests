@@ -36,7 +36,7 @@ for (const screenName in screens) {
     await t.navigateTo('/cart');
 
     await t
-          .typeText(Selector("input[aria-label=Name]"), "John", {replace: true})
+          .typeText(Selector("input[aria-label='Full Name']"), "John", {replace: true})
           .pressKey("Enter");
     
     await checkElementScreenshot(`Cart-Page--${screenName}.png`, TopBar, t);
