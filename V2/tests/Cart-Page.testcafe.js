@@ -27,7 +27,7 @@ for (const screenName in screens) {
       const TopBar = Selector(".v2-class---cart-page").filterVisible();
 
       await t.expect(Selector(".v2-class---empty-cart__title").visible).ok();
-      await checkElementScreenshot(`Cart-Page--Empty--${screenName}.png`, TopBar, t);
+      await takeElementScreenshot(`Cart-Page--Empty--${screenName}.png`, TopBar, t, comparer);
       
       await t.navigateTo('/pricing');
       await t.click(Selector('.v2-class---pricing-header--basic a').withText('Buy Now').filterVisible());
@@ -39,18 +39,18 @@ for (const screenName in screens) {
             .typeText(Selector("input[aria-label='Full Name']"), "John", {replace: true})
             .pressKey("Enter");
       
-      await checkElementScreenshot(`Cart-Page--${screenName}.png`, TopBar, t);
+      await takeElementScreenshot(`Cart-Page--${screenName}.png`, TopBar, t, comparer);
 
       await t.click(Selector(".v2-class---editor-dropdown div[aria-label=Qty]").nth(0))
             .expect(Selector(".v2-class---drop-down-menu--editor-quantity").filterVisible().visible).ok();
 
-      await checkElementScreenshot(`Cart-Page--QtyDropdown--${screenName}.png`, TopBar, t);
+      await takeElementScreenshot(`Cart-Page--QtyDropdown--${screenName}.png`, TopBar, t, comparer);
       await t.click(Selector(".sv-popup"), {offsetX: 5, offsetY: 5});
 
       await t
             .click(Selector(".v2-class---text-edit__input div[aria-label=Country]").nth(0))
             .expect(Selector(".v2-class---drop-down-menu--editor").filterVisible().visible).ok();
-      await checkElementScreenshot(`Cart-Page--CountryDropdown--${screenName}.png`, TopBar, t);
+      await takeElementScreenshot(`Cart-Page--CountryDropdown--${screenName}.png`, TopBar, t, comparer);
     });
   });
 }
