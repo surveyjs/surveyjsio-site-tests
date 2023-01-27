@@ -50,15 +50,38 @@ test('Full buy cart cycle', async t => {
     
 
     await t.click(Selector("button").withText("Proceed to Checkout"));
-    const iframeSelector = Selector('#sjs-pyapal-payment iframe', { timeout: 30000 });
-    await t.switchToIframe(iframeSelector);
-    await t.click(Selector("div.paypal-button[aria-label='PayPal']"), {timeout: 30000});
+    const iframeSelector = Selector('#sjs-pyapal-payment iframe');
+    await t.switchToIframe(iframeSelector, { timeout: 30000 });
+    // await t.click(Selector("div.paypal-button[aria-label='PayPal']"), {timeout: 30000});
 
-    await t.click(Selector("button").withText("Log In"));
-    await t.typeText(Selector("#email"), "buyer@surveyjs.io");
-    await t.click(Selector("button").withText("Next"));
-    await t.typeText(Selector("#password"), "buyer@surveyjs.io");
-    await t.click(Selector("button").withText("Log In"));
-    await t.click(Selector("button").withText("Complete Purchase"));
+    // await t.click(Selector("button").withText("Log In"));
+    // await t.typeText(Selector("#email"), "buyer@surveyjs.io");
+    // await t.click(Selector("button").withText("Next"));
+    // await t.typeText(Selector("#password"), "buyer@surveyjs.io");
+    // await t.click(Selector("button").withText("Log In"));
+    // await t.click(Selector("button").withText("Complete Purchase"));
+
+    await t.click(Selector("div.paypal-button[aria-label='Debit or Credit Card']"), {timeout: 30000});
+    const iframeSelectorCard = Selector('#card-fields-container iframe');
+    await t.expect(iframeSelectorCard.exists, { timeout: 30000 }).ok();
+    await t.switchToIframe(iframeSelectorCard);
+
+    await t.typeText(Selector("input[name=cardnumber]"), "4005519200000004");
+    await t.typeText(Selector("input[name='expiry-date']"), "0125");
+    await t.typeText(Selector("input[name='credit-card-security']"), "123");
+
+    await t.typeText(Selector("input[name=givenName]"), "Tester");
+    await t.typeText(Selector("input[name=familyName]"), "Name");
+    await t.typeText(Selector("input[name=line1]"), "Test address");
+    await t.typeText(Selector("input[name=city]"), "Test city");
+    await t.click(Selector("select[name=state]"));
+    await t.click(Selector("select[name=state] option").withText('Alabama'));
+    await t.typeText(Selector("input[name=postcode]"), "35004");
+    await t.typeText(Selector("input[name=phone]"), "5555555555");
+    await t.typeText(Selector("input[name=email]"), "tester@surveyjs.io");
+
+    await t.click(Selector("button").withText("Pay Now"));
+    await t.switchToMainWindow();
+
     await t.expect(Selector("body").innerText).eql("OK", "ok", {timeout: 30000});
 });
