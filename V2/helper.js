@@ -61,6 +61,16 @@ export const screens = {
   "Mobile": { width: 375, height: 667 }
 };
 
+export async function wrapVisualTest(t, fn) {
+  const comparer = createScreenshotsComparer(t);
+
+  await fn(t, comparer);
+
+  await t
+    .expect(comparer.compareResults.isValid())
+    .ok(comparer.compareResults.errorMessages());
+}
+
 export const explicitErrorHandler = ClientFunction(() => {
   window.addEventListener("error", e => {
     if (e.message === "ResizeObserver loop completed with undelivered notifications." ||
