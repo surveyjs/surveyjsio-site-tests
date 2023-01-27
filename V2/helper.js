@@ -70,6 +70,12 @@ export async function wrapVisualTest(t, fn) {
     .expect(comparer.compareResults.isValid())
     .ok(comparer.compareResults.errorMessages());
 }
+export async function takeElementScreenshot(screenshotName, element, t, comparer) {
+  await t
+    .wait(1000)
+    .expect(element.visible).ok("element is invisible for " + screenshotName);
+  await comparer.takeScreenshot(screenshotName, element, screenshotComparerOptions);
+}
 
 export const explicitErrorHandler = ClientFunction(() => {
   window.addEventListener("error", e => {

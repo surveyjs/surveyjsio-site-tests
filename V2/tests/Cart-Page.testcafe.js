@@ -1,5 +1,5 @@
 import { Selector } from "testcafe";
-import { url, checkElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll, wrapVisualTest } from "../helper";
+import { url, takeElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll, wrapVisualTest } from "../helper";
 
 const route = "/cart";
 
