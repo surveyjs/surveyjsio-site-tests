@@ -8,6 +8,6 @@ test('Show default tabs', async t => {
         .maximizeWindow()
         .expect(Selector('.panel.card.svd_content.svd-dark-bg-color').exists).eql(true)
         .expect(Selector('span.nav-link').withText('Survey Designer').innerText).eql('Survey Designer')
-        .expect(Selector('#creatorElement span.nav-link').withText('Test Survey').innerText).eql('Test Survey')
-        .expect(Selector('span.nav-link').withText('JSON Editor').innerText).eql('JSON Editor');
+        .expect(Selector('span.nav-link').withText('Test Survey').exists).eql(true)
+        .expect(Selector('span.nav-link').withText('Survey Logic').exists).eql(true);
 });
