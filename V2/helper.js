@@ -61,6 +61,22 @@ export const screens = {
   "Mobile": { width: 375, height: 667 }
 };
 
+export async function wrapVisualTest(t, fn) {
+  const comparer = createScreenshotsComparer(t);
+
+  await fn(t, comparer);
+
+  await t
+    .expect(comparer.compareResults.isValid())
+    .ok(comparer.compareResults.errorMessages());
+}
+export async function takeElementScreenshot(screenshotName, element, t, comparer) {
+  await t
+    .wait(1000)
+    .expect(element.visible).ok("element is invisible for " + screenshotName);
+  await comparer.takeScreenshot(screenshotName, element, screenshotComparerOptions);
+}
+
 export const explicitErrorHandler = ClientFunction(() => {
   window.addEventListener("error", e => {
     if (e.message === "ResizeObserver loop completed with undelivered notifications." ||
