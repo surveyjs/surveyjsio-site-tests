@@ -30,13 +30,13 @@ for (const screenName in screens) {
       await takeElementScreenshot(`Cart-Page--Empty--${screenName}.png`, TopBar, t, comparer);
       
       await t.navigateTo('/pricing');
-      await t.click(Selector('.v2-class---pricing-header--basic a').withText('Buy Now').filterVisible());
+      await t.click(Selector('.v2-class---pricing-header--basic a', {timeout: 5000}).withText('Buy Now').filterVisible());
       await t.navigateTo('/pricing');
-      await t.click(Selector('.v2-class---pricing-header--pro a').withText('Buy Now').filterVisible());
+      await t.click(Selector('.v2-class---pricing-header--pro a', {timeout: 5000}).withText('Buy Now').filterVisible());
       await t.navigateTo('/cart');
 
       await t
-            .typeText(Selector("input[aria-label='Full Name']"), "John", {replace: true})
+            .typeText(Selector("input[aria-label='Full Name']", {timeout: 5000}), "John", {replace: true})
             .pressKey("Enter");
       
       await takeElementScreenshot(`Cart-Page--${screenName}.png`, TopBar, t, comparer);
