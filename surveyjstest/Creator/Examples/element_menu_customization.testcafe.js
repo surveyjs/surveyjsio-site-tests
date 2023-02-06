@@ -9,7 +9,7 @@ test("Check default tabs", async (t) => {
     .expect(Selector("span.nav-link").withText("Survey Designer").textContent)
     .eql("Survey Designer")
     .expect(
-      Selector("#creatorElement span.nav-link").withText("Test Survey")
+      Selector("span.nav-link").withText("Test Survey")
         .textContent
     )
     .eql("Test Survey")
@@ -17,7 +17,7 @@ test("Check default tabs", async (t) => {
     .click(Selector(".tabs a").withExactText("Code"))
     .expect(Selector("span").withText("SurveyCreator").visible).ok()
     .click(Selector('span').withText('index.html'))
-    .expect(Selector("span").withText("<!doctype html>").visible).ok()
+    .expect(Selector("span").withText("<div id=\"surveyCreatorContainer").visible).ok()
     .click(Selector('span').withText('index.css'))
     .expect(Selector(".source-code.language-css").visible).ok()
 });
