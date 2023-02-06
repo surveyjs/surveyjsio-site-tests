@@ -90,3 +90,34 @@ export const disableSmoothScroll = ClientFunction(() => {
   document.querySelector("html").style.scrollBehavior = "initial";
 });
 
+export async function signupWithNewUser(t, Selector) {
+  await t.navigateTo('/signup');
+
+  const randomNumber1 = Math.round(Math.random() * 100);
+  const randomNumber2 = Math.round(Math.random() * 100);
+  const email = `${randomNumber1}test${randomNumber2}@tester.org`;
+  const password = 'Test71';
+  const displayName = 'Test71 Name';
+
+  const registerButton = Selector("a.v2-class---button").withText("Create Account");
+  const acceptTermsCheckbox = Selector('label').withText('I have read, understand and accept the surveyjs.io')
+      .find('.v2-class---checkbox__checkmark');
+  const menuAccountLink = Selector('span').withText('Account');
+
+  //#region register user
+  const displayNameInput = Selector("[name='DisplayName']");
+  const registerEmailInput = Selector("[name='RegisterEmail']");
+  const registerPasswordInput = Selector("[name='RegisterPassword']");
+  const confirmPassword = Selector("[name='ConfirmPassword']");
+
+  await t
+      .typeText(displayNameInput, displayName)
+      .typeText(registerEmailInput, email)
+      .typeText(registerPasswordInput, password)
+      .typeText(confirmPassword, password)
+      .click(acceptTermsCheckbox)
+      .click(registerButton);
+
+  await t.expect(menuAccountLink.visible).ok('Logged in and see Account');
+  //#endregion register user
+}
