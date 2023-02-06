@@ -17,7 +17,7 @@ fixture`CartPage`.page`${url}${route}`.beforeEach(async t => {
 for (const screenName in screens) {
   const screen = screens[screenName];
   const height = 10000;
-  test.only(`Cart-Page--${screenName}`, async (t) => {
+  test(`Cart-Page--${screenName}`, async (t) => {
     await t.expect(true).ok();
     await wrapVisualTest(t, async (t, comparer) => {
       await t.resizeWindow(screen.width, height);
