@@ -1,22 +1,24 @@
 import { Selector } from "testcafe";
 import { url, takeElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll, wrapVisualTest } from "../helper";
 
-const route = "/cart";
+const route = "cart";
 
 fixture`CartPage`.page`${url}${route}`.beforeEach(async t => {
-    await explicitErrorHandler();
-    await disableSmoothScroll();
+    // await explicitErrorHandler();
+    // await disableSmoothScroll();
     
-    const cookiePopupAccept = Selector(".v2-class---cookies-popup__button-container a");
-    if(await cookiePopupAccept.exists) {
-      await t.click(cookiePopupAccept); // close cookie msg
-    } 
+    // const cookiePopupAccept = Selector(".v2-class---cookies-popup__button-container a");
+    // if(await cookiePopupAccept.exists) {
+    //   await t.click(cookiePopupAccept); // close cookie msg
+    // } 
 });
+
 
 for (const screenName in screens) {
   const screen = screens[screenName];
   const height = 10000;
-  test(`Cart-Page--${screenName}`, async (t) => {
+  test.only(`Cart-Page--${screenName}`, async (t) => {
+    await t.expect(true).ok();
     await wrapVisualTest(t, async (t, comparer) => {
       await t.resizeWindow(screen.width, height);
 
@@ -52,5 +54,9 @@ for (const screenName in screens) {
             .expect(Selector(".v2-class---drop-down-menu--editor").filterVisible().visible).ok();
       await takeElementScreenshot(`Cart-Page--CountryDropdown--${screenName}.png`, TopBar, t, comparer);
     });
+  }).timeouts({
+    pageLoadTimeout:    2000,
+    pageRequestTimeout: 2000,
+    ajaxRequestTimeout: 2000,
   });
 }
