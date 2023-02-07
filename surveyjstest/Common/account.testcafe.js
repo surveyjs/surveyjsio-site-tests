@@ -59,7 +59,6 @@ test('RegisterRemove', async t => {
     const menuLogInLink = Selector('a').withText('Sign Up');
     const invalidLoginAttemptMessage = Selector('li').withText('Invalid login attempt.');
 
-
     //#region invalid login attempt
     await t
         .typeText(emailInput, email)
@@ -112,13 +111,18 @@ test('RegisterRemove', async t => {
     //#region remove user
     const removeAccountTab = Selector('h3').withText('Delete your Account');
     const menuManageLink = Selector('span').withText('Manage');
-    const deleteAccountEmailInput = Selector('[placeholder="Enter your email address to confirm"]');
-    const deleteUserButton = Selector('[value="Delete Account"]');
+    const deleteAccountEmailInput = Selector('input[placeholder="Email"]');
+    const deleteUserButton = Selector('.v2-class---button').withText('Confirm');;
+
+    const goToDeletePageButton = Selector('.v2-class---button').withText('Delete');
 
     await t
         .hover(menuAccountLink)
-        .click(menuManageLink)
-        .click(removeAccountTab)
+        .click(menuManageLink);
+
+    await t.click(goToDeletePageButton);
+
+       await t
         .typeText(deleteAccountEmailInput, email)
         .setNativeDialogHandler((dialogType, message, url) => {
             if (dialogType === 'confirm')

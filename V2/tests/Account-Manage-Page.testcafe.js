@@ -1,5 +1,5 @@
 import { Selector } from "testcafe";
-import { url, checkElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll, signupWithNewUser } from "../helper";
+import { url, checkElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll } from "../helper";
 
 fixture`AccountManagePage`.page`${url}`.beforeEach(async t => {
     await explicitErrorHandler();
@@ -15,10 +15,25 @@ for (const screenName in screens) {
   const screen = screens[screenName];
   const height = 10000;
 
-  test.only(`Account-Manage-Page--${screenName}`, async (t) => {
+  test(`Account-Manage-Page--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
 
-    await signupWithNewUser(t, Selector);
+    const email = `surveyjstest@gmail.com`;
+    const password = 'Surveyjstest1';
+
+    // login
+    await t.navigateTo('/login');
+    const emailInput = Selector('#Email');
+    const passwordInput = Selector('#Password');
+    const loginButton = Selector("main a").withText("Log In");
+    const acceptTermsCheckboxLogin = Selector('label').withText('I have read, understand and accept the surveyjs.io')
+        .find('.v2-class---checkbox__checkmark');
+    await t
+        .typeText(emailInput, email)
+        .typeText(passwordInput, password)
+        .click(acceptTermsCheckboxLogin)
+        .click(loginButton);
+    //
 
     await t.navigateTo('/manage');
     const Page = Selector(".v2-class---account-page").filterVisible();
