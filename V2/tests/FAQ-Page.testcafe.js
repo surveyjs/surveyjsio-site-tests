@@ -19,7 +19,7 @@ for (const screenName in screens) {
   test(`FAQ-Page--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
 
-    const TopBar = Selector(".v2-class---faq-page").filterVisible();
-    await checkElementScreenshot(`FAQ-Page--${screenName}.png`, TopBar, t);
+    const Page = Selector(".v2-class---faq-page").filterVisible();
+    await checkElementScreenshot(`FAQ-Page--${screenName}.png`, Page, t);
   });
 }

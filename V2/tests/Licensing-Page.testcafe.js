@@ -19,7 +19,7 @@ for (const screenName in screens) {
   test(`Licensing-Page--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
 
-    const TopBar = Selector(".v2-class---licensing-page").filterVisible();
-    await checkElementScreenshot(`Licensing-Page--${screenName}.png`, TopBar, t);
+    const Page = Selector(".v2-class---licensing-page").filterVisible();
+    await checkElementScreenshot(`Licensing-Page--${screenName}.png`, Page, t);
   });
 }

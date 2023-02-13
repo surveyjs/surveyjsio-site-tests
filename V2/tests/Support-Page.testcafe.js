@@ -19,7 +19,7 @@ for (const screenName in screens) {
   test(`Support-Page--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
 
-    const TopBar = Selector(".v2-class---support-page").filterVisible();
-    await checkElementScreenshot(`Support-Page--${screenName}.png`, TopBar, t);
+    const Page = Selector(".v2-class---support-page").filterVisible();
+    await checkElementScreenshot(`Support-Page--${screenName}.png`, Page, t);
   });
 }

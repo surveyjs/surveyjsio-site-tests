@@ -89,4 +89,3 @@ export const explicitErrorHandler = ClientFunction(() => {
 export const disableSmoothScroll = ClientFunction(() => {
   document.querySelector("html").style.scrollBehavior = "initial";
 });
-

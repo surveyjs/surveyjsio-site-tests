@@ -11,8 +11,6 @@ test('Remove the non-commercial usage text', async t => {
     const email = `surveyjstest@gmail.com`;
     const password = 'Surveyjstest1';
 
-
-
     // login
     const emailInput = Selector('#Email');
     const passwordInput = Selector('#Password');
@@ -27,7 +25,7 @@ test('Remove the non-commercial usage text', async t => {
 
 
     // test
-    const removeNonCommercialTab = Selector('h3').withText('Remove the non-commercial usage text');
+    const removeNonCommercialTab = Selector('.v2-class---paragraph-link').withText('instructions');
     await t
         .navigateTo('https://surveyjstest.azurewebsites.net/manage')
         .click(removeNonCommercialTab);
