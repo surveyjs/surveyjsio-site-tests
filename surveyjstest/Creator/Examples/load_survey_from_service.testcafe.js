@@ -7,5 +7,5 @@ test('Load survey from service', async t => {
     await t
         .maximizeWindow()
         .click(Selector('span.nav-link').withText('JSON Editor'))
-        .expect(Selector('.svd-json-editor').find('.ace_content').textContent).match(/frameworkUsing.*\s*.*mvvmUsing/);
+        .expect(Selector('.svd-json-editor-area').value).contains('frameworkUsing');
 });

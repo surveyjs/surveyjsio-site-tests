@@ -14,9 +14,9 @@ test('title_adorners', async t => {
         .expect(Selector('span').withText('Input survey title here').nth(2).visible).eql(true)
         .expect(Selector('span').withText('Enter a survey description').nth(2).visible).eql(true)
         .expect(Selector('span').withText('Add logo...').nth(2).visible).eql(true)
-        .click('#cb_allowShowEmptyTitle')
+        .click(Selector('span').withText('Allow show page empty title'))
         .expect(Selector('span').withText('Input page title here').exists).eql(false)
         .expect(Selector('span').withText('Enter a page description').exists).eql(false)
-        .click('#cb_allowControlSurveyTitleVisibility')
+        .click(Selector('span').withText('Allow user to change survey title visibility'))
         .expect(Selector('.svd-primary-icon.svda-title-action__show-hide[data-bind=\"css: $parent.getStyle($data)\"]').find('svg').exists).eql(false);
 });
