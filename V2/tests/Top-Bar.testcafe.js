@@ -102,7 +102,7 @@ test("Mobile Menu", async (t) => {
   await t.resizeWindow(srceen.width, height);
   await t.click(TopBarMenuItemMenu);
   await checkElementScreenshot(`TopBar--MobileMenu.png`, MobileMenuOpened, t);
-  const closeButton = Selector(".v2-class---mobile-menu--opened .v2-class---drop-down-menu__group-header--mobile");
+  const closeButton = Selector(".v2-class---mobile-menu--opened .v2-class---drop-down-menu__group-header--mobile").filterVisible();
   await t.click(closeButton);
   await await t.expect(MobileMenu.visible).notOk("Mobile Menu closed by cross icon");
 });
