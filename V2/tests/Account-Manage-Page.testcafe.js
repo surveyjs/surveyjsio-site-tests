@@ -23,6 +23,7 @@ for (const screenName in screens) {
 
     // login
     await t.navigateTo('/login');
+    await explicitErrorHandler();
     const emailInput = Selector('#Email');
     const passwordInput = Selector('#Password');
     const loginButton = Selector("main a").withText("Log In");
@@ -36,6 +37,7 @@ for (const screenName in screens) {
     //
 
     await t.navigateTo('/manage');
+    await explicitErrorHandler();
     const Page = Selector(".v2-class---account-page").filterVisible();
     await checkElementScreenshot(`Account-Manage-Page--${screenName}.png`, Page, t);
   });
