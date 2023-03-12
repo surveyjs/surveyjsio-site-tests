@@ -16,7 +16,7 @@ fixture`SurveyCreatorPage`.page`${url}${route}`.beforeEach(async t => {
 for (const screenName in screens) {
   const screen = screens[screenName];
   const height = 10000;
-  test.only(`Survey-Creator-Page--${screenName}`, async (t) => {
+  test(`Survey-Creator-Page--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
     const Page = Selector(".v2-class---survey-creator-page").filterVisible();
     await checkElementScreenshot(`Survey-Creator-Page--${screenName}.png`, Page, t);
