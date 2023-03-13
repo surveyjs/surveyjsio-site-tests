@@ -5,7 +5,7 @@ const domain = "https://surveyjstest.azurewebsites.net";
 
 fixture`account`
     .page(domain + '/pricing').beforeEach(async t => {
-        const cookiePopupAccept = Selector(".v2-class---cookies-popup__button-container a");
+        const cookiePopupAccept = Selector(".v2-class---popup__button-container a");
         if(await cookiePopupAccept.exists) {
             await t.click(cookiePopupAccept); // close cookie msg
         } 

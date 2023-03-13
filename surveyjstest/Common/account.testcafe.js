@@ -3,7 +3,7 @@ import { getIUnderstandButton } from '../helpers';
 
 fixture`account`
     .page`https://surveyjstest.azurewebsites.net/login`.beforeEach(async t => {
-        const cookiePopupAccept = Selector(".v2-class---cookies-popup__button-container a");
+        const cookiePopupAccept = Selector(".v2-class---popup__button-container a");
         if(await cookiePopupAccept.exists) {
             await t.click(cookiePopupAccept); // close cookie msg
         } 

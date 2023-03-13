@@ -7,7 +7,7 @@ fixture`FormLibraryPage`.page`${url}${route}`.beforeEach(async t => {
     await explicitErrorHandler();
     await disableSmoothScroll();
     
-    const cookiePopupAccept = Selector(".v2-class---cookies-popup__button-container a");
+    const cookiePopupAccept = Selector(".v2-class---popup__button-container a");
     if(await cookiePopupAccept.exists) {
       await t.click(cookiePopupAccept); // close cookie msg
     } 

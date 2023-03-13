@@ -4,7 +4,7 @@ import { explicitErrorHandler, getSideBarGroupItem, getSideBarItem } from '../..
 fixture `question_types`.page `https://surveyjstest.azurewebsites.net/Examples/Library`.clientScripts({
     content: `(${explicitErrorHandler.toString()})()`
 }).beforeEach(async t => {
-    const cookiePopupAccept = Selector(".v2-class---cookies-popup__button-container a");
+    const cookiePopupAccept = Selector(".v2-class---popup__button-container a");
     if(await cookiePopupAccept.exists) {
         await t.click(cookiePopupAccept); // close cookie msg
     } 
