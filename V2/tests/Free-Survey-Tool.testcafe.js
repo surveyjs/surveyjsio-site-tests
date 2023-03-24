@@ -16,7 +16,7 @@ fixture`FreeSurveyToolPage`.page`${url}${route}`.beforeEach(async t => {
 for (const screenName in screens) {
   const screen = screens[screenName];
   const height = 10000;
-  test.only(`Free-Survey-Tool-Page--${screenName}`, async (t) => {
+  test(`Free-Survey-Tool-Page--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
     const Page = Selector(".v2-class---free-survey-tool-page").filterVisible();
     await checkElementScreenshot(`Free-Survey-Tool-Page--${screenName}.png`, Page, t);
