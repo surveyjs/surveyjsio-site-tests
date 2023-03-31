@@ -14,7 +14,7 @@ fixture`CartPage`.page`${url}${route}`.beforeEach(async t => {
 });
 
 
- test.only("Cart-Page", async (t) => {
+ test("Cart-Page", async (t) => {
     const height = 10000;
     await t.expect(true).ok().debug();
     const Page = Selector(".v2-class---cart-page").filterVisible();
