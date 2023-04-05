@@ -72,7 +72,6 @@ export async function wrapVisualTest(t, fn) {
 }
 export async function takeElementScreenshot(screenshotName, element, t, comparer) {
   await t
-    .wait(1000)
     .expect(element.visible).ok("element is invisible for " + screenshotName);
   await comparer.takeScreenshot(screenshotName, element, screenshotComparerOptions);
 }
