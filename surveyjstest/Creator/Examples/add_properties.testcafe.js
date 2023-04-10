@@ -39,7 +39,9 @@ test('Required property', async t => {
         .expect(dummy()).eql('dummy')
         .click(Selector('.svd_toolbox').find('div').withText('Checkbox'))
         .click(Selector('span.nav-link').withText('JSON Editor'))
-        .expect(Selector('.svd-json-editor-area').exists).eql(true);
+        //.expect(Selector('.svd-json-editor-area').exists).eql(true); // if ACE not loaded
+        .expect(Selector('div').withAttribute('class', /ace_gutter\-cell\s+ace_error/).exists).eql(true); // if ACE loaded
+
 });
 
 test.skip('Set property via JSON', async t => {

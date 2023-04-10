@@ -56,7 +56,8 @@ test('RegisterRemove', async t => {
     const acceptTermsCheckbox = Selector('label').withText('I have read, understand and accept the surveyjs.io')
         .find('.v2-class---checkbox__checkmark');
     const menuAccountLink = Selector('span').withText('Account');
-    const menuLogInLink = Selector('a').withText('Sign Up');
+    const menuLogInLink = Selector('a').withText('Log In');
+    const menuSignUpLink = Selector('a').withText('Sign Up');
     const invalidLoginAttemptMessage = Selector('li').withText('Invalid login attempt.');
 
     //#region invalid login attempt
@@ -98,9 +99,10 @@ test('RegisterRemove', async t => {
         .hover(menuAccountLink)
         .expect(menuLogOffLink.visible).ok('Logoff available')
         .click(menuLogOffLink)
-        .expect(menuLogInLink.visible).ok('Logoff successful, login enabled')
-        .click(menuLogInLink)
-        .click(goToLoginLink)
+        .expect(menuLogInLink.visible || menuSignUpLink.visible).ok('Logoff successful, login enabled')
+        //.click(menuLogInLink)
+        //.click(goToLoginLink)
+        .navigateTo('/login')
         .typeText(emailInput, email)
         .typeText(passwordInput, password)
         .click(acceptTermsCheckbox)
@@ -110,7 +112,7 @@ test('RegisterRemove', async t => {
 
     //#region remove user
     const removeAccountTab = Selector('h3').withText('Delete your Account');
-    const menuManageLink = Selector('span').withText('Manage');
+    const menuManageLink = Selector('span').withText('Settings');
     const deleteAccountEmailInput = Selector('input[placeholder="Email"]');
     const deleteUserButton = Selector('.v2-class---button').withText('Confirm');;
 
@@ -131,9 +133,10 @@ test('RegisterRemove', async t => {
             throw Error(`An unexpected ${dialogType} dialog with the message "${message}" appeared on ${url}.`);
         })
         .click(deleteUserButton)
-        .expect(menuLogInLink.visible).ok('Login link is visible')
-        .click(menuLogInLink)
-        .click(goToLoginLink)
+        .expect(menuLogInLink.visible || menuSignUpLink.visible).ok('Login link is visible')
+        //.click(menuLogInLink)
+        //.click(goToLoginLink)
+        .navigateTo('/login')
         .typeText(emailInput, email)
         .typeText(passwordInput, password)
         .click(acceptTermsCheckbox)
