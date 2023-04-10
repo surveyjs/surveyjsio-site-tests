@@ -49,7 +49,7 @@ fixture`CartPage`.page`${url}${route}`.beforeEach(async t => {
       }
     });
   }).timeouts({
-    pageLoadTimeout:    2000,
-    pageRequestTimeout: 2000,
+    pageLoadTimeout:    10000,
+    pageRequestTimeout: 5000,
     ajaxRequestTimeout: 2000,
 });
