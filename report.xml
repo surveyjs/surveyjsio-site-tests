@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite name="TestCafe Tests: Chrome 111.0.5563.110 / Windows 10" tests="5" failures="0" skipped="0" errors="0" time="42.416" timestamp="Thu, 23 Mar 2023 17:01:53 GMT" >
-  <testcase classname="FreeSurveyToolPage" name="Free-Survey-Tool-Page--Large-Desktop (screenshots: C:\Projects\surveyjs\surveyjsio-site-tests\V2\screenshots\Free-Survey-Tool-Page--Large-Desktop.png)" time="11.766">
+<testsuite name="TestCafe Tests: Chrome 111.0.5563.147 / Windows 10" tests="5" failures="0" skipped="0" errors="0" time="52.007" timestamp="Tue, 11 Apr 2023 11:16:06 GMT" >
+  <testcase classname="SurveyCreatorPage" file="C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\tests\Survey-Creator-Page.testcafe.js" name="Survey-Creator-Page--Large-Desktop (screenshots: C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\screenshots\Survey-Creator-Page--Large-Desktop.png)" time="16.875">
   </testcase>
-  <testcase classname="FreeSurveyToolPage" name="Free-Survey-Tool-Page--Desktop (screenshots: C:\Projects\surveyjs\surveyjsio-site-tests\V2\screenshots\Free-Survey-Tool-Page--Desktop.png)" time="8.154">
+  <testcase classname="SurveyCreatorPage" file="C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\tests\Survey-Creator-Page.testcafe.js" name="Survey-Creator-Page--Desktop (screenshots: C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\screenshots\Survey-Creator-Page--Desktop.png)" time="11.491">
   </testcase>
-  <testcase classname="FreeSurveyToolPage" name="Free-Survey-Tool-Page--Tablet (screenshots: C:\Projects\surveyjs\surveyjsio-site-tests\V2\screenshots\Free-Survey-Tool-Page--Tablet.png)" time="8.673">
+  <testcase classname="SurveyCreatorPage" file="C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\tests\Survey-Creator-Page.testcafe.js" name="Survey-Creator-Page--Tablet (screenshots: C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\screenshots\Survey-Creator-Page--Tablet.png)" time="8.727">
   </testcase>
-  <testcase classname="FreeSurveyToolPage" name="Free-Survey-Tool-Page--Vertical-Tablet (screenshots: C:\Projects\surveyjs\surveyjsio-site-tests\V2\screenshots\Free-Survey-Tool-Page--Vertical-Tablet.png)" time="7.178">
+  <testcase classname="SurveyCreatorPage" file="C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\tests\Survey-Creator-Page.testcafe.js" name="Survey-Creator-Page--Vertical-Tablet (screenshots: C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\screenshots\Survey-Creator-Page--Vertical-Tablet.png)" time="7.915">
   </testcase>
-  <testcase classname="FreeSurveyToolPage" name="Free-Survey-Tool-Page--Mobile (screenshots: C:\Projects\surveyjs\surveyjsio-site-tests\V2\screenshots\Free-Survey-Tool-Page--Mobile.png)" time="6.604">
+  <testcase classname="SurveyCreatorPage" file="C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\tests\Survey-Creator-Page.testcafe.js" name="Survey-Creator-Page--Mobile (screenshots: C:\Users\kurmanov.dmitry\Documents\projects\surveyjsio-site-tests\V2\screenshots\Survey-Creator-Page--Mobile.png)" time="6.961">
   </testcase>
 </testsuite>
