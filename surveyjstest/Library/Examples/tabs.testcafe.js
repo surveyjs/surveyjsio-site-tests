@@ -13,7 +13,7 @@ test('Click example tabs', async t => {
         .expect(Selector('.tabs__tab.example-tab.tabs__tab--active').classNames).contains('tabs__tab--active');
 });
 
-test.skip('Click survey result tabs', async t => {
+test('Click survey result tabs', async t => {
     await t
         .maximizeWindow()
         .click(getIUnderstandButton())
