@@ -24,28 +24,36 @@ test('PayPal', async ({ page }) => {
 
   await page.getByRole('button', { name: 'Proceed to Checkout' }).click();
 
-  const frameLocator0 = await page.frameLocator("#sjs-pyapal-payment iframe").nth(0);
+  await page.waitForTimeout(10000); 
+  const frameLocator0 = await page.frameLocator("#sjs-pyapal-payment iframe").first();
 
-  frameLocator0.getByLabel('Card number').click();
-  frameLocator0.getByLabel('Card number').fill('4005519200000004');
+  const link = await frameLocator0.getByText('Debit or Credit Card');
 
-  frameLocator0.getByLabel('Expires').click();
-  frameLocator0.getByPlaceholder('MM/YY').fill('01 / 25');
+  await link.click();
 
-  frameLocator0.getByLabel('CSC').click();
-  frameLocator0.getByPlaceholder('CSC').fill('123');
+  await page.waitForTimeout(10000); 
+  const frameLocatorNested = await frameLocator0.frameLocator("[title='paypal_card_form']").first();
+
+  await frameLocatorNested.getByLabel('Card number').click();
+  await frameLocatorNested.getByLabel('Card number').fill('4005519200000004');
+
+  await frameLocator0.getByLabel('Expires').click();
+  await frameLocator0.getByPlaceholder('MM/YY').fill('01 / 25');
+
+  await frameLocator0.getByLabel('CSC').click();
+  await frameLocator0.getByPlaceholder('CSC').fill('123');
   
-  frameLocator0.locator('input[name="givenName"]').click();
-  frameLocator0.locator('input[name="givenName"]').fill("Tester");
+  await frameLocator0.locator('input[name="givenName"]').click();
+  await frameLocator0.locator('input[name="givenName"]').fill("Tester");
 
-  frameLocator0.locator('input[name="familyName"]').click();
-  frameLocator0.locator('input[name="familyName"]').fill("Name");
+  await frameLocator0.locator('input[name="familyName"]').click();
+  await frameLocator0.locator('input[name="familyName"]').fill("Name");
 
-  frameLocator0.locator('input[name="line1"]').click();
-  frameLocator0.locator('input[name="line1"]').fill("Test address");
+  await frameLocator0.locator('input[name="line1"]').click();
+  await frameLocator0.locator('input[name="line1"]').fill("Test address");
   
-  frameLocator0.locator('input[name="city"]').click();
-  frameLocator0.locator('input[name="city"]').fill("Test city");
+  await frameLocator0.locator('input[name="city"]').click();
+  await frameLocator0.locator('input[name="city"]').fill("Test city");
 
   frameLocator0.locator('select[name="state"]').selectOption('AL');
 
