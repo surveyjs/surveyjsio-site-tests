@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 
 test('PayPal', async ({ page }) => {
+  test.setTimeout(120000);
+  
   await page.goto('https://surveyjstest.azurewebsites.net/pricing');
   await page.locator('a').filter({ hasText: 'I Understand' }).click();
   await page.locator('div:nth-child(4) > .v2-class---pricing-header__content > div:nth-child(2) > .v2-class---button').first().click();
@@ -37,37 +39,42 @@ test('PayPal', async ({ page }) => {
   await frameLocatorNested.getByLabel('Card number').click();
   await frameLocatorNested.getByLabel('Card number').fill('4005519200000004');
 
-  await frameLocator0.getByLabel('Expires').click();
-  await frameLocator0.getByPlaceholder('MM/YY').fill('01 / 25');
+  await frameLocatorNested.getByLabel('Expires').click();
+  await frameLocatorNested.getByPlaceholder('MM/YY').fill('01 / 25');
 
-  await frameLocator0.getByLabel('CSC').click();
-  await frameLocator0.getByPlaceholder('CSC').fill('123');
+  await frameLocatorNested.getByLabel('CSC').click();
+  await frameLocatorNested.getByPlaceholder('CSC').fill('123');
   
-  await frameLocator0.locator('input[name="givenName"]').click();
-  await frameLocator0.locator('input[name="givenName"]').fill("Tester");
+  await frameLocatorNested.locator('input[name="givenName"]').click();
+  await frameLocatorNested.locator('input[name="givenName"]').fill("Tester");
 
-  await frameLocator0.locator('input[name="familyName"]').click();
-  await frameLocator0.locator('input[name="familyName"]').fill("Name");
+  await frameLocatorNested.locator('input[name="familyName"]').click();
+  await frameLocatorNested.locator('input[name="familyName"]').fill("Name");
 
-  await frameLocator0.locator('input[name="line1"]').click();
-  await frameLocator0.locator('input[name="line1"]').fill("Test address");
+  await frameLocatorNested.locator('input[name="line1"]').click();
+  await frameLocatorNested.locator('input[name="line1"]').fill("Test address");
   
-  await frameLocator0.locator('input[name="city"]').click();
-  await frameLocator0.locator('input[name="city"]').fill("Test city");
+  await frameLocatorNested.locator('input[name="city"]').click();
+  await frameLocatorNested.locator('input[name="city"]').fill("Test city");
 
-  frameLocator0.locator('select[name="state"]').selectOption('AL');
+  await frameLocatorNested.locator('select[name="state"]').selectOption('AL');
 
-  frameLocator0.getByLabel('ZIP code').click();
-  frameLocator0.getByPlaceholder('ZIP code').fill('35004');
+  await frameLocatorNested.locator('input[name="postcode"]').click();
+  await frameLocatorNested.locator('input[name="postcode"]').fill('35004');
   
-  frameLocator0.locator('input[name="phone"]').click();
-  frameLocator0.locator('input[name="phone"]').fill("5555555555");
+  await frameLocatorNested.locator('input[name="phone"]').click();
+  await frameLocatorNested.locator('input[name="phone"]').fill("5555555555");
 
-  frameLocator0.locator('input[name="email"]').click();
-  frameLocator0.locator('input[name="email"]').fill("tester@surveyjs.io");
+  await frameLocatorNested.locator('input[name="email"]').click();
+  await frameLocatorNested.locator('input[name="email"]').fill("tester@surveyjs.io");
   
-  frameLocator0.getByRole('button', { name: 'Pay Now' }).click();
+  const payNow = await frameLocatorNested.getByRole('button', { name: 'Pay Now' });
 
-  await page.getByRole('heading', { name: 'Thank you for choosing SurveyJS!' }).click();
+  await payNow.click();
+
+  await page.waitForTimeout(10000);
+
+  const thankYouText = await page.getByText('Thank you for choosing SurveyJS!');
+  await thankYouText.click();
 });
 
