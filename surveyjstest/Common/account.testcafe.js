@@ -153,5 +153,5 @@ test('ForgotPasswordForm', async t => {
         .expect(Selector('h1').withText('Reset Password').visible).ok('Password recovery form has been opened')
         .typeText('#Email', 'test@tester.org')
         .click(Selector('a').withText("Reset"))
-        .expect(Selector('h1').withText('Reset Forgotten Password').visible).ok('Recovery password link has been sent, redirected to confirmation form');
+        .expect(Selector('h1').withText('Please Check Your Email').visible).ok('Your password reset instructions have been emailed to you, follow the link in the email to continue.');
 });
