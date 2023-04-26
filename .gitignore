@@ -62,3 +62,6 @@ typings/
 
 V2/screenshots
 V2/artifacts
+/test-results/
+/playwright-report/
+/playwright/.cache/

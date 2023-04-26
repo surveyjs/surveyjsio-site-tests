@@ -13,12 +13,21 @@
     "v2:ci:new": "testcafe chrome:headless ./V2/ --screenshots ./  --native-automation --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000 --env-new=true",
     "v2:dev": "testcafe chrome ./V2/ --screenshots ./  --native-automation --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000 --env-dev=true",
     "v2:dev:ci": "testcafe chrome:headless ./V2/ --screenshots ./  --native-automation --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000 --env-dev=true",
-    "v2:dev:new": "testcafe chrome:headless ./V2/ --screenshots ./  --native-automation --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000 --env-dev=true --env-new=true"
+    "v2:dev:new": "testcafe chrome:headless ./V2/ --screenshots ./  --native-automation --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000 --env-dev=true --env-new=true",
+    "pw:ci": "npx playwright test --project=chromium",
+    "pw:update": "npx playwright test --project=chromium --update-snapshots",
+    "pw:ui": "npx playwright test --ui",
+    "pw:debug": "npx playwright test --ui --debug",
+    "pw:codegen": "npx playwright codegen",
+    "pw:file": "npx playwright test example"
   },
   "dependencies": {
     "devextreme-screenshot-comparer": "^2.0.14",
     "minimist": "^1.2.6",
     "testcafe": "latest",
     "testcafe-reporter-xunit": "^2.2.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.32.3"
   }
 }
