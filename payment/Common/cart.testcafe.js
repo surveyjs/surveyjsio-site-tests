@@ -14,8 +14,8 @@ fixture`account`
 test('Fill cart for unregistered user', async t => {
     await t.maximizeWindow();
 
-    const basicRow = Selector(".v2-class---cart-item").nth(0);
-    const proRow = Selector(".v2-class---cart-item").nth(1);
+    const basicRow = Selector(".v2-class---cart-item").withText("SurveyJS Basic");
+    const proRow = Selector(".v2-class---cart-item").withText("SurveyJS Pro");
 
     await t.click(Selector('.v2-class---pricing-header--basic a').withText('Buy Now').filterVisible());
     await t.expect(basicRow.find("td").withText("SurveyJS Basic").exists).ok();
@@ -92,8 +92,8 @@ test('Fill cart for registered users', async t => {
     //#endregion register user
 
 
-    const basicRow = Selector(".v2-class---cart-item").nth(0);
-    const proRow = Selector(".v2-class---cart-item").nth(1);
+    const basicRow = Selector(".v2-class---cart-item").withText("SurveyJS Basic");
+    const proRow = Selector(".v2-class---cart-item").withText("SurveyJS Pro");
 
     await t.navigateTo('/pricing');
     await t.click(Selector('.v2-class---pricing-header--basic a').withText('Buy Now').filterVisible());
