@@ -12,40 +12,39 @@ trigger:
 pool:
   vmImage: 'Ubuntu-20.04'
 
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '14.x'
-  displayName: 'Install Node.js'
+jobs:
+- job: Main
+  steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '14.x'
+    displayName: 'Install Node.js'
 
-- bash: |
-    npm install
-  displayName: 'npm install'
+  - bash: |
+      npm install
+    displayName: 'npm install'
 
-- bash: |
-    npm run test_ci
-  displayName: 'run TestCafe tests'
+  - bash: |
+      npm run test_ci
+    displayName: 'run TestCafe tests'
 
-- task: PublishTestResults@2
-  inputs:
-    testResultsFiles: '**/report.xml'
-    testResultsFormat: 'JUnit'
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/report.xml'
+      testResultsFormat: 'JUnit'
 
-# # create build artifact file
-# - powershell: |
-#     New-Item "IntegrationTestsIsOk.txt"
-#     Set-Content "Integration Tests Is Ok"
-#   displayName: 'create file as build artifact'
+- job: Paypal-Playwright
 
-# - task: CopyFiles@2
-#   inputs:
-#     contents: 'IntegrationTestsIsOk.txt'
-#     targetFolder: $(Build.ArtifactStagingDirectory)
-#   displayName: 'copy artifact to Build.ArtifactStagingDirectory'
+  steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '14.x'
+    displayName: 'Install Node.js'
 
-# - task: PublishBuildArtifacts@1
-#   inputs:
-#     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-#     ArtifactName: 'SurveyJSIntegrationTests'
-#     publishLocation: 'Container'
-#   displayName: 'Publish Build Artifact'
+  - bash: |
+      npm install
+    displayName: 'npm install'
+
+  - bash: |
+      npm run pw:ci
+    displayName: 'run Playwright tests'
