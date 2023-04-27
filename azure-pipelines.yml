@@ -33,7 +33,7 @@ jobs:
       testResultsFiles: '**/report.xml'
       testResultsFormat: 'JUnit'
 
-- job: Paypal-Playwright
+- job: Paypal
 
   steps:
   - task: NodeTool@0
