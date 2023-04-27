@@ -22,7 +22,7 @@
     "pw:file": "npx playwright test example"
   },
   "dependencies": {
-    "devextreme-screenshot-comparer": "^2.0.14",
+    "devextreme-screenshot-comparer": "^2.0.16",
     "minimist": "^1.2.6",
     "testcafe": "latest",
     "testcafe-reporter-xunit": "^2.2.1"
