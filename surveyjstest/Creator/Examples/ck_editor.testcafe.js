@@ -7,7 +7,7 @@ fixture `ck_editor`
 test.skip('CK editor', async t => {
     await t
         .maximizeWindow()
-        .click(Selector('.svd_toolbox').find('div').withText('Single Input'))
+        .click(Selector('.svd_toolbox').find('div').withText('Single-Line Input'))
         .click(Selector('.svda_question_action.svd-main-color[data-bind^="key2click, clickNoFocus: function() { onClick($par"][title="Edit"]').find('span').withText('Edit'))
         .click(Selector('.modal-body.svd_notopbottompaddings').nth(9).find('div').withText('Title').nth(1))
         .expect(Selector('#cke_modalEditorCustomWidget12').id).contains('cke')

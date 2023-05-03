@@ -16,7 +16,7 @@ test.skip('Check question properties', async t => {
 
     await t
         .expect(guid()).eql('dummy')
-        .click(Selector('#creatorElement').find('div').withText('Single Input').nth(5))
+        .click(Selector('#creatorElement').find('div').withText('Single-Line Input').nth(5))
         .expect(Selector('.form-control.svd_editor_control[data-bind^="value: koValue, disable: readOnly, attr: {placehol"]').nth(0).value).eql("QuestionText1")
         .expect(Selector('[data-bind=\"event: { keydown: $data.editor.keyDownHandler }\"]').nth(17).find('.form-control.svd_editor_control[data-bind^=\"value: koValue, disable: readOnly, attr: {placehol\"]').value).eql("1")
         .click(Selector('span').withText('Checkbox'))

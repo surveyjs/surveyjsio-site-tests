@@ -6,7 +6,7 @@ fixture `question_editor`
 test.skip('Add, hide propery to editor modal, change tabs order', async t => {
     await t
         .maximizeWindow()
-        .click(Selector('.svd_toolbox').find('div').withText('Single Input'))
+        .click(Selector('.svd_toolbox').find('div').withText('Single-Line Input'))
         .click(Selector('.svda_question_action.svd-main-color[data-bind^="key2click, clickNoFocus: function() { onClick($par"][title="Edit"]').find('span').withText('Edit'))
         .expect(Selector('div').withText('Is start with new line').nth(14).find('.sjs-cb-wrapper').exists).eql(false)
         .expect(Selector('.form-group').nth(50).find('div').withText('Tag').exists).eql(true)
