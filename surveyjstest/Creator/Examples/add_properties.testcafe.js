@@ -295,7 +295,7 @@ test.skip('Check triggers property', async t => {
 
     await t
         .expect(dummy()).eql('dummy')
-        .click(Selector('span').withText('Single Input'))
+        .click(Selector('span').withText('Single-Line Input'))
         .click('#objectSelector')
         .click(Selector('option').withText('Survey'))
         .click(Selector('[data-bind="text: koText"]').nth(5));

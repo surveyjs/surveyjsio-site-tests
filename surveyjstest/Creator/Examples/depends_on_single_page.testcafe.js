@@ -55,7 +55,7 @@ test.skip('Check question properties', async t => {
 test.skip('Check single input properties', async t => {
     await t
         .maximizeWindow()
-        .click(Selector('.svd_toolbox').find('div').withText('Single Input'))
+        .click(Selector('.svd_toolbox').find('div').withText('Single-Line Input'))
         .click(Selector('.svd-svg-icon').nth(34).find('use'))
         .click(Selector('#editor_tab_id_general').find('.form-control.svd_editor_control[data-bind^="value: koValue, disable: readOnly, options: koChoi"]'))
         .click(Selector('#editor_tab_id_general').find('option').withText('datetime').nth(0))

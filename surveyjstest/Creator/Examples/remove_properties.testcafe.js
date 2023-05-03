@@ -16,7 +16,7 @@ test.skip('Remove property', async t => {
 
     await t
         .expect(dummy()).eql('dummy')
-        .click(Selector('.svd_toolbox').find('div').withText('Single Input'))
+        .click(Selector('.svd_toolbox').find('div').withText('Single-Line Input'))
         .expect(Selector('#creatorElement').find('[data-bind^="text: displayName, attr: {title: title || displayN"][title="Description"]').exists).eql(false)
         .click(Selector('a').withText('JSON Editor'))
         .click(Selector('#surveyjsJSONEditor').find('.ace_content'), {
@@ -43,7 +43,7 @@ test.skip('Hide property in designer', async t => {
 
     await t
         .expect(dummy()).eql('dummy')
-        .click(Selector('.svd_toolbox').find('div').withText('Single Input'))
+        .click(Selector('.svd_toolbox').find('div').withText('Single-Line Input'))
         .expect(Selector('[data-bind^="text: displayName, attr: {title: title || displayN"][title="Description"]').exists).eql(false)
         .click(Selector('a').withText('JSON Editor'))
         .pressKey('backspace')
