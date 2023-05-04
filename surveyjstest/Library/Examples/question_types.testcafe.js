@@ -48,7 +48,7 @@ test('signaturepad', async t => {
     await t
         .maximizeWindow()
         .click(getSideBarGroupItem('Simple Questions'))
-        .click(getSideBarItem('Signature Pad'))
+        .click(getSideBarItem('Signature'))
         .expect(Selector('.sd-signaturepad').find('div').find('canvas').visible).ok()
         //.expect(Selector('[title="Clear"]').visible).ok()
         // .click(Selector('.form-element').find('.form-element__input.form-element--inverse'))

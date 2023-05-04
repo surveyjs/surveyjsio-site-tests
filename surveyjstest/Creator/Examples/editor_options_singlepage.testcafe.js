@@ -4,7 +4,7 @@ fixture `editor_options_singlepage`
     .page `https://surveyjstest.azurewebsites.net//Examples/CreatorSinglePage?id=options&platform=Knockoutjs&theme=default`;
 
 test('Check editor works after JSON Editor tab hidden', async t => {
-    const toolboxSingleInput = Selector('span.svd_toolbox_item_text').withText('Single-Line Input');
+    const toolboxSingleInput = Selector('span.svd_toolbox_item_text').withText('Single Input');
 
     await t
         .maximizeWindow()
