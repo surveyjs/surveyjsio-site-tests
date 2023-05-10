@@ -38,11 +38,9 @@ jobs:
   - task: Bash@3
     displayName: 'Run Playwright tests'
     inputs:
-      workingDirectory: 'my-e2e-tests'
       targetType: 'inline'
       failOnStderr: true
-      env:
-        CI: true
+      bashEnvValue: 'CI: true'
       script: |
         npm ci
         npm run pw:ci
