@@ -35,6 +35,11 @@ jobs:
 
 - job: Paypal
   steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '14.x'
+    displayName: 'Install Node.js'
+
   - task: Bash@3
     displayName: 'Run Playwright tests'
     inputs:
@@ -42,7 +47,7 @@ jobs:
       failOnStderr: true
       bashEnvValue: 'CI: true'
       script: |
-        npm ci
+        npm install
         npm run pw:ci
 
 #   steps:
