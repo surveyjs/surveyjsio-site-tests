@@ -33,7 +33,19 @@ jobs:
       testResultsFiles: '**/report.xml'
       testResultsFormat: 'JUnit'
 
-# - job: Paypal
+- job: Paypal
+  steps:
+  - task: Bash@3
+    displayName: 'Run Playwright tests'
+    inputs:
+      workingDirectory: 'my-e2e-tests'
+      targetType: 'inline'
+      failOnStderr: true
+      env:
+        CI: true
+      script: |
+        npm ci
+        npm run pw:ci
 
 #   steps:
 #   - task: NodeTool@0
