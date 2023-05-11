@@ -1,5 +1,16 @@
+import { Selector } from "testcafe";
+import { explicitErrorHandler, disableSmoothScroll } from '../../V2/helper';
+
 fixture `ExamplesCheck`
-    .page `https://surveyjstest.azurewebsites.net/`;
+    .page `https://surveyjstest.azurewebsites.net/`.beforeEach(async t => {
+        await explicitErrorHandler();
+        await disableSmoothScroll();
+        
+        const cookiePopupAccept = Selector(".v2-class---popup__button-container a");
+        if(await cookiePopupAccept.exists) {
+            await t.click(cookiePopupAccept); // close cookie msg
+        } 
+    });
 
 test('Library', async t => {
     await t
