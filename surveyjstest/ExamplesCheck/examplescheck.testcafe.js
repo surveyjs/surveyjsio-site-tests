@@ -1,5 +1,4 @@
-import { Selector } from "testcafe";
-import { explicitErrorHandler, disableSmoothScroll } from '../../V2/helper';
+import { explicitErrorHandler } from '../helpers';
 
 fixture`ExamplesCheck`
     .page`https://surveyjstest.azurewebsites.net/`.clientScripts({
