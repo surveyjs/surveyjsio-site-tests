@@ -13,43 +13,7 @@ pool:
   vmImage: 'Ubuntu-20.04'
 
 jobs:
-- job: Main
-  steps:
-  - task: NodeTool@0
-    inputs:
-      versionSpec: '14.x'
-    displayName: 'Install Node.js'
-
-  - bash: |
-      npm install
-    displayName: 'npm install'
-
-  - bash: |
-      npm run test_ci
-    displayName: 'run TestCafe tests'
-
-  - task: PublishTestResults@2
-    inputs:
-      testResultsFiles: '**/report.xml'
-      testResultsFormat: 'JUnit'
-
-# - job: Paypal
-#   steps:
-#   - task: NodeTool@0
-#     inputs:
-#       versionSpec: '14.x'
-#     displayName: 'Install Node.js'
-
-#   - task: Bash@3
-#     displayName: 'Run Playwright tests'
-#     inputs:
-#       targetType: 'inline'
-#       failOnStderr: true
-#       bashEnvValue: 'CI: true'
-#       script: |
-#         npm install
-#         npm run pw:ci
-
+# - job: Main
 #   steps:
 #   - task: NodeTool@0
 #     inputs:
@@ -61,5 +25,29 @@ jobs:
 #     displayName: 'npm install'
 
 #   - bash: |
-#       npm run pw:ci
-#     displayName: 'run Playwright tests'
+#       npm run test_ci
+#     displayName: 'run TestCafe tests'
+
+#   - task: PublishTestResults@2
+#     inputs:
+#       testResultsFiles: '**/report.xml'
+#       testResultsFormat: 'JUnit'
+
+- job: Paypal
+  steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '14.x'
+    displayName: 'Install Node.js'
+
+  - bash: |
+      npm install
+    displayName: 'npm install'
+
+  - bash: |
+      npx playwright install chromium
+    displayName: 'npm install'
+
+  - bash: |
+      npm run pw:ci
+    displayName: 'run Playwright tests'
