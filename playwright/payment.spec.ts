@@ -24,6 +24,8 @@ test('PayPal', async ({ page }) => {
   await page.getByPlaceholder('Address').press('Tab');
   await page.getByPlaceholder('Phone').fill('+34567890123');
 
+  await page.locator('.v2-class---checkbox__checkmark--in-panel').click();
+
   await page.getByRole('button', { name: 'Proceed to Checkout' }).click();
 
   await page.waitForTimeout(10000); 
