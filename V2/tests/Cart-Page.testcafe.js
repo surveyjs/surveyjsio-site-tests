@@ -30,7 +30,7 @@ fixture`CartPage`.page`${url}${route}`.beforeEach(async t => {
       await t.navigateTo("/cart");
 
       await t
-            .typeText(Selector("input[aria-label='Full Name']", {timeout: 5000}), "John", {replace: true})
+            .typeText(Selector("input[placeholder='Full Name']", {timeout: 5000}), "John", {replace: true})
             .pressKey("Enter");
       for (const screenName in screens) {
         await t.resizeWindow(screens[screenName].width, height);
