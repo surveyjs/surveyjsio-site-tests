@@ -9,7 +9,7 @@ test('Check tabs', async t => {
         .maximizeWindow()
         .switchToMainWindow()
         .click(getExampleTabSelector('Code'))
-        .expect(Selector('pre').withText('const creator = new SurveyCreator("surveyCreatorContainer", options);').exists).eql(true)
+        .expect(Selector('pre').withText('const creator = new SurveyCreator.SurveyCreator("surveyCreatorContainer", options);').exists).eql(true)
         .click(Selector('span').withText('index.html'))
         .expect(Selector('pre').withText('id="surveyCreatorContainer"').exists).eql(true)
         .click(getExampleTabSelector('Documentation'))
