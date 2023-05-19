@@ -1,8 +1,12 @@
-fixture `ExamplesCheck`
-    .page `https://surveyjstest.azurewebsites.net/`;
+import { explicitErrorHandler } from '../helpers';
+
+fixture`ExamplesCheck`
+    .page`https://surveyjstest.azurewebsites.net/`.clientScripts({
+        content: `(${explicitErrorHandler.toString()})()`
+    });
 
 test('Library', async t => {
-    await t
+   await t
         .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-text&platform=Knockoutjs&theme=default')
         .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-radiogroup&platform=Knockoutjs&theme=default')
         .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-dropdown&platform=Knockoutjs&theme=default')
