@@ -15,9 +15,9 @@ test('PayPal', async ({ page }) => {
   await page.getByPlaceholder('Email').press('Tab');
   await page.getByPlaceholder('Country').click();
   await page.getByText('Argentina').click();
-  await page.getByRole('heading', { name: 'Company Name' }).click();
+  await page.locator('[placeholder="Company Name"]').click();
   await page.getByPlaceholder('Company Name').fill('Tester Company');
-  await page.getByRole('heading', { name: 'Postal Code' }).click();
+  await page.locator('[placeholder="Postal Code"]').click();
   await page.getByPlaceholder('Postal Code').fill('123456');
   await page.getByPlaceholder('Postal Code').press('Tab');
   await page.getByPlaceholder('Address').fill('Test adress');
