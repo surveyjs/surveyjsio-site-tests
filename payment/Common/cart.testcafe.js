@@ -35,16 +35,16 @@ test('Fill cart for unregistered user', async t => {
 
     await t.expect(Selector(".v2-class---cart-subtotal-container__value").innerText).eql("€2,198.00");
 
-    await t.expect(Selector("input[aria-label='Company VAT Number (EU companies only)']").visible).notOk("no vat", { timeout: 500 });
+    await t.expect(Selector("input[placeholder='Company VAT Number (EU companies only)']").visible).notOk("no vat", { timeout: 500 });
 
-    await t.typeText(Selector("input[aria-label='Full Name']"), "Tester Name");
-    await t.typeText(Selector("input[aria-label=Email]"), "tester@surveyjs.io");
-    await t.typeText(Selector("input[aria-label='Country']"), "Argentina");
+    await t.typeText(Selector("input[placeholder='Full Name']"), "Tester Name");
+    await t.typeText(Selector("input[placeholder=Email]"), "tester@surveyjs.io");
+    await t.typeText(Selector("input[placeholder='Country']"), "Argentina");
     await t.pressKey("Enter");
-    await t.typeText(Selector("input[aria-label='Company Name']"), "Tester Company");
-    await t.typeText(Selector("input[aria-label='Postal Code']"), "123456");
-    await t.typeText(Selector("input[aria-label='Address']"), "Test address");
-    await t.typeText(Selector("input[aria-label='Phone']"), "+34567890123");
+    await t.typeText(Selector("input[placeholder='Company Name']"), "Tester Company");
+    await t.typeText(Selector("input[placeholder='Postal Code']"), "123456");
+    await t.typeText(Selector("input[placeholder='Address']"), "Test address");
+    await t.typeText(Selector("input[placeholder='Phone']"), "+34567890123");
 
     await t.click(Selector("button").withText("Proceed to Checkout"));
 });
@@ -114,15 +114,15 @@ test('Fill cart for registered users', async t => {
 
     await t.expect(Selector(".v2-class---cart-subtotal-container__value").innerText).eql("€2,198.00");
 
-    await t.expect(Selector("input[aria-label='Company VAT Number (EU companies only)']").visible).notOk("no vat", { timeout: 500 });
+    await t.expect(Selector("input[placeholder='Company VAT Number (EU companies only)']").visible).notOk("no vat", { timeout: 500 });
 
-    await t.typeText(Selector("input[aria-label='Full Name']"), "Tester Name");
-    await t.typeText(Selector("input[aria-label='Country']"), "Argentina");
+    await t.typeText(Selector("input[placeholder='Full Name']"), "Tester Name");
+    await t.typeText(Selector("input[placeholder='Country']"), "Argentina");
     await t.pressKey("Enter");
-    await t.typeText(Selector("input[aria-label='Company Name']"), "Tester Company");
-    await t.typeText(Selector("input[aria-label='Postal Code']"), "123456");
-    await t.typeText(Selector("input[aria-label='Address']"), "Test address");
-    await t.typeText(Selector("input[aria-label='Phone']"), "+34567890123");
+    await t.typeText(Selector("input[placeholder='Company Name']"), "Tester Company");
+    await t.typeText(Selector("input[placeholder='Postal Code']"), "123456");
+    await t.typeText(Selector("input[placeholder='Address']"), "Test address");
+    await t.typeText(Selector("input[placeholder='Phone']"), "+34567890123");
 
     await t.click(Selector("button").withText("Proceed to Checkout"));
 
