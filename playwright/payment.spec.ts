@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('PayPal', async ({ page }) => {
+test('PayPal: failed test payment', async ({ page }) => {
   test.setTimeout(120000);
   
   await page.goto('https://surveyjstest.azurewebsites.net/pricing');
@@ -76,7 +76,7 @@ test('PayPal', async ({ page }) => {
 
   await page.waitForTimeout(10000);
 
-  const thankYouText = await page.getByText('Thank you for choosing SurveyJS!');
+  const thankYouText = await page.getByText('Sorry, your payment failed.');
   await thankYouText.click();
 });
 
