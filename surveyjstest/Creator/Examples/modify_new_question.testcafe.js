@@ -1,8 +1,10 @@
 import { Selector } from 'testcafe';
-import { getIUnderstandButton, getExampleTabSelector } from '../../helpers';
+import { acceptCookie, getExampleTabSelector } from '../../helpers';
 
 fixture`modify_new_question`
-    .page`https://surveyjstest.azurewebsites.net/Examples/Builder?id=oncreatequestion&platform=Knockoutjs&theme=default`
+    .page`https://surveyjstest.azurewebsites.net/Examples/Builder?id=oncreatequestion&platform=Knockoutjs&theme=default`.beforeEach(async t => {
+        await acceptCookie(t);
+    });;
 ;
 
 test('Check default tabs', async t => {

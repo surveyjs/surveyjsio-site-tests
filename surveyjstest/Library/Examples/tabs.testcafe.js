@@ -19,10 +19,10 @@ test('Click survey result tabs', async t => {
         .click(getIUnderstandButton())
         .click(Selector('span').withText('Ford').nth(1))
         .click('.sv_complete_btn')
-        .expect(Selector('a').withText('JSON').classNames).contains('tabs__tab--active')
+        .expect(Selector('a').withText('JSON').classNames).contains('v2-class---demo-tab-item--active')
         .click(Selector('a').withText('Export to Pdf'))
-        .expect(Selector('a').withText('JSON').classNames).notContains('tabs__tab--active')
-        .expect(Selector('a').withText('Export to Pdf').classNames).contains('tabs__tab--active');
+        .expect(Selector('a').withText('JSON').classNames).notContains('v2-class---demo-tab-item--active')
+        .expect(Selector('a').withText('Export to Pdf').classNames).contains('v2-class---demo-tab-item--active');
 });
 
 test('Check survey result tabs', async t => {
@@ -32,7 +32,7 @@ test('Check survey result tabs', async t => {
         .click(Selector('span').withText('Ford').nth(1))
         .click('.sv_complete_btn')
         .expect(Selector('a').withText('JSON').visible).ok()
-        .expect(Selector('a').withText('JSON').classNames).contains('tabs__tab--active')
+        .expect(Selector('a').withText('JSON').classNames).contains('v2-class---demo-tab-item--active')
         .expect(Selector('a').withText('Export to Pdf').visible).ok()
-        .expect(Selector('a').withText('Export to Pdf').classNames).notContains('tabs__tab--active');
+        .expect(Selector('a').withText('Export to Pdf').classNames).notContains('v2-class---demo-tab-item--active');
 });

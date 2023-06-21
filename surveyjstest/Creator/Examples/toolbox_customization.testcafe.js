@@ -1,8 +1,10 @@
 import { Selector } from 'testcafe';
-import { getExampleTabSelector } from '../../helpers';
+import { acceptCookie, getExampleTabSelector } from '../../helpers';
 
 fixture`toolbox_customization`
-    .page`https://surveyjstest.azurewebsites.net/Examples/Builder?id=toolboxcustomization&platform=Knockoutjs&theme=default`;
+    .page`https://surveyjstest.azurewebsites.net/Examples/Builder?id=toolboxcustomization&platform=Knockoutjs&theme=default`.beforeEach(async t => {
+        await acceptCookie(t);
+    });;
 
 test('Check tabs', async t => {
     await t
@@ -13,7 +15,7 @@ test('Check tabs', async t => {
         .click(Selector('span').withText('index.html'))
         .expect(Selector('pre').withText('id="surveyCreatorContainer"').exists).eql(true)
         .click(getExampleTabSelector('Documentation'))
-        .expect(getExampleTabSelector('Documentation').classNames).contains('tabs__tab--active')
+        .expect(getExampleTabSelector('Documentation').classNames).contains('v2-class---footer-toolbar-item--active')
         .click(getExampleTabSelector('Result'))
         .expect(Selector('span.nav-link').withText('Survey Designer').textContent).eql("Survey Designer")
         .expect(Selector('span.nav-link').withText('Test Survey').textContent).eql("Test Survey")

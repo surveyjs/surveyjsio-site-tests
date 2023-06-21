@@ -1,15 +1,17 @@
 import { Selector } from 'testcafe';
-import { getSideBarGroupItem, getSideBarItem, explicitErrorHandler } from '../../helpers';
+import { getSideBarGroupItem, getSideBarItem, explicitErrorHandler, acceptCookie } from '../../helpers';
 
 fixture`survey`
     .page`https://surveyjstest.azurewebsites.net/Examples/Library`.clientScripts({
         content: `(${explicitErrorHandler.toString()})()`
+    }).beforeEach(async t => {
+        await acceptCookie(t);
     });
 
 test('title_logo', async t => {
     await t
-        .maximizeWindow()
-        .click('#category-survey')
+        .resizeWindow(1600, 2000)
+        .click(getSideBarGroupItem('Survey'))
         .click(getSideBarItem('Title and Logo'))
         .expect(Selector('.sd-logo__image').getAttribute('src')).ok('Logo is visible')
         .expect(Selector('#surveyElement').find('span').withText('Survey Title&Logo demo').visible).ok('Title is visible')
