@@ -3,7 +3,7 @@ import { getIUnderstandButton, getExampleTabSelector, acceptCookie } from '../..
 
 fixture `tabs`
     .page `https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-radiogroup&platform=jQuery&theme=default`
-    .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=dependsonproperties&platform=Knockoutjs&theme=default`.beforeEach(async t => {
+    .beforeEach(async t => {
         await acceptCookie(t);
     });
 
