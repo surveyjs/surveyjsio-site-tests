@@ -19,7 +19,6 @@ test('Click example tabs', async t => {
 test('Click survey result tabs', async t => {
     await t
         .maximizeWindow()
-        .click(getIUnderstandButton())
         .click(Selector('span').withText('Ford').nth(1))
         .click('.sv_complete_btn')
         .expect(Selector('a').withText('JSON').classNames).contains('v2-class---demo-tab-item--active')
@@ -31,7 +30,6 @@ test('Click survey result tabs', async t => {
 test('Check survey result tabs', async t => {
     await t
         .maximizeWindow()
-        .click(getIUnderstandButton())
         .click(Selector('span').withText('Ford').nth(1))
         .click('.sv_complete_btn')
         .expect(Selector('a').withText('JSON').visible).ok()
