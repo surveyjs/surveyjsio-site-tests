@@ -8,9 +8,9 @@ fixture`survey`
         await acceptCookie(t);
     });
 
-test('title_logo', async t => {
+test.only('title_logo', async t => {
     await t
-        .resizeWindow(1600, 2000)
+        .maximizeWindow()
         .click(getSideBarGroupItem('Survey'))
         .click(getSideBarItem('Title and Logo'))
         .expect(Selector('.sd-logo__image').getAttribute('src')).ok('Logo is visible')
@@ -18,6 +18,7 @@ test('title_logo', async t => {
         .expect(Selector('#surveyElement').find('span').withText('Please take look at the survey title and logo. Tes').visible).ok('Description is visible')
         .expect(Selector('.sd-logo.sv-logo--left').exists).eql(true)
         .expect(Selector('.sd-logo.sv-logo--right').exists).eql(false)
+        .click("#tool-settings")
         .click('#selColCount')
         .click(Selector('#selColCount').find('option').withText('right'))
         .expect(Selector('.sd-logo.sv-logo--left').exists).eql(false)

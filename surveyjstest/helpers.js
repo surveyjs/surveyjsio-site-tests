@@ -1,10 +1,10 @@
 import { Selector } from 'testcafe';
 
 export function getSideBarGroupItem(text) {
-    return Selector(".v2-class---drop-down-menu-item--level-1").withText(text);
+    return Selector(".v2-class---drop-down-menu-item__link--level-1").withText(text);
 }
 export function getSideBarItem(text){
-    return Selector(".v2-class---drop-down-menu-item--level-2").withText(text);
+    return Selector(".v2-class---drop-down-menu-item__link--level-2").withText(text);
 }
 export function getExampleTabSelector(text) {
     return Selector(".v2-class---footer-toolbar-item").filterVisible().withText(text);

@@ -1,8 +1,10 @@
 import { Selector } from 'testcafe';
-import { getExampleTabSelector } from '../../helpers';
+import { getExampleTabSelector, acceptCookie } from '../../helpers';
 
 fixture `depends_on_properties`
-    .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=dependsonproperties&platform=Knockoutjs&theme=default`;
+    .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=dependsonproperties&platform=Knockoutjs&theme=default`.beforeEach(async t => {
+        await acceptCookie(t);
+    });
 
 test('Check default tabs', async t => {
     await t
