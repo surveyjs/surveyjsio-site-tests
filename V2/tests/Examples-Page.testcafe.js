@@ -16,7 +16,7 @@ fixture`ExamplesPage`.page`${url}${route}`.beforeEach(async t => {
 for (const screenName in screens) {
   const screen = screens[screenName];
   const height = 900;
-  test(`Examples-Page--${screenName}`, async (t) => {
+  test.only(`Examples-Page--${screenName}`, async (t) => {
       await wrapVisualTest(t, async (t, comparer) => {
       await t.resizeWindow(screen.width, height);
 
@@ -35,12 +35,13 @@ for (const screenName in screens) {
       await t
       .click("#tool-settings");
 
-      if(screenName == "Mobile") {
+      if(screenName == "Mobile" || screenName == "Vertical-Tablet") {
         await t
         .click("#button-sidebar");
-        await takeElementScreenshot(`Examples-Page-Sidebar--${screenName}.png`, Page, t, comparer);
+        await takeElementScreenshot(`Examples-Page-Sidebar--${screenName}.png`, Page, t, comparer)
+        .click("#button-sidebar");
       }
-      else {
+      if(screenName != "Mobile") {
         await t
         .hover(Selector(".v2-class---demo-header__toolbar .v2-class---header-toolbar-item-dropdown").nth(1))
         .expect(Selector(".v2-class---drop-down-menu-item__link").withText("React").visible).ok()
