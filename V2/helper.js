@@ -89,3 +89,10 @@ export const explicitErrorHandler = ClientFunction(() => {
 export const disableSmoothScroll = ClientFunction(() => {
   document.querySelector("html").style.scrollBehavior = "initial";
 });
+
+export const removeNewItemsExcept5 = ClientFunction((selector) => {
+  const items = document.querySelectorAll(selector);
+  items.forEach((item, index)=>{
+    if (index < items.length - 5 ) item.remove();
+  });
+});
