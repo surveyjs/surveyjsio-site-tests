@@ -8,7 +8,7 @@ fixture`survey`
         await acceptCookie(t);
     });
 
-test.only('title_logo', async t => {
+test('title_logo', async t => {
     await t
         .maximizeWindow()
         .click(getSideBarGroupItem('Survey'))
