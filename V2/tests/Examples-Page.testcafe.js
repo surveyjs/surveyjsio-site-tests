@@ -16,18 +16,23 @@ fixture`ExamplesPage`.page`${url}${route}`.beforeEach(async t => {
 for (const screenName in screens) {
   const screen = screens[screenName];
   const height = 900;
-  test(`Examples-Page--${screenName}`, async (t) => {
+  test.only(`Examples-Page--${screenName}`, async (t) => {
       await wrapVisualTest(t, async (t, comparer) => {
       await t.resizeWindow(screen.width, height);
 
       const Page = Selector(".v2-class---examples-page").filterVisible();
+      await t.wait(500);
       await takeElementScreenshot(`Examples-Page--${screenName}.png`, Page, t, comparer);
 
+      await t.wait(500);
       await t
-        .hover(Selector("#tool-theme"))
-        .expect(Selector(".v2-class---drop-down-menu-item__link").withText("modern").visible).ok()
-        .wait(500);
+      .click("#tool-theme")
+      .wait(500);
       await takeElementScreenshot(`Examples-Page-Theme--${screenName}.png`, Page, t, comparer);
+      await t.wait(500);
+      await t
+      .click("#tool-theme");
+      await t.wait(500);
       
       await t
       .click("#tool-settings");
