@@ -1,4 +1,4 @@
-import { Selector } from "testcafe";
+import { Selector, ClientFunction } from "testcafe";
 import { url, checkElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll, wrapVisualTest, takeElementScreenshot } from "../helper";
 
 const route = "/form-library/examples/single-select-radio-button-group/reactjs";
@@ -17,22 +17,27 @@ for (const screenName in screens) {
   const screen = screens[screenName];
   const height = 900;
   test(`Examples-Page--${screenName}`, async (t) => {
-      await wrapVisualTest(t, async (t, comparer) => {
+      await wrapVisualTest(t, async (t, comparer) => {      
       await t.resizeWindow(screen.width, height);
 
-      const Page = Selector(".v2-class---examples-page").filterVisible();
-      await t.wait(500);
-      await takeElementScreenshot(`Examples-Page--${screenName}.png`, Page, t, comparer);
+      const toggleThemes = ClientFunction(() => {
+        // neeed to call it "by hand" because testcafe open site in small size and only then do resixeWindow so toggleThemes doesn't work properly
+        if (document.body.offsetWidth > 1600) {
+          toggleThemes();
+        }
+      });
 
-      await t.wait(500);
+      const Page = Selector(".v2-class---examples-page").filterVisible();
+
+      await toggleThemes();
+      await takeElementScreenshot(`Examples-Page--${screenName}.png`, Page, t, comparer);
+      await toggleThemes();
+
       await t
       .click("#tool-theme")
-      .wait(500);
       await takeElementScreenshot(`Examples-Page-Theme--${screenName}.png`, Page, t, comparer);
-      await t.wait(500);
       await t
       .click("#tool-theme");
-      await t.wait(500);
       
       await t
       .click("#tool-settings");
@@ -63,6 +68,9 @@ for (const screenName in screens) {
         .click("#tab-docs");
         await takeElementScreenshot(`Examples-Page-Docs--${screenName}.png`, Page, t, comparer);
       }
+
+      await t.resizeWindow(929, 932);
+
     });
   });
 }
