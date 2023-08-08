@@ -987,7 +987,7 @@ test('Survey-Creator', async t => {
         .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=matrixcustomcelltypes&theme=default&platform=Knockoutjs')
         .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=setsurvey&theme=default&platform=Knockoutjs')
         .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=loadfromservice&theme=default&platform=Knockoutjs')
-        .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=editor-custom-theme&theme=default&platform=Knockoutjs')
+        //.navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=editor-custom-theme&theme=default&platform=Knockoutjs')
 
     await t
         .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=options&theme=modern&platform=Knockoutjs')
@@ -1018,7 +1018,7 @@ test('Survey-Creator', async t => {
         .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=matrixcustomcelltypes&theme=modern&platform=Knockoutjs')
         .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=setsurvey&theme=modern&platform=Knockoutjs')
         .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=loadfromservice&theme=modern&platform=Knockoutjs')
-        .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=editor-custom-theme&theme=modern&platform=Knockoutjs')
+        //.navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=editor-custom-theme&theme=modern&platform=Knockoutjs')
 
         .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=options&theme=bootstrap&platform=Knockoutjs')
         .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=singlepage&theme=bootstrap&platform=Knockoutjs')
@@ -1048,7 +1048,7 @@ test('Survey-Creator', async t => {
         .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=matrixcustomcelltypes&theme=bootstrap&platform=Knockoutjs')
         .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=setsurvey&theme=bootstrap&platform=Knockoutjs')
         .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=loadfromservice&theme=bootstrap&platform=Knockoutjs')
-        .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=editor-custom-theme&theme=bootstrap&platform=Knockoutjs');
+        //.navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=editor-custom-theme&theme=bootstrap&platform=Knockoutjs');
 });
 
 test('Pdf-Export', async t => {

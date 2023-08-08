@@ -1,8 +1,10 @@
 import { Selector } from 'testcafe';
-import { getExampleTabSelector } from '../../helpers';
+import { acceptCookie, getExampleTabSelector } from '../../helpers';
 
 fixture`custom_widgets`
-    .page`https://surveyjstest.azurewebsites.net/Examples/Builder?id=customwidgets&platform=reactjs`;
+    .page`https://surveyjstest.azurewebsites.net/Examples/Builder?id=customwidgets&platform=reactjs`.beforeEach(async t => {
+        await acceptCookie(t);
+    });
 
 test('Check custom widgets default tabs', async t => {
     await t
@@ -18,7 +20,7 @@ test('Check custom widgets default tabs', async t => {
         .expect(Selector('code').textContent).contains('jquery-bar-rating')
         .expect(Selector('code').textContent).contains('surveyjs-widgets')
         .click(getExampleTabSelector('Documentation'))
-        .expect(getExampleTabSelector('Documentation').classNames).contains('tabs__tab--active')
+        .expect(getExampleTabSelector('Documentation').classNames).contains('v2-class---footer-toolbar-item--active')
         .expect(Selector('a').withText('this repo to find out more').getAttribute('href')).eql('https://github.com/surveyjs/widgets')
         .expect(Selector('a').withText('create a new issue').getAttribute('href')).eql('https://github.com/surveyjs/widgets/issues')
         .click(getExampleTabSelector('Result'));

@@ -1,13 +1,13 @@
 import { Selector } from 'testcafe';
 
 export function getSideBarGroupItem(text) {
-    return Selector(".sidebar__item").withText(text);
+    return Selector(".v2-class---drop-down-menu-item__link--level-1").withText(text);
 }
 export function getSideBarItem(text){
-    return Selector(".sidebar__subitem-content div").withText(text);
+    return Selector(".v2-class---drop-down-menu-item__link--level-2").withText(text);
 }
 export function getExampleTabSelector(text) {
-    return Selector(".tabs__tab.example-tab").withText(text);
+    return Selector(".v2-class---footer-toolbar-item").filterVisible().withText(text);
 }
 export const explicitErrorHandler = () => { window.addEventListener("error", e => {
     if (e.message === "ResizeObserver loop completed with undelivered notifications." ||
@@ -18,4 +18,11 @@ export const explicitErrorHandler = () => { window.addEventListener("error", e =
 
 export function getIUnderstandButton() {
     return Selector('span').withText('I Understand');
+}
+
+export async function acceptCookie(t) {
+    const cookiePopupAccept = Selector(".v2-class---popup__button-container a");
+    if(await cookiePopupAccept.exists) {
+        await t.click(cookiePopupAccept); // close cookie msg
+    } 
 }
