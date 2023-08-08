@@ -122,6 +122,7 @@ test('RegisterRemove', async t => {
         .hover(menuAccountLink)
         .click(menuManageLink);
 
+    await t.click("#delete-account-item");
     await t.click(goToDeletePageButton);
 
        await t
