@@ -28,15 +28,17 @@ steps:
       Sleep 1
       $wshell.SendKeys("%{F4}") # ALT F4
 
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: 'dir "C:\Program Files\Google"'
 
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: 'dir "C:\Program Files (x86)\Google"'
+
+# - task: PowerShell@2
+#   inputs:
+#     targetType: 'inline'
+#     script: 'dir "C:\Program Files\Google"'
+
+# - task: PowerShell@2
+#   inputs:
+#     targetType: 'inline'
+#     script: 'dir "C:\Program Files (x86)\Google"'
 
 
 - task: NodeTool@0
