@@ -5,6 +5,42 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
+# - task: PowerShell@2
+#   inputs:
+#     targetType: 'inline'
+#     script: '"C:\Program Files (x86)\Google\Update\GoogleUpdate.exe" /c | cmd'
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      start chrome
+      Sleep 1
+      $wshell = New-Object -ComObject wscript.shell; # shell for sending keys
+      $wshell.AppActivate('Chrome') # make sure chrome is the active window
+      Sleep 1
+      $wshell.SendKeys('chrome://settings/help')
+      Sleep .5
+      $wshell.SendKeys("{ENTER}")
+      Sleep 300 # sleep to allow updates to be processed 
+      # change sleep values if computer is slow.
+      $wshell.AppActivate('Chrome') # make sure chrome is the active window
+      Sleep 1
+      #$wshell.SendKeys("%{F4}") # ALT F4
+
+
+
+# - task: PowerShell@2
+#   inputs:
+#     targetType: 'inline'
+#     script: 'dir "C:\Program Files\Google"'
+
+# - task: PowerShell@2
+#   inputs:
+#     targetType: 'inline'
+#     script: 'dir "C:\Program Files (x86)\Google"'
+
+
 - task: NodeTool@0
   inputs:
     versionSpec: '14.x'
