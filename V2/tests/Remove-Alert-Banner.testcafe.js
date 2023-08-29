@@ -16,7 +16,7 @@ fixture`RemoveAlertBannerPage`.page`${url}${route}`.beforeEach(async t => {
 for (const screenName in screens) {
   const screen = screens[screenName];
   const height = 10000;
-  test.only(`Remove-Alert-Banner-Page--${screenName}`, async (t) => {
+  test(`Remove-Alert-Banner-Page--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
     const email = `surveyjstest@gmail.com`;
     const password = 'Surveyjstest1';
