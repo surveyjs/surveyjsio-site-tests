@@ -39,7 +39,7 @@ for (const screenName in screens) {
     await t.navigateTo('/remove-alert-banner');
     await explicitErrorHandler();
 
-    const Page = Selector("main").filterVisible();
+    const Page = Selector(".v2-class---account-page").filterVisible();
     await checkElementScreenshot(`Remove-Alert-Banner-Page--${screenName}.png`, Page, t);
   });
 }
