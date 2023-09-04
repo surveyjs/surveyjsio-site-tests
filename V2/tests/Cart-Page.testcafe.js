@@ -16,7 +16,7 @@ fixture`CartPage`.page`${url}${route}`.beforeEach(async t => {
 
  test("Cart-Page", async (t) => {
     const height = 10000;
-    await t.expect(true).ok().debug();
+    await t.expect(true).ok();
     const Page = Selector(".v2-class---cart-page").filterVisible();
 
     await t.setCookies({cartCookie: "%5b%7b%22UserID%22%3a%2200000000-0000-0000-0000-000000000000%22%2c%22Product%22%3a5%2c%22ProductTitle%22%3a%22SurveyJS+Basic+(Creator+only)%2c+1+Developer+License%22%2c%22Count%22%3a1%2c%22ExpirationDate%22%3a%220001-01-01T00%3a00%3a00%22%2c%22PersonalDiscount%22%3a0.0%2c%22HappenedAt%22%3a%220001-01-01T00%3a00%3a00%22%2c%22ItemPrice%22%3a499.0%2c%22ItemsPrice%22%3a499.0%2c%22Comment%22%3anull%2c%22Id%22%3a%22aa50359a-8ac1-48ac-877a-30aa7ecfcb5a%22%7d%2c%7b%22UserID%22%3a%2200000000-0000-0000-0000-000000000000%22%2c%22Product%22%3a4%2c%22ProductTitle%22%3a%22SurveyJS+Pro%2c+1+Developer+License%22%2c%22Count%22%3a1%2c%22ExpirationDate%22%3a%220001-01-01T00%3a00%3a00%22%2c%22PersonalDiscount%22%3a0.0%2c%22HappenedAt%22%3a%220001-01-01T00%3a00%3a00%22%2c%22ItemPrice%22%3a899.0%2c%22ItemsPrice%22%3a899.0%2c%22Comment%22%3anull%2c%22Id%22%3a%2218b9376c-2c1d-4751-a4ad-c96450cc37f7%22%7d%5d"});
