@@ -9,6 +9,6 @@ fixture`question_types`
 test('text', async t => {
     await t
         .maximizeWindow()
-        .hover(Selector('.v2-class---header-toolbar-item-dropdown').withText('Edit In Codesandbox'))
-        .click(Selector('.v2-class---header-toolbar-item-dropdown').withText('Edit In Codesandbox').find("li").withText("React"));
+        .hover(Selector('.v2-class---header-toolbar-item-dropdown').withText('CodeSandbox'))
+        .click(Selector('.v2-class---header-toolbar-item-dropdown').withText('CodeSandbox').find("li").withText("React"));
 });

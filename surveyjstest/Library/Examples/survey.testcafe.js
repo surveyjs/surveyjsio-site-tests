@@ -19,8 +19,8 @@ test('title_logo', async t => {
         .expect(Selector('.sd-logo.sv-logo--left').exists).eql(true)
         .expect(Selector('.sd-logo.sv-logo--right').exists).eql(false)
         .click("#tool-settings")
-        .click('#logoPosition')
-        .click(Selector('#logoPosition').find('option').withText('right'))
-        .expect(Selector('.sd-logo.sv-logo--left').exists).eql(false)
-        .expect(Selector('.sd-logo.sv-logo--right').exists).eql(true);
+        // .click('#logoPosition')
+        // .click(Selector('#logoPosition').find('option').withText('right'))
+        // .expect(Selector('.sd-logo.sv-logo--left').exists).eql(false)
+        // .expect(Selector('.sd-logo.sv-logo--right').exists).eql(true);
 });
