@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('PayPal: failed test payment', async ({ page }) => {
-  test.setTimeout(120000);
+  test.setTimeout(240000);
   
   await page.goto('https://surveyjstest.azurewebsites.net/pricing');
   await page.locator('a').filter({ hasText: 'I Understand' }).click();
