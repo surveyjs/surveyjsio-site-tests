@@ -6,16 +6,16 @@ fixture `Custom Adorner`
 test('Adorner exists', async t => {
     await t
         .maximizeWindow()
-        .expect(Selector('span').withText('On new line').visible).ok()
+        .expect(Selector('span').withText('Read-Only').visible).ok()
         .click(Selector('span').withText('JSON Editor'))
         .pressKey('ctrl+a')
         .pressKey('delete')
         .click(Selector('span').withText('Designer'))
         //.wait(2000)
-        .expect(Selector('span').withText('On new line').visible).notOk()
+        .expect(Selector('span').withText('Read-Only').visible).notOk()
         .click(Selector('span').withText('Single-Line Input'))
         //.wait(2000)
-        .expect(Selector('span').withText('On new line').visible).ok();
+        .expect(Selector('span').withText('Read-Only').visible).ok();
 });
 
 test.skip('Adorner works', async t => {
