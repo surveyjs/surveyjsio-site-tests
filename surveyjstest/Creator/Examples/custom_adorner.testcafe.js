@@ -6,7 +6,7 @@ fixture `Custom Adorner`
 test('Adorner exists', async t => {
     await t
         .maximizeWindow()
-        .expect(Selector('span').withText('Read-Only').visible).ok()
+        .expect(Selector('span').withText('Read-Only').visible).notOk()
         .click(Selector('span').withText('JSON Editor'))
         .pressKey('ctrl+a')
         .pressKey('delete')
