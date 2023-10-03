@@ -11,10 +11,10 @@ test('Adorner exists', async t => {
         .pressKey('ctrl+a')
         .pressKey('delete')
         .click(Selector('span').withText('Designer'))
-        //.wait(2000)
+        .wait(1000)
         .expect(Selector('span').withText('Read-Only').visible).notOk()
         .click(Selector('span').withText('Single-Line Input'))
-        //.wait(2000)
+        .wait(1000)
         .expect(Selector('span').withText('Read-Only').visible).ok();
 });
 
