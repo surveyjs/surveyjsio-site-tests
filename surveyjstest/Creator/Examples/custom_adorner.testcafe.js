@@ -3,19 +3,22 @@ import { Selector } from 'testcafe';
 fixture `Custom Adorner`
     .page `https://surveyjstest.azurewebsites.net/survey-creator/examples/s/create-custom-adorners/reactjs`;
 
-test('Adorner exists', async t => {
+test.only('Adorner exists', async t => {
+    const selector = Selector('.svc-question__content span').withText('Read-Only');
     await t
         .maximizeWindow()
-        .expect(Selector('span').withText('Read-Only').visible).notOk()
+        .expect(selector.visible).notOk()
         .click(Selector('span').withText('JSON Editor'))
         .pressKey('ctrl+a')
         .pressKey('delete')
         .click(Selector('span').withText('Designer'))
         .wait(1000)
-        .expect(Selector('span').withText('Read-Only').visible).notOk()
+        .expect(selector.visible).notOk()
         .click(Selector('span').withText('Single-Line Input'))
         .wait(1000)
-        .expect(Selector('span').withText('Read-Only').visible).ok();
+        .debug()
+        .expect(selector.exists).ok()
+        .expect(selector.visible).ok();
 });
 
 test.skip('Adorner works', async t => {
