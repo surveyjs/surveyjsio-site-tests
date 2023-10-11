@@ -3,7 +3,7 @@ import { Selector } from 'testcafe';
 fixture `Custom Adorner`
     .page `https://surveyjstest.azurewebsites.net/survey-creator/examples/s/create-custom-adorners/reactjs`;
 
-test.only('Adorner exists', async t => {
+test('Adorner exists', async t => {
     const selector = Selector('.svc-question__content span').withText('Read-Only');
     await t
         .maximizeWindow()
