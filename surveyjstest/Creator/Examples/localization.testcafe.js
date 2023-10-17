@@ -2,7 +2,7 @@ import { Selector } from 'testcafe';
 import { acceptCookie, explicitErrorHandler, getExampleTabSelector } from '../../helpers';
 
 fixture `localization`
-    .page `https://surveyjstest.azurewebsites.net/survey-creator/examples/survey-creator-interface-localization/knockoutjs  `
+    .page `https://surveyjstest.azurewebsites.net/survey-creator/examples/survey-creator-interface-localization/knockoutjs`
     .clientScripts({
         content: `(${explicitErrorHandler.toString()})()`
     })
@@ -13,11 +13,12 @@ fixture `localization`
 test('Check tabs', async t => {
     await t
         .maximizeWindow()
-        .expect(Selector('span').withText('Wahrheitswert').visible).ok()
-        .expect(Selector('span').withText('JSON').visible).ok()
-        .expect(Selector('span').withText('Logik').visible).ok()
+        // .expect(Selector('.svc-tabbed-menu-item__text').withText('Wahrheitswert').visible).ok()
+        .expect(Selector('.svc-tabbed-menu-item__text').withText('Test').visible).ok()
+        .expect(Selector('.svc-tabbed-menu-item__text').withText('Logik').visible).ok()
+        .expect(Selector('.svc-tabbed-menu-item__text').withText('JSON').visible).ok()
         .switchToMainWindow()
-
+        .click(Selector(".v2-class---button__text").withText('I Understand'))
         .expect(getExampleTabSelector('Code').visible).ok()
         .click(getExampleTabSelector('Code'))
         .expect(Selector('span').withText(' Override individual translations in an existing locale').visible).ok()
