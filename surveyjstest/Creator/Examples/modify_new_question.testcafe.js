@@ -11,7 +11,6 @@ test('Check default tabs', async t => {
     await t
         .maximizeWindow()
         .expect(Selector('.svc-tabbed-menu-item__text').withText('Preview').visible).ok()
-        .click(Selector(".v2-class---button__text").withText('I Understand'))
         .click(getExampleTabSelector('Code'))
         .expect(Selector('code').textContent).contains('Add a tag property')
         .click(Selector('span').withText('index.html'))

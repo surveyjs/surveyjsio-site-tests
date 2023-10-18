@@ -10,7 +10,6 @@ test('Check tabs', async t => {
     await t
         .maximizeWindow()
         .switchToMainWindow()
-        .click(Selector(".v2-class---button__text").withText('I Understand'))
         .click(getExampleTabSelector('Code'))
         .expect(Selector('code').textContent).contains('const creator = new SurveyCreator.SurveyCreator("surveyCreatorContainer", options);')
         .click(Selector('span').withText('index.html'))

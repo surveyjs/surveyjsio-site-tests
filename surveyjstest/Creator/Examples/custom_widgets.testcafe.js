@@ -9,7 +9,6 @@ fixture`custom_widgets`
 test('Check custom widgets default tabs', async t => {
     await t
         .maximizeWindow()
-        .click(Selector(".v2-class---button__text").withText('I Understand'))
         .click(getExampleTabSelector('Code'))
         .expect(Selector('code').textContent).contains('const options')
         .click(Selector('span').withText('index.html'))

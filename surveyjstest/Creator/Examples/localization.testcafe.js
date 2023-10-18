@@ -18,7 +18,6 @@ test('Check tabs', async t => {
         .expect(Selector('.svc-tabbed-menu-item__text').withText('Logik').visible).ok()
         .expect(Selector('.svc-tabbed-menu-item__text').withText('JSON').visible).ok()
         .switchToMainWindow()
-        .click(Selector(".v2-class---button__text").withText('I Understand'))
         .expect(getExampleTabSelector('Code').visible).ok()
         .click(getExampleTabSelector('Code'))
         .expect(Selector('span').withText(' Override individual translations in an existing locale').visible).ok()

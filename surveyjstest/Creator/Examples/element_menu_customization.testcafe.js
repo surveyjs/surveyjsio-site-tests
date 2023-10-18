@@ -12,7 +12,6 @@ test("Check default tabs", async (t) => {
     .expect(Selector("span.nav-link").withText("Survey Designer").visible).ok()
     .expect(Selector("span.nav-link").withText("Test Survey").visible).ok()
     .expect(Selector("span.nav-link").withText("JSON Editor").visible).ok()
-    .click(Selector(".v2-class---button__text").withText('I Understand'))
     .click(getExampleTabSelector("Code"))
     .expect(Selector("span").withText("SurveyCreator").visible).ok()
     .click(Selector('span').withText('index.html'))
