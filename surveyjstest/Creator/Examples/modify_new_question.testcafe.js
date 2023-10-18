@@ -10,12 +10,13 @@ fixture`modify_new_question`
 test('Check default tabs', async t => {
     await t
         .maximizeWindow()
-        .expect(Selector('span.nav-link').withText('Test Survey').textContent).eql("Test Survey")
+        .expect(Selector('.svc-tabbed-menu-item__text').withText('Preview').visible).ok()
+        .click(Selector(".v2-class---button__text").withText('I Understand'))
         .click(getExampleTabSelector('Code'))
-        .expect(Selector('pre').withText('Add a tag property').exists).eql(true)
+        .expect(Selector('code').textContent).contains('Add a tag property')
         .click(Selector('span').withText('index.html'))
         .wait(2000)
-        .expect(Selector('pre').withText('surveyCreatorContainer').exists).eql(true)
+        .expect(Selector('code').textContent).contains('surveyCreatorContainer')
         .click(getExampleTabSelector('Documentation'));
         //.expect(getExampleTabSelector('Documentation').filterVisible().classNames).contains('tabs__tab--active');
 });

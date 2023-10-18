@@ -9,11 +9,12 @@ fixture `depends_on_properties`
 test('Check default tabs', async t => {
     await t
         .maximizeWindow()
-        .expect(Selector('span.nav-link').withText('Survey Designer').textContent).eql("Survey Designer")
-        .expect(Selector('  span.nav-link').withText('Test Survey').textContent).eql("Test Survey")
-        .expect(Selector('span.nav-link').withText('JSON Editor').textContent).eql("JSON Editor")
+        .expect(Selector('.svc-tabbed-menu-item__text').withText('Designer').visible).ok()
+        .expect(Selector('.svc-tabbed-menu-item__text').withText('Preview').visible).ok()
+        .expect(Selector('.svc-tabbed-menu-item__text').withText('JSON Editor').visible).ok()
+        .click(Selector(".v2-class---button__text").withText('I Understand'))
         .click(getExampleTabSelector('Code'))
-        .expect(Selector('pre').withText('Populate countries depending on the selected region').exists).eql(true)
+        .expect(Selector('code').textContent).contains('Populate countries depending on the selected region')
         .click(Selector('span').withText('index.html'))
-        .expect(Selector('pre').withText('id="surveyCreatorContainer"').exists).eql(true);
+        .expect(Selector('code').textContent).contains('id="surveyCreatorContainer"');
 });
