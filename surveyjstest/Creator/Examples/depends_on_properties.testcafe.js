@@ -9,9 +9,9 @@ fixture `depends_on_properties`
 test('Check default tabs', async t => {
     await t
         .maximizeWindow()
-        .expect(Selector('.svc-tabbed-menu-item__text').withText('Designer').visible).ok()
-        .expect(Selector('.svc-tabbed-menu-item__text').withText('Preview').visible).ok()
-        .expect(Selector('.svc-tabbed-menu-item__text').withText('JSON Editor').visible).ok()
+        .expect(Selector('span.nav-link').withText('Survey Designer').visible).ok()
+        .expect(Selector('span.nav-link').withText('Test Survey').visible).ok()
+        .expect(Selector('span.nav-link').withText('JSON Editor').visible).ok()
         .click(getExampleTabSelector('Code'))
         .expect(Selector('code').textContent).contains('Populate countries depending on the selected region')
         .click(Selector('span').withText('index.html'))
