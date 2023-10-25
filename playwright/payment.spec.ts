@@ -4,7 +4,7 @@ test('PayPal: failed test payment', async ({ page }) => {
   test.setTimeout(480000);
   
   await page.goto('https://surveyjstest.azurewebsites.net/pricing');
-  await page.locator('a').filter({ hasText: 'I Understand' }).click();
+  await page.locator('a').filter({ hasText: 'Accept All' }).click();
   await page.locator('div:nth-child(4) > .v2-class---pricing-header__content > div:nth-child(2) > .v2-class---button').first().click();
   await page.getByRole('combobox', { name: 'Qty' }).click();
   await page.getByRole('option', { name: '3', exact: true }).locator('div').click();
