@@ -6,7 +6,7 @@ fixture`TopBar`.page`${url}`.beforeEach(async t => {
   await disableSmoothScroll();
 
 
-  const cookiePopupAccept = Selector(".v2-class---popup__button-container a");
+  const cookiePopupAccept = Selector(".v2-class---banner-footer-actions .v2-class---button");
   if(await cookiePopupAccept.exists) {
     await t.click(cookiePopupAccept); // close cookie msg
   } 

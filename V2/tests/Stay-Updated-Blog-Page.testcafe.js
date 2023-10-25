@@ -8,7 +8,7 @@ fixture`StayUpdatedBlog-Page`.page`${url}${route}`.beforeEach(async t => {
     await disableSmoothScroll();
     await removeNewItemsExcept5(".v2-class---stay-updated-page__articles-list-item");
     
-    const cookiePopupAccept = Selector(".v2-class---popup__button-container a");
+    const cookiePopupAccept = Selector(".v2-class---banner-footer-actions .v2-class---button");
     if(await cookiePopupAccept.exists) {
       await t.click(cookiePopupAccept); // close cookie msg
     } 

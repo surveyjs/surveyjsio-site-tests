@@ -9,7 +9,7 @@ fixture`Changelog-Page`.page`${url}${route}`.beforeEach(async t => {
     await removeNewItemsExcept5(".v2-class---changelog-page__version-content");
     await removeNewItemsExcept5(".v2-class---anchor-menu-item");
     
-    const cookiePopupAccept = Selector(".v2-class---popup__button-container a");
+    const cookiePopupAccept = Selector(".v2-class---banner-footer-actions .v2-class---button");
     if(await cookiePopupAccept.exists) {
       await t.click(cookiePopupAccept); // close cookie msg
     } 
