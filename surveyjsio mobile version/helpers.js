@@ -14,5 +14,5 @@ export const explicitErrorHandler = () => { window.addEventListener("error", e =
 }
 
 export function getIUnderstandButton() {
-    return Selector('span').withText('I Understand');
+    return Selector('span').withText('Accept All');
 }
