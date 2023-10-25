@@ -10,7 +10,7 @@ test('Check custom widgets default tabs', async t => {
     await t
         .maximizeWindow()
         .click(getExampleTabSelector('Code'))
-        .expect(Selector('pre').withText('const options').exists).eql(true)
+        .expect(Selector('code').textContent).contains('const options')
         .click(Selector('span').withText('index.html'))
         .expect(Selector('code').textContent).contains('ckeditor.js')
         .click(Selector('span').withText('package.json'))
@@ -25,7 +25,7 @@ test('Check custom widgets default tabs', async t => {
         .expect(Selector('a').withText('create a new issue').getAttribute('href')).eql('https://github.com/surveyjs/widgets/issues')
         .click(getExampleTabSelector('Result'));
     await t
-        .expect(Selector('span.svc-tabbed-menu-item__text').withText('Designer').textContent).eql("Designer")
-        .expect(Selector('span.svc-tabbed-menu-item__text').withText('Preview').textContent).eql("Preview")
-        .expect(Selector('span.svc-tabbed-menu-item__text').withText('JSON Editor').textContent).eql("JSON Editor");
+        .expect(Selector('span.svc-tabbed-menu-item__text').withText('Designer').visible).ok()
+        .expect(Selector('span.svc-tabbed-menu-item__text').withText('Preview').visible).ok()
+        .expect(Selector('span.svc-tabbed-menu-item__text').withText('JSON Editor').visible).ok();
 });

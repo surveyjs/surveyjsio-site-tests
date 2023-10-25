@@ -4,20 +4,20 @@ import { acceptCookie, getExampleTabSelector } from '../../helpers';
 fixture`toolbox_customization`
     .page`https://surveyjstest.azurewebsites.net/Examples/Builder?id=toolboxcustomization&platform=Knockoutjs&theme=default`.beforeEach(async t => {
         await acceptCookie(t);
-    });;
+    });
 
 test('Check tabs', async t => {
     await t
         .maximizeWindow()
         .switchToMainWindow()
         .click(getExampleTabSelector('Code'))
-        .expect(Selector('pre').withText('const creator = new SurveyCreator.SurveyCreator("surveyCreatorContainer", options);').exists).eql(true)
+        .expect(Selector('code').textContent).contains('const creator = new SurveyCreator.SurveyCreator("surveyCreatorContainer", options);')
         .click(Selector('span').withText('index.html'))
-        .expect(Selector('pre').withText('id="surveyCreatorContainer"').exists).eql(true)
+        .expect(Selector('code').textContent).contains('id="surveyCreatorContainer"')
         .click(getExampleTabSelector('Documentation'))
         .expect(getExampleTabSelector('Documentation').classNames).contains('v2-class---footer-toolbar-item--active')
         .click(getExampleTabSelector('Result'))
-        .expect(Selector('span.nav-link').withText('Survey Designer').textContent).eql("Survey Designer")
-        .expect(Selector('span.nav-link').withText('Test Survey').textContent).eql("Test Survey")
-        .expect(Selector('span.nav-link').withText('JSON Editor').textContent).eql("JSON Editor");
+        .expect(Selector('span.nav-link').withText('Survey Designer').visible).ok()
+        .expect(Selector('span.nav-link').withText('Test Survey').visible).ok()
+        .expect(Selector('span.nav-link').withText('JSON Editor').visible).ok();
 });

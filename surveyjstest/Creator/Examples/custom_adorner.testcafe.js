@@ -16,7 +16,6 @@ test('Adorner exists', async t => {
         .expect(selector.visible).notOk()
         .click(Selector('span').withText('Single-Line Input'))
         .wait(1000)
-        .debug()
         .expect(selector.exists).ok()
         .expect(selector.visible).ok();
 });

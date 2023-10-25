@@ -14,7 +14,7 @@ test('text', async t => {
     await t
         .maximizeWindow()
         .click(getSideBarGroupItem('Simple Questions'))
-        .click(getSideBarItem('Text'))
+        .click(getSideBarItem('Text Entry'))
         .typeText('#sq_100i', 'Test', {
             caretPos: 0
         })

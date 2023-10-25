@@ -25,6 +25,7 @@ jobs:
     displayName: 'npm install'
 
   - bash: |
+      npm run warmup
       npm run test_ci
     displayName: 'run TestCafe tests'
 
