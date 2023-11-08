@@ -1,23 +1,22 @@
-import {  ClientFunction } from "testcafe";
-import { createScreenshotsComparer } from "devextreme-screenshot-comparer";
-
+import { ClientFunction } from 'testcafe';
+import { createScreenshotsComparer } from 'devextreme-screenshot-comparer';
 
 // eslint-disable-next-line no-undef
-const minimist = require("minimist");
+const minimist = require('minimist');
 
 // eslint-disable-next-line no-undef
 const args = minimist(process.argv.slice(2));
-const envDev = args["env-dev"];
-const envNew = args["env-new"];
+const envDev = args['env-dev'];
+const envNew = args['env-new'];
 
-const productionURL = "https://surveyjstest.azurewebsites.net/";
-export const url = envDev ? "https://localhost:44388/" : productionURL;
+const productionURL = 'https://surveyjstest.azurewebsites.net/';
+export const url = envDev ? 'https://localhost:44388/' : productionURL;
 
 export async function checkElementScreenshot(screenshotName, element, t) {
   const comparer = createScreenshotsComparer(t);
   await t
     .wait(1000)
-    .expect(element.visible).ok("element is invisible for " + screenshotName);
+    .expect(element.visible).ok('element is invisible for ' + screenshotName);
   await comparer.takeScreenshot(screenshotName, element, screenshotComparerOptions);
   if (!envNew) {
     await t
@@ -28,9 +27,9 @@ export async function checkElementScreenshot(screenshotName, element, t) {
 
 //devextreme-screenshot-comparer options
 export const screenshotComparerOptions = {
-  path: "./tests",
-  screenshotsRelativePath: "../V2/screenshots",
-  destinationRelativePath: "../V2/artifacts",
+  path: './tests',
+  screenshotsRelativePath: '../V2/screenshots',
+  destinationRelativePath: '../V2/artifacts',
   enableTextMask: true,
   textMaskRadius: 5,
   textDiffTreshold: 0.5,
@@ -55,11 +54,11 @@ export const screenshotComparerOptions = {
 };
 
 export const screens = {
-  "Large-Desktop": { width: 1920, height: 1080 },
-  "Desktop": { width: 1366, height: 768 },
-  "Tablet": { width: 1024, height: 744 },
-  "Vertical-Tablet": { width: 744, height: 1024 },
-  "Mobile": { width: 375, height: 667 }
+  'Large-Desktop': { width: 1920, height: 1080 },
+  'Desktop': { width: 1366, height: 768 },
+  'Tablet': { width: 1024, height: 744 },
+  'Vertical-Tablet': { width: 744, height: 1024 },
+  'Mobile': { width: 375, height: 667 }
 };
 
 export async function wrapVisualTest(t, fn) {
@@ -73,26 +72,26 @@ export async function wrapVisualTest(t, fn) {
 }
 export async function takeElementScreenshot(screenshotName, element, t, comparer) {
   await t
-    .expect(element.visible).ok("element is invisible for " + screenshotName);
+    .expect(element.visible).ok('element is invisible for ' + screenshotName);
   await comparer.takeScreenshot(screenshotName, element, screenshotComparerOptions);
 }
 
 export const explicitErrorHandler = ClientFunction(() => {
-  window.addEventListener("error", e => {
-    if (e.message === "ResizeObserver loop completed with undelivered notifications." ||
-      e.message === "ResizeObserver loop limit exceeded") {
+  window.addEventListener('error', e => {
+    if (e.message === 'ResizeObserver loop completed with undelivered notifications.' ||
+      e.message === 'ResizeObserver loop limit exceeded') {
       e.stopImmediatePropagation();
     }
   });
 });
 
 export const disableSmoothScroll = ClientFunction(() => {
-  document.querySelector("html").style.scrollBehavior = "initial";
+  document.querySelector('html').style.scrollBehavior = 'initial';
 });
 
 export const removeNewItemsExcept5 = ClientFunction((selector) => {
   const items = document.querySelectorAll(selector);
   items.forEach((item, index)=>{
-    if (index < items.length - 5 ) item.remove();
+    if (index < items.length - 5) item.remove();
   });
 });

@@ -1,4 +1,4 @@
-import { Selector } from "testcafe";
+import { Selector, fixture, test } from 'testcafe';
 
 fixture`Basics`.page`http://surveyjstest.azurewebsites.net`;
 
@@ -27,8 +27,8 @@ fixture`Basics`.page`http://surveyjstest.azurewebsites.net`;
 //     .expect(visiblePopupItems.count).eql(7);
 // });
 
-test("Logo Test", async (t) => {
+test('Logo Test', async (t) => {
   await t
     .maximizeWindow()
-    .expect(Selector(".v2-class---logo").exists).ok();
+    .expect(Selector('.v2-class---logo').exists).ok();
 });

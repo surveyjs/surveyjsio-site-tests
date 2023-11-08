@@ -1,16 +1,16 @@
-import { Selector } from "testcafe";
-import { url, checkElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll } from "../helper";
+import { Selector, fixture, test } from 'testcafe';
+import { url, checkElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll } from '../helper';
 
-const route = "/features";
+const route = '/features';
 
 fixture`FeaturesPage`.page`${url}${route}`.beforeEach(async t => {
-    await explicitErrorHandler();
-    await disableSmoothScroll();
-    
-    const cookiePopupAccept = Selector(".v2-class---banner-footer-actions .v2-class---button");
-    if(await cookiePopupAccept.exists) {
-      await t.click(cookiePopupAccept); // close cookie msg
-    } 
+  await explicitErrorHandler();
+  await disableSmoothScroll();
+
+  const cookiePopupAccept = Selector('.v2-class---banner-footer-actions .v2-class---button');
+  if(await cookiePopupAccept.exists) {
+    await t.click(cookiePopupAccept); // close cookie msg
+  }
 });
 
 for (const screenName in screens) {
@@ -19,7 +19,7 @@ for (const screenName in screens) {
   test(`Features-Page--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
 
-    const Page = Selector(".v2-class---features-page").filterVisible();
+    const Page = Selector('.v2-class---features-page').filterVisible();
     await checkElementScreenshot(`Features-Page--${screenName}.png`, Page, t);
   });
 }

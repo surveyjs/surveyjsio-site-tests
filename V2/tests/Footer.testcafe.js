@@ -1,14 +1,14 @@
-import { Selector } from "testcafe";
-import { url, checkElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll } from "../helper";
+import { Selector, fixture, test } from 'testcafe';
+import { url, checkElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll } from '../helper';
 
 fixture`Footer`.page`${url}`.beforeEach(async t => {
-    await explicitErrorHandler();
-    await disableSmoothScroll();
-    
-    const cookiePopupAccept = Selector(".v2-class---banner-footer-actions .v2-class---button");
-    if(await cookiePopupAccept.exists) {
-      await t.click(cookiePopupAccept); // close cookie msg
-    } 
+  await explicitErrorHandler();
+  await disableSmoothScroll();
+
+  const cookiePopupAccept = Selector('.v2-class---banner-footer-actions .v2-class---button');
+  if(await cookiePopupAccept.exists) {
+    await t.click(cookiePopupAccept); // close cookie msg
+  }
 });
 
 for (const screenName in screens) {
@@ -18,27 +18,27 @@ for (const screenName in screens) {
   test(`Footer--${screenName}`, async (t) => {
     await t.resizeWindow(screen.width, height);
 
-    const Footer = Selector(".v2-class---footer").filterVisible();
+    const Footer = Selector('.v2-class---footer').filterVisible();
 
     await checkElementScreenshot(`Footer--${screenName}.png`, Footer, t);
   });
 }
 
-test("Hovers", async (t) => {
-  const srceen = screens["Desktop"];
+test('Hovers', async (t) => {
+  const srceen = screens['Desktop'];
 
   await t.resizeWindow(srceen.width, srceen.height);
 
-  const Footer = Selector(".v2-class---footer").filterVisible();
+  const Footer = Selector('.v2-class---footer').filterVisible();
 
   await t.wait(5000);
 
-  const Link = Footer.find(".v2-class---footer__link-group-item__link");
-  const SocialLink = Footer.find(".v2-class---footer__social-link");
+  const Link = Footer.find('.v2-class---footer__link-group-item__link');
+  const SocialLink = Footer.find('.v2-class---footer__social-link');
 
   await t.hover(Link);
-  await checkElementScreenshot(`Footer--Link-Hover.png`, Link, t);
+  await checkElementScreenshot('Footer--Link-Hover.png', Link, t);
 
   await t.hover(SocialLink);
-  await checkElementScreenshot(`Footer--SocialLink-Hover.png`, SocialLink, t);
+  await checkElementScreenshot('Footer--SocialLink-Hover.png', SocialLink, t);
 });
