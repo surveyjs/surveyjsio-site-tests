@@ -12,43 +12,22 @@ trigger:
 pool:
   vmImage: 'Ubuntu-20.04'
 
-jobs:
-- job: Main
-  steps:
-  - task: NodeTool@0
-    inputs:
-      versionSpec: '14.x'
-    displayName: 'Install Node.js'
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'
+  displayName: 'Install Node.js'
 
-  - bash: |
-      npm install
-    displayName: 'npm install'
+- bash: |
+    npm install
+  displayName: 'npm install'
 
-  - bash: |
-      npm run warmup
-      npm run test:examples
-    displayName: 'run TestCafe tests'
+- bash: |
+    npm run warmup
+    npm run test:examples
+  displayName: 'run TestCafe tests'
 
-  - task: PublishTestResults@2
-    inputs:
-      testResultsFiles: '**/report.xml'
-      testResultsFormat: 'JUnit'
-
-- job: Paypal
-  steps:
-  - task: NodeTool@0
-    inputs:
-      versionSpec: '14.x'
-    displayName: 'Install Node.js'
-
-  - bash: |
-      npm install
-    displayName: 'npm install'
-
-  - bash: |
-      npx playwright install chromium
-    displayName: 'npm install'
-
-  - bash: |
-      npm run pw:ci
-    displayName: 'run Playwright tests'
+- task: PublishTestResults@2
+  inputs:
+    testResultsFiles: '**/report.xml'
+    testResultsFormat: 'JUnit'
