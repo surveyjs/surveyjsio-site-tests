@@ -2,11 +2,11 @@ import { Selector } from 'testcafe';
 import { explicitErrorHandler } from '../../helpers';
 
 fixture`question_types`
-    .page`https://surveyjstest.azurewebsites.net/Examples/Library`.clientScripts({
+    .page`https://surveyjstest.azurewebsites.net/form-library/examples/text-entry-question/reactjs`.clientScripts({
         content: `(${explicitErrorHandler.toString()})()`
     });
 
-test('text', async t => {
+test.only('codesandbox', async t => {
     await t
         .maximizeWindow()
         .hover(Selector('.v2-class---header-toolbar-item-dropdown').withText('CodeSandbox'))
