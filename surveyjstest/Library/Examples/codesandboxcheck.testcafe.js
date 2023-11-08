@@ -1,4 +1,4 @@
-import { Selector } from 'testcafe';
+import { Selector , fixture, test } from 'testcafe';
 import { explicitErrorHandler } from '../../helpers';
 
 fixture`question_types`

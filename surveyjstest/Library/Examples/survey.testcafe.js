@@ -1,4 +1,4 @@
-import { Selector } from 'testcafe';
+import { Selector , fixture, test } from 'testcafe';
 import { getSideBarGroupItem, getSideBarItem, explicitErrorHandler, acceptCookie } from '../../helpers';
 
 fixture`survey`

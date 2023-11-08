@@ -1,4 +1,4 @@
-import { Selector } from 'testcafe';
+import { Selector , fixture, test } from 'testcafe';
 import { explicitErrorHandler, getSideBarGroupItem, getSideBarItem } from '../../helpers';
 
 fixture `question_types`.page `https://surveyjstest.azurewebsites.net/Examples/Library`.clientScripts({

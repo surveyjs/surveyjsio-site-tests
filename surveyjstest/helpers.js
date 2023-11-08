@@ -1,4 +1,4 @@
-import { Selector } from 'testcafe';
+import { Selector , fixture, test } from 'testcafe';
 
 export function getSideBarGroupItem(text) {
     return Selector(".v2-class---drop-down-menu-item__link--level-1").withText(text);

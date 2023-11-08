@@ -1,4 +1,4 @@
-import { Selector } from 'testcafe';
+import { Selector, fixture, test } from 'testcafe';
 
 fixture `warmup`
     .page `https://surveyjstest.azurewebsites.net/Account/Login`;

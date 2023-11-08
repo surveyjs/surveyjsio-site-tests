@@ -1,4 +1,4 @@
-import { Selector } from 'testcafe';
+import { Selector, fixture, test } from 'testcafe';
 
 export function getSideBarGroupItem(text) {
     return Selector(".sidebar__item").withText(text);
