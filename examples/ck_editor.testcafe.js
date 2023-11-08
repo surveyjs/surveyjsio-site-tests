@@ -1,5 +1,5 @@
 import { Selector } from 'testcafe';
-import { getIUnderstandButton } from '../../helpers';
+import { getIUnderstandButton } from '../surveyjstest/helpers';
 
 fixture `ck_editor`
     .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=ckeditorpropertyeditor&theme=default`;

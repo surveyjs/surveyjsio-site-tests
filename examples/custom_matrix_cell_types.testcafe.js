@@ -1,5 +1,5 @@
 import { Selector } from 'testcafe';
-import { getIUnderstandButton } from '../../helpers';
+import { getIUnderstandButton } from '../surveyjstest/helpers';
 
 fixture `custom_matrix_cell_types`
     .page `https://surveyjstest.azurewebsites.net/Examples/Builder?id=matrixcustomcelltypes&theme=default`;
