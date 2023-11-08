@@ -8,7 +8,7 @@ test.skip('Survey property with default string type', async t => {
     .maximizeWindow();
 
   const dummy = ClientFunction(() => {
-    window.Survey.Serializer.addProperty('survey', { name: 'foo' });
+    Survey.Serializer.addProperty('survey', { name: 'foo' });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
     return 'dummy';
@@ -22,17 +22,14 @@ test.skip('Survey property with default string type', async t => {
 });
 
 test('Required property', async t => {
-  await t
-    .maximizeWindow();
+  await t.maximizeWindow();
 
-  const dummy = ClientFunction(() => {
-    window.Survey.Serializer.addProperty('checkbox', { name: '!foo' });
-    window.creator.JSON = '';
-    return 'dummy';
-  });
+  await ClientFunction(() => {
+    Survey.Serializer.addProperty('checkbox', { name: '!foo' });
+    creator.JSON = '';
+  })();
 
   await t
-    .expect(dummy()).eql('dummy')
     .click(Selector('.svd_toolbox').find('div').withText('Checkbox'))
     .click(Selector('span.nav-link').withText('JSON Editor'))
   //.expect(Selector('.svd-json-editor-area').exists).eql(true); // if ACE not loaded
@@ -45,7 +42,7 @@ test.skip('Set property via JSON', async t => {
     .maximizeWindow();
 
   const dummy = ClientFunction(() => {
-    window.Survey.Serializer.addProperty('checkbox', { name: '!foo' });
+    Survey.Serializer.addProperty('checkbox', { name: '!foo' });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
     return 'dummy';
@@ -64,33 +61,27 @@ test.skip('Set property via JSON', async t => {
 });
 
 test('Property with default value', async t => {
-  await t
-    .maximizeWindow();
+  await t.maximizeWindow();
 
-  const dummy = ClientFunction(() => {
-    window.Survey.Serializer.addProperty('survey', { name: 'foo', default: 'bar' });
-    window.creator.JSON = {};
-    return 'dummy';
-  });
+  await ClientFunction(() => {
+    Survey.Serializer.addProperty('survey', { name: 'foo', default: 'bar' });
+    creator.JSON = {};
+  })();
 
   await t
-    .expect(dummy()).eql('dummy')
     .click(Selector('span').withText('Others'))
     .expect(Selector('input[placeholder=\"bar\"]').value).eql('bar');
 });
 
 test('Check boolean property', async t => {
-  await t
-    .maximizeWindow();
+  await t.maximizeWindow();
 
-  const dummy = ClientFunction(() => {
-    window.Survey.Serializer.addProperty('survey', { name: 'foo:boolean' });
-    window.creator.JSON = {};
-    return 'dummy';
-  });
+  ClientFunction(() => {
+    Survey.Serializer.addProperty('survey', { name: 'foo:boolean' });
+    creator.JSON = {};
+  })();
 
   await t
-    .expect(dummy()).eql('dummy')
     .click(Selector('span').withText('Others'))
     .expect(Selector('.sjs-cb-label').withText('Foo').exists).eql(true)
     .expect(Selector('.sjs-cb-container').withText('Foo').find('input').exists).eql(true);
@@ -101,7 +92,7 @@ test.skip('Check number property', async t => {
     .maximizeWindow();
 
   const dummy = ClientFunction(() => {
-    window.Survey.Serializer.addProperty('survey', { name: 'foo:number' });
+    Survey.Serializer.addProperty('survey', { name: 'foo:number' });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
     return 'dummy';
@@ -117,17 +108,14 @@ test.skip('Check number property', async t => {
 });
 
 test('Check text property', async t => {
-  await t
-    .maximizeWindow();
+  await t.maximizeWindow();
 
-  const dummy = ClientFunction(() => {
-    window.Survey.Serializer.addProperty('survey', { name: 'foo:text' });
-    window.creator.JSON = {};
-    return 'dummy';
-  });
+  ClientFunction(() => {
+    Survey.Serializer.addProperty('survey', { name: 'foo:text' });
+    creator.JSON = {};
+  })();
 
   await t
-    .expect(dummy()).eql('dummy')
     .click(Selector('span').withText('Others'))
     .click(Selector('div').withText('Foo').find('textarea'))
     .typeText(Selector('div').withText('Foo').find('textarea'), 'Bar')
@@ -135,17 +123,14 @@ test('Check text property', async t => {
 });
 
 test('Check html property', async t => {
-  await t
-    .maximizeWindow();
+  await t.maximizeWindow();
 
-  const dummy = ClientFunction(() => {
-    window.Survey.Serializer.addProperty('survey', { name: 'foo:html' });
-    window.creator.JSON = {};
-    return 'dummy';
-  });
+  ClientFunction(() => {
+    Survey.Serializer.addProperty('survey', { name: 'foo:html' });
+    creator.JSON = {};
+  })();
 
   await t
-    .expect(dummy()).eql('dummy')
     .click(Selector('span').withText('Others'))
     .click(Selector('div').withText('Foo'))
     .typeText(Selector('div').withText('Foo').find('textarea'), 'Bar')
@@ -157,7 +142,7 @@ test.skip('Check choices property', async t => {
     .maximizeWindow();
 
   const dummy = ClientFunction(() => {
-    window.Survey.Serializer.addProperty('survey', { name: 'foo', choices: ['bar', 'egg'], default: 'bar' });
+    Survey.Serializer.addProperty('survey', { name: 'foo', choices: ['bar', 'egg'], default: 'bar' });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
     return 'dummy';
@@ -174,17 +159,14 @@ test.skip('Check choices property', async t => {
 });
 
 test('Check itemvalues property', async t => {
-  await t
-    .maximizeWindow();
+  await t.maximizeWindow();
 
-  const dummy = ClientFunction(() => {
-    window.Survey.Serializer.addProperty('survey', { name: 'foo:itemvalues' });
-    window.creator.JSON = {};
-    return 'dummy';
-  });
+  ClientFunction(() => {
+    Survey.Serializer.addProperty('survey', { name: 'foo:itemvalues' });
+    creator.JSON = {};
+  })();
 
   await t
-    .expect(dummy()).eql('dummy')
     .click(Selector('span').withText('Others'))
     .click(Selector('button').withText('Form Entry'))
     .click("input[value='Add New']")
@@ -197,7 +179,7 @@ test.skip('Check matrixdropdowncolumns property', async t => {
     .maximizeWindow();
 
   const dummy = ClientFunction(() => {
-    window.Survey.Serializer.addProperty('matrixdynamic', { name: 'foo:matrixdropdowncolumns' });
+    Survey.Serializer.addProperty('matrixdynamic', { name: 'foo:matrixdropdowncolumns' });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
     return 'dummy';
@@ -219,7 +201,7 @@ test.skip('Check textitems property', async t => {
     .maximizeWindow();
 
   const dummy = ClientFunction(() => {
-    window.Survey.Serializer.addProperty('multipletext', { name: 'foo:textitems' });
+    Survey.Serializer.addProperty('multipletext', { name: 'foo:textitems' });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
     return 'dummy';
@@ -240,7 +222,7 @@ test.skip('Check choices with function property', async t => {
     .maximizeWindow();
 
   const dummy = ClientFunction(() => {
-    window.Survey.Serializer.addProperty('survey', { name: 'locale', choices: function() { return window.Survey.surveyLocalization.getLocales(); } });
+    Survey.Serializer.addProperty('survey', { name: 'locale', choices: function() { return window.Survey.surveyLocalization.getLocales(); } });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
     return 'dummy';
@@ -258,7 +240,7 @@ test.skip('Check triggers property', async t => {
     .maximizeWindow();
 
   const dummy = ClientFunction(() => {
-    window.Survey.Serializer.addProperty('survey', { name: 'foo:triggers' });
+    Survey.Serializer.addProperty('survey', { name: 'foo:triggers' });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
     return 'dummy';
@@ -302,7 +284,7 @@ test.skip('Check validators property', async t => {
     .maximizeWindow();
 
   const dummy = ClientFunction(() => {
-    window.Survey.Serializer.addProperty('survey', { name: 'foo:validators' });
+    Survey.Serializer.addProperty('survey', { name: 'foo:validators' });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
     return 'dummy';
