@@ -43,8 +43,8 @@ test('FormElements', async t => {
 test('RegisterRemove', async t => {
     await t.maximizeWindow();
 
-    const randomNumber1 = Math.round(Math.random() * 100);
-    const randomNumber2 = Math.round(Math.random() * 100);
+    const randomNumber1 = Math.round(Math.random() * 10000);
+    const randomNumber2 = Math.round(Math.random() * 10000);
     const email = `${randomNumber1}test${randomNumber2}@tester.org`;
     const password = 'Test71';
     const displayName = 'Test71 Name';
