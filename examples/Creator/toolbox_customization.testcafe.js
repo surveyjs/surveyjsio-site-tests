@@ -1,5 +1,5 @@
 import { Selector, fixture, test } from 'testcafe';
-import { acceptCookie, getExampleTabSelector } from '../surveyjstest/helpers';
+import { acceptCookie, getExampleTabSelector } from '../helpers';
 
 fixture`toolbox_customization`
   .page`https://surveyjstest.azurewebsites.net/Examples/Builder?id=toolboxcustomization&platform=Knockoutjs&theme=default`.beforeEach(async t => {

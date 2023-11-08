@@ -1,5 +1,5 @@
 import { Selector, fixture, test } from 'testcafe';
-import { acceptCookie, explicitErrorHandler, getExampleTabSelector } from '../surveyjstest/helpers';
+import { acceptCookie, explicitErrorHandler, getExampleTabSelector } from '../helpers';
 
 fixture `localization`
   .page `https://surveyjstest.azurewebsites.net/survey-creator/examples/survey-creator-interface-localization/knockoutjs`

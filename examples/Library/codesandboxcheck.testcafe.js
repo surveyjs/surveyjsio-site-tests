@@ -1,5 +1,5 @@
 import { Selector, fixture, test } from 'testcafe';
-import { explicitErrorHandler } from '../../../surveyjstest/helpers';
+import { explicitErrorHandler } from '../helpers';
 
 fixture`question_types`
   .page`https://surveyjstest.azurewebsites.net/form-library/examples/text-entry-question/reactjs`.clientScripts({

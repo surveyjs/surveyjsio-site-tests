@@ -1,4 +1,5 @@
-import { explicitErrorHandler, fixture, test } from '../helpers';
+import { explicitErrorHandler } from '../helpers';
+import { Selector, fixture, test } from 'testcafe';
 
 fixture`ExamplesCheck`
   .page`https://surveyjstest.azurewebsites.net/`.clientScripts({

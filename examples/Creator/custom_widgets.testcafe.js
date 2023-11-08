@@ -1,5 +1,5 @@
 import { Selector, fixture, test } from 'testcafe';
-import { acceptCookie, getExampleTabSelector } from '../surveyjstest/helpers';
+import { acceptCookie, getExampleTabSelector } from '../helpers';
 
 fixture`custom_widgets`
   .page`https://surveyjstest.azurewebsites.net/Examples/Builder?id=customwidgets&platform=reactjs`.beforeEach(async t => {
