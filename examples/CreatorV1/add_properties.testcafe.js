@@ -69,7 +69,7 @@ test('Property with default value', async t => {
     .expect(Selector('input[placeholder=\"bar\"]').value).eql('bar');
 });
 
-test.only('Check boolean property', async t => {
+test('Check boolean property', async t => {
   await t.maximizeWindow();
 
   await ClientFunction(() => {
