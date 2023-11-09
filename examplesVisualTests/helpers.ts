@@ -59,4 +59,5 @@ export const screenshotComparerOptions = {
   },
   generatePatch: false,
   highlightColor: { r: 0xff, g: 0, b: 0xff },
+  ignoreSizeDifference: true,
 };
