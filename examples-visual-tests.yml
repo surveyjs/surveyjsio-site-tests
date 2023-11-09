@@ -1,0 +1,56 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+  batch: true
+  branches:
+    include:
+    - master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+
+- task: PowerShell@2
+  displayName: 'update Google Chrome to latest'
+  inputs:
+    targetType: 'inline'
+    script: '$Path = $env:TEMP; $Installer = ''chrome_installer.exe''; Invoke-WebRequest -Uri ''http://dl.google.com/chrome/install/375.126/chrome_installer.exe'' -OutFile $Path\$Installer; Start-Process -FilePath $Path\$Installer -Args ''/silent /install'' -Verb RunAs -Wait; Remove-Item -Path $Path\$Installer'
+
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+  displayName: 'npm install'
+
+- script: |
+    npm run test:v2:ci
+  displayName: 'run TestCafe V2 VRT tests'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFiles: '**/report.xml'
+    testResultsFormat: 'JUnit'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/V2'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/V2-Site-VRT-Artifacts'
+    OverWrite: true
+  condition: always()
+  displayName: 'copy vrt artifacts'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/V2-Site-VRT-Artifacts/'
+    ArtifactName: 'V2-Site-VRT-Artifacts'
+    publishLocation: 'Container'
+  condition: always()
+  displayName: 'publish vrt artifacts'
