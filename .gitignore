@@ -65,3 +65,5 @@ V2/artifacts
 /test-results/
 /playwright-report/
 /playwright/.cache/
+examplesVisualTests/screenshots/
+examplesVisualTests/artifacts/

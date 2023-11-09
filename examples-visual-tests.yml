@@ -30,7 +30,7 @@ steps:
   displayName: 'npm install'
 
 - script: |
-    npm run test:v2:ci
+    npm run test:visual:ci
   displayName: 'run TestCafe V2 VRT tests'
 
 - task: PublishTestResults@2
