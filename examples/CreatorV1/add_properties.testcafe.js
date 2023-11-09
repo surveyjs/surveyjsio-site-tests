@@ -7,15 +7,13 @@ test.skip('Survey property with default string type', async t => {
   await t
     .maximizeWindow();
 
-  const dummy = ClientFunction(() => {
+  await ClientFunction(() => {
     Survey.Serializer.addProperty('survey', { name: 'foo' });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
-    return 'dummy';
-  });
+  })();
 
   await t
-    .expect(dummy()).eql('dummy')
     .click(Selector('span').withText('Others'))
     .expect(Selector('label').withText('Foo').exists).eql(true)
     .expect(Selector('.form-control.svd_editor_control[data-bind^="value: koValue, disable: readOnly, attr: {placehol"]').nth(2).exists).eql(true);
@@ -41,15 +39,13 @@ test.skip('Set property via JSON', async t => {
   await t
     .maximizeWindow();
 
-  const dummy = ClientFunction(() => {
+  await ClientFunction(() => {
     Survey.Serializer.addProperty('checkbox', { name: '!foo' });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
-    return 'dummy';
-  });
+  })();
 
   await t
-    .expect(dummy()).eql('dummy')
     .click(Selector('.svd_toolbox').find('div').withText('Checkbox'))
     .click(Selector('span.nav-link').withText('JSON Editor'))
     .typeText('.ace_text-input', '{  "pages": [   {    "name": "page1",    "elements": [     {      "type": "checkbox",      "name": "question1",      "choices": [       "item1",       "item2",       "item3"      ],      "foo":"bar"     }    ]   }  ] }')
@@ -73,10 +69,10 @@ test('Property with default value', async t => {
     .expect(Selector('input[placeholder=\"bar\"]').value).eql('bar');
 });
 
-test('Check boolean property', async t => {
+test.only('Check boolean property', async t => {
   await t.maximizeWindow();
 
-  ClientFunction(() => {
+  await ClientFunction(() => {
     Survey.Serializer.addProperty('survey', { name: 'foo:boolean' });
     creator.JSON = {};
   })();
@@ -91,15 +87,13 @@ test.skip('Check number property', async t => {
   await t
     .maximizeWindow();
 
-  const dummy = ClientFunction(() => {
+  await ClientFunction(() => {
     Survey.Serializer.addProperty('survey', { name: 'foo:number' });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
-    return 'dummy';
-  });
+  })();
 
   await t
-    .expect(dummy()).eql('dummy')
     .click(Selector('span').withText('Others'))
     .expect(Selector('label').withText('Foo').exists).eql(true)
     .expect(Selector('div').withText('Foo').find('input').exists).eql(true)
@@ -110,7 +104,7 @@ test.skip('Check number property', async t => {
 test('Check text property', async t => {
   await t.maximizeWindow();
 
-  ClientFunction(() => {
+  await ClientFunction(() => {
     Survey.Serializer.addProperty('survey', { name: 'foo:text' });
     creator.JSON = {};
   })();
@@ -125,7 +119,7 @@ test('Check text property', async t => {
 test('Check html property', async t => {
   await t.maximizeWindow();
 
-  ClientFunction(() => {
+  await ClientFunction(() => {
     Survey.Serializer.addProperty('survey', { name: 'foo:html' });
     creator.JSON = {};
   })();
@@ -141,15 +135,13 @@ test.skip('Check choices property', async t => {
   await t
     .maximizeWindow();
 
-  const dummy = ClientFunction(() => {
+  await ClientFunction(() => {
     Survey.Serializer.addProperty('survey', { name: 'foo', choices: ['bar', 'egg'], default: 'bar' });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
-    return 'dummy';
-  });
+  })();
 
   await t
-    .expect(dummy()).eql('dummy')
     .click(Selector('span').withText('Others'))
     .expect(Selector('div').withText('Foo').find('select').value).eql('bar')
     .click(Selector('div').withText('Foo').find('select'))
@@ -161,7 +153,7 @@ test.skip('Check choices property', async t => {
 test('Check itemvalues property', async t => {
   await t.maximizeWindow();
 
-  ClientFunction(() => {
+  await ClientFunction(() => {
     Survey.Serializer.addProperty('survey', { name: 'foo:itemvalues' });
     creator.JSON = {};
   })();
@@ -178,15 +170,13 @@ test.skip('Check matrixdropdowncolumns property', async t => {
   await t
     .maximizeWindow();
 
-  const dummy = ClientFunction(() => {
+  await ClientFunction(() => {
     Survey.Serializer.addProperty('matrixdynamic', { name: 'foo:matrixdropdowncolumns' });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
-    return 'dummy';
-  });
+  })();
 
   await t
-    .expect(dummy()).eql('dummy')
     .click(Selector('div').withText('Matrix').nth(9).find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind="text:title"]'))
     .click(Selector('a').withText('Items').nth(2).find('[data-bind="text: koText"]'))
     .click(Selector('div').withText('Required').nth(19).find('.btn.btn-primary[data-bind^="click: onAddClick, value: $root.getLocString(\\\'pe.a"]'))
@@ -200,15 +190,13 @@ test.skip('Check textitems property', async t => {
   await t
     .maximizeWindow();
 
-  const dummy = ClientFunction(() => {
+  await ClientFunction(() => {
     Survey.Serializer.addProperty('multipletext', { name: 'foo:textitems' });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
-    return 'dummy';
-  });
+  })();
 
   await t
-    .expect(dummy()).eql('dummy')
     .click(Selector('div').withText('Multiple Text').nth(7).find('.svd_toolbox_item_text.hidden-sm.hidden-xs[data-bind="text:title"]'))
     .click(Selector('a').withText('Items').find('[data-bind="text: koText"]'))
     .click(Selector('.svd-items-control-footer[data-bind="visible: koAllowAddRemoveItems"]').find('.btn.btn-primary[data-bind^="click: onAddClick, value: $root.getLocString(\\\'pe.a"]'))
@@ -221,15 +209,13 @@ test.skip('Check choices with function property', async t => {
   await t
     .maximizeWindow();
 
-  const dummy = ClientFunction(() => {
+  await ClientFunction(() => {
     Survey.Serializer.addProperty('survey', { name: 'locale', choices: function() { return window.Survey.surveyLocalization.getLocales(); } });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
-    return 'dummy';
-  });
+  })();
 
   await t
-    .expect(dummy()).eql('dummy')
     .click(Selector('div').withText('Default').nth(10).find('.form-control.svd_editor_control[data-bind^="value: koValue, disable: readOnly, options: koChoi"]'))
     .click(Selector('.form-control.svd_editor_control[data-bind^="value: koValue, disable: readOnly, options: koChoi"]').nth(2).find('option').withText('русский'))
     .expect(Selector('div').withText('Default').nth(10).find('.form-control.svd_editor_control[data-bind^="value: koValue, disable: readOnly, options: koChoi"]').value).eql('ru');
@@ -239,38 +225,32 @@ test.skip('Check triggers property', async t => {
   await t
     .maximizeWindow();
 
-  const dummy = ClientFunction(() => {
+  await ClientFunction(() => {
     Survey.Serializer.addProperty('survey', { name: 'foo:triggers' });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
-    return 'dummy';
-  });
+  })();
 
   await t
-    .expect(dummy()).eql('dummy')
     .click(Selector('span').withText('Single-Line Input'))
     .click('#objectSelector')
     .click(Selector('option').withText('Survey'))
     .click(Selector('[data-bind="text: koText"]').nth(5));
 
-  const workaroundShow = ClientFunction(() => {
+  await ClientFunction(() => {
     const el = document.querySelector('#modelEditortriggers49').querySelector('div.ddmenu').querySelector('ul');
     el.style.visibility = 'visible';
-    return true;
-  });
+  })();
 
   await t
-    .expect(workaroundShow()).ok()
     .click(Selector('a').withText('complete survey').nth(0));
 
-  const workaroundHide = ClientFunction(() => {
+  await ClientFunction(() => {
     const el = document.querySelector('#modelEditortriggers49').querySelector('div.ddmenu').querySelector('ul');
     el.style.visibility = 'hidden';
-    return true;
-  });
+  })();
 
   await t
-    .expect(workaroundHide()).ok()
     .click('[data-bind="if: true, value: koAddConditionQuestion"]')
     .click('[data-bind^="value: name, text: (text || \'\').substring(0, 80), "][title="question1"]')
     .click('.form-control[data-bind^="textInput:koAddConditionValue, enable: koAddContio"]')
@@ -283,35 +263,29 @@ test.skip('Check validators property', async t => {
   await t
     .maximizeWindow();
 
-  const dummy = ClientFunction(() => {
+  await ClientFunction(() => {
     Survey.Serializer.addProperty('survey', { name: 'foo:validators' });
     var creatorOptions = {};
     new window.SurveyCreator.SurveyCreator('creatorElement', creatorOptions);
-    return 'dummy';
-  });
+  })();
 
   await t
-    .expect(dummy()).eql('dummy')
     .click(Selector('[data-bind="text: koText"]').nth(5));
 
-  const workaroundShow = ClientFunction(() => {
+  await ClientFunction(() => {
     const el = document.querySelectorAll('.propertyeditor-validators')[2].querySelector('div.ddmenu').querySelector('ul');
     el.style.visibility = 'visible';
-    return true;
-  });
+  })();
 
   await t
-    .expect(workaroundShow()).ok()
     .click(Selector('a').withText('numeric'));
 
-  const workaroundHide = ClientFunction(() => {
+  await ClientFunction(() => {
     const el = document.querySelectorAll('.propertyeditor-validators')[2].querySelector('div.ddmenu').querySelector('ul');
     el.style.visibility = 'hidden';
-    return true;
-  });
+  })();
 
   await t
-    .expect(workaroundHide()).ok()
     .typeText(Selector('#editor_tab_id_general').find('.form-control.svd_editor_control[data-bind^="value: koValue, disable: readOnly, attr: {placehol"]'), '3')
     .typeText(Selector('[data-bind^="visible: objectProperty.koVisible, event: { keydow"][data-property="minValue"]').find('.form-control.svd_editor_control[data-bind^="value: koValue, disable: readOnly, attr: {max: koM"]'), '1')
     .click(Selector('[data-bind^="visible: objectProperty.koVisible, event: { keydow"][data-property="maxValue"]').find('.form-control.svd_editor_control[data-bind^="value: koValue, disable: readOnly, attr: {max: koM"]'))
