@@ -1,10 +1,6 @@
 pr: none
+trigger: none
 
-trigger:
-  batch: true
-  branches:
-    include:
-    - master
 
 pool:
   vmImage: 'windows-latest'
