@@ -31,7 +31,7 @@ steps:
 
 - script: |
     npm run test:visual:ci
-  displayName: 'run TestCafe V2 VRT tests'
+  displayName: 'run TestCafe Examples VRT tests'
 
 - task: PublishTestResults@2
   inputs:
@@ -40,17 +40,17 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(Build.SourcesDirectory)/V2'
+    SourceFolder: '$(Build.SourcesDirectory)/examplesVisualTests'
     Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/V2-Site-VRT-Artifacts'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/Examples-VRT-Artifacts'
     OverWrite: true
   condition: always()
   displayName: 'copy vrt artifacts'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/V2-Site-VRT-Artifacts/'
-    ArtifactName: 'V2-Site-VRT-Artifacts'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/Examples-VRT-Artifacts/'
+    ArtifactName: 'Examples-VRT-Artifacts'
     publishLocation: 'Container'
   condition: always()
   displayName: 'publish vrt artifacts'
