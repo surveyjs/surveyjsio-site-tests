@@ -38,31 +38,3 @@ test('Check property names with deutsch', async t => {
   await t.expect(options.replace(/\n/g, '_')).eql('an_an (unabhängig für jede Seite)_aus');
 });
 
-//You can't recreate the creator, you should do it for the new creator change the locale
-//creator.locale = "fr";
-test.skip('Check custom translation', async t => {
-  await t
-    .maximizeWindow();
-
-  const changeCurrentLocale = ClientFunction(() => {
-    //Create your translation
-    var frenchStrings = {
-      qt: { comment: 'Commentaire' },
-      pe: { isRequired: 'Est obligatoire ?' },
-      ed: { designer: 'Éditeur de questionnaire' }
-    };
-
-    //Set the your translation to the locale
-    window.SurveyCreator.localization.locales['fr'] = frenchStrings;
-    window.SurveyCreator.localization.currentLocale = 'fr';
-    new window.SurveyCreator.SurveyCreator('creatorElement');
-    return 'dummy';
-  });
-
-  await t
-    .expect(changeCurrentLocale()).eql('dummy')
-    .expect(Selector('.svd-tab-text').withText('Éditeur de questionnaire').visible).ok()
-    .expect(Selector('span').withText('Commentaire').visible).ok()
-    .click(Selector('.svd_toolbox_item').filterVisible().nth(0))
-    .expect(Selector('.svda_question_action[title="Est obligatoire ?"]').visible).ok();
-});
