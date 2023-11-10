@@ -7,7 +7,9 @@ test('Required property', async t => {
   await t.maximizeWindow();
 
   await ClientFunction(() => {
+    // eslint-disable-next-line no-undef
     Survey.Serializer.addProperty('checkbox', { name: '!foo' });
+    // eslint-disable-next-line no-undef
     creator.JSON = '';
   })();
 
@@ -23,7 +25,9 @@ test('Property with default value', async t => {
   await t.maximizeWindow();
 
   await ClientFunction(() => {
+    // eslint-disable-next-line no-undef
     Survey.Serializer.addProperty('survey', { name: 'foo', default: 'bar' });
+    // eslint-disable-next-line no-undef
     creator.JSON = {};
   })();
 
@@ -36,7 +40,9 @@ test('Check boolean property', async t => {
   await t.maximizeWindow();
 
   await ClientFunction(() => {
+    // eslint-disable-next-line no-undef
     Survey.Serializer.addProperty('survey', { name: 'foo:boolean' });
+    // eslint-disable-next-line no-undef
     creator.JSON = {};
   })();
 
@@ -50,7 +56,9 @@ test('Check text property', async t => {
   await t.maximizeWindow();
 
   await ClientFunction(() => {
+    // eslint-disable-next-line no-undef
     Survey.Serializer.addProperty('survey', { name: 'foo:text' });
+    // eslint-disable-next-line no-undef
     creator.JSON = {};
   })();
 
@@ -65,7 +73,9 @@ test('Check html property', async t => {
   await t.maximizeWindow();
 
   await ClientFunction(() => {
+    // eslint-disable-next-line no-undef
     Survey.Serializer.addProperty('survey', { name: 'foo:html' });
+    // eslint-disable-next-line no-undef
     creator.JSON = {};
   })();
 
@@ -80,7 +90,9 @@ test('Check itemvalues property', async t => {
   await t.maximizeWindow();
 
   await ClientFunction(() => {
+    // eslint-disable-next-line no-undef
     Survey.Serializer.addProperty('survey', { name: 'foo:itemvalues' });
+    // eslint-disable-next-line no-undef
     creator.JSON = {};
   })();
 
