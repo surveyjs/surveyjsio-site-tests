@@ -1,5 +1,5 @@
 import { ClientFunction, Selector, fixture, test } from 'testcafe';
-import { url, checkElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll } from '../helper';
+import { url, wrapVisualTest, takeElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll } from '../helper';
 
 const route = '/form-library';
 
@@ -13,13 +13,27 @@ fixture`FormLibraryPage`.page`${url}${route}`.beforeEach(async t => {
   }
 });
 
-for (const screenName in screens) {
-  const screen = screens[screenName];
-  const height = 10000;
-  test(`Form-Library-Page--${screenName}`, async (t) => {
-    await t.resizeWindow(screen.width, height);
-    await ClientFunction(()=>{ document.getElementById('configure-web-forms').style.display = 'none'; })();
-    const Page = Selector('.v2-class---form-library-page').filterVisible();
-    await checkElementScreenshot(`Form-Library-Page--${screenName}.png`, Page, t);
-  });
-}
+test(`Form-Library-Page`, async (t) => {  
+  await wrapVisualTest(t, async (t, comparer) => {
+    for (const screenName in screens) {
+      const screen = screens[screenName];
+      const height = 10000;
+      await t.resizeWindow(screen.width, height);
+      await ClientFunction(()=>{ document.getElementById('configure-web-forms').style.display = 'none'; })();
+
+
+      const sections = {
+        "title": ".v2-class---title-section", 
+        "title-video": ".v2-class---title-video-section",
+        "features": ".v2-class---features-section",
+        "demo": ".v2-class---demo-section",
+        "get-started": ".v2-class---form-library-page__get-started-section",
+        "ending": ".v2-class---ending-section",
+      }
+      for(const section in sections) {
+        const Section = Selector(sections[section]).filterVisible();
+        await takeElementScreenshot(`form-library/${section}/Form-Library-Page--${section}--${screenName}.png`, Section, t, comparer);
+      }
+    }
+  })
+});

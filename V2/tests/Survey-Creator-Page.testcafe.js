@@ -1,5 +1,5 @@
 import { ClientFunction, Selector, fixture, test } from 'testcafe';
-import { url, checkElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll } from '../helper';
+import { url, wrapVisualTest, takeElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll } from '../helper';
 
 const route = '/survey-creator';
 
@@ -13,12 +13,25 @@ fixture`SurveyCreatorPage`.page`${url}${route}`.beforeEach(async t => {
   }
 });
 
-for (const screenName in screens) {
-  const screen = screens[screenName];
-  const height = 10000;
-  test(`Survey-Creator-Page--${screenName}`, async (t) => {
-    await t.resizeWindow(screen.width, height);
-    const Page = Selector('.v2-class---survey-creator-page').filterVisible();
-    await checkElementScreenshot(`Survey-Creator-Page--${screenName}.png`, Page, t);
-  });
-}
+test(`Survey-Creator-Page`, async (t) => {  
+  await wrapVisualTest(t, async (t, comparer) => {
+    for (const screenName in screens) {
+      const screen = screens[screenName];
+      const height = 10000;
+      await t.resizeWindow(screen.width, height);
+
+      const sections = {
+        "title": ".v2-class---title-section", 
+        "title-video": ".v2-class---title-video-section",
+        "features": ".v2-class---features-section",
+        "creator-features": ".v2-class---survey-creator-page__features-section",
+        "get-started": ".v2-class---survey-creator-page__get-started-section",
+        "ending": ".v2-class---ending-section",
+      }
+      for(const section in sections) {
+        const Section = Selector(sections[section]).filterVisible();
+        await takeElementScreenshot(`survey-creator/${section}/Survey-Creator-Page--${section}--${screenName}.png`, Section, t, comparer);
+      }
+    }
+  })
+});

@@ -1,5 +1,5 @@
 import { ClientFunction, Selector, fixture, test } from 'testcafe';
-import { url, checkElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll } from '../helper';
+import { url, takeElementScreenshot, wrapVisualTest, screens, explicitErrorHandler, disableSmoothScroll } from '../helper';
 
 const route = '/free-survey-tool';
 
@@ -13,12 +13,25 @@ fixture`FreeSurveyToolPage`.page`${url}${route}`.beforeEach(async t => {
   }
 });
 
-for (const screenName in screens) {
-  const screen = screens[screenName];
-  const height = 10000;
-  test(`Free-Survey-Tool-Page--${screenName}`, async (t) => {
-    await t.resizeWindow(screen.width, height);
-    const Page = Selector('.v2-class---free-survey-tool-page').filterVisible();
-    await checkElementScreenshot(`Free-Survey-Tool-Page--${screenName}.png`, Page, t);
-  });
-}
+test(`Free-Survey-Tool-Page`, async (t) => {  
+  await wrapVisualTest(t, async (t, comparer) => {
+    for (const screenName in screens) {
+      const screen = screens[screenName];
+      const height = 10000;
+      await t.resizeWindow(screen.width, height);
+
+      const sections = {
+        "title": ".v2-class---features-page__title-section", 
+        "features": ".v2-class---features-section--secondary",
+        "gradient-features": ".v2-class---features-section--medium-image",
+        "primary-features": ".v2-class---features-section--primary",
+        "info": ".v2-class---info-section",
+        "ending": ".v2-class---ending-section",
+      }
+      for(const section in sections) {
+        const Section = Selector(sections[section]).filterVisible();
+        await takeElementScreenshot(`free-survey-tool/${section}/Free-Survey-Tool-Page--${section}--${screenName}.png`, Section, t, comparer);
+      }
+    }
+  })
+});

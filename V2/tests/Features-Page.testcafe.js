@@ -1,5 +1,5 @@
 import { Selector, fixture, test } from 'testcafe';
-import { url, checkElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll } from '../helper';
+import { url, wrapVisualTest, takeElementScreenshot, screens, explicitErrorHandler, disableSmoothScroll } from '../helper';
 
 const route = '/features';
 
@@ -13,13 +13,23 @@ fixture`FeaturesPage`.page`${url}${route}`.beforeEach(async t => {
   }
 });
 
-for (const screenName in screens) {
-  const screen = screens[screenName];
-  const height = 10000;
-  test(`Features-Page--${screenName}`, async (t) => {
-    await t.resizeWindow(screen.width, height);
+test(`Features-Page`, async (t) => {  
+  await wrapVisualTest(t, async (t, comparer) => {
+    for (const screenName in screens) {
+      const screen = screens[screenName];
+      const height = 10000;
+      await t.resizeWindow(screen.width, height);
 
-    const Page = Selector('.v2-class---features-page').filterVisible();
-    await checkElementScreenshot(`Features-Page--${screenName}.png`, Page, t);
-  });
-}
+      const sections = {
+        "title": ".v2-class---features-page__title-section", 
+        "diagram": ".v2-class---features-page__diagram-section",
+        "features": ".v2-class---features-page__features-section",
+        "ending": ".v2-class---features-page__ending-section",
+      }
+      for(const section in sections) {
+        const Section = Selector(sections[section]).filterVisible();
+        await takeElementScreenshot(`features/${section}/Features-Page--${section}--${screenName}.png`, Section, t, comparer);
+      }
+    }
+  })
+});
