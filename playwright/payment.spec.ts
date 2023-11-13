@@ -53,13 +53,13 @@ test('PayPal: failed test payment', async ({ page }) => {
   await frameLocatorNested.locator('input[name="familyName"]').click();
   await frameLocatorNested.locator('input[name="familyName"]').fill("Name");
 
-  await frameLocatorNested.locator('input[name="line1"]').click();
-  await frameLocatorNested.locator('input[name="line1"]').fill("Test address");
+  // await frameLocatorNested.locator('input[name="line1"]').click();
+  // await frameLocatorNested.locator('input[name="line1"]').fill("Test address");
   
-  await frameLocatorNested.locator('input[name="city"]').click();
-  await frameLocatorNested.locator('input[name="city"]').fill("Test city");
+  // await frameLocatorNested.locator('input[name="city"]').click();
+  // await frameLocatorNested.locator('input[name="city"]').fill("Test city");
 
-  await frameLocatorNested.locator('select[name="state"]').selectOption('AL');
+  // await frameLocatorNested.locator('select[name="state"]').selectOption('AL');
 
   await frameLocatorNested.locator('input[name="postcode"]').click();
   await frameLocatorNested.locator('input[name="postcode"]').fill('35004');
