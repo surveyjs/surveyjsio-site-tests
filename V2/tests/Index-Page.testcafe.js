@@ -34,7 +34,7 @@ test(`Index-Page`, async (t) => {
       }
       for(const section in sections) {
         const Section = Selector(sections[section]).filterVisible();
-        await takeElementScreenshot(`index/${section}/Index-Page--${section}--${screenName}.png`, Section, t, comparer);
+        await takeElementScreenshot(`Index-Page--${section}--${screenName}.png`, Section, t, comparer);
       }
     }
   })

@@ -28,7 +28,7 @@ test(`Features-Page`, async (t) => {
       }
       for(const section in sections) {
         const Section = Selector(sections[section]).filterVisible();
-        await takeElementScreenshot(`features/${section}/Features-Page--${section}--${screenName}.png`, Section, t, comparer);
+        await takeElementScreenshot(`Features-Page--${section}--${screenName}.png`, Section, t, comparer);
       }
     }
   })

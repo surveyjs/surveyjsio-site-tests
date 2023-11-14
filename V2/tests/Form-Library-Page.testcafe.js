@@ -32,7 +32,7 @@ test(`Form-Library-Page`, async (t) => {
       }
       for(const section in sections) {
         const Section = Selector(sections[section]).filterVisible();
-        await takeElementScreenshot(`form-library/${section}/Form-Library-Page--${section}--${screenName}.png`, Section, t, comparer);
+        await takeElementScreenshot(`Form-Library-Page--${section}--${screenName}.png`, Section, t, comparer);
       }
     }
   })

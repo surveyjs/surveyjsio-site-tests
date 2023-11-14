@@ -32,7 +32,7 @@ test(`PDF-Generator-Page`, async (t) => {
       }
       for(const section in sections) {
         const Section = Selector(sections[section]).filterVisible();
-        await takeElementScreenshot(`pdf-generator/${section}/PDF-Generator-Page--${section}--${screenName}.png`, Section, t, comparer);
+        await takeElementScreenshot(`PDF-Generator-Page--${section}--${screenName}.png`, Section, t, comparer);
       }
     }
   })

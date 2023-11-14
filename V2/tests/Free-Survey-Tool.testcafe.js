@@ -30,7 +30,7 @@ test(`Free-Survey-Tool-Page`, async (t) => {
       }
       for(const section in sections) {
         const Section = Selector(sections[section]).filterVisible();
-        await takeElementScreenshot(`free-survey-tool/${section}/Free-Survey-Tool-Page--${section}--${screenName}.png`, Section, t, comparer);
+        await takeElementScreenshot(`Free-Survey-Tool-Page--${section}--${screenName}.png`, Section, t, comparer);
       }
     }
   })
