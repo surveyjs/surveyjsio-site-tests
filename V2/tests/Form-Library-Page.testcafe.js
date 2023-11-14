@@ -13,7 +13,7 @@ fixture`FormLibraryPage`.page`${url}${route}`.beforeEach(async t => {
   }
 });
 
-test(`Form-Library-Page`, async (t) => {  
+test('Form-Library-Page', async (t) => {
   await wrapVisualTest(t, async (t, comparer) => {
     for (const screenName in screens) {
       const screen = screens[screenName];
@@ -21,19 +21,18 @@ test(`Form-Library-Page`, async (t) => {
       await t.resizeWindow(screen.width, height);
       await ClientFunction(()=>{ document.getElementById('configure-web-forms').style.display = 'none'; })();
 
-
       const sections = {
-        "title": ".v2-class---title-section", 
-        "title-video": ".v2-class---title-video-section",
-        "features": ".v2-class---features-section",
-        "demo": ".v2-class---demo-section",
-        "get-started": ".v2-class---form-library-page__get-started-section",
-        "ending": ".v2-class---ending-section",
-      }
+        'title': '.v2-class---title-section',
+        'title-video': '.v2-class---title-video-section',
+        'features': '.v2-class---features-section',
+        'demo': '.v2-class---demo-section',
+        'get-started': '.v2-class---form-library-page__get-started-section',
+        'ending': '.v2-class---ending-section',
+      };
       for(const section in sections) {
         const Section = Selector(sections[section]).filterVisible();
-        await takeElementScreenshot(`form-library/${section}/Form-Library-Page--${section}--${screenName}.png`, Section, t, comparer);
+        await takeElementScreenshot(`Form-Library-Page--${section}--${screenName}.png`, Section, t, comparer);
       }
     }
-  })
+  });
 });

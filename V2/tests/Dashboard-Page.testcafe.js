@@ -13,17 +13,7 @@ fixture`DashboardPage`.page`${url}${route}`.beforeEach(async t => {
   }
 });
 
-for (const screenName in screens) {
-  const screen = screens[screenName];
-  const height = 10000;
-  test(`Dashboard-Page--${screenName}`, async (t) => {
-    await t.resizeWindow(screen.width, height);
-    const Page = Selector('.v2-class---dashboard-page').filterVisible();
-    await checkElementScreenshot(`Dashboard-Page--${screenName}.png`, Page, t);
-  });
-}
-
-test(`Dashboard-Page`, async (t) => {  
+test('Dashboard-Page', async (t) => {
   await wrapVisualTest(t, async (t, comparer) => {
     for (const screenName in screens) {
       const screen = screens[screenName];
@@ -31,17 +21,17 @@ test(`Dashboard-Page`, async (t) => {
       await t.resizeWindow(screen.width, height);
 
       const sections = {
-        "title": ".v2-class---title-section", 
-        "features": ".v2-class---features-section",
-        "primary-features": ".v2-class---features-section--primary",
-        "gradient-features": ".v2-class---features-section--gradient",
-        "info": ".v2-class---info-section",
-        "ending": ".v2-class---ending-section",
-      }
+        'title': '.v2-class---title-section',
+        'features': '.v2-class---features-section',
+        'primary-features': '.v2-class---features-section--primary',
+        'gradient-features': '.v2-class---features-section--gradient',
+        'info': '.v2-class---info-section',
+        'ending': '.v2-class---ending-section',
+      };
       for(const section in sections) {
         const Section = Selector(sections[section]).filterVisible();
-        await takeElementScreenshot(`dashboard/${section}/Dashboard-Page-Page--${section}--${screenName}.png`, Section, t, comparer);
+        await takeElementScreenshot(`Dashboard-Page-Page--${section}--${screenName}.png`, Section, t, comparer);
       }
     }
-  })
+  });
 });
