@@ -34,7 +34,7 @@ jobs:
       testResultsFiles: '**/report.xml'
       testResultsFormat: 'JUnit'
 
-- job: Paypal
+- job: Playwright-PayPal-LicencesExpiredPopups
   steps:
   - task: NodeTool@0
     inputs:
