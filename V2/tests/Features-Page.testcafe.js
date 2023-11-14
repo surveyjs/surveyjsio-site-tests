@@ -13,7 +13,7 @@ fixture`FeaturesPage`.page`${url}${route}`.beforeEach(async t => {
   }
 });
 
-test(`Features-Page`, async (t) => {  
+test('Features-Page', async (t) => {
   await wrapVisualTest(t, async (t, comparer) => {
     for (const screenName in screens) {
       const screen = screens[screenName];
@@ -21,15 +21,15 @@ test(`Features-Page`, async (t) => {
       await t.resizeWindow(screen.width, height);
 
       const sections = {
-        "title": ".v2-class---features-page__title-section", 
-        "diagram": ".v2-class---features-page__diagram-section",
-        "features": ".v2-class---features-page__features-section",
-        "ending": ".v2-class---features-page__ending-section",
-      }
+        'title': '.v2-class---features-page__title-section',
+        'diagram': '.v2-class---features-page__diagram-section',
+        'features': '.v2-class---features-page__features-section',
+        'ending': '.v2-class---features-page__ending-section',
+      };
       for(const section in sections) {
         const Section = Selector(sections[section]).filterVisible();
         await takeElementScreenshot(`Features-Page--${section}--${screenName}.png`, Section, t, comparer);
       }
     }
-  })
+  });
 });
