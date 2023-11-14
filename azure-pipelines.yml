@@ -13,7 +13,7 @@ pool:
   vmImage: 'Ubuntu-20.04'
 
 jobs:
-- job: Main
+- job: TestCafe
   steps:
   - task: NodeTool@0
     inputs:
@@ -34,7 +34,7 @@ jobs:
       testResultsFiles: '**/report.xml'
       testResultsFormat: 'JUnit'
 
-- job: Paypal
+- job: Playwright
   steps:
   - task: NodeTool@0
     inputs:

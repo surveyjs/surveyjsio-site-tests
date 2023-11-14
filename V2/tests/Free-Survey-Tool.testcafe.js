@@ -13,7 +13,7 @@ fixture`FreeSurveyToolPage`.page`${url}${route}`.beforeEach(async t => {
   }
 });
 
-test(`Free-Survey-Tool-Page`, async (t) => {  
+test('Free-Survey-Tool-Page', async (t) => {
   await wrapVisualTest(t, async (t, comparer) => {
     for (const screenName in screens) {
       const screen = screens[screenName];
@@ -21,17 +21,17 @@ test(`Free-Survey-Tool-Page`, async (t) => {
       await t.resizeWindow(screen.width, height);
 
       const sections = {
-        "title": ".v2-class---features-page__title-section", 
-        "features": ".v2-class---features-section--secondary",
-        "gradient-features": ".v2-class---features-section--medium-image",
-        "primary-features": ".v2-class---features-section--primary",
-        "info": ".v2-class---info-section",
-        "ending": ".v2-class---ending-section",
-      }
+        'title': '.v2-class---features-page__title-section',
+        'features': '.v2-class---features-section--secondary',
+        'gradient-features': '.v2-class---features-section--medium-image',
+        'primary-features': '.v2-class---features-section--primary',
+        'info': '.v2-class---info-section',
+        'ending': '.v2-class---ending-section',
+      };
       for(const section in sections) {
         const Section = Selector(sections[section]).filterVisible();
         await takeElementScreenshot(`Free-Survey-Tool-Page--${section}--${screenName}.png`, Section, t, comparer);
       }
     }
-  })
+  });
 });
