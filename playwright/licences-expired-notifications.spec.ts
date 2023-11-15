@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test("licences expired notifications", async ({ page }) => {
+test("licences expired notifications", async ({ page, browser }) => {
   const testerEmail = "Sych-Test1@gmail.com";
   const testerPass = "Sych-Test1@gmail.com";
   const url = "https://surveyjstest.azurewebsites.net";
@@ -29,7 +29,11 @@ test("licences expired notifications", async ({ page }) => {
     await page.evaluate(() => {
       document.cookie = "expirationCookie" + "=; Max-Age=0";
     });
-    
+  }
+  const isExpirationCookieExists = async ()=>{
+    return await page.evaluate(() => {
+      return document.cookie.indexOf("expirationCookie=") !== -1;
+    });
   }
 
   test.setTimeout(480000);
@@ -37,6 +41,7 @@ test("licences expired notifications", async ({ page }) => {
 
   // none notifications
   await page.goto(`${url}/login`);
+  await expect(await isExpirationCookieExists()).toBeFalsy();
   await page.locator('a').filter({ hasText: 'Accept All' }).click(); // hide cookie banner
   await page.getByPlaceholder('Email').fill(testerEmail);
   await page.getByPlaceholder('Password').fill(testerPass);
@@ -51,6 +56,7 @@ test("licences expired notifications", async ({ page }) => {
 
   // expired notifications
   await removeExpirationCookie();
+  await expect(await isExpirationCookieExists()).toBeFalsy();
   await mockPopupType("expired");
   await page.goto(`${url}`);
   await expect(page.getByText(bannerExpiredTitle)).toBeVisible();
@@ -59,9 +65,11 @@ test("licences expired notifications", async ({ page }) => {
   await page.locator(topBarAccountClass).first().click();
   await expect(page.locator(topBarAccountSettingsWarningClass).first()).toBeVisible();
   await expect(apiRequestCount).toEqual(2);
+  await expect(await isExpirationCookieExists()).toBeTruthy();
 
   // expiresSoon notifications
   await removeExpirationCookie();
+  await expect(await isExpirationCookieExists()).toBeFalsy();
   await mockPopupType("expiresSoon");
   await page.goto(`${url}`);
   await expect(page.getByText(bannerExpiredTitle)).toBeHidden();
@@ -70,9 +78,11 @@ test("licences expired notifications", async ({ page }) => {
   await page.locator(topBarAccountClass).first().click();
   await expect(page.locator(topBarAccountSettingsWarningClass).first()).toBeVisible();
   await expect(apiRequestCount).toEqual(3);
+  await expect(await isExpirationCookieExists()).toBeTruthy();
 
   // warningOnly notifications
   await removeExpirationCookie();
+  await expect(await isExpirationCookieExists()).toBeFalsy();
   await mockPopupType("warningOnly");
   await page.goto(`${url}`);
   await expect(page.getByText(bannerExpiredTitle)).toBeHidden();
@@ -81,9 +91,11 @@ test("licences expired notifications", async ({ page }) => {
   await page.locator(topBarAccountClass).first().click();
   await expect(page.locator(topBarAccountSettingsWarningClass).first()).toBeVisible();
   await expect(apiRequestCount).toEqual(4);
+  await expect(await isExpirationCookieExists()).toBeTruthy();
 
   // close banner after visit Account Page
   await removeExpirationCookie();
+  await expect(await isExpirationCookieExists()).toBeFalsy();
   await mockPopupType("expired");
   await page.goto(`${url}`);
   await expect(page.getByText(bannerExpiredTitle)).toBeVisible();
@@ -92,5 +104,6 @@ test("licences expired notifications", async ({ page }) => {
   await page.goto(`${url}`);
   await expect(page.getByText(bannerExpiredTitle)).toBeHidden();
   await expect(apiRequestCount).toEqual(5);
+  await expect(await isExpirationCookieExists()).toBeTruthy();
 });
 
