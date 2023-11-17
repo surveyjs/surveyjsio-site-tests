@@ -1,9 +1,36 @@
 import { test, expect } from '@playwright/test';
 
+const url = "https://surveyjstest.azurewebsites.net";
+// const url = "http://localhost:62946";
+
+test('Cart: vat number field', async ({ page }) => {
+  await page.goto(`${url}/pricing`);
+  await page.locator('a').filter({ hasText: 'Accept All' }).click();
+  await page.locator('div:nth-child(4) > .v2-class---pricing-header__content > div:nth-child(2) > .v2-class---button').first().click();
+
+  await expect(page.locator("[data-name=companyVATNumber]")).toBeVisible();
+  await expect(page.locator("[data-name=companyVATNumber] .v2-class---text-edit__title-required")).toBeHidden();
+  await page.getByPlaceholder('Country').click();
+  await page.getByPlaceholder('Country').type("A");
+  await page.getByText('Austria').click();
+
+  await expect(page.locator("[data-name=companyVATNumber]")).toBeVisible();
+  await expect(page.locator("[data-name=companyVATNumber] .v2-class---text-edit__title-required")).toBeHidden();
+
+  await page.getByPlaceholder('Company Name').click();
+  await page.getByPlaceholder('Company Name').fill("Comp inc.");
+
+  await page.getByPlaceholder('VAT Number').click();
+
+  await expect(page.locator("[data-name=companyVATNumber]")).toBeVisible();
+  await expect(page.locator("[data-name=companyVATNumber] .v2-class---text-edit__title-required")).toBeVisible();
+});
+
+
 test('PayPal: failed test payment', async ({ page }) => {
   test.setTimeout(480000);
   
-  await page.goto('https://surveyjstest.azurewebsites.net/pricing');
+  await page.goto(`${url}/pricing`);
   await page.locator('a').filter({ hasText: 'Accept All' }).click();
   await page.locator('div:nth-child(4) > .v2-class---pricing-header__content > div:nth-child(2) > .v2-class---button').first().click();
   await page.getByRole('combobox', { name: 'Qty' }).click();
