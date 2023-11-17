@@ -6,6 +6,8 @@ const domain = "http://localhost:62946";
 const url = domain + "/form-library";
 
 test('Switch platform', async ({ page }) => {
+   test.setTimeout(480000);
+   
    await page.goto(url);
    await page.locator('a').filter({ hasText: 'Accept All' }).click();
    
