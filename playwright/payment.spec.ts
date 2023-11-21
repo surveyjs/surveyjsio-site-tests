@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-const url = "https://surveyjstest.azurewebsites.net";
-// const url = "http://localhost:62946";
+// const url = "https://surveyjstest.azurewebsites.net";
+const url = "http://localhost:62946";
 
 test('Cart: vat number field', async ({ page }) => {
   await page.goto(`${url}/pricing`);
@@ -24,6 +24,12 @@ test('Cart: vat number field', async ({ page }) => {
 
   await expect(page.locator("[data-name=companyVATNumber]")).toBeVisible();
   await expect(page.locator("[data-name=companyVATNumber] .v2-class---text-edit__title-required")).toBeVisible();
+
+  await page.locator("[data-name=country]").click();
+  await page.getByText('Australia').click();
+
+  await expect(page.locator("[data-name=companyVATNumber]")).toBeVisible();
+  await expect(page.locator("[data-name=companyVATNumber] .v2-class---text-edit__title-required")).toBeHidden();
 });
 
 
