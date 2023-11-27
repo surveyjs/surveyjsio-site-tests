@@ -54,7 +54,7 @@ test.page('https://surveyjstest.azurewebsites.net/form-library/examples/online-c
 
 test.page('https://surveyjstest.azurewebsites.net/form-library/examples/patient-registration-form-template-free/reactjs')('Patient Registration Form', async t => {
   await wrapVisualTest(t, async (t, comparer) => {
-    await t.resizeWindow(1280, 2500);
+    await t.resizeWindow(1280, 2700);
     await takeElementScreenshot('themes-patient-registration-form-1.png', demoModule, t, comparer);
 
     await t.click(Selector('.sd-navigation__complete-btn'));
