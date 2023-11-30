@@ -47,6 +47,7 @@ test("licences expired notifications", async ({ page, browser }) => {
   await page.getByPlaceholder('Password').fill(testerPass);
   await page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io website Terms of Use and Priv' }).click();
   await page.locator('.v2-class---signup-page__actions-footer-button-container--login').click();
+  await removeExpirationCookie();
   await expect(page.getByText(bannerExpiredTitle)).toBeHidden();
   await expect(page.getByText(bannerExpiresSoonTitle)).toBeHidden();
   await expect(page.locator(topBarIconTwinklingClass).first()).toBeHidden();
