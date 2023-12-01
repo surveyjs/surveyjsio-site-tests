@@ -47,7 +47,7 @@ test("licences expired notifications", async ({ page, browser }) => {
   await page.getByPlaceholder('Email').fill(testerEmail);
   await page.getByPlaceholder('Password').fill(testerPass);
   await page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io website Terms of Use and Priv' }).click();
-  await mockPopupType({popupType:"none", preventCountingRequests: true}); // prevent counting next api call because we don't know actually about cookie existence on server at the moment
+  await mockPopupType({popupType:"none", preventCountingRequests: true}); // prevent counting next api call because we don't know actually about cookie existence in current browser context https://playwright.dev/docs/next/api/class-browsercontext
   await page.locator('.v2-class---signup-page__actions-footer-button-container--login').click(); // +0 api call because counting prevented
   await removeExpirationCookie();
   await mockPopupType({popupType:"none"});
