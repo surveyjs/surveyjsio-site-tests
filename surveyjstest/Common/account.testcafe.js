@@ -2,7 +2,7 @@ import { Selector, ClientFunction, fixture, test } from 'testcafe';
 import { getIUnderstandButton } from '../helpers';
 
 fixture`account`
-  .page`https://surveyjstest.azurewebsites.net/login`.beforeEach(async t => {
+  .page`https://surveyjsio-test.azurewebsites.net/login`.beforeEach(async t => {
   const cookiePopupAccept = Selector('.v2-class---banner-footer-actions .v2-class---button');
   if(await cookiePopupAccept.exists) {
     await t.click(cookiePopupAccept); // close cookie msg

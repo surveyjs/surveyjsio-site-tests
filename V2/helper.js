@@ -9,7 +9,7 @@ const args = minimist(process.argv.slice(2));
 const envDev = args['env-dev'];
 const envNew = args['env-new'];
 
-const productionURL = 'https://surveyjstest.azurewebsites.net/';
+const productionURL = 'https://surveyjsio-test.azurewebsites.net/';
 export const url = envDev ? 'https://localhost:44388/' : productionURL;
 
 export async function checkElementScreenshot(screenshotName, element, t) {

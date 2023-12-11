@@ -1,6 +1,6 @@
 // import { test, expect } from '@playwright/test';
 
-// const url = "https://surveyjstest.azurewebsites.net/";
+// const url = "https://surveyjsio-test.azurewebsites.net/";
 
 // test('SurveyJS Site Index Page', async ({ page }) => {
 //   const height = 10000;

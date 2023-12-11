@@ -1,6 +1,6 @@
 import { Selector, fixture, test } from 'testcafe';
 
-fixture`Basics`.page`http://surveyjstest.azurewebsites.net`;
+fixture`Basics`.page`http://surveyjsio-test.azurewebsites.net`;
 
 // test("Menu Examples test", async (t) => {
 //   await t.maximizeWindow();

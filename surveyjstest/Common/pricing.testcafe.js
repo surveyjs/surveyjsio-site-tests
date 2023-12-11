@@ -2,7 +2,7 @@ import { Selector, ClientFunction, fixture, test } from 'testcafe';
 import { getIUnderstandButton } from '../helpers';
 
 fixture`account`
-  .page`https://surveyjstest.azurewebsites.net/Account/Login`;
+  .page`https://surveyjsio-test.azurewebsites.net/Account/Login`;
 
 test('Pricing buy test', async t => {
   await t.maximizeWindow();

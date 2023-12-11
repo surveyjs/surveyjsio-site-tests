@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const url = "https://surveyjstest.azurewebsites.net";
+const url = "https://surveyjsio-test.azurewebsites.net";
 // const url = "http://localhost:62946";
 
 test('Cart: vat number field', async ({ page }) => {

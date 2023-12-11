@@ -2,7 +2,7 @@ import { Selector , fixture, test } from 'testcafe';
 import { getIUnderstandButton } from './helpers';
 
 fixture `docs`
-    .page `https://surveyjstest.azurewebsites.net/Documentation/Library`;
+    .page `https://surveyjsio-test.azurewebsites.net/Documentation/Library`;
 
 test('Article', async t => {
     await t

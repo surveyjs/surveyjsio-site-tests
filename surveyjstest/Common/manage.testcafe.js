@@ -2,7 +2,7 @@ import { Selector, ClientFunction, fixture, test } from 'testcafe';
 import { getIUnderstandButton } from '../helpers';
 
 fixture`account`
-  .page`https://surveyjstest.azurewebsites.net/login`;
+  .page`https://surveyjsio-test.azurewebsites.net/login`;
 
 test('Remove the non-commercial usage text', async t => {
   await t.maximizeWindow()
@@ -26,6 +26,6 @@ test('Remove the non-commercial usage text', async t => {
   // test
   const removeNonCommercialTab = Selector('.v2-class---paragraph-link').withText('instructions');
   await t
-    .navigateTo('https://surveyjstest.azurewebsites.net/manage')
+    .navigateTo('https://surveyjsio-test.azurewebsites.net/manage')
     .click(removeNonCommercialTab);
 });

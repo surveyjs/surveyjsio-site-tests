@@ -5,7 +5,7 @@ test("remember organization", async ({ page, browser }) => {
 
   const testerEmail = "Sych-Test1@gmail.com";
   const testerPass = "Sych-Test1@gmail.com";
-  const url = "https://surveyjstest.azurewebsites.net/";
+  const url = "https://surveyjsio-test.azurewebsites.net/";
   // const url = "http://localhost:62946/";
   const personalSurveys = "Personal Surveys";
   const organizationSurveys = "55";

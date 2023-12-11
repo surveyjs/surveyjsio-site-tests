@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const domain = "https://surveyjstest.azurewebsites.net";
+const domain = "https://surveyjsio-test.azurewebsites.net";
 // const domain = "http://localhost:62946";
 
 const url = domain + "/form-library";

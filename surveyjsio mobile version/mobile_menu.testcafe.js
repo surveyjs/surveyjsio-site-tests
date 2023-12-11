@@ -2,7 +2,7 @@ import { Selector , fixture, test } from 'testcafe';
 import { getIUnderstandButton } from './helpers';
 
 fixture `Mobile Menu`
-    .page `https://surveyjstest.azurewebsites.net`;
+    .page `https://surveyjsio-test.azurewebsites.net`;
 
 test('Index', async t => {
     await t

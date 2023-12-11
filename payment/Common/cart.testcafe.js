@@ -1,7 +1,7 @@
 import { Selector , fixture, test } from 'testcafe';
 
 //const domain = 'http://localhost:62946';
-const domain = "https://surveyjstest.azurewebsites.net";
+const domain = "https://surveyjsio-test.azurewebsites.net";
 
 fixture`account`
     .page(domain + '/pricing').beforeEach(async t => {

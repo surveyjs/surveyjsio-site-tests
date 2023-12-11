@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test("licences expired notifications", async ({ page, browser }) => {
   const testerEmail = "Sych-Test1@gmail.com";
   const testerPass = "Sych-Test1@gmail.com";
-  const url = "https://surveyjstest.azurewebsites.net";
+  const url = "https://surveyjsio-test.azurewebsites.net";
   //const url = "http://localhost:62946";
   const apiUrl = "api/ManageUser/getLicensesExpirationPopupType?expiresSoonNotificationDateTime=null&expiredNotificationDateTime=null";
   const bannerExpiredTitle = "Your renewal subscription has expired.";
