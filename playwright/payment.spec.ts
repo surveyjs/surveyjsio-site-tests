@@ -11,7 +11,7 @@ test('Cart: vat number field', async ({ page }) => {
   await page.locator('div:nth-child(4) > .v2-class---pricing-header__content > div:nth-child(2) > .v2-class---button').first().click();
 
   await page.waitForTimeout(5000);
-  await page.locator("[data-name=companyVATNumber]").click();
+
   await expect(page.locator("[data-name=companyVATNumber]")).toBeVisible();
   await expect(page.locator("[data-name=companyVATNumber] .v2-class---text-edit__title-required")).toBeHidden();
   await page.getByPlaceholder('Country').click();
@@ -19,21 +19,19 @@ test('Cart: vat number field', async ({ page }) => {
   await page.getByText('Austria').click();
 
   await expect(page.locator("[data-name=companyVATNumber]")).toBeVisible();
-  await expect(page.locator("[data-name=companyVATNumber] .v2-class---text-edit__title-required")).toBeHidden();
+  await expect(page.locator("[data-name=companyVATNumber] .v2-class---text-edit__title-required")).toBeVisible();
 
   await page.getByPlaceholder('Company Name').click();
   await page.getByPlaceholder('Company Name').fill("Comp inc.");
 
-  await expect(page.locator('.v2-class---text-edit__title--disabled').getByText("VAT Number")).toBeVisible();
-
   await expect(page.locator("[data-name=companyVATNumber]")).toBeVisible();
-  await expect(page.locator("[data-name=companyVATNumber] .v2-class---text-edit__title--disabled")).toBeVisible();
+  await expect(page.locator("[data-name=companyVATNumber] .v2-class---text-edit__title-required")).toBeVisible();
 
   await page.locator("[data-name=country]").click();
   await page.getByText('Australia').click();
 
   await expect(page.locator("[data-name=companyVATNumber]")).toBeVisible();
-  await expect(page.locator("[data-name=companyVATNumber] .v2-class---text-edit__title--disabled")).toBeVisible();
+  await expect(page.locator("[data-name=companyVATNumber] .v2-class---text-edit__title-required")).toBeHidden();
 });
 
 
