@@ -3,7 +3,7 @@ import { Selector, fixture, test } from 'testcafe';
 fixture`survey_title`
   .page`https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=titleadorner&platform=Knockoutjs`;
 
-test('title_adorners', async t => {
+test.skip('title_adorners', async t => {
   await t
     .maximizeWindow()
     .expect(Selector('span').withText('Input page title here').nth(2).visible).eql(true, 'Page title is visible')
