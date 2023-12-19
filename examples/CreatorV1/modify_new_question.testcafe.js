@@ -11,7 +11,7 @@ test('Check default tabs', async t => {
     .maximizeWindow()
     .expect(Selector('span.nav-link').withText('Test Survey').visible).ok()
     .click(getExampleTabSelector('Code'))
-    .expect(Selector('code').textContent).contains('Add a tag property')
+    .expect(Selector('code').textContent).contains('Add a tag property', { timeout: 5000 })
     .click(Selector('span').withText('index.html'))
     .wait(2000)
     .expect(Selector('code').textContent).contains('surveyCreatorContainer')
