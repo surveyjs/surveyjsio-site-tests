@@ -7,7 +7,7 @@ test('Adorner exists', async t => {
   const selector = Selector('.svc-question__content span').withText('Read-Only');
   await t
     .maximizeWindow()
-    .expect(selector.visible).notOk()
+    .expect(selector.visible).ok()
     .click(Selector('span').withText('JSON Editor'))
     .pressKey('ctrl+a')
     .pressKey('delete')
