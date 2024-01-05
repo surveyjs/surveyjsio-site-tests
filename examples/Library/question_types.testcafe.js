@@ -46,8 +46,7 @@ test('text', async t => {
 test('signaturepad', async t => {
   await t
     .maximizeWindow()
-    .click(getSideBarGroupItem('Simple Questions'))
-    .click(getSideBarItem('Signature'))
+    .navigateTo("https://surveyjstest.azurewebsites.net/form-library/examples/signature-pad-widget-javascript")
     .expect(Selector('.sd-signaturepad').find('canvas').visible).ok()
   //.expect(Selector('[title="Clear"]').visible).ok()
   // .click(Selector('.form-element').find('.form-element__input.form-element--inverse'))
