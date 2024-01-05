@@ -48,7 +48,7 @@ test('signaturepad', async t => {
     .maximizeWindow()
     .click(getSideBarGroupItem('Simple Questions'))
     .click(getSideBarItem('Signature'))
-    .expect(Selector('.sd-signaturepad').find('div').find('canvas').visible).ok()
+    .expect(Selector('.sd-signaturepad').find('canvas').visible).ok()
   //.expect(Selector('[title="Clear"]').visible).ok()
   // .click(Selector('.form-element').find('.form-element__input.form-element--inverse'))
   // .pressKey('ctrl+a')
@@ -60,6 +60,6 @@ test('signaturepad', async t => {
   // .typeText(Selector('div').withText('Height: (default is empty)').nth(7).find('.form-element__input.form-element--inverse'), '700', {
   //     caretPos: 0
   // })
-    .expect(Selector('.sd-signaturepad').find('div').find('canvas').scrollWidth).ok()
-    .expect(Selector('.sd-signaturepad').find('div').find('canvas').clientHeight).ok();
+    .expect(Selector('.sd-signaturepad').find('canvas').scrollWidth).ok()
+    .expect(Selector('.sd-signaturepad').find('canvas').clientHeight).ok();
 });
