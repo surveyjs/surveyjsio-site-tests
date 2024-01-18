@@ -28,23 +28,23 @@ test("remember organization", async ({ page, browser }) => {
   await page.goto(`${url}/service/mysurveys`);
 
   await expect(await isOrganizationCookieExists()).toBeFalsy();
-  await expect(page.locator('.v2-class---my-surveys-page__choose-organization-button-text').filter({ hasText: personalSurveys })).toBeVisible();
-  await expect(page.locator('.v2-class---my-surveys-page__choose-organization-button-text').filter({ hasText: organizationSurveys })).toBeHidden();
+  await expect(page.locator('.v2-class---drop-down-button__selected-item-button-text').filter({ hasText: personalSurveys })).toBeVisible();
+  await expect(page.locator('.v2-class---drop-down-button__selected-item-button-text').filter({ hasText: organizationSurveys })).toBeHidden();
 
-  await page.locator('.v2-class---my-surveys-page__drop-down-button.v2-class---my-surveys-page__choose-organization').click();
+  await page.locator('.v2-class---drop-down-button.v2-class---drop-down-button__selected-item').click();
   await expect(page.getByRole('link', { name: personalSurveys })).toBeVisible();
   await expect(page.getByRole('link', { name: organizationSurveys })).toBeVisible();
 
   await page.getByRole('link', { name: organizationSurveys }).click();
-  await expect(page.locator('.v2-class---my-surveys-page__choose-organization-button-text').filter({ hasText: personalSurveys })).toBeHidden();
-  await expect(page.locator('.v2-class---my-surveys-page__choose-organization-button .v2-class---drop-down-menu-item__text').filter({ hasText: personalSurveys })).toBeHidden();
-  await expect(page.locator('.v2-class---my-surveys-page__choose-organization-button .v2-class---drop-down-menu-item__text').filter({ hasText: organizationSurveys })).toBeVisible();
+  await expect(page.locator('.v2-class---drop-down-button__selected-item-button-text').filter({ hasText: personalSurveys })).toBeHidden();
+  await expect(page.locator('.v2-class---drop-down-button__selected-item-button .v2-class---drop-down-menu-item__text').filter({ hasText: personalSurveys })).toBeHidden();
+  await expect(page.locator('.v2-class---drop-down-button__selected-item-button .v2-class---drop-down-menu-item__text').filter({ hasText: organizationSurveys })).toBeVisible();
   await expect(await isOrganizationCookieExists()).toBeTruthy();
 
   await page.goto(`${url}/service/mysurveys`);
   await expect(await isOrganizationCookieExists()).toBeTruthy();
-  await expect(page.locator('.v2-class---my-surveys-page__choose-organization-button-text').filter({ hasText: personalSurveys })).toBeHidden();
-  await expect(page.locator('.v2-class---my-surveys-page__choose-organization-button .v2-class---drop-down-menu-item__text').filter({ hasText: personalSurveys })).toBeHidden();
-  await expect(page.locator('.v2-class---my-surveys-page__choose-organization-button .v2-class---drop-down-menu-item__text').filter({ hasText: organizationSurveys })).toBeVisible();
+  await expect(page.locator('.v2-class---drop-down-button__selected-item-button-text').filter({ hasText: personalSurveys })).toBeHidden();
+  await expect(page.locator('.v2-class---drop-down-button__selected-item-button .v2-class---drop-down-menu-item__text').filter({ hasText: personalSurveys })).toBeHidden();
+  await expect(page.locator('.v2-class---drop-down-button__selected-item-button .v2-class---drop-down-menu-item__text').filter({ hasText: organizationSurveys })).toBeVisible();
 });
 
