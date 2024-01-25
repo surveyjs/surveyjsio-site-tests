@@ -26,12 +26,12 @@ test('Fill cart for unregistered user', async t => {
     await t.click(Selector(".sv-popup .v2-class---drop-down-menu-item__link").withExactText("3").filterVisible());
 
     await t.expect(basicRow.find("td").nth(2).innerText).eql("€499.00");
-    await t.expect(basicRow.find("td").nth(3).innerText).eql("-€198.00");
-    await t.expect(basicRow.find("td").nth(4).innerText).eql("€1,299.00");
+    await t.expect(basicRow.find("td").nth(4).innerText).eql("-€198.00");
+    await t.expect(basicRow.find("td").nth(5).innerText).eql("€1,299.00");
 
     await t.expect(proRow.find("td").nth(2).innerText).eql("€899.00");
-    await t.expect(proRow.find("td").nth(3).innerText).eql("€0.00");
-    await t.expect(proRow.find("td").nth(4).innerText).eql("€899.00");
+    await t.expect(proRow.find("td").nth(4).innerText).eql("€0.00");
+    await t.expect(proRow.find("td").nth(5).innerText).eql("€899.00");
 
     await t.expect(Selector(".v2-class---cart-subtotal-container__value").innerText).eql("€2,198.00");
 
@@ -105,12 +105,12 @@ test('Fill cart for registered users', async t => {
     await t.click(Selector(".sv-popup .v2-class---drop-down-menu-item__link").withExactText("3").filterVisible());
 
     await t.expect(basicRow.find("td").nth(2).innerText).eql("€499.00");
-    await t.expect(basicRow.find("td").nth(3).innerText).eql("-€198.00");
-    await t.expect(basicRow.find("td").nth(4).innerText).eql("€1,299.00");
+    await t.expect(basicRow.find("td").nth(4).innerText).eql("-€198.00");
+    await t.expect(basicRow.find("td").nth(5).innerText).eql("€1,299.00");
 
     await t.expect(proRow.find("td").nth(2).innerText).eql("€899.00");
-    await t.expect(proRow.find("td").nth(3).innerText).eql("€0.00");
-    await t.expect(proRow.find("td").nth(4).innerText).eql("€899.00");
+    await t.expect(proRow.find("td").nth(4).innerText).eql("€0.00");
+    await t.expect(proRow.find("td").nth(5).innerText).eql("€899.00");
 
     await t.expect(Selector(".v2-class---cart-subtotal-container__value").innerText).eql("€2,198.00");
 
@@ -180,12 +180,12 @@ test.skip('Full buy cart cycle', async t => {
     await t.click(Selector(".sv-popup .v2-class---drop-down-menu-item__link").withExactText("3").filterVisible());
 
     await t.expect(basicRow.find("td").nth(2).innerText).eql("€499.00");
-    await t.expect(basicRow.find("td").nth(3).innerText).eql("-€198.00");
-    await t.expect(basicRow.find("td").nth(4).innerText).eql("€1,299.00");
+    await t.expect(basicRow.find("td").nth(4).innerText).eql("-€198.00");
+    await t.expect(basicRow.find("td").nth(5).innerText).eql("€1,299.00");
 
     await t.expect(proRow.find("td").nth(2).innerText).eql("€899.00");
-    await t.expect(proRow.find("td").nth(3).innerText).eql("€0.00");
-    await t.expect(proRow.find("td").nth(4).innerText).eql("€899.00");
+    await t.expect(proRow.find("td").nth(4).innerText).eql("€0.00");
+    await t.expect(proRow.find("td").nth(5).innerText).eql("€899.00");
 
     await t.expect(Selector(".v2-class---cart-subtotal-container__value").innerText).eql("€2,198.00");
 
