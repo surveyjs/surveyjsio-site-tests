@@ -111,7 +111,7 @@ test('PayPal: failed test payment', async ({ page }) => {
 
   await page.waitForTimeout(10000);
 
-  const thankYouText = await page.getByText('Sorry, your payment failed.');
+  const thankYouText = await page.getByText('Thank you for choosing SurveyJS!');
   await thankYouText.click();
 });
 
