@@ -33,7 +33,7 @@ test('Fill cart for unregistered user', async t => {
   await t.expect(proRow.find('td').nth(4).innerText).eql('€0.00');
   await t.expect(proRow.find('td').nth(5).innerText).eql('€899.00');
 
-  await t.expect(Selector('.v2-class---cart-subtotal-container[data-name=subtotal] .v2-class---cart-subtotal-container__value').innerText).eql('€2,198.00');
+  await t.expect(Selector('.v2-class---cart-subtotal-container [data-name=subtotal] .v2-class---cart-subtotal-container__value').innerText).eql('€2,198.00');
 
   await t.expect(Selector("input[placeholder='Company VAT Number (EU companies only)']").visible).notOk('no vat', { timeout: 500 });
 
@@ -110,7 +110,7 @@ test('Fill cart for registered users', async t => {
   await t.expect(proRow.find('td').nth(4).innerText).eql('€0.00');
   await t.expect(proRow.find('td').nth(5).innerText).eql('€899.00');
 
-  await t.expect(Selector('.v2-class---cart-subtotal-container[data-name=subtotal] .v2-class---cart-subtotal-container__value').innerText).eql('€2,198.00');
+  await t.expect(Selector('.v2-class---cart-subtotal-container [data-name=subtotal] .v2-class---cart-subtotal-container__value').innerText).eql('€2,198.00');
 
   await t.expect(Selector("input[placeholder='Company VAT Number (EU companies only)']").visible).notOk('no vat', { timeout: 500 });
 
@@ -183,7 +183,7 @@ test.skip('Full buy cart cycle', async t => {
   await t.expect(proRow.find('td').nth(4).innerText).eql('€0.00');
   await t.expect(proRow.find('td').nth(5).innerText).eql('€899.00');
 
-  await t.expect(Selector('.v2-class---cart-subtotal-container__value').innerText).eql('€2,198.00');
+  await t.expect(Selector('.v2-class---cart-subtotal-container [data-name=subtotal] .v2-class---cart-subtotal-container__value').innerText).eql('€2,198.00');
 
   await t.expect(Selector("input[aria-label='Company VAT Number (EU companies only)']").visible).notOk('no vat', { timeout: 500 });
 
