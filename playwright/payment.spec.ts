@@ -74,14 +74,16 @@ test('PayPal: failed test payment', async ({ page }) => {
   const frameLocatorNested = await frameLocator0.frameLocator("[title='paypal_card_form']").first();
 
   await frameLocatorNested.getByLabel('Card number').click();
-  await frameLocatorNested.getByLabel('Card number').fill('4005519200000004');
+  await frameLocatorNested.getByLabel('Card number').fill('4032039884454820');
 
   await frameLocatorNested.getByLabel('Expires').click();
-  await frameLocatorNested.getByPlaceholder('MM/YY').fill('01 / 25');
+  await frameLocatorNested.getByPlaceholder('MM/YY').fill('01 / 28');
 
   await frameLocatorNested.getByLabel('CSC').click();
-  await frameLocatorNested.getByPlaceholder('CSC').fill('123');
+  await frameLocatorNested.getByPlaceholder('CSC').fill('464');
   
+  await page.waitForTimeout(5000);
+
   await frameLocatorNested.locator('input[name="givenName"]').click();
   await frameLocatorNested.locator('input[name="givenName"]').fill("Tester");
 
