@@ -28,8 +28,8 @@ test('Check property names with deutsch', async t => {
     .maximizeWindow()
 
     .click(Selector('.svd-accordion-tab-header').withText('Allgemein'))
-    .click(Selector('.svd-accordion-tab-header').withText('Timer'))
-    .expect(Selector('.svd-control-label').withText('Modus des Timers').visible).ok()
+    .click(Selector('.svd-accordion-tab-header').withText('Abschluss'))
+    .expect(Selector('.svd-control-label').withText('Weiterleitung (URL)').visible).ok()
 
     .click(Selector('.svd-accordion-tab-header').withText('Fragen'))
     .expect(Selector('.svd-control-label').withText('Fragennummern anzeigen').visible).ok();
