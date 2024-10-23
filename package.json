@@ -6,7 +6,7 @@
     "test": "testcafe chrome surveyjstest --native-automation --selector-timeout  5000",
     "test:pay": "testcafe -e chrome payment --native-automation --selector-timeout 5000",
     "test:file": "testcafe chrome payment/Common/cart.testcafe.js --native-automation --selector-timeout 1500",
-    "test:examples": "testcafe chrome:headless examples --native-automation --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000",
+    "test:examples": "testcafe examples --native-automation --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000",
     "test:visual:ci": "testcafe ./examplesVisualTests/ --screenshots ./  --native-automation --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000",
     "test_ci": "testcafe chrome:headless payment surveyjstest  --native-automation --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000",
     "test_ci:pay": "testcafe -e chrome:headless payment -s takeOnFails=true  --native-automation --selector-timeout 5000  --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000",
