@@ -107,7 +107,7 @@ test('PayPal: failed test payment', async ({ page }) => {
   await frameLocatorNested.locator('input[name="email"]').click();
   await frameLocatorNested.locator('input[name="email"]').fill("tester@surveyjs.io");
   
-  const payNow = await frameLocatorNested.getByRole('button', { name: 'Pay Now' });
+  const payNow = await frameLocatorNested.locator('#submit-button');
 
   await payNow.click();
 
