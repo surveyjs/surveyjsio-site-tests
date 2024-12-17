@@ -26,7 +26,7 @@ test('Check tabs', async t => {
     .expect(Selector('pre').withText('id="surveyCreatorContainer"').textContent).contains('<div')
 
     .click(getExampleTabSelector('Documentation'))
-    .expect(Selector('a').withText('dictionary files').getAttribute('href')).eql('https://github.com/surveyjs/survey-creator/tree/master/packages/survey-creator-core/src/localization')
+    .expect(Selector('a').withText('dictionary files').getAttribute('href')).eql('https://github.com/surveyjs/survey-creator/tree/90de47d2c9da49b06a7f97414026d70f7acf05c6/packages/survey-creator-core/src/localization')
     .expect(Selector('a').withText('English dictionary').getAttribute('href')).eql('https://github.com/surveyjs/survey-creator/blob/master/packages/survey-creator-core/src/localization/english.ts')
 
     .click(getExampleTabSelector('Demo'))
