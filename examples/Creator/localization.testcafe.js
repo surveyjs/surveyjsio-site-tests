@@ -29,6 +29,6 @@ test('Check tabs', async t => {
     .expect(Selector('a').withText('dictionary files').getAttribute('href')).eql('https://github.com/surveyjs/survey-creator/tree/master/packages/survey-creator-core/src/localization')
     .expect(Selector('a').withText('English dictionary').getAttribute('href')).eql('https://github.com/surveyjs/survey-creator/blob/master/packages/survey-creator-core/src/localization/english.ts')
 
-    .click(getExampleTabSelector('Result'))
+    .click(getExampleTabSelector('Demo'))
     .expect(Selector('span').withText('Wahrheitswert').visible).ok();
 });

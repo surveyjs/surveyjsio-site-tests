@@ -23,7 +23,7 @@ test('Check custom widgets default tabs', async t => {
     .expect(getExampleTabSelector('Documentation').classNames).contains('v2-class---footer-toolbar-item--active')
     .expect(Selector('a').withText('this repo to find out more').getAttribute('href')).eql('https://github.com/surveyjs/widgets')
     .expect(Selector('a').withText('create a new issue').getAttribute('href')).eql('https://github.com/surveyjs/widgets/issues')
-    .click(getExampleTabSelector('Result'));
+    .click(getExampleTabSelector('Demo'));
   await t
     .expect(Selector('span.svc-tabbed-menu-item__text').withText('Designer').visible).ok()
     .expect(Selector('span.svc-tabbed-menu-item__text').withText('Preview').visible).ok()

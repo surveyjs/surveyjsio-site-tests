@@ -12,7 +12,7 @@ test('Click example tabs', async t => {
     .maximizeWindow()
     .expect(Selector('.v2-class---footer-toolbar-item.v2-class---footer-toolbar-item--active').classNames).contains('v2-class---footer-toolbar-item--active')
     .click(getExampleTabSelector('Code'))
-    .expect(getExampleTabSelector('Result').classNames).notContains('v2-class---footer-toolbar-item--active')
+    .expect(getExampleTabSelector('Demo').classNames).notContains('v2-class---footer-toolbar-item--active')
     .expect(Selector('.v2-class---footer-toolbar-item.v2-class---footer-toolbar-item--active').classNames).contains('v2-class---footer-toolbar-item--active');
 });
 
