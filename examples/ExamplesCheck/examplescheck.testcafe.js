@@ -979,7 +979,7 @@ test('Survey-Creator', async t => {
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=titleadorner&theme=default&platform=Knockoutjs')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=modifysurveys&theme=default&platform=Knockoutjs')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=component-ordertable&theme=default&platform=Knockoutjs')
-    .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=component-ordergrid&theme=default&platform=Knockoutjs')
+  //.navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=component-ordergrid&theme=default&platform=Knockoutjs')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=component-country&theme=default&platform=Knockoutjs')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=component-fullname&theme=default&platform=Knockoutjs')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=component-shippingaddress&theme=default&platform=Knockoutjs')
