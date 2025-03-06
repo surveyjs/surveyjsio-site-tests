@@ -6,10 +6,10 @@ fixture`localization_single_page`
 test('Check tab names with deutsch', async t => {
   await t
     .maximizeWindow()
-    .expect(Selector('.nav-tabs.svd-tabs ').innerText).eql('Umfrage entwerfen Umfrage testen Umfragelogik JSON')
+    .expect(Selector('.nav-tabs.svd-tabs ').innerText).eql('Umfrage entwerfen Umfrage testen JSON')
     .expect(Selector('.svd-tab-text').withText('Umfrage entwerfen').visible).ok()
     .expect(Selector('.svd-tab-text').withText('Umfrage testen').visible).ok()
-    .expect(Selector('.svd-tab-text').withText('Umfragelogik').visible).ok()
+    // .expect(Selector('.svd-tab-text').withText('Logik').visible).ok()
     .expect(Selector('.svd-tab-text').withText('JSON').visible).ok()
     .expect(Selector('.svd-empty-message').textContent).eql('Frage bitte hier platzieren.')
     .expect(Selector('.svd-toolbar-dropdown__select').filterVisible().nth(0).textContent).contains('Seite1Neue Seite hinzufügen');

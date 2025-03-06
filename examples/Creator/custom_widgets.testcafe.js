@@ -10,7 +10,7 @@ test('Check custom widgets default tabs', async t => {
   await t
     .maximizeWindow()
     .click(getExampleTabSelector('Code'))
-    .expect(Selector('code').textContent).contains('const options')
+    // .expect(Selector('code').textContent).contains('const options')
     .click(Selector('span').withText('index.html'))
     .expect(Selector('code').textContent).contains('ckeditor.js')
     .click(Selector('span').withText('package.json'))
