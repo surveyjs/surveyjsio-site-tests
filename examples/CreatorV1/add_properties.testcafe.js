@@ -15,7 +15,7 @@ test('Required property', async t => {
 
   await t
     .click(Selector('.svd_toolbox').find('div').withText('Checkbox'))
-    .click(Selector('.svc-tabbed-menu-item').withText('JSON Editor'))
+    .click(Selector('span.nav-link').withText('JSON Editor'))
   //.expect(Selector('.svd-json-editor-area').exists).eql(true); // if ACE not loaded
     .expect(Selector('div').withAttribute('class', /ace_gutter\-cell\s+ace_error/).exists).eql(true); // if ACE loaded
 });

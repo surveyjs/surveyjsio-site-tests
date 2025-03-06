@@ -12,7 +12,7 @@ test('Check microphone in creator', async t => {
   await t
     .maximizeWindow()
     .click(Selector('span').withText('Microphone'))
-    .click(Selector('span.nav-link').withText('Preview'))
+    .click(Selector('span.nav-link').withText('Test Survey'))
     .expect(Selector('button[title=\"Record\"]').exists).eql(true)
     .expect(Selector('audio').exists).eql(true);
 });
