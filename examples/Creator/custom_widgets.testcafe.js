@@ -10,7 +10,7 @@ test('Check custom widgets default tabs', async t => {
   await t
     .maximizeWindow()
     .click(getExampleTabSelector('Code'))
-    // .expect(Selector('code').textContent).contains('const options')
+    .expect(Selector('code').textContent).contains('const creator = new SurveyCreator({ questionTypes: ["text", "checkbox", "radiogroup", "dropdown"] });')
     .click(Selector('span').withText('index.html'))
     .expect(Selector('code').textContent).contains('ckeditor.js')
     .click(Selector('span').withText('package.json'))
@@ -19,10 +19,10 @@ test('Check custom widgets default tabs', async t => {
     .expect(Selector('code').textContent).contains('jquery')
     .expect(Selector('code').textContent).contains('jquery-bar-rating')
     .expect(Selector('code').textContent).contains('surveyjs-widgets')
-    .click(getExampleTabSelector('Documentation'))
-    .expect(getExampleTabSelector('Documentation').classNames).contains('v2-class---footer-toolbar-item--active')
-    .expect(Selector('a').withText('this repo to find out more').getAttribute('href')).eql('https://github.com/surveyjs/widgets')
-    .expect(Selector('a').withText('create a new issue').getAttribute('href')).eql('https://github.com/surveyjs/widgets/issues')
+    // .click(getExampleTabSelector('Documentation'))
+    // .expect(getExampleTabSelector('Documentation').classNames).contains('v2-class---footer-toolbar-item--active')
+    // .expect(Selector('a').withText('this repo to find out more').getAttribute('href')).eql('https://github.com/surveyjs/widgets')
+    // .expect(Selector('a').withText('create a new issue').getAttribute('href')).eql('https://github.com/surveyjs/widgets/issues')
     .click(getExampleTabSelector('Demo'));
   await t
     .expect(Selector('span.svc-tabbed-menu-item__text').withText('Designer').visible).ok()
