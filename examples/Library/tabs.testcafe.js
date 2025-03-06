@@ -20,7 +20,7 @@ test('Click survey result tabs', async t => {
   await t
     .maximizeWindow()
     .click(Selector('span').withText('Ford').nth(1))
-    .click('.sv_complete_btn')
+    .click('.sd-navigation__complete-btn')
     .expect(Selector('a').withText('JSON').classNames).contains('v2-class---demo-tab-item--active')
     .click(Selector('a').withText('Export to Pdf'))
     .expect(Selector('a').withText('JSON').classNames).notContains('v2-class---demo-tab-item--active')
@@ -31,7 +31,7 @@ test('Check survey result tabs', async t => {
   await t
     .maximizeWindow()
     .click(Selector('span').withText('Ford').nth(1))
-    .click('.sv_complete_btn')
+    .click('.sd-navigation__complete-btn')
     .expect(Selector('a').withText('JSON').visible).ok()
     .expect(Selector('a').withText('JSON').classNames).contains('v2-class---demo-tab-item--active')
     .expect(Selector('a').withText('Export to Pdf').visible).ok()
