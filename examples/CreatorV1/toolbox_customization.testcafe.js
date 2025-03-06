@@ -16,7 +16,7 @@ test('Check tabs', async t => {
     .expect(Selector('code').textContent).contains('id="surveyCreatorContainer"')
     .expect(getExampleTabSelector('Code').classNames).contains('v2-class---footer-toolbar-item--active')
     .click(getExampleTabSelector('Demo'))
-    .expect(Selector('span.nav-link').withText('Survey Designer').visible).ok()
-    .expect(Selector('span.nav-link').withText('Test Survey').visible).ok()
+    .expect(Selector('span.nav-link').withText('Designer').visible).ok()
+    .expect(Selector('span.nav-link').withText('Preview').visible).ok()
     .expect(Selector('span.nav-link').withText('JSON Editor').visible).ok();
 });

@@ -9,8 +9,8 @@ fixture`element_menu_customization`
 test('Check default tabs', async (t) => {
   await t
     .maximizeWindow()
-    .expect(Selector('span.nav-link').withText('Survey Designer').visible).ok()
-    .expect(Selector('span.nav-link').withText('Test Survey').visible).ok()
+    .expect(Selector('span.nav-link').withText('Designer').visible).ok()
+    .expect(Selector('span.nav-link').withText('Preview').visible).ok()
     .expect(Selector('span.nav-link').withText('JSON Editor').visible).ok()
     .click(getExampleTabSelector('Code'))
     .expect(Selector('span').withText('SurveyCreator').visible).ok()
