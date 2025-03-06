@@ -10,7 +10,7 @@ fixture `localization`
     await acceptCookie(t);
   });
 
-test('Check tabs', async t => {
+test('Check tabs 1', async t => {
   await t
     .maximizeWindow()
   // .expect(Selector('.svc-tabbed-menu-item__text').withText('Wahrheitswert').visible).ok()
