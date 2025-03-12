@@ -6,17 +6,17 @@ fixture`toolbox_customization`
   await acceptCookie(t);
 });
 
-test('Check tabs', async t => {
+test('Check tabs 2', async t => {
   await t
     .maximizeWindow()
     .switchToMainWindow()
     .click(getExampleTabSelector('Code'))
-    .expect(Selector('code').textContent).contains('const creator = new SurveyCreator.SurveyCreator("surveyCreatorContainer", options);')
+    .expect(Selector('code').textContent).contains('const creator = new SurveyCreator({ questionTypes: [ "text", "checkbox", "radiogroup", "dropdown" ] });')
     .click(Selector('span').withText('index.html'))
     .expect(Selector('code').textContent).contains('id="surveyCreatorContainer"')
     .expect(getExampleTabSelector('Code').classNames).contains('v2-class---footer-toolbar-item--active')
     .click(getExampleTabSelector('Demo'))
-    .expect(Selector('span.nav-link').withText('Survey Designer').visible).ok()
-    .expect(Selector('span.nav-link').withText('Test Survey').visible).ok()
-    .expect(Selector('span.nav-link').withText('JSON Editor').visible).ok();
+    .expect(Selector('.svc-tabbed-menu-item').withText('Designer').visible).ok()
+    .expect(Selector('.svc-tabbed-menu-item').withText('Preview').visible).ok()
+    .expect(Selector('.svc-tabbed-menu-item').withText('JSON Editor').visible).ok();
 });

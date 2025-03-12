@@ -6,12 +6,12 @@ fixture`element_menu_customization`
   await acceptCookie(t);
 });
 
-test('Check default tabs', async (t) => {
+test('Check default tabs 2', async (t) => {
   await t
     .maximizeWindow()
-    .expect(Selector('span.nav-link').withText('Survey Designer').visible).ok()
-    .expect(Selector('span.nav-link').withText('Test Survey').visible).ok()
-    .expect(Selector('span.nav-link').withText('JSON Editor').visible).ok()
+    .expect(Selector('.svc-tabbed-menu-item').withText('Designer').visible).ok()
+    .expect(Selector('.svc-tabbed-menu-item').withText('Preview').visible).ok()
+    .expect(Selector('.svc-tabbed-menu-item').withText('JSON Editor').visible).ok()
     .click(getExampleTabSelector('Code'))
     .expect(Selector('span').withText('SurveyCreator').visible).ok()
     .click(Selector('span').withText('index.html'))
