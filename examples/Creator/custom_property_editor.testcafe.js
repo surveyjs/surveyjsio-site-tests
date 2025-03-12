@@ -8,6 +8,7 @@ test('Check shortname property', async t => {
   await t
     .maximizeWindow()
     .click(Selector('.svc-add-new-question-action'))
+    .wait(500)
     .typeText(shortnameEditor, '123456789101112131415')
     .expect(shortnameEditor.value).eql('123456789101112');
 });
