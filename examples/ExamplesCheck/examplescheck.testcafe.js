@@ -1084,7 +1084,6 @@ test('Analytics', async t => {
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=custom-vis&platform=Reactjs')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=analytics-nps&platform=Reactjs')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=nps-tabulator&platform=Reactjs')
-    .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=nps-datatables&platform=Reactjs')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=panel-state&platform=Reactjs')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=table-state&platform=Reactjs')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=text-chart&platform=Reactjs')
@@ -1095,7 +1094,6 @@ test('Analytics', async t => {
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=custom-vis&platform=Vue')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=analytics-nps&platform=Vue')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=nps-tabulator&platform=Vue')
-    .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=nps-datatables&platform=Vue')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=panel-state&platform=Vue')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=table-state&platform=Vue')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=text-chart&platform=Vue');
