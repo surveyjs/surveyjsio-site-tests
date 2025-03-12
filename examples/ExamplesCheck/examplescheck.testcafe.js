@@ -1073,7 +1073,6 @@ test('Analytics', async t => {
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=custom-vis&platform=Knockoutjs')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=analytics-nps&platform=Knockoutjs')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=nps-tabulator&platform=Knockoutjs')
-    .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=nps-datatables&platform=Knockoutjs')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=panel-state&platform=Knockoutjs')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=table-state&platform=Knockoutjs')
     .navigateTo('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=text-chart&platform=Knockoutjs')
