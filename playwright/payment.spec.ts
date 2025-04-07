@@ -35,7 +35,7 @@ test('Cart: vat number field', async ({ page }) => {
 });
 
 
-test('PayPal: failed test payment', async ({ page }) => {
+test('PayPal: test payment', async ({ page }) => {
   test.setTimeout(480000);
   
   await page.goto(`${url}/pricing`);
@@ -90,13 +90,19 @@ test('PayPal: failed test payment', async ({ page }) => {
   await frameLocatorNested.locator('input[name="familyName"]').click();
   await frameLocatorNested.locator('input[name="familyName"]').fill("Name");
 
-  await frameLocatorNested.locator('input[name="line1"]').click();
-  await frameLocatorNested.locator('input[name="line1"]').fill("Test address");
+  if(await frameLocatorNested.locator('input[name="line1"]').isVisible()) {
+    await frameLocatorNested.locator('input[name="line1"]').click();
+    await frameLocatorNested.locator('input[name="line1"]').fill("Test address");
+  }
   
-  await frameLocatorNested.locator('input[name="city"]').click();
-  await frameLocatorNested.locator('input[name="city"]').fill("Test city");
+  if(await frameLocatorNested.locator('input[name="city"]').isVisible()) {
+    await frameLocatorNested.locator('input[name="city"]').click();
+    await frameLocatorNested.locator('input[name="city"]').fill("Test city");
+  }
 
-  await frameLocatorNested.locator('select[name="state"]').selectOption('AL');
+  if(await frameLocatorNested.locator('select[name="state"]').isVisible()) {
+    await frameLocatorNested.locator('select[name="state"]').selectOption('AL');
+  }
 
   await frameLocatorNested.locator('input[name="postcode"]').click();
   await frameLocatorNested.locator('input[name="postcode"]').fill('35004');
