@@ -1,7 +1,7 @@
 import { Selector, ClientFunction, fixture, test } from 'testcafe';
 
 fixture `add_properties`
-  .page `https://surveyjstest.azurewebsites.net//Examples/CreatorSinglePage?id=addproperties&platform=Knockoutjs&theme=default`;
+  .page `https://surveyjstest.azurewebsites.net/survey-creator/examples/s/add-properties-to-property-grid/vanillajs`;
 
 test('Required property', async t => {
   await t.maximizeWindow();
@@ -14,8 +14,8 @@ test('Required property', async t => {
   })();
 
   await t
-    .click(Selector('.svd_toolbox').find('div').withText('Checkbox'))
-    .click(Selector('span.nav-link').withText('JSON Editor'))
+    .click(Selector('.svc-toolbox').find('div').withText('Checkbox'))
+    .click(Selector('.svc-tabbed-menu-item').withText('JSON Editor'))
   //.expect(Selector('.svd-json-editor-area').exists).eql(true); // if ACE not loaded
     .expect(Selector('div').withAttribute('class', /ace_gutter\-cell\s+ace_error/).exists).eql(true); // if ACE loaded
 });
@@ -31,8 +31,8 @@ test('Property with default value', async t => {
   })();
 
   await t
-    .click(Selector('span').withText('Others'))
-    .expect(Selector('input[placeholder=\"bar\"]').value).eql('bar');
+    .click(Selector('div').withAttribute('title', 'Others'))
+    .expect(Selector('[data-name=foo] input').value).eql('bar');
 });
 
 test('Check boolean property', async t => {
@@ -46,9 +46,9 @@ test('Check boolean property', async t => {
   })();
 
   await t
-    .click(Selector('span').withText('Others'))
-    .expect(Selector('.sjs-cb-label').withText('Foo').exists).eql(true)
-    .expect(Selector('.sjs-cb-container').withText('Foo').find('input').exists).eql(true);
+    .click(Selector('div').withAttribute('title', 'Others'))
+    .expect(Selector('label').withText('Foo').exists).eql(true)
+    .expect(Selector('label').withText('Foo').find('input').exists).eql(true);
 });
 
 test('Check text property', async t => {
@@ -62,7 +62,7 @@ test('Check text property', async t => {
   })();
 
   await t
-    .click(Selector('span').withText('Others'))
+    .click(Selector('div').withAttribute('title', 'Others'))
     .click(Selector('div').withText('Foo').find('textarea'))
     .typeText(Selector('div').withText('Foo').find('textarea'), 'Bar')
     .expect(Selector('div').withText('Foo').find('textarea').value).eql('Bar');
@@ -79,7 +79,7 @@ test('Check html property', async t => {
   })();
 
   await t
-    .click(Selector('span').withText('Others'))
+    .click(Selector('div').withAttribute('title', 'Others'))
     .click(Selector('div').withText('Foo'))
     .typeText(Selector('div').withText('Foo').find('textarea'), 'Bar')
     .expect(Selector('div').withText('Foo').find('textarea').value).eql('Bar');
@@ -96,9 +96,8 @@ test('Check itemvalues property', async t => {
   })();
 
   await t
-    .click(Selector('span').withText('Others'))
-    .click(Selector('button').withText('Form Entry'))
-    .click("input[value='Add New']")
-    .click("input[value='Add New']")
+    .click(Selector('div').withAttribute('title', 'Others'))
+    .click("button[title='Add New']")
+    .click("button[title='Add New']")
     .expect(Selector('div').withText('Foo').find('table tbody').find('tr').count).eql(2);
 });
