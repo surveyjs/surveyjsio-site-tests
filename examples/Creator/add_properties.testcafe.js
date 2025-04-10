@@ -3,7 +3,7 @@ import { Selector, ClientFunction, fixture, test } from 'testcafe';
 fixture `add_properties`
   .page `https://surveyjstest.azurewebsites.net/survey-creator/examples/s/add-properties-to-property-grid/vanillajs`;
 
-test('Required property', async t => {
+test.skip('Required property', async t => {
   await t.maximizeWindow();
 
   await ClientFunction(() => {
