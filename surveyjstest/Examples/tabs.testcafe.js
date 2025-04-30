@@ -1,5 +1,5 @@
 import { Selector, fixture, test } from 'testcafe';
-import { getIUnderstandButton, getExampleTabSelector, acceptCookie } from '../helpers';
+import { getIUnderstandButton, getExampleTabSelector, acceptCookie } from '../../examples/helpers';
 
 fixture `tabs`
   .page `https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-radiogroup&platform=jQuery&theme=default`
@@ -22,9 +22,9 @@ test('Click survey result tabs', async t => {
     .click(Selector('span').withText('Ford').nth(1))
     .click('.sd-navigation__complete-btn')
     .expect(Selector('a').withText('JSON').classNames).contains('v2-class---demo-tab-item--active')
-    .click(Selector('a').withText('Export to Pdf'))
+    .click(Selector('a').withText('Export to PDF'))
     .expect(Selector('a').withText('JSON').classNames).notContains('v2-class---demo-tab-item--active')
-    .expect(Selector('a').withText('Export to Pdf').classNames).contains('v2-class---demo-tab-item--active');
+    .expect(Selector('a').withText('Export to PDF').classNames).contains('v2-class---demo-tab-item--active');
 });
 
 test('Check survey result tabs', async t => {
@@ -34,6 +34,6 @@ test('Check survey result tabs', async t => {
     .click('.sd-navigation__complete-btn')
     .expect(Selector('a').withText('JSON').visible).ok()
     .expect(Selector('a').withText('JSON').classNames).contains('v2-class---demo-tab-item--active')
-    .expect(Selector('a').withText('Export to Pdf').visible).ok()
-    .expect(Selector('a').withText('Export to Pdf').classNames).notContains('v2-class---demo-tab-item--active');
+    .expect(Selector('a').withText('Export to PDF').visible).ok()
+    .expect(Selector('a').withText('Export to PDF').classNames).notContains('v2-class---demo-tab-item--active');
 });
