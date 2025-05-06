@@ -7,6 +7,7 @@ test('Adorner exists', async t => {
   const selector = Selector('.svc-question__content span').withText('Read-Only');
   await t
     .maximizeWindow()
+    .hover('.svc-question__content')
     .expect(selector.visible).ok()
     .click(Selector('span').withText('JSON Editor'))
     .pressKey('ctrl+a')
@@ -16,6 +17,7 @@ test('Adorner exists', async t => {
     .expect(selector.visible).notOk()
     .click(Selector('span').withText('Single-Line Input'))
     .wait(1000)
+    .hover('.svc-question__content')
     .expect(selector.exists).ok()
     .expect(selector.visible).ok();
 });
