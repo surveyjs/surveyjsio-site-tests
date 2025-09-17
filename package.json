@@ -25,7 +25,9 @@
     "pw:file": "npx playwright test example",
     "pre-push-check": "npm run lint",
     "lint": "eslint ./examples --quiet && eslint ./surveyjstest --quiet && eslint ./V2 --quiet && eslint ./V2/tests --quiet",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pw:examples:ci": "npx playwright test --reporter=dot --project=examples",
+    "pw:examples:ui": "npx playwright test --ui --project=examples"
   },
   "dependencies": {
     "@playwright/test": "1.40.1",
