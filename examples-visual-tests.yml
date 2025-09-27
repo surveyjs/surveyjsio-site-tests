@@ -32,7 +32,7 @@ steps:
 
   - task: CopyFiles@2
     inputs:
-      SourceFolder: '$(Build.SourcesDirectory)/examples-vrt-playwright/test-results/'
+      SourceFolder: '$(Build.SourcesDirectory)/test-results/'
       Contents: '**'
       TargetFolder: '$(Build.ArtifactStagingDirectory)/Examples-VRT-Artifacts'
       OverWrite: true
