@@ -27,7 +27,9 @@
     "lint": "eslint ./examples --quiet && eslint ./surveyjstest --quiet && eslint ./V2 --quiet && eslint ./V2/tests --quiet",
     "prepare": "husky install",
     "pw:examples:ci": "npx playwright test --reporter=dot --project=examples",
-    "pw:examples:ui": "npx playwright test --ui --project=examples"
+    "pw:examples:ui": "npx playwright test --ui --project=examples",
+    "pw:examples:vrt:ci": "npx playwright test --reporter=dot --project=examples-vrt",
+    "pw:examples:vrt:ui": "npx playwright test --ui --project=examples-vrt"
   },
   "dependencies": {
     "@playwright/test": "1.40.1",

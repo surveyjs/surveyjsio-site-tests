@@ -46,10 +46,14 @@ export default defineConfig({
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
-
     {
       name: 'examples',
       testDir: './examples-playwright',
+      use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'examples-vrt',
+      testDir: './examples-vrt-playwright',
       use: { ...devices['Desktop Chrome'] },
     },
 
