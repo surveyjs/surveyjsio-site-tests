@@ -13,48 +13,36 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '14.x'
+    displayName: 'Install Node.js'
 
-- task: PowerShell@2
-  displayName: 'update Google Chrome to latest'
-  inputs:
-    targetType: 'inline'
-    script: '$Path = $env:TEMP; $Installer = ''chrome_installer.exe''; Invoke-WebRequest -Uri ''http://dl.google.com/chrome/install/375.126/chrome_installer.exe'' -OutFile $Path\$Installer; Start-Process -FilePath $Path\$Installer -Args ''/silent /install'' -Verb RunAs -Wait; Remove-Item -Path $Path\$Installer'
+  - bash: |
+      npm install
+    displayName: 'npm install'
 
-- task: NodeTool@0
-  inputs:
-    versionSpec: '16.x'
-  displayName: 'Install Node.js'
+  - bash: |
+      npx playwright install chromium
+    displayName: 'npm install'
 
-- script: |
-    npx puppeteer browsers install chrome
-  displayName: "install chrome"
+  - bash: |
+      npm run pw:examples:vrt:ci
+    displayName: 'run Playwright VRT tests'
 
-- script: |
-    npm install
-  displayName: 'npm install'
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: '$(Build.SourcesDirectory)/examples-vrt-playwright/test-results/'
+      Contents: '**'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)/Examples-VRT-Artifacts'
+      OverWrite: true
+    condition: always()
+    displayName: 'copy vrt artifacts'
 
-- script: |
-    npm run test:visual:ci
-  displayName: 'run TestCafe Examples VRT tests'
-
-- task: PublishTestResults@2
-  inputs:
-    testResultsFiles: '**/report.xml'
-    testResultsFormat: 'JUnit'
-
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(Build.SourcesDirectory)/examplesVisualTests'
-    Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/Examples-VRT-Artifacts'
-    OverWrite: true
-  condition: always()
-  displayName: 'copy vrt artifacts'
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/Examples-VRT-Artifacts/'
-    ArtifactName: 'Examples-VRT-Artifacts'
-    publishLocation: 'Container'
-  condition: always()
-  displayName: 'publish vrt artifacts'
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/Examples-VRT-Artifacts/'
+      ArtifactName: 'Examples-VRT-Artifacts'
+      publishLocation: 'Container'
+    condition: always()
+    displayName: 'publish vrt artifacts'
