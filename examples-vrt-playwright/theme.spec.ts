@@ -73,6 +73,10 @@ test('Patient Registration Form', async ({ page }) => {
   await page.locator('a').filter({ hasText: 'Accept All' }).click();
   await page.setViewportSize({ width: 1280, height: 2700 });
 
+  await page.evaluate(() => {
+    (window as any).survey.getQuestionByName('photo').setPropertyValue('currentMode', 'file');
+  });
+
   const demoModule = page.locator('.v2-class---examples-page__demo-module .sd-root-modern').first();
   const completeBtn = page.locator('.sd-navigation__complete-btn').first();
 
