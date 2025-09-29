@@ -36,7 +36,7 @@ steps:
       Contents: '**'
       TargetFolder: '$(Build.ArtifactStagingDirectory)/Examples-VRT-Artifacts'
       OverWrite: true
-    condition: always()
+    condition: failed()
     displayName: 'copy vrt artifacts'
 
   - task: PublishBuildArtifacts@1
@@ -44,5 +44,5 @@ steps:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)/Examples-VRT-Artifacts/'
       ArtifactName: 'Examples-VRT-Artifacts'
       publishLocation: 'Container'
-    condition: always()
+    condition: failed()
     displayName: 'publish vrt artifacts'
