@@ -14,14 +14,16 @@ test('Hotel Booking Form', async ({ page }) => {
   const demoModule = page.locator('.v2-class---examples-page__demo-module .sd-root-modern').first();
   const nextBtn = page.locator('.sd-navigation__next-btn').first();
   const completeBtn = page.locator('.sd-navigation__complete-btn').first();
+  const checkIn = page.getByPlaceholder('Check-in');
+  const checkOut = page.getByPlaceholder('Check-out');
 
-  await compareScreenshot(page, demoModule, 'themes-hotel-booking-form-1.png');
+  await compareScreenshot(page, demoModule, 'themes-hotel-booking-form-1.png', undefined, undefined, [checkIn, checkOut]);
 
   await nextBtn.click();
-  await compareScreenshot(page, demoModule, 'themes-hotel-booking-form-2.png');
+  await compareScreenshot(page, demoModule, 'themes-hotel-booking-form-2.png', undefined, undefined, [checkIn, checkOut]);
 
   await completeBtn.click();
-  await compareScreenshot(page, demoModule, 'themes-hotel-booking-form-completed-page.png');
+  await compareScreenshot(page, demoModule, 'themes-hotel-booking-form-completed-page.png', undefined, undefined, [checkIn, checkOut]);
 });
 
 test('Order Form', async ({ page }) => {
@@ -140,11 +142,12 @@ test('Sales Contract Form', async ({ page }) => {
 
   const demoModule = page.locator('.v2-class---examples-page__demo-module .sd-root-modern').first();
   const completeBtn = page.locator('.sd-navigation__complete-btn').first();
+  const date = page.getByPlaceholder('date');
 
-  await compareScreenshot(page, demoModule, 'themes-sales-contract-form-1.png');
+  await compareScreenshot(page, demoModule, 'themes-sales-contract-form-1.png', undefined, undefined, [date]);
 
   await page.setViewportSize({ width: 1920, height: 2500 });
-  await compareScreenshot(page, demoModule, 'themes-sales-contract-form-2.png');
+  await compareScreenshot(page, demoModule, 'themes-sales-contract-form-2.png', undefined, undefined, [date]);
 
   await completeBtn.click();
   await compareScreenshot(page, demoModule, 'themes-sales-contract-form-completed-page.png');

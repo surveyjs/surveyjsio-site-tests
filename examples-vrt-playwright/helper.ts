@@ -1,17 +1,18 @@
 import type { Locator, Page } from '@playwright/test';
 import { expect, test as baseTest } from '@playwright/test';
 
-export async function compareScreenshot(page: Page, elementSelector: string | Locator | undefined, screenshotName: string, elementIndex = 0, maxDiffPixels?:number) {
+export async function compareScreenshot(page: Page, elementSelector: string | Locator | undefined, screenshotName: string, elementIndex = 0, maxDiffPixels?:number, mask?: Array<Locator>) {
   let currentElement = elementSelector;
   if (!!currentElement && typeof currentElement == 'string') {
     currentElement = page.locator(currentElement);
   }
 
-  const options: {timeout: number, maxDiffPixels?: number} = {
+  const options: {timeout: number, maxDiffPixels?: number, mask?: Array<Locator>} = {
     timeout: 10000
   };
 
   if (maxDiffPixels) options.maxDiffPixels = maxDiffPixels;
+  if (mask) options.mask = mask;
 
   if (!!currentElement) {
     const element = (<any>currentElement).filter({ visible: true });
