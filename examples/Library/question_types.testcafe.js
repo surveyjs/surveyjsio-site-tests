@@ -15,11 +15,11 @@ test('text', async t => {
     .maximizeWindow()
     .click(getSideBarGroupItem('Simple Questions'))
     .click(getSideBarItem('Text Entry'))
-    .typeText('#sq_100i', 'Test', {
+    .typeText(Selector('input.sd-text').nth(0), 'Test', {
       caretPos: 0
     })
-    .typeText('#sq_102i', '01012001')
-    .typeText('#sq_101i', 'test@test.org')
+    .typeText(Selector('input.sd-text').nth(2), '01012001')
+    .typeText(Selector('input.sd-text').nth(1), 'test@test.org')
     .click('.sd-navigation__complete-btn')
     .expect(Selector('#content-result-json-code').innerText).ok();
 });
