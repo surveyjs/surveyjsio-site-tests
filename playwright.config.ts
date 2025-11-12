@@ -10,7 +10,7 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './playwright',
+  testDir: './site/playwright',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -33,7 +33,7 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'site',
       use: { ...devices['Desktop Chrome'] },
     },
 
@@ -48,12 +48,12 @@ export default defineConfig({
     },
     {
       name: 'examples',
-      testDir: './examples-playwright',
+      testDir: './examples/examples-playwright',
       use: { ...devices['Desktop Chrome'] },
     },
     {
       name: 'examples-vrt',
-      testDir: './examples-vrt-playwright',
+      testDir: './examples/examples-vrt-playwright',
       use: { ...devices['Desktop Chrome'] },
     },
 
