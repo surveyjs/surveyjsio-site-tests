@@ -14,7 +14,7 @@
     "pw:examples:vrt:ui": "npx playwright test --ui --project=examples-vrt",
     
     "pre-push-check": "npm run lint",
-    "lint": "eslint ./examples/examples-func --quiet && eslint .site/surveyjstest --quiet && eslint ./site/V2-VRT --quiet && eslint ./site/V2-VRT/tests --quiet",
+    "lint": "eslint ./examples/examples-func --quiet && eslint ./site/surveyjstest --quiet && eslint ./site/V2-VRT --quiet && eslint ./site/V2-VRT/tests --quiet",
     "prepare": "husky install",    
     
     "v2": "testcafe chrome ./site/V2-VRT/ --screenshots ./  --native-automation --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000",
