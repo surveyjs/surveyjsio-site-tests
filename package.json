@@ -15,7 +15,8 @@
     
     "pre-push-check": "npm run lint",
     "lint": "eslint ./examples/examples-func --quiet && eslint ./site/surveyjstest --quiet && eslint ./site/V2-VRT --quiet && eslint ./site/V2-VRT/tests --quiet",
-    "prepare": "husky install",    
+    "prepare": "husky install",
+    "postinstall": "playwright install chromium",  
     
     "v2": "testcafe chrome ./site/V2-VRT/ --screenshots ./  --native-automation --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000",
     "v2:ci": "testcafe chrome:headless ./site/V2-VRT/ --screenshots ./  --native-automation --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000",
@@ -25,7 +26,8 @@
     "v2:dev:new": "testcafe chrome:headless ./site/V2-VRT/ --screenshots ./  --native-automation --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000 --env-dev=true --env-new=true"
   },
   "dependencies": {
-    "@playwright/test": "1.40.1",
+    "@playwright/test":  "1.52.0",
+    "playwright": "1.52.0",
     "devextreme-screenshot-comparer": "^2.0.16",
     "minimist": "^1.2.6",
     "puppeteer": "22.13.1",

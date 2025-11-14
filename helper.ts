@@ -22,3 +22,7 @@ export async function compareScreenshot(page: Page, elementSelector: string | Lo
     await expect.soft(page).toHaveScreenshot(screenshotName, options);
   }
 }
+
+export async function acceptCookieBanner(page: Page):Promise<void> {
+  await page.locator('a').filter({ hasText: 'Accept All' }).click();
+}

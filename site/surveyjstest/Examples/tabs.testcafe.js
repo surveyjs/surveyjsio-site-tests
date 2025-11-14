@@ -1,5 +1,5 @@
 import { Selector, fixture, test } from 'testcafe';
-import { getIUnderstandButton, getExampleTabSelector, acceptCookie } from '../../examples/helpers';
+import { getIUnderstandButton, getExampleTabSelector, acceptCookie } from '../helpers';
 
 fixture `tabs`
   .page `https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-radiogroup&platform=jQuery&theme=default`

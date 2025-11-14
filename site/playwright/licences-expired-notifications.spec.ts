@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { acceptCookieBanner } from '../../helper';
 
 test("licences expired notifications", async ({ page, browser }) => {
   const testerEmail = "Sych-Test1@gmail.com";
@@ -43,7 +44,7 @@ test("licences expired notifications", async ({ page, browser }) => {
   // none notifications
   await page.goto(`${url}/login`); // +0 api call because of logout
   await expect(await isExpirationCookieExists()).toBeFalsy();
-  await page.locator('a').filter({ hasText: 'Accept All' }).click(); // hide cookie banner
+  await acceptCookieBanner(page);
   await page.getByPlaceholder('Email').fill(testerEmail);
   await page.getByPlaceholder('Password').fill(testerPass);
   await page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io website Terms of Use and Priv' }).click();

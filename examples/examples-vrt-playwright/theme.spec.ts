@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { compareScreenshot } from './helper';
+import { acceptCookieBanner, compareScreenshot } from '../../helper';
 
 const domain = 'https://surveyjsio-test.azurewebsites.net';
 // const domain = "http://localhost:62946";
@@ -8,7 +8,7 @@ test('Hotel Booking Form', async ({ page }) => {
   test.setTimeout(480000);
   const url = domain + '/form-library/examples/hotel-booking-form-template-free/reactjs';
   await page.goto(url);
-  await page.locator('a').filter({ hasText: 'Accept All' }).click();
+  await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1920, height: 1080 });
 
   const demoModule = page.locator('.v2-class---examples-page__demo-module .sd-root-modern').first();
@@ -30,7 +30,7 @@ test('Order Form', async ({ page }) => {
   test.setTimeout(480000);
   const url = domain + '/form-library/examples/order-form-template-free/reactjs';
   await page.goto(url);
-  await page.locator('a').filter({ hasText: 'Accept All' }).click();
+  await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1280, height: 1500 });
 
   const demoModule = page.locator('.v2-class---examples-page__demo-module .sd-root-modern').first();
@@ -54,7 +54,7 @@ test('Online Check-In Form', async ({ page }) => {
   test.setTimeout(480000);
   const url = domain + '/form-library/examples/online-check-in-form-template-free/reactjs';
   await page.goto(url);
-  await page.locator('a').filter({ hasText: 'Accept All' }).click();
+  await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1280, height: 2200 });
 
   const demoModule = page.locator('.v2-class---examples-page__demo-module .sd-root-modern').first();
@@ -70,7 +70,7 @@ test('Patient Registration Form', async ({ page }) => {
   test.setTimeout(480000);
   const url = domain + '/form-library/examples/patient-registration-form-template-free/reactjs';
   await page.goto(url);
-  await page.locator('a').filter({ hasText: 'Accept All' }).click();
+  await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1280, height: 2700 });
 
   await page.evaluate(() => {
@@ -90,7 +90,7 @@ test('Pet Hotel Reservation Form', async ({ page }) => {
   test.setTimeout(480000);
   const url = domain + '/form-library/examples/pet-hotel-reservation-form-template-free/reactjs';
   await page.goto(url);
-  await page.locator('a').filter({ hasText: 'Accept All' }).click();
+  await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1280, height: 1100 });
 
   const demoModule = page.locator('.v2-class---examples-page__demo-module .sd-root-modern').first();
@@ -113,7 +113,7 @@ test('Car Rental Form', async ({ page }) => {
   test.setTimeout(480000);
   const url = domain + '/form-library/examples/car-rental-form-template-free/reactjs';
   await page.goto(url);
-  await page.locator('a').filter({ hasText: 'Accept All' }).click();
+  await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1280, height: 3200 });
 
   const demoModule = page.locator('.v2-class---examples-page__demo-module .sd-root-modern').first();
@@ -125,7 +125,7 @@ test('Issue Report', async ({ page }) => {
   test.setTimeout(480000);
   const url = domain + '/form-library/examples/issue-report-template-free/reactjs';
   await page.goto(url);
-  await page.locator('a').filter({ hasText: 'Accept All' }).click();
+  await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1280, height: 1700 });
 
   const demoModule = page.locator('.v2-class---examples-page__demo-module .sd-root-modern').first();
@@ -141,7 +141,7 @@ test('Sales Contract Form', async ({ page }) => {
   test.setTimeout(480000);
   const url = domain + '/form-library/examples/sales-contract-form-template-free/reactjs';
   await page.goto(url);
-  await page.locator('a').filter({ hasText: 'Accept All' }).click();
+  await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1500, height: 1100 });
 
   const demoModule = page.locator('.v2-class---examples-page__demo-module .sd-root-modern').first();
@@ -161,7 +161,7 @@ test('Conference Registration Form', async ({ page }) => {
   test.setTimeout(480000);
   const url = domain + '/form-library/examples/conference-registration-form-template-free/reactjs';
   await page.goto(url);
-  await page.locator('a').filter({ hasText: 'Accept All' }).click();
+  await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1280, height: 2500 });
 
   const demoModule = page.locator('.v2-class---examples-page__demo-module .sd-root-modern').first();
@@ -177,7 +177,7 @@ test('Feedback Form', async ({ page }) => {
   test.setTimeout(480000);
   const url = domain + '/form-library/examples/feedback-form-template-free/reactjs';
   await page.goto(url);
-  await page.locator('a').filter({ hasText: 'Accept All' }).click();
+  await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1280, height: 2200 });
 
   const demoModule = page.locator('.v2-class---examples-page__demo-module .sd-root-modern').first();

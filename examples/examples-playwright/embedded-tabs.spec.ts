@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { acceptCookieBanner } from '../../helper';
 
 const domain = 'https://surveyjsio-test.azurewebsites.net';
 // const domain = "http://localhost:62946";
@@ -14,7 +15,7 @@ test('Survey Embeded & Creator Embeded', async ({ page }) => {
   });
 
   await page.goto(url);
-  await page.locator('a').filter({ hasText: 'Accept All' }).click();
+  await acceptCookieBanner(page);
   await page.locator('#site-tour').getByText('Later').click();
   await page.setViewportSize({ width: 1920, height: 1080 });
   await page.getByRole('tab', { name: 'Embed Survey' }).locator('span').click();
