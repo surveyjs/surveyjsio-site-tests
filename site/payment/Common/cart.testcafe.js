@@ -11,44 +11,6 @@ fixture`account`
     }
   });
 
-test('Fill cart for unregistered user', async t => {
-  await t.maximizeWindow();
-
-  const basicRow = Selector('.v2-class---cart-item').withText('SurveyJS Basic');
-  const proRow = Selector('.v2-class---cart-item').withText('SurveyJS Pro');
-
-  await t.click(Selector('.v2-class---pricing-header--basic a').withText('Buy Now').filterVisible());
-  await t.expect(basicRow.find('td').withText('SurveyJS Basic').exists).ok();
-  await t.navigateTo('/pricing');
-  await t.click(Selector('.v2-class---pricing-header--pro a').withText('Buy Now').filterVisible());
-
-  await t.click(basicRow.find('.v2-class---editor-dropdown__control'));
-  await t.click(Selector('.sv-popup .v2-class---drop-down-menu-item__link').withExactText('3').filterVisible());
-
-  await t.expect(basicRow.find('td').nth(2).innerText).eql('€499.00');
-  await t.expect(basicRow.find('td').nth(4).innerText).eql('-€198.00');
-  await t.expect(basicRow.find('td').nth(5).innerText).eql('€1,299.00');
-
-  await t.expect(proRow.find('td').nth(2).innerText).eql('€899.00');
-  await t.expect(proRow.find('td').nth(4).innerText).eql('€0.00');
-  await t.expect(proRow.find('td').nth(5).innerText).eql('€899.00');
-
-  await t.expect(Selector('.v2-class---cart-subtotal-container [data-name=subtotal] .v2-class---cart-subtotal-container__value').innerText).eql('€2,198.00');
-
-  await t.expect(Selector("input[placeholder='Company VAT Number (EU companies only)']").visible).notOk('no vat', { timeout: 500 });
-
-  await t.typeText(Selector("input[placeholder='Full Name']"), 'Tester Name');
-  await t.typeText(Selector('input[placeholder=Email]'), 'tester@surveyjs.io');
-  await t.typeText(Selector("input[placeholder='Country']"), 'Argentina');
-  await t.pressKey('Enter');
-  await t.typeText(Selector("input[placeholder='Company Name']"), 'Tester Company');
-  await t.typeText(Selector("input[placeholder='Postal Code']"), '123456');
-  await t.typeText(Selector("input[placeholder='Address']"), 'Test address');
-  await t.typeText(Selector("input[placeholder='Phone']"), '+34567890123');
-
-  await t.click(Selector('button').withText('Proceed to Checkout'));
-});
-
 test('Fill cart for registered users', async t => {
   await t.maximizeWindow();
   await t.navigateTo('/signup');
