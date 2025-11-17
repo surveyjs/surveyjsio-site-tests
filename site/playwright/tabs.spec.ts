@@ -2,11 +2,11 @@ import { test, expect } from '@playwright/test';
 import { acceptCookieBanner, url } from '../../helper';
 
 test('Click example tabs', async ({ page }) => {
-  test.setTimeout(480000); 
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/Library?id=questiontype-radiogroup&platform=jQuery&theme=default`);
   await acceptCookieBanner(page);
-  
+
   await page.setViewportSize({ width: 1920, height: 1080 });
 
   const activeTabLocator = page.locator('.v2-class---footer-toolbar-item--active').first();
@@ -14,21 +14,21 @@ test('Click example tabs', async ({ page }) => {
   const demoTab = page.locator('span').filter({ hasText: 'Demo', visible: true }).first();
 
   await expect(activeTabLocator).toHaveClass(/v2-class---footer-toolbar-item--active/);
-  
-  await codeTab.click({force: true});
-  
+
+  await codeTab.click({ force: true });
+
   await expect(demoTab).not.toHaveClass(/v2-class---footer-toolbar-item--active/);
   await expect(activeTabLocator).toHaveClass(/v2-class---footer-toolbar-item--active/);
 });
 
 test('Click survey result tabs', async ({ page }) => {
-  test.setTimeout(480000); 
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/Library?id=questiontype-radiogroup&platform=jQuery&theme=default`);
   await acceptCookieBanner(page);
-  
+
   await page.setViewportSize({ width: 1920, height: 1080 });
-  
+
   const fordOption = page.locator('span').filter({ hasText: 'Ford', visible: true }).nth(1);
   const completeButton = page.locator('.sd-navigation__complete-btn').first();
   const jsonTab = page.locator('a').filter({ hasText: 'JSON', visible: true }).first();
@@ -36,23 +36,23 @@ test('Click survey result tabs', async ({ page }) => {
 
   await fordOption.click();
   await completeButton.click();
-  
+
   await expect(jsonTab).toHaveClass(/v2-class---demo-tab-item--active/);
-  
+
   await pdfTab.click();
-  
+
   await expect(jsonTab).not.toHaveClass(/v2-class---demo-tab-item--active/);
   await expect(pdfTab).toHaveClass(/v2-class---demo-tab-item--active/);
 });
 
 test('Check survey result tabs', async ({ page }) => {
-  test.setTimeout(480000); 
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/Library?id=questiontype-radiogroup&platform=jQuery&theme=default`);
   await acceptCookieBanner(page);
-  
+
   await page.setViewportSize({ width: 1920, height: 1080 });
-  
+
   const fordOption = page.locator('span').filter({ hasText: 'Ford', visible: true }).nth(1);
   const completeButton = page.locator('.sd-navigation__complete-btn').first();
   const jsonTab = page.locator('a').filter({ hasText: 'JSON', visible: true }).first();
@@ -60,10 +60,10 @@ test('Check survey result tabs', async ({ page }) => {
 
   await fordOption.click();
   await completeButton.click();
-  
+
   await expect(jsonTab).toBeVisible();
   await expect(jsonTab).toHaveClass(/v2-class---demo-tab-item--active/);
-  
+
   await expect(pdfTab).toBeVisible();
   await expect(pdfTab).not.toHaveClass(/v2-class---demo-tab-item--active/);
 });

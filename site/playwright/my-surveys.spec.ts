@@ -1,19 +1,19 @@
 import { test, expect } from '@playwright/test';
 import { acceptCookieBanner, url } from '../../helper';
 
-test("remember organization", async ({ page, browser }) => {
+test('remember organization', async ({ page, browser }) => {
   test.setTimeout(480000);
 
-  const testerEmail = "Sych-Test1@gmail.com";
-  const testerPass = "Sych-Test1@gmail.com";
-  const personalSurveys = "Personal Surveys";
-  const organizationSurveys = "55";
+  const testerEmail = 'Sych-Test1@gmail.com';
+  const testerPass = 'Sych-Test1@gmail.com';
+  const personalSurveys = 'Personal Surveys';
+  const organizationSurveys = '55';
 
   const isOrganizationCookieExists = async ()=>{
     return await page.evaluate(() => {
-      return document.cookie.indexOf("organizationId=") !== -1;
+      return document.cookie.indexOf('organizationId=') !== -1;
     });
-  }
+  };
 
   // none notifications
   await page.goto(`${url}/login`);

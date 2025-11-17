@@ -1,19 +1,19 @@
 import { test, expect } from '@playwright/test';
 import { acceptCookieBanner, url } from '../../helper';
 
-test("licences expired notifications", async ({ page, browser }) => {
-  const testerEmail = "Sych-Test1@gmail.com";
-  const testerPass = "Sych-Test1@gmail.com";
-  const apiUrl = "api/ManageUser/getLicensesExpirationPopupType?expiresSoonNotificationDateTime=null&expiredNotificationDateTime=null";
-  const bannerExpiredTitle = "Your renewal subscription has expired.";
-  const bannerExpiresSoonTitle = "Your renewal subscription expires soon.";
-  const topBarIconTwinklingClass = ".v2-class---top-menu-item__icon--twinkling";
-  const topBarAccountClass = ".v2-class---top-menu-item--drop-down-account";
-  const topBarAccountSettingsWarningClass = ".v2-class---drop-down-menu-item--manage-warning";
+test('licences expired notifications', async ({ page, browser }) => {
+  const testerEmail = 'Sych-Test1@gmail.com';
+  const testerPass = 'Sych-Test1@gmail.com';
+  const apiUrl = 'api/ManageUser/getLicensesExpirationPopupType?expiresSoonNotificationDateTime=null&expiredNotificationDateTime=null';
+  const bannerExpiredTitle = 'Your renewal subscription has expired.';
+  const bannerExpiresSoonTitle = 'Your renewal subscription expires soon.';
+  const topBarIconTwinklingClass = '.v2-class---top-menu-item__icon--twinkling';
+  const topBarAccountClass = '.v2-class---top-menu-item--drop-down-account';
+  const topBarAccountSettingsWarningClass = '.v2-class---drop-down-menu-item--manage-warning';
 
   let apiRequestCount = 0;
 
-  const mockPopupType = async ({popupType, preventCountingRequests=false})=>{
+  const mockPopupType = async ({ popupType, preventCountingRequests=false })=>{
     // Mock the api call before navigating
     await page.route(`*/**/${apiUrl}`, async route => {
       /*
@@ -25,17 +25,17 @@ test("licences expired notifications", async ({ page, browser }) => {
       const json = { popupType };
       await route.fulfill({ json });
     });
-  }
+  };
   const removeExpirationCookie = async ()=>{
     await page.evaluate(() => {
-      document.cookie = "expirationCookie" + "=; Max-Age=0";
+      document.cookie = 'expirationCookie' + '=; Max-Age=0';
     });
-  }
+  };
   const isExpirationCookieExists = async ()=>{
     return await page.evaluate(() => {
-      return document.cookie.indexOf("expirationCookie=") !== -1;
+      return document.cookie.indexOf('expirationCookie=') !== -1;
     });
-  }
+  };
 
   test.setTimeout(480000);
 
@@ -46,10 +46,10 @@ test("licences expired notifications", async ({ page, browser }) => {
   await page.getByPlaceholder('Email').fill(testerEmail);
   await page.getByPlaceholder('Password').fill(testerPass);
   await page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io website Terms of Use and Priv' }).click();
-  await mockPopupType({popupType:"none", preventCountingRequests: true}); // prevent counting next api call because we don't know actually about cookie existence in current browser context https://playwright.dev/docs/next/api/class-browsercontext
+  await mockPopupType({ popupType: 'none', preventCountingRequests: true }); // prevent counting next api call because we don't know actually about cookie existence in current browser context https://playwright.dev/docs/next/api/class-browsercontext
   await page.locator('.v2-class---signup-page__actions-footer-button-container--login').click(); // +0 api call because counting prevented
   await removeExpirationCookie();
-  await mockPopupType({popupType:"none"});
+  await mockPopupType({ popupType: 'none' });
   await page.goto(`${url}`); // +1 api call and cookie is set
   await expect(page.getByText(bannerExpiredTitle)).toBeHidden();
   await expect(page.getByText(bannerExpiresSoonTitle)).toBeHidden();
@@ -61,7 +61,7 @@ test("licences expired notifications", async ({ page, browser }) => {
   // expired notifications
   await removeExpirationCookie();
   await expect(await isExpirationCookieExists()).toBeFalsy();
-  await mockPopupType({popupType:"expired"});
+  await mockPopupType({ popupType: 'expired' });
   await page.goto(`${url}`); // +1 api call and cookie is set
   await expect(page.getByText(bannerExpiredTitle)).toBeVisible();
   await expect(page.getByText(bannerExpiresSoonTitle)).toBeHidden();
@@ -74,7 +74,7 @@ test("licences expired notifications", async ({ page, browser }) => {
   // expiresSoon notifications
   await removeExpirationCookie();
   await expect(await isExpirationCookieExists()).toBeFalsy();
-  await mockPopupType({popupType:"expiresSoon"});
+  await mockPopupType({ popupType: 'expiresSoon' });
   await page.goto(`${url}`); // +1 api call and cookie is set
   await expect(page.getByText(bannerExpiredTitle)).toBeHidden();
   await expect(page.getByText(bannerExpiresSoonTitle)).toBeVisible();
@@ -87,7 +87,7 @@ test("licences expired notifications", async ({ page, browser }) => {
   // warningOnly notifications
   await removeExpirationCookie();
   await expect(await isExpirationCookieExists()).toBeFalsy();
-  await mockPopupType({popupType:"warningOnly"});
+  await mockPopupType({ popupType: 'warningOnly' });
   await page.goto(`${url}`); // +1 api call and cookie is set
   await expect(page.getByText(bannerExpiredTitle)).toBeHidden();
   await expect(page.getByText(bannerExpiresSoonTitle)).toBeHidden();
@@ -100,7 +100,7 @@ test("licences expired notifications", async ({ page, browser }) => {
   // close banner after visit Account Page
   await removeExpirationCookie();
   await expect(await isExpirationCookieExists()).toBeFalsy();
-  await mockPopupType({popupType:"expired"});
+  await mockPopupType({ popupType: 'expired' });
   await page.goto(`${url}`); // +1 api call and cookie is set
   await expect(page.getByText(bannerExpiredTitle)).toBeVisible();
   await page.goto(`${url}/manage`);

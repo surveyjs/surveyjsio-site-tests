@@ -2,50 +2,50 @@ import { test, expect } from '@playwright/test';
 import { acceptCookieBanner, url } from '../../helper';
 
 test('FormElements', async ({ page }) => {
-  test.setTimeout(480000); 
+  test.setTimeout(480000);
 
   await page.setViewportSize({ width: 1920, height: 1080 });
-  
-  await page.goto(`${url}/login`); 
-  
+
+  await page.goto(`${url}/login`);
+
   await acceptCookieBanner(page);
 
   const acceptTermsCheckbox = page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io', visible: true }).locator('.v2-class---checkbox__checkmark').first();
   const rememberMeCheckbox = page.locator('label').filter({ hasText: 'Remember me', visible: true }).locator('.v2-class---checkbox__checkmark').first();
   const signUpLinkMain = page.locator('main').locator('a').filter({ hasText: 'Sign Up', visible: true }).first();
 
-  await expect(page.locator('#Email')).toBeVisible({ timeout: 5000 }); 
-  await expect(page.locator('#Password')).toBeVisible(); 
-  await expect(page.locator('a').filter({ hasText: 'Forgot your password?', visible: true }).first()).toBeVisible(); 
-  await expect(acceptTermsCheckbox).toBeVisible(); 
-  await expect(rememberMeCheckbox).toBeVisible(); 
-  
-  await expect(page.locator('#GitHub').locator('.v2-class---signup-page__social-link-panel-link-icon').first()).toBeVisible(); 
-  await expect(page.locator('#Google').locator('.v2-class---signup-page__social-link-panel-link-icon').first()).toBeVisible(); 
-  await expect(page.locator('#Facebook').locator('.v2-class---signup-page__social-link-panel-link-icon').first()).toBeVisible(); 
-  await expect(page.locator('#Twitter').locator('.v2-class---signup-page__social-link-panel-link-icon').first()).toBeVisible(); 
-  
-  await expect(page.locator('a.v2-class---button').filter({ hasText: 'Log In', visible: true }).first()).toBeVisible(); 
-  await expect(signUpLinkMain).toBeVisible(); 
+  await expect(page.locator('#Email')).toBeVisible({ timeout: 5000 });
+  await expect(page.locator('#Password')).toBeVisible();
+  await expect(page.locator('a').filter({ hasText: 'Forgot your password?', visible: true }).first()).toBeVisible();
+  await expect(acceptTermsCheckbox).toBeVisible();
+  await expect(rememberMeCheckbox).toBeVisible();
+
+  await expect(page.locator('#GitHub').locator('.v2-class---signup-page__social-link-panel-link-icon').first()).toBeVisible();
+  await expect(page.locator('#Google').locator('.v2-class---signup-page__social-link-panel-link-icon').first()).toBeVisible();
+  await expect(page.locator('#Facebook').locator('.v2-class---signup-page__social-link-panel-link-icon').first()).toBeVisible();
+  await expect(page.locator('#Twitter').locator('.v2-class---signup-page__social-link-panel-link-icon').first()).toBeVisible();
+
+  await expect(page.locator('a.v2-class---button').filter({ hasText: 'Log In', visible: true }).first()).toBeVisible();
+  await expect(signUpLinkMain).toBeVisible();
 
   await signUpLinkMain.click();
 
-  await expect(page.locator('#DisplayName')).toBeVisible(); 
-  await expect(page.locator('#RegisterEmail')).toBeVisible(); 
-  await expect(page.locator('#RegisterPassword')).toBeVisible(); 
-  await expect(page.locator('#ConfirmPassword')).toBeVisible(); 
-  
-  await expect(page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io', visible: true }).first()).toBeVisible(); 
-  
-  await expect(page.locator('a.v2-class---button').filter({ hasText: 'Create Account', visible: true }).first()).toBeVisible(); 
-  await expect(page.locator('a').filter({ hasText: 'Log In', visible: true }).first()).toBeVisible(); 
+  await expect(page.locator('#DisplayName')).toBeVisible();
+  await expect(page.locator('#RegisterEmail')).toBeVisible();
+  await expect(page.locator('#RegisterPassword')).toBeVisible();
+  await expect(page.locator('#ConfirmPassword')).toBeVisible();
+
+  await expect(page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io', visible: true }).first()).toBeVisible();
+
+  await expect(page.locator('a.v2-class---button').filter({ hasText: 'Create Account', visible: true }).first()).toBeVisible();
+  await expect(page.locator('a').filter({ hasText: 'Log In', visible: true }).first()).toBeVisible();
 });
 
 test('RegisterRemove', async ({ page }) => {
-  test.setTimeout(480000); 
+  test.setTimeout(480000);
 
   await page.setViewportSize({ width: 1920, height: 1080 });
-  
+
   await page.goto(`${url}/login`);
   await acceptCookieBanner(page);
 
@@ -68,10 +68,10 @@ test('RegisterRemove', async ({ page }) => {
   // #region invalid login attempt
   await emailInput.first().fill(email);
   await passwordInput.first().fill(password);
-  await acceptTermsCheckbox.click(); 
+  await acceptTermsCheckbox.click();
   await loginButton.click();
 
-  await expect(invalidLoginAttemptMessage).toBeVisible(); 
+  await expect(invalidLoginAttemptMessage).toBeVisible();
   // #endregion invalid login attempt
 
   // #region register user
@@ -90,25 +90,25 @@ test('RegisterRemove', async ({ page }) => {
   await acceptTermsCheckbox.click();
   await registerButton.click();
 
-  await expect(menuAccountLink).toBeVisible(); 
+  await expect(menuAccountLink).toBeVisible();
   // #endregion register user
 
   // #region logoff and login again
   const menuLogOffLink = page.locator('span').filter({ hasText: 'Sign Out', visible: true }).first();
 
   await menuAccountLink.hover();
-  await expect(menuLogOffLink).toBeVisible(); 
+  await expect(menuLogOffLink).toBeVisible();
   await menuLogOffLink.click();
-  
-  await expect(menuLogInLink.or(menuSignUpLink)).toBeVisible(); 
+
+  await expect(menuLogInLink.or(menuSignUpLink)).toBeVisible();
 
   await page.goto(`${url}/login`);
   await emailInput.first().fill(email);
   await passwordInput.first().fill(password);
   await acceptTermsCheckbox.click();
   await loginButton.click();
-  
-  await expect(menuAccountLink).toBeVisible(); 
+
+  await expect(menuAccountLink).toBeVisible();
   // #endregion logoff and login again
 
   // #region remove user
@@ -134,37 +134,37 @@ test('RegisterRemove', async ({ page }) => {
   await deleteAccountEmailInput.first().fill(email);
   await deleteUserButton.click();
 
-  await expect(menuLogInLink.or(menuSignUpLink)).toBeVisible(); 
+  await expect(menuLogInLink.or(menuSignUpLink)).toBeVisible();
 
   await page.goto(`${url}/login`);
   await emailInput.first().fill(email);
   await passwordInput.first().fill(password);
   await acceptTermsCheckbox.click();
   await loginButton.click();
-  
-  await expect(invalidLoginAttemptMessage).toBeVisible(); 
+
+  await expect(invalidLoginAttemptMessage).toBeVisible();
   // #endregion remove user
 });
 
 test('ForgotPasswordForm', async ({ page }) => {
-  test.setTimeout(480000); 
+  test.setTimeout(480000);
 
   await page.setViewportSize({ width: 1920, height: 1080 });
-  
+
   await page.goto(`${url}/login`);
   await acceptCookieBanner(page);
 
   const forgotPasswordLink = page.locator('a').filter({ hasText: 'Forgot your password?', visible: true }).first();
 
-  await expect(forgotPasswordLink).toBeVisible(); 
-  
+  await expect(forgotPasswordLink).toBeVisible();
+
   await forgotPasswordLink.click();
-  
-  await expect(page.locator('h1').filter({ hasText: 'Reset Password', visible: true }).first()).toBeVisible(); 
-  
+
+  await expect(page.locator('h1').filter({ hasText: 'Reset Password', visible: true }).first()).toBeVisible();
+
   await page.locator('#Email').first().fill('test@tester.org');
-  
+
   await page.locator('a').filter({ hasText: 'Reset', visible: true }).first().click();
-  
-  await expect(page.locator('h1').filter({ hasText: 'Please Check Your Email', visible: true }).first()).toBeVisible(); 
+
+  await expect(page.locator('h1').filter({ hasText: 'Please Check Your Email', visible: true }).first()).toBeVisible();
 });
