@@ -1,6 +1,9 @@
 import type { Locator, Page } from '@playwright/test';
 import { expect, test as baseTest } from '@playwright/test';
 
+export const url = 'https://surveyjsio-test.azurewebsites.net';
+// export const url = "http://localhost:62946";
+
 export async function compareScreenshot(page: Page, elementSelector: string | Locator | undefined, screenshotName: string, elementIndex = 0, maxDiffPixels?:number, mask?: Array<Locator>) {
   let currentElement = elementSelector;
   if (!!currentElement && typeof currentElement == 'string') {

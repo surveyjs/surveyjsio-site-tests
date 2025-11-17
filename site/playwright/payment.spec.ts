@@ -1,8 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { acceptCookieBanner } from '../../helper';
-
-const url = "https://surveyjsio-test.azurewebsites.net";
-// const url = "http://localhost:62946";
+import { acceptCookieBanner, url } from '../../helper';
 
 test('Cart: vat number field', async ({ page }) => {
   test.setTimeout(480000);

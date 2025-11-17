@@ -1,15 +1,11 @@
 import { test, expect } from '@playwright/test';
-import { acceptCookieBanner } from '../../helper';
-
-const domain = "https://surveyjsio-test.azurewebsites.net";
-// const domain = "http://localhost:62946";
-
-const url = domain + "/form-library";
+import { acceptCookieBanner, url } from '../../helper';
 
 test('Switch platform', async ({ page }) => {
    test.setTimeout(480000);
    
    await page.goto(url);
+   await page.goto(`${url}/form-library`);
    await acceptCookieBanner(page);
    
    await expect(page.locator(".v2-class---code-panel div[data-platform=angular]")).toHaveClass(/v2-class---platform-selector-item--selected/);
