@@ -2,7 +2,6 @@
   "version": "0.0.1",
   "name": "surveyjs.io.tests",
   "scripts": {
-    "test:examples": "testcafe ./examples/examples-func --native-automation --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000",
     "pw:site:ci": "npx playwright test --reporter=dot --project=site",
     "pw:site:ui": "npx playwright test --project=site --ui",
     "pw:examples:ci": "npx playwright test --reporter=dot --project=examples",
