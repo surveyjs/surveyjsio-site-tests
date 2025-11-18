@@ -145,15 +145,15 @@ test('Fill cart for unregistered user', async ({ page }) => {
 
   await page.locator('.sv-popup .v2-class---drop-down-menu-item__link').filter({ hasText: '3', visible: true }).first().click();
 
-  await expect(basicRow.locator('td').nth(2)).toHaveText('€499.00');
-  await expect(basicRow.locator('td').nth(4)).toHaveText('-€198.00');
-  await expect(basicRow.locator('td').nth(5)).toHaveText('€1,299.00');
+  await expect(basicRow.locator('td').nth(2)).toHaveText('€499.00'); // eslint-disable-line surveyjs/eslint-plugin-i18n/only-english-or-code
+  await expect(basicRow.locator('td').nth(4)).toHaveText('-€198.00'); // eslint-disable-line surveyjs/eslint-plugin-i18n/only-english-or-code
+  await expect(basicRow.locator('td').nth(5)).toHaveText('€1,299.00'); // eslint-disable-line surveyjs/eslint-plugin-i18n/only-english-or-code
 
-  await expect(proRow.locator('td').nth(2)).toHaveText('€899.00');
-  await expect(proRow.locator('td').nth(4)).toHaveText('€0.00');
-  await expect(proRow.locator('td').nth(5)).toHaveText('€899.00');
+  await expect(proRow.locator('td').nth(2)).toHaveText('€899.00'); // eslint-disable-line surveyjs/eslint-plugin-i18n/only-english-or-code
+  await expect(proRow.locator('td').nth(4)).toHaveText('€0.00'); // eslint-disable-line surveyjs/eslint-plugin-i18n/only-english-or-code
+  await expect(proRow.locator('td').nth(5)).toHaveText('€899.00'); // eslint-disable-line surveyjs/eslint-plugin-i18n/only-english-or-code
 
-  await expect(page.locator('.v2-class---cart-subtotal-container [data-name=subtotal] .v2-class---cart-subtotal-container__value')).toHaveText('€2,198.00');
+  await expect(page.locator('.v2-class---cart-subtotal-container [data-name=subtotal] .v2-class---cart-subtotal-container__value')).toHaveText('€2,198.00'); // eslint-disable-line surveyjs/eslint-plugin-i18n/only-english-or-code
 
   await expect(page.locator("input[placeholder='Company VAT Number (EU companies only)']")).toBeHidden({ timeout: 500 });
 
@@ -233,15 +233,15 @@ test('Fill cart for registered users', async ({ page }) => {
 
   await page.locator('.sv-popup .v2-class---drop-down-menu-item__link').filter({ hasText: '3', visible: true }).first().click();
 
-  await expect(basicRow.locator('td').nth(2)).toHaveText('€499.00');
-  await expect(basicRow.locator('td').nth(4)).toHaveText('-€198.00');
-  await expect(basicRow.locator('td').nth(5)).toHaveText('€1,299.00');
+  await expect(basicRow.locator('td').nth(2)).toHaveText('€499.00'); // eslint-disable-line surveyjs/eslint-plugin-i18n/only-english-or-code
+  await expect(basicRow.locator('td').nth(4)).toHaveText('-€198.00'); // eslint-disable-line surveyjs/eslint-plugin-i18n/only-english-or-code
+  await expect(basicRow.locator('td').nth(5)).toHaveText('€1,299.00'); // eslint-disable-line surveyjs/eslint-plugin-i18n/only-english-or-code
 
-  await expect(proRow.locator('td').nth(2)).toHaveText('€899.00');
-  await expect(proRow.locator('td').nth(4)).toHaveText('€0.00');
-  await expect(proRow.locator('td').nth(5)).toHaveText('€899.00');
+  await expect(proRow.locator('td').nth(2)).toHaveText('€899.00'); // eslint-disable-line surveyjs/eslint-plugin-i18n/only-english-or-code
+  await expect(proRow.locator('td').nth(4)).toHaveText('€0.00'); // eslint-disable-line surveyjs/eslint-plugin-i18n/only-english-or-code
+  await expect(proRow.locator('td').nth(5)).toHaveText('€899.00');// eslint-disable-line surveyjs/eslint-plugin-i18n/only-english-or-code
 
-  await expect(page.locator('.v2-class---cart-subtotal-container [data-name=subtotal] .v2-class---cart-subtotal-container__value')).toHaveText('€2,198.00');
+  await expect(page.locator('.v2-class---cart-subtotal-container [data-name=subtotal] .v2-class---cart-subtotal-container__value')).toHaveText('€2,198.00'); // eslint-disable-line surveyjs/eslint-plugin-i18n/only-english-or-code
 
   await expect(page.locator("input[placeholder='Company VAT Number (EU companies only)']")).toBeHidden({ timeout: 500 });
 
