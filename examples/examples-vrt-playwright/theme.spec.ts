@@ -1,13 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { acceptCookieBanner, compareScreenshot } from '../../helper';
-
-const domain = 'https://surveyjsio-test.azurewebsites.net';
-// const domain = "http://localhost:62946";
+import { acceptCookieBanner, compareScreenshot, url } from '../../helper';
 
 test('Hotel Booking Form', async ({ page }) => {
   test.setTimeout(480000);
-  const url = domain + '/form-library/examples/hotel-booking-form-template-free/reactjs';
-  await page.goto(url);
+  await page.goto(`${url}/form-library/examples/hotel-booking-form-template-free/reactjs`);
   await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1920, height: 1080 });
 
@@ -28,8 +24,7 @@ test('Hotel Booking Form', async ({ page }) => {
 
 test('Order Form', async ({ page }) => {
   test.setTimeout(480000);
-  const url = domain + '/form-library/examples/order-form-template-free/reactjs';
-  await page.goto(url);
+  await page.goto(`${url}/form-library/examples/order-form-template-free/reactjs`);
   await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1280, height: 1500 });
 
@@ -52,8 +47,7 @@ test('Order Form', async ({ page }) => {
 
 test('Online Check-In Form', async ({ page }) => {
   test.setTimeout(480000);
-  const url = domain + '/form-library/examples/online-check-in-form-template-free/reactjs';
-  await page.goto(url);
+  await page.goto(`${url}/form-library/examples/online-check-in-form-template-free/reactjs`);
   await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1280, height: 2200 });
 
@@ -68,8 +62,7 @@ test('Online Check-In Form', async ({ page }) => {
 
 test('Patient Registration Form', async ({ page }) => {
   test.setTimeout(480000);
-  const url = domain + '/form-library/examples/patient-registration-form-template-free/reactjs';
-  await page.goto(url);
+  await page.goto(`${url}/form-library/examples/patient-registration-form-template-free/reactjs`);
   await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1280, height: 2700 });
 
@@ -88,8 +81,7 @@ test('Patient Registration Form', async ({ page }) => {
 
 test('Pet Hotel Reservation Form', async ({ page }) => {
   test.setTimeout(480000);
-  const url = domain + '/form-library/examples/pet-hotel-reservation-form-template-free/reactjs';
-  await page.goto(url);
+  await page.goto(`${url}/form-library/examples/pet-hotel-reservation-form-template-free/reactjs`);
   await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1280, height: 1100 });
 
@@ -111,8 +103,7 @@ test('Pet Hotel Reservation Form', async ({ page }) => {
 
 test('Car Rental Form', async ({ page }) => {
   test.setTimeout(480000);
-  const url = domain + '/form-library/examples/car-rental-form-template-free/reactjs';
-  await page.goto(url);
+  await page.goto(`${url}/form-library/examples/car-rental-form-template-free/reactjs`);
   await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1280, height: 3200 });
 
@@ -123,8 +114,7 @@ test('Car Rental Form', async ({ page }) => {
 
 test('Issue Report', async ({ page }) => {
   test.setTimeout(480000);
-  const url = domain + '/form-library/examples/issue-report-template-free/reactjs';
-  await page.goto(url);
+  await page.goto(`${url}/form-library/examples/issue-report-template-free/reactjs`);
   await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1280, height: 1700 });
 
@@ -139,8 +129,7 @@ test('Issue Report', async ({ page }) => {
 
 test('Sales Contract Form', async ({ page }) => {
   test.setTimeout(480000);
-  const url = domain + '/form-library/examples/sales-contract-form-template-free/reactjs';
-  await page.goto(url);
+  await page.goto(`${url}/form-library/examples/sales-contract-form-template-free/reactjs`);
   await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1500, height: 1100 });
 
@@ -159,8 +148,7 @@ test('Sales Contract Form', async ({ page }) => {
 
 test('Conference Registration Form', async ({ page }) => {
   test.setTimeout(480000);
-  const url = domain + '/form-library/examples/conference-registration-form-template-free/reactjs';
-  await page.goto(url);
+  await page.goto(`${url}/form-library/examples/conference-registration-form-template-free/reactjs`);
   await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1280, height: 2500 });
 
@@ -175,8 +163,7 @@ test('Conference Registration Form', async ({ page }) => {
 
 test('Feedback Form', async ({ page }) => {
   test.setTimeout(480000);
-  const url = domain + '/form-library/examples/feedback-form-template-free/reactjs';
-  await page.goto(url);
+  await page.goto(`${url}/form-library/examples/feedback-form-template-free/reactjs`);
   await acceptCookieBanner(page);
   await page.setViewportSize({ width: 1280, height: 2200 });
 

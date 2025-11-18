@@ -1,10 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { acceptCookieBanner } from '../../helper';
-
-const domain = 'https://surveyjsio-test.azurewebsites.net';
-// const domain = "http://localhost:62946";
-
-const url = domain + '/create-free-survey';
+import { acceptCookieBanner, url } from '../../helper';
 
 test('Survey Embeded & Creator Embeded', async ({ page }) => {
   test.setTimeout(480000);
@@ -14,7 +9,8 @@ test('Survey Embeded & Creator Embeded', async ({ page }) => {
     errors.push(error);
   });
 
-  await page.goto(url);
+  await page.goto(`${url}/create-free-survey`);
+
   await acceptCookieBanner(page);
   await page.locator('#site-tour').getByText('Later').click();
   await page.setViewportSize({ width: 1920, height: 1080 });
