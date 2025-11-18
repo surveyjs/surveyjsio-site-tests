@@ -3,7 +3,8 @@
 	"parser": "@typescript-eslint/parser",
 	"plugins": [
 		"@typescript-eslint",
-		"surveyjs"
+		"surveyjs",
+    	"surveyjs/eslint-plugin-i18n"
 	],
 	"extends": [
 		"eslint:recommended",
@@ -19,6 +20,13 @@
 	"rules": {
 		"surveyjs/no-test-only": 2,
 		"surveyjs/no-test-debug": 2,
+		"surveyjs/eslint-plugin-i18n/only-english-or-code": [
+		"error",
+			{
+				"includeIdentifier": true,
+				"includeComment": true
+			}
+		],
 		"indent": [
 			"error", 2,
 			{
