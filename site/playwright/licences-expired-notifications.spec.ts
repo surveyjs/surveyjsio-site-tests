@@ -1,5 +1,4 @@
-import { test, expect } from '@playwright/test';
-import { acceptCookieBanner, url } from '../../helper';
+import { test, expect, acceptCookieBanner, url } from '../../helper';
 
 test('licences expired notifications', async ({ page, browser }) => {
   const testerEmail = 'Sych-Test1@gmail.com';

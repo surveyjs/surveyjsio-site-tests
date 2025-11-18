@@ -1,5 +1,4 @@
-import { test, expect } from '@playwright/test';
-import { acceptCookieBanner, url } from '../../../helper';
+import { test, expect, acceptCookieBanner, url } from '../../../helper';
 
 test('Check tabs 1', async ({ page }) => {
   test.setTimeout(480000);

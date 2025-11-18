@@ -1,5 +1,4 @@
-import { test, expect } from '@playwright/test';
-import { acceptCookieBanner, url } from '../../../helper';
+import { test, expect, acceptCookieBanner, url } from '../../../helper';
 
 // --- custom_widgets_single_page tests ---
 

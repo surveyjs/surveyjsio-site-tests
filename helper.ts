@@ -29,3 +29,18 @@ export async function compareScreenshot(page: Page, elementSelector: string | Lo
 export async function acceptCookieBanner(page: Page):Promise<void> {
   await page.locator('a').filter({ hasText: 'Accept All' }).click();
 }
+
+export const test = baseTest.extend<{page: void, skipJSErrors: boolean}>({
+  skipJSErrors: [false, { option: false }],
+  page: async ({ page, skipJSErrors }, use) => {
+    const errors: Array<Error> = [];
+    page.addListener('pageerror', (error) => {
+      errors.push(error);
+    });
+    await use(page);
+    if (!skipJSErrors) {
+      expect(errors).toHaveLength(0);
+    }
+  }
+});
+export { expect };
