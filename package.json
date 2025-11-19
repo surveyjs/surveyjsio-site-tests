@@ -2,17 +2,15 @@
   "version": "0.0.1",
   "name": "surveyjs.io.tests",
   "scripts": {
-    "pw:site:ci": "npx playwright test --reporter=dot --project=site",
-    "pw:site:ui": "npx playwright test --project=site --ui",
-    "pw:examples:ci": "npx playwright test --reporter=dot --project=examples",
-    "pw:examples:ui": "npx playwright test --ui --project=examples",
-    "pw:examples:vrt:ci": "npx playwright test --reporter=dot --project=examples-vrt",
-    "pw:examples:vrt:ui": "npx playwright test --ui --project=examples-vrt",
+    "site:ci": "npx playwright test --reporter=dot --project=site",
+    "site:dev": "npx playwright test --project=site --ui",
+    "examples:ci": "npx playwright test --reporter=dot --project=examples",
+    "examples:ui": "npx playwright test --ui --project=examples",
     "pre-push-check": "npm run lint",
     "lint": "eslint ./**/*.spec.ts --quiet",
     "prepare": "husky install",
     "postinstall": "playwright install chromium",
-    "v2:vrt:ci": "testcafe chrome:headless ./site/V2-VRT/ --screenshots ./  --native-automation --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000"
+    "site:vrt:ci": "testcafe chrome:headless ./site/V2-VRT-TestCafe/ --screenshots ./  --native-automation --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000"
   },
   "dependencies": {
     "@playwright/test": "1.52.0",
