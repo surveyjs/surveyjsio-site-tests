@@ -1,7 +1,7 @@
 import { test, expect, acceptCookieBanner, url } from '../../helper';
 
 test('Survey Embeded & Creator Embeded', async ({ page }) => {
-  test.setTimeout(480000);
+  await page.waitForLoadState('load');
 
   const errors:any = [];
   page.on('pageerror', (error) => {

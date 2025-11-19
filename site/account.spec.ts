@@ -1,7 +1,7 @@
 import { test, expect, acceptCookieBanner, url } from '../helper';
 
 test('FormElements', async ({ page }) => {
-  test.setTimeout(480000);
+  await page.waitForLoadState('load');
 
   await page.setViewportSize({ width: 1920, height: 1080 });
 
@@ -41,7 +41,7 @@ test('FormElements', async ({ page }) => {
 });
 
 test('RegisterRemove', async ({ page }) => {
-  test.setTimeout(480000);
+  await page.waitForLoadState('load');
 
   await page.setViewportSize({ width: 1920, height: 1080 });
 
@@ -146,7 +146,7 @@ test('RegisterRemove', async ({ page }) => {
 });
 
 test('ForgotPasswordForm', async ({ page }) => {
-  test.setTimeout(480000);
+  await page.waitForLoadState('load');
 
   await page.setViewportSize({ width: 1920, height: 1080 });
 

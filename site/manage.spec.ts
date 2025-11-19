@@ -1,7 +1,7 @@
 import { test, expect, acceptCookieBanner, url } from '../helper';
 
 test('Remove the non-commercial usage text', async ({ page }) => {
-  test.setTimeout(480000);
+  await page.waitForLoadState('load');
 
   await page.goto(`${url}/login`);
 

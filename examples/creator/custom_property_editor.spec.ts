@@ -1,7 +1,7 @@
 import { test, expect, acceptCookieBanner, url } from '../../helper';
 
 test('Check shortname property', async ({ page }) => {
-  test.setTimeout(480000);
+  await page.waitForLoadState('load');
 
   await page.goto(`${url}/survey-creator/examples/s/customize-property-editors/reactjs`);
 

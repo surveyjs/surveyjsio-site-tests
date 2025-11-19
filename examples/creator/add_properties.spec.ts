@@ -1,7 +1,7 @@
 import { test, expect, acceptCookieBanner, url } from '../../helper';
 
 test('Required property', async ({ page }) => {
-  test.setTimeout(480000);
+  await page.waitForLoadState('load');
 
   await page.goto(`${url}/survey-creator/examples/s/add-properties-to-property-grid/vanillajs`);
 
@@ -21,7 +21,7 @@ test('Required property', async ({ page }) => {
 });
 
 test('Property with default value', async ({ page }) => {
-  test.setTimeout(480000);
+  await page.waitForLoadState('load');
 
   await page.goto(`${url}/survey-creator/examples/s/add-properties-to-property-grid/vanillajs`);
 
@@ -40,7 +40,7 @@ test('Property with default value', async ({ page }) => {
 });
 
 test('Check boolean property', async ({ page }) => {
-  test.setTimeout(480000);
+  await page.waitForLoadState('load');
 
   await page.goto(`${url}/survey-creator/examples/s/add-properties-to-property-grid/vanillajs`);
 
@@ -60,7 +60,7 @@ test('Check boolean property', async ({ page }) => {
 });
 
 test('Check text property', async ({ page }) => {
-  test.setTimeout(480000);
+  await page.waitForLoadState('load');
 
   await page.goto(`${url}/survey-creator/examples/s/add-properties-to-property-grid/vanillajs`);
 
@@ -84,7 +84,7 @@ test('Check text property', async ({ page }) => {
 });
 
 test('Check html property', async ({ page }) => {
-  test.setTimeout(480000);
+  await page.waitForLoadState('load');
 
   await page.goto(`${url}/survey-creator/examples/s/add-properties-to-property-grid/vanillajs`);
 
@@ -108,7 +108,7 @@ test('Check html property', async ({ page }) => {
 });
 
 test('Check itemvalues property', async ({ page }) => {
-  test.setTimeout(480000);
+  await page.waitForLoadState('load');
 
   await page.goto(`${url}/survey-creator/examples/s/add-properties-to-property-grid/vanillajs`);
 

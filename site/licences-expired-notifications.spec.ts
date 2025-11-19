@@ -36,7 +36,7 @@ test('licences expired notifications', async ({ page, browser }) => {
     });
   };
 
-  test.setTimeout(480000);
+  await page.waitForLoadState('load');
 
   // none notifications
   await page.goto(`${url}/login`); // +0 api call because of logout

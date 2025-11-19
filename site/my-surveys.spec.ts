@@ -1,7 +1,7 @@
 import { test, expect, acceptCookieBanner, url } from '../helper';
 
 test('remember organization', async ({ page, browser }) => {
-  test.setTimeout(480000);
+  await page.waitForLoadState('load');
 
   const testerEmail = 'Sych-Test1@gmail.com';
   const testerPass = 'Sych-Test1@gmail.com';
