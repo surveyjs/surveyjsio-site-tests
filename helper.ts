@@ -1,7 +1,7 @@
 import type { Locator, Page } from '@playwright/test';
 import { expect, test as baseTest } from '@playwright/test';
 
-export const examplesURL = 'https://surveyjstest.azurewebsites.net/';
+export const examplesURL = 'https://surveyjstest.azurewebsites.net';
 export const siteUrl = 'https://surveyjsio-test.azurewebsites.net';
 // export const examplesURL = 'http://localhost:62946';
 // export const siteUrl = 'http://localhost:62946';
