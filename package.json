@@ -3,9 +3,9 @@
   "name": "surveyjs.io.tests",
   "scripts": {
     "site:ci": "npx playwright test --reporter=dot --project=site",
-    "site:dev": "npx playwright test --project=site --ui",
+    "site:ui": "npx playwright test --project=site --ui",
     "examples:ci": "npx playwright test --reporter=dot --project=examples",
-    "examples:dev": "npx playwright test --ui --project=examples",
+    "examples:ui": "npx playwright test --ui --project=examples",
     "pre-push-check": "npm run lint",
     "lint": "eslint ./**/*.spec.ts --quiet",
     "prepare": "husky install",
