@@ -3,46 +3,46 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
-trigger:
-  batch: true
-  branches:
-    include:
-    - master
+# trigger:
+#   batch: true
+#   branches:
+#     include:
+#     - master
 
-pool:
-  vmImage: 'windows-latest'
+# pool:
+#   vmImage: 'windows-latest'
 
-steps:
-  - task: NodeTool@0
-    inputs:
-      versionSpec: '14.x'
-    displayName: 'Install Node.js'
+# steps:
+#   - task: NodeTool@0
+#     inputs:
+#       versionSpec: '14.x'
+#     displayName: 'Install Node.js'
 
-  - bash: |
-      npm install
-    displayName: 'npm install'
+#   - bash: |
+#       npm install
+#     displayName: 'npm install'
 
-  - bash: |
-      npx playwright install chromium
-    displayName: 'npm install'
+#   - bash: |
+#       npx playwright install chromium
+#     displayName: 'npm install'
 
-  - bash: |
-      npm run pw:examples:vrt:ci
-    displayName: 'run Playwright VRT tests'
+#   - bash: |
+#       npm run pw:examples:vrt:ci
+#     displayName: 'run Playwright VRT tests'
 
-  - task: CopyFiles@2
-    inputs:
-      SourceFolder: '$(Build.SourcesDirectory)/test-results/'
-      Contents: '**'
-      TargetFolder: '$(Build.ArtifactStagingDirectory)/Examples-VRT-Artifacts'
-      OverWrite: true
-    condition: failed()
-    displayName: 'copy vrt artifacts'
+#   - task: CopyFiles@2
+#     inputs:
+#       SourceFolder: '$(Build.SourcesDirectory)/test-results/'
+#       Contents: '**'
+#       TargetFolder: '$(Build.ArtifactStagingDirectory)/Examples-VRT-Artifacts'
+#       OverWrite: true
+#     condition: failed()
+#     displayName: 'copy vrt artifacts'
 
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)/Examples-VRT-Artifacts/'
-      ArtifactName: 'Examples-VRT-Artifacts'
-      publishLocation: 'Container'
-    condition: failed()
-    displayName: 'publish vrt artifacts'
+#   - task: PublishBuildArtifacts@1
+#     inputs:
+#       PathtoPublish: '$(Build.ArtifactStagingDirectory)/Examples-VRT-Artifacts/'
+#       ArtifactName: 'Examples-VRT-Artifacts'
+#       publishLocation: 'Container'
+#     condition: failed()
+#     displayName: 'publish vrt artifacts'
