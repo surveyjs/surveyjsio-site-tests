@@ -27,3 +27,20 @@ jobs:
   - bash: |
       npm run examples:ci
     displayName: 'run Playwright tests'
+
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: '$(Build.SourcesDirectory)/test-results/'
+      Contents: '**'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)/Site-Test-Artifacts'
+      OverWrite: true
+    condition: failed()
+    displayName: 'copy vrt artifacts'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/Site-Test-Artifacts/'
+      ArtifactName: 'Site-Test-Artifacts'
+      publishLocation: 'Container'
+    condition: failed()
+    displayName: 'publish test artifacts'
