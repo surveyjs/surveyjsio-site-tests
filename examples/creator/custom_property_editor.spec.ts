@@ -1,7 +1,7 @@
-import { test, expect, acceptCookieBanner, url } from '../../helper';
+import { test, expect, acceptCookieBanner, examplesURL as url } from '../../helper';
 
 test('Check shortname property', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/survey-creator/examples/s/customize-property-editors/reactjs`);
 

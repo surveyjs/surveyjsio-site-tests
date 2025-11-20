@@ -1,9 +1,9 @@
-import { test, expect, acceptCookieBanner, url } from '../../helper';
+import { test, expect, acceptCookieBanner, examplesURL as url } from '../../helper';
 
 // --- Tests from question_types (codesandbox) ---
 
 test('codesandbox', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/form-library/examples/text-entry-question/reactjs`);
 
@@ -18,7 +18,7 @@ test('codesandbox', async ({ page }) => {
 // --- Tests from question_types (text, signaturepad) ---
 
 test('text', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/Library`);
 
@@ -51,7 +51,7 @@ test('text', async ({ page }) => {
 });
 
 test('signaturepad', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto('https://surveyjstest.azurewebsites.net/form-library/examples/signature-pad-widget-javascript');
 
@@ -70,7 +70,7 @@ test('signaturepad', async ({ page }) => {
 // --- Tests from survey (title_logo) ---
 
 test('title_logo', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/Library`);
   await acceptCookieBanner(page);

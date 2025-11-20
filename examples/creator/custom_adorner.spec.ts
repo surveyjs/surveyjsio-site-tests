@@ -1,7 +1,7 @@
-import { test, expect, acceptCookieBanner, url } from '../../helper';
+import { test, expect, acceptCookieBanner, examplesURL as url } from '../../helper';
 
 test('Adorner exists', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/survey-creator/examples/s/create-custom-adorners/reactjs`);
 

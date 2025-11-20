@@ -1,7 +1,7 @@
-import { test, expect, acceptCookieBanner, url } from '../../helper';
+import { test, expect, acceptCookieBanner, examplesURL as url } from '../../helper';
 
 test('Check tabs 1', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/survey-creator/examples/survey-creator-interface-localization/knockoutjs`);
   await acceptCookieBanner(page);

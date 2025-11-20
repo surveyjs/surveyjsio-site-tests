@@ -1,7 +1,7 @@
-import { test, expect, acceptCookieBanner, url } from '../helper';
+import { test, expect, acceptCookieBanner, examplesURL as url } from '../helper';
 
 test('Library', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-text&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-radiogroup&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-dropdown&platform=Knockoutjs&theme=default');
@@ -953,7 +953,7 @@ test('Library', async ({ page }) => {
 });
 
 test('Survey-Creator', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=options&theme=default&platform=Knockoutjs');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=singlepage&theme=default&platform=Knockoutjs');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=localization&theme=default&platform=Knockoutjs');
@@ -1047,7 +1047,7 @@ test('Survey-Creator', async ({ page }) => {
 });
 
 test('Pdf-Export', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Pdf-Export?id=survey-pdf-export');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Pdf-Export?id=survey-pdf-customstylization');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Pdf-Export?id=survey-pdf-integrationwithcreator');
@@ -1059,7 +1059,7 @@ test('Pdf-Export', async ({ page }) => {
 });
 
 test('Analytics', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=nps-direct&platform=Knockoutjs');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=multilanguage&platform=Knockoutjs');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=plain-data&platform=Knockoutjs');

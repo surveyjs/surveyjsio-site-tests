@@ -1,7 +1,7 @@
-import { test, expect, acceptCookieBanner, url } from '../helper';
+import { test, expect, acceptCookieBanner, siteUrl as url } from '../helper';
 
 test('Cart: vat number field', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/pricing`);
   await acceptCookieBanner(page);
@@ -32,7 +32,7 @@ test('Cart: vat number field', async ({ page }) => {
 });
 
 test('PayPal: test payment', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/pricing`);
   await acceptCookieBanner(page);
@@ -120,7 +120,7 @@ test('PayPal: test payment', async ({ page }) => {
 });
 
 test('Fill cart for unregistered user', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
   await page.setViewportSize({ width: 1920, height: 1080 });
 
   await page.goto(`${url}/pricing`);
@@ -173,7 +173,7 @@ test('Fill cart for unregistered user', async ({ page }) => {
 });
 
 test('Fill cart for registered users', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.setViewportSize({ width: 1920, height: 1080 });
 

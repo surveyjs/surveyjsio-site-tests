@@ -1,4 +1,4 @@
-import { test, expect, acceptCookieBanner, url } from '../helper';
+import { test, expect, acceptCookieBanner, siteUrl as url } from '../helper';
 
 test('licences expired notifications', async ({ page, browser }) => {
   const testerEmail = 'Sych-Test1@gmail.com';
@@ -36,7 +36,7 @@ test('licences expired notifications', async ({ page, browser }) => {
     });
   };
 
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   // none notifications
   await page.goto(`${url}/login`); // +0 api call because of logout

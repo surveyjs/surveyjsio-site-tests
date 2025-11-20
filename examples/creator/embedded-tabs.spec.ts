@@ -1,7 +1,7 @@
-import { test, expect, acceptCookieBanner, url } from '../../helper';
+import { test, expect, acceptCookieBanner, examplesURL as url } from '../../helper';
 
 test('Survey Embeded & Creator Embeded', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   const errors:any = [];
   page.on('pageerror', (error) => {

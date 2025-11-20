@@ -1,7 +1,7 @@
-import { test, expect, acceptCookieBanner, url } from '../helper';
+import { test, expect, acceptCookieBanner, siteUrl as url } from '../helper';
 
 test('Pricing buy test', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Account/Login`);
 

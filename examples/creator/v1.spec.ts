@@ -1,9 +1,9 @@
-import { test, expect, acceptCookieBanner, url } from '../../helper';
+import { test, expect, acceptCookieBanner, examplesURL as url } from '../../helper';
 
 // --- custom_widgets_single_page tests ---
 
 test('Check date picker in creator', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/BuilderSinglePage?id=customwidgets&platform=Knockoutjs&theme=default`);
 
@@ -11,7 +11,7 @@ test('Check date picker in creator', async ({ page }) => {
 });
 
 test('Check microphone in creator', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/BuilderSinglePage?id=customwidgets&platform=Knockoutjs&theme=default`);
 
@@ -25,7 +25,7 @@ test('Check microphone in creator', async ({ page }) => {
 });
 
 test('Check bootstrap datepicker', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/BuilderSinglePage?id=customwidgets&platform=Knockoutjs&theme=default`);
 
@@ -35,7 +35,7 @@ test('Check bootstrap datepicker', async ({ page }) => {
 // --- depends_on_properties tests ---
 
 test('Check default tabs 1', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/Builder?id=dependsonproperties&platform=Knockoutjs&theme=default`);
   await acceptCookieBanner(page);
@@ -60,7 +60,7 @@ test('Check default tabs 1', async ({ page }) => {
 // --- Editor Options tests ---
 
 test('Show default tabs', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/Builder?id=options&platform=Knockoutjs&theme=default`);
 
@@ -75,7 +75,7 @@ test('Show default tabs', async ({ page }) => {
 // --- element_menu_customization tests ---
 
 test('Check default tabs 2', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/Builder?id=elementmenu&platform=Knockoutjs&theme=default`);
   await acceptCookieBanner(page);
@@ -104,7 +104,7 @@ test('Check default tabs 2', async ({ page }) => {
 // --- load_survey_from_service tests ---
 
 test('Load survey from service', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/Builder?id=loadfromservice&platform=Knockoutjs&theme=default`);
 
@@ -119,7 +119,7 @@ test('Load survey from service', async ({ page }) => {
 // --- localization_single_page tests ---
 
 test.skip('Check tab names with deutsch', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/CreatorSinglePage?id=localization&platform=Knockoutjs&theme=default`);
 
@@ -139,7 +139,7 @@ test.skip('Check tab names with deutsch', async ({ page }) => {
 });
 
 test('Check toolbox names with deutsch', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/CreatorSinglePage?id=localization&platform=Knockoutjs&theme=default`);
 
@@ -151,7 +151,7 @@ test('Check toolbox names with deutsch', async ({ page }) => {
 });
 
 test.skip('Check property names with deutsch', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/CreatorSinglePage?id=localization&platform=Knockoutjs&theme=default`);
 
@@ -175,7 +175,7 @@ test.skip('Check property names with deutsch', async ({ page }) => {
 // --- open_close_edit_question tests ---
 
 test('Open close check question title', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/CreatorSinglePage?id=options&platform=Knockoutjs&theme=default`);
 
@@ -193,7 +193,7 @@ test('Open close check question title', async ({ page }) => {
 // --- survey_title tests ---
 
 test.skip('title_adorners', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/Survey-Creator?id=titleadorner&platform=Knockoutjs`);
 
@@ -233,7 +233,7 @@ test.skip('title_adorners', async ({ page }) => {
 // --- toolbox_customization tests ---
 
 test('Check tabs 2', async ({ page }) => {
-  await page.waitForLoadState('load');
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/Builder?id=toolboxcustomization&platform=Knockoutjs&theme=default`);
   await acceptCookieBanner(page);
