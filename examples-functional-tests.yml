@@ -10,7 +10,7 @@ trigger:
     - master
 
 pool:
-  vmImage: 'Ubuntu-22.04'
+  vmImage: "windows-latest"
 
 jobs:
 - job: Playwright
