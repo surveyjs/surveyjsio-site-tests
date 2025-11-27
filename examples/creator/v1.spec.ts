@@ -183,10 +183,10 @@ test('Open close check question title', async ({ page }) => {
 
   await page.locator('.svd_toolbox div').filter({ hasText: 'Single Input', visible: true }).first().click();
 
-  const questionTitle = page.locator('span').filter({ hasText: 'question1', visible: true }).first();
+  const questionTitle = page.getByText('question1', { exact: true });
   await questionTitle.click();
+  await expect(page.getByLabel('question1 text').getByRole('textbox', { name: 'title', exact: true })).toBeFocused();
   await page.keyboard.press('Enter');
-
   await questionTitle.hover();
 });
 
