@@ -14,6 +14,13 @@ pool:
 
 jobs:
 - job: Playwright
+
+  strategy:
+    matrix:
+      Shard_1: { SHARD_INDEX: 1, SHARD_TOTAL: 3 }
+      Shard_2: { SHARD_INDEX: 2, SHARD_TOTAL: 3 }
+      Shard_3: { SHARD_INDEX: 3, SHARD_TOTAL: 3 }
+
   steps:
   - task: NodeTool@0
     inputs:
@@ -25,7 +32,7 @@ jobs:
     displayName: 'npm install'
 
   - bash: |
-      npm run examples:ci
+      npm run examples:ci -- --shard=$(SHARD_INDEX)/$(SHARD_TOTAL)
     displayName: 'run Playwright tests'
 
   - task: CopyFiles@2
