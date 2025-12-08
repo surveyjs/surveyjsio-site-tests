@@ -1,5 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const shardIndex = process.env.PLAYWRIGHT_SHARD_INDEX || 'default';
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -69,6 +71,11 @@ export default defineConfig({
     //   name: 'webkit',
     //   use: { ...devices['Desktop Safari'] },
     // },
+  ],
+
+  reporter: [
+    ['list'],
+    ['junit', { outputFile: `./test-results/results-shard-${shardIndex}.xml` }],
   ],
 
   /* Run your local dev server before starting the tests */
