@@ -33,8 +33,18 @@ jobs:
     displayName: 'npm install'
 
   - bash: |
+      export PLAYWRIGHT_SHARD_INDEX=$(SHARD_INDEX)
       npm run examples:ci -- --shard=$(SHARD_INDEX)/$(SHARD_TOTAL)
     displayName: 'run Playwright tests'
+
+
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '**/test-results/results-shard-*.xml' 
+      testRunTitle: 'Playwright E2E Shard $(SHARD_INDEX)'
+    condition: succeededOrFailed()
+    displayName: 'Publish Playwright Test Results'
 
   - task: CopyFiles@2
     inputs:
