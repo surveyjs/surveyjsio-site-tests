@@ -75,7 +75,7 @@ export default defineConfig({
 
   reporter: [
     ['list'],
-    ['junit', { outputFile: `./test-results/results-shard-${shardIndex}.xml` }],
+    ['junit', { outputFile: `./test-results/results-shard-${shardIndex}.xml` }]
   ],
 
   /* Run your local dev server before starting the tests */

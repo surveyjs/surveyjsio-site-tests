@@ -2,9 +2,9 @@
   "version": "0.0.1",
   "name": "surveyjs.io.tests",
   "scripts": {
-    "site:ci": "npx playwright test --reporter=dot --project=site",
+    "site:ci": "npx playwright test --project=site",
     "site:ui": "npx playwright test --project=site --ui",
-    "examples:ci": "npx playwright test --reporter=dot --project=examples",
+    "examples:ci": "npx playwright test --project=examples",
     "examples:ui": "npx playwright test --ui --project=examples",
     "pre-push-check": "npm run lint",
     "lint": "eslint ./**/*.spec.ts --quiet",
