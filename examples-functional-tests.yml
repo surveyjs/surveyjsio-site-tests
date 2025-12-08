@@ -41,7 +41,7 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testResultsFormat: 'JUnit'
-      testResultsFiles: '$(Build.SourcesDirectory)/test-results/results-shard-*.xml' 
+      testResultsFiles: '$(Build.SourcesDirectory)/test-results/results-shard-$(SHARD_INDEX).xml' 
       testRunTitle: 'Playwright E2E Shard $(SHARD_INDEX)'
     condition: succeededOrFailed()
     displayName: 'Publish Playwright Test Results'
