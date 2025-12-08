@@ -1,6 +1,6 @@
 import { test, expect, acceptCookieBanner, examplesURL as url } from '../helper';
 
-test('Library', async ({ page }) => {
+test('Library-1', async ({ page }) => {
   test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-text&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-radiogroup&platform=Knockoutjs&theme=default');
@@ -85,6 +85,10 @@ test('Library', async ({ page }) => {
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=survey-calculatedvalues&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=textprocessing-choices&platform=Knockoutjs&theme=default');
 
+});
+
+test('Library-2', async ({ page }) => {
+  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=survey-markdown-matrix&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=survey-markdown-radiogroup&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=survey-markdown-radiogroup-marked&platform=Knockoutjs&theme=default');
@@ -280,6 +284,10 @@ test('Library', async ({ page }) => {
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=survey-customcss&platform=Knockoutjs&theme=bootstrap');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=survey-cssclasses&platform=Knockoutjs&theme=bootstrap');
 
+});
+
+test('Library-3', async ({ page }) => {
+  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=custom-theme&platform=Knockoutjs&theme=bootstrap');
   // await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=bootstrap-material-theme&platform=Knockoutjs&theme=bootstrap')
   // await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=floating-labels&platform=Knockoutjs&theme=bootstrap')
@@ -952,7 +960,7 @@ test('Library', async ({ page }) => {
   // await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=real-income&platform=Vue&theme=bootstrap');
 });
 
-test('Survey-Creator', async ({ page }) => {
+test('Survey-Creator-1', async ({ page }) => {
   test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=options&theme=default&platform=Knockoutjs');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=singlepage&theme=default&platform=Knockoutjs');
@@ -984,6 +992,10 @@ test('Survey-Creator', async ({ page }) => {
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=loadfromservice&theme=default&platform=Knockoutjs');
   //await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=editor-custom-theme&theme=default&platform=Knockoutjs')
 
+});
+
+test('Survey-Creator-2', async ({ page }) => {
+  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=options&theme=modern&platform=Knockoutjs');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=singlepage&theme=modern&platform=Knockoutjs');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=localization&theme=modern&platform=Knockoutjs');
