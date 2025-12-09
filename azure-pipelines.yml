@@ -28,6 +28,15 @@ jobs:
       npm run site:ci
     displayName: 'run Playwright tests'
 
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '$(Build.SourcesDirectory)/test-results/results-shard-default.xml' 
+      testRunTitle: 'Playwright E2E Site Tests'
+    condition: succeededOrFailed()
+    displayName: 'Publish Playwright Test Results'
+
+
   - task: CopyFiles@2
     inputs:
       SourceFolder: '$(Build.SourcesDirectory)/test-results/'
