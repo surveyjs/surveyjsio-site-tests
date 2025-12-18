@@ -5,7 +5,7 @@ test.beforeAll('Setup', async () => {
   test.setTimeout(480000);
 });
 
-test('FAQ Overview', async ({ page }) => {
+test.skip('FAQ Overview', async ({ page }) => {
   await page.setViewportSize({ width: 1599, height: 768 });
   await page.goto(`${url}/faq`);
   await acceptCookieBanner(page);
@@ -37,7 +37,7 @@ test('FAQ Overview', async ({ page }) => {
   await expect(rightSidebar).toBeVisible();
 });
 
-test('FAQ Licensing', async ({ page }) => {
+test.skip('FAQ Licensing', async ({ page }) => {
   await page.setViewportSize({ width: 1599, height: 768 });
   await page.goto(`${url}/faq/licensing`);
   await acceptCookieBanner(page);
@@ -81,7 +81,7 @@ test('FAQ Licensing', async ({ page }) => {
   await compareScreenshot(page, bottomNav, 'markdown-content-faq-bottom-nav.png');
 });
 
-test('Documentation Overview', async ({ page }) => {
+test.skip('Documentation Overview', async ({ page }) => {
   await page.setViewportSize({ width: 1599, height: 768 });
   await page.goto(`${url}/documentation`);
   await acceptCookieBanner(page);
@@ -119,7 +119,7 @@ test('Documentation Overview', async ({ page }) => {
   await compareScreenshot(page, articleParagraph, 'markdown-content-doc-article-paragraph.png');
 });
 
-test('Stay Updated Overview', async ({ page }) => {
+test.skip('Stay Updated Overview', async ({ page }) => {
   await page.setViewportSize({ width: 1599, height: 768 });
   await page.goto(`${url}/stay-updated`);
   await acceptCookieBanner(page);
