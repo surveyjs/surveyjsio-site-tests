@@ -1,9 +1,8 @@
 import { test, expect, acceptCookieBanner, siteUrl as url, compareScreenshot, screens } from '../helper';
 
-test.beforeAll('Setup', async ({ page }) => {
+test.beforeAll('Setup', async () => {
   console.log('Before tests');
   test.setTimeout(480000);
-  await page.goto(`${url}`);
 });
 
 test('FAQ Overview', async ({ page }) => {
