@@ -63,7 +63,7 @@ test('PayPal: test payment', async ({ page }) => {
   const frameLocator0 = await page.frameLocator('#sjs-pyapal-payment iframe').first();
 
   const link = await frameLocator0.getByText('Debit or Credit Card');
-
+  await page.waitForTimeout(10000);
   await link.click();
 
   await page.waitForTimeout(10000);
@@ -116,6 +116,7 @@ test('PayPal: test payment', async ({ page }) => {
   await page.waitForTimeout(10000);
 
   const thankYouText = await page.getByText('Thank you for choosing SurveyJS!');
+  await page.waitForTimeout(10000);
   await thankYouText.click();
 });
 
