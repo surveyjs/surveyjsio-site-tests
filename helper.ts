@@ -6,6 +6,14 @@ export const siteUrl = 'https://surveyjsio-test.azurewebsites.net';
 // export const examplesURL = 'http://localhost:62946';
 // export const siteUrl = 'http://localhost:62946';
 
+export const screens = {
+  'Large-Desktop': { width: 1920, height: 1080 },
+  'Desktop': { width: 1366, height: 768 },
+  'Tablet': { width: 1024, height: 744 },
+  'Vertical-Tablet': { width: 744, height: 1024 },
+  'Mobile': { width: 375, height: 667 }
+};
+
 export async function compareScreenshot(page: Page, elementSelector: string | Locator | undefined, screenshotName: string, elementIndex = 0, maxDiffPixels?:number, mask?: Array<Locator>) {
   let currentElement = elementSelector;
   if (!!currentElement && typeof currentElement == 'string') {
