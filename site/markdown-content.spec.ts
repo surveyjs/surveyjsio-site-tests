@@ -122,10 +122,11 @@ test('Documentation Overview', async ({ page }) => {
   await compareScreenshot(page, articleParagraph, 'markdown-content-doc-article-paragraph.png');
 });
 
-test.skip('Stay Updated Overview', async ({ page }) => {
+test('Stay Updated Overview', async ({ page }) => {
   await page.setViewportSize({ width: 1599, height: 768 });
   await page.goto(`${url}/stay-updated`);
   await acceptCookieBanner(page);
+  await page.waitForTimeout(2500);
 
   await expect(page.locator('.s-search')).toBeVisible();
   await expect(page.locator('.s-search__search-button').first()).toBeVisible();
