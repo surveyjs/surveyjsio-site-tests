@@ -9,7 +9,7 @@ test('FAQ Overview', async ({ page }) => {
   await page.setViewportSize({ width: 1599, height: 768 });
   await page.goto(`${url}/faq`);
   await acceptCookieBanner(page);
-  await page.waitForTimeout(5000);
+  await page.waitForTimeout(2500);
 
   await expect(page.locator('.s-search')).toBeVisible();
   await expect(page.locator('.s-search__search-button').first()).toBeVisible();
@@ -38,10 +38,11 @@ test('FAQ Overview', async ({ page }) => {
   await expect(rightSidebar).toBeVisible();
 });
 
-test.skip('FAQ Licensing', async ({ page }) => {
+test('FAQ Licensing', async ({ page }) => {
   await page.setViewportSize({ width: 1599, height: 768 });
   await page.goto(`${url}/faq/licensing`);
   await acceptCookieBanner(page);
+  await page.waitForTimeout(2500);
 
   await expect(page.locator('.s-search')).toBeVisible();
   await expect(page.locator('.s-search__search-button').first()).toBeVisible();
@@ -82,10 +83,11 @@ test.skip('FAQ Licensing', async ({ page }) => {
   await compareScreenshot(page, bottomNav, 'markdown-content-faq-bottom-nav.png');
 });
 
-test.skip('Documentation Overview', async ({ page }) => {
+test('Documentation Overview', async ({ page }) => {
   await page.setViewportSize({ width: 1599, height: 768 });
   await page.goto(`${url}/documentation`);
   await acceptCookieBanner(page);
+  await page.waitForTimeout(2500);
 
   await expect(page.locator('.s-search')).toBeVisible();
   await expect(page.locator('.s-search__search-button').first()).toBeVisible();
