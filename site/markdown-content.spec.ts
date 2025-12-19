@@ -9,7 +9,7 @@ test('FAQ Overview', async ({ page }) => {
   await page.setViewportSize({ width: 1599, height: 768 });
   await page.goto(`${url}/faq`);
   await acceptCookieBanner(page);
-  await page.waitForTimeout(2500);
+  await page.waitForTimeout(1000);
 
   await expect(page.locator('.s-search')).toBeVisible();
   await expect(page.locator('.s-search__search-button').first()).toBeVisible();
@@ -42,7 +42,7 @@ test('FAQ Licensing', async ({ page }) => {
   await page.setViewportSize({ width: 1599, height: 768 });
   await page.goto(`${url}/faq/licensing`);
   await acceptCookieBanner(page);
-  await page.waitForTimeout(2500);
+  await page.waitForTimeout(1000);
 
   await expect(page.locator('.s-search')).toBeVisible();
   await expect(page.locator('.s-search__search-button').first()).toBeVisible();
@@ -87,7 +87,7 @@ test('Documentation Overview', async ({ page }) => {
   await page.setViewportSize({ width: 1599, height: 768 });
   await page.goto(`${url}/documentation`);
   await acceptCookieBanner(page);
-  await page.waitForTimeout(2500);
+  await page.waitForTimeout(1000);
 
   await expect(page.locator('.s-search')).toBeVisible();
   await expect(page.locator('.s-search__search-button').first()).toBeVisible();
@@ -126,7 +126,7 @@ test('Stay Updated Overview', async ({ page }) => {
   await page.setViewportSize({ width: 1599, height: 768 });
   await page.goto(`${url}/stay-updated`);
   await acceptCookieBanner(page);
-  await page.waitForTimeout(2500);
+  await page.waitForTimeout(1000);
 
   await expect(page.locator('.s-search')).toBeVisible();
   await expect(page.locator('.s-search__search-button').first()).toBeVisible();
