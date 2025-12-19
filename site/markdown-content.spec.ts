@@ -5,10 +5,11 @@ test.beforeAll('Setup', async () => {
   test.setTimeout(480000);
 });
 
-test.skip('FAQ Overview', async ({ page }) => {
+test('FAQ Overview', async ({ page }) => {
   await page.setViewportSize({ width: 1599, height: 768 });
   await page.goto(`${url}/faq`);
   await acceptCookieBanner(page);
+  await page.waitForTimeout(5000);
 
   await expect(page.locator('.s-search')).toBeVisible();
   await expect(page.locator('.s-search__search-button').first()).toBeVisible();
