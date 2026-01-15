@@ -154,9 +154,7 @@ test('Stay Updated Overview', async ({ page }) => {
   const pinnedArticle = page.locator('.v2-class---markdown-content-page__pinned-article').first();
   await compareScreenshot(page, pinnedArticle, 'markdown-content-blog-pinned-article.png');
 
-  const articleItem = page.locator('.v2-class---markdown-content-page__articles-list-item')
-    .filter({ hasText: 'December 16, 2025' })
-    .first();
+  const articleItem = page.locator('.v2-class---markdown-content-page__articles-list-item').first();
 
   await compareScreenshot(page, articleItem, 'markdown-content-blog-article-item.png');
 });
