@@ -10,7 +10,7 @@ test('Cart: vat number field', async ({ page }) => {
   await page.waitForTimeout(5000);
 
   await expect(page.locator('[data-name=companyVATNumber]')).toBeVisible();
-  await expect(page.locator('[data-name=companyVATNumber] .v2-class---text-edit__title-required')).toBeHidden();
+  await expect(page.locator('[data-name=companyVATNumber] .v2-class---text-edit__title-required')).toBeHidden({ timeout: 500 });
   await page.getByPlaceholder('Country').click();
   await page.getByPlaceholder('Country').type('A');
   await page.getByText('Austria').click();
@@ -28,7 +28,7 @@ test('Cart: vat number field', async ({ page }) => {
   await page.getByText('Australia').click();
 
   await expect(page.locator('[data-name=companyVATNumber]')).toBeVisible();
-  await expect(page.locator('[data-name=companyVATNumber] .v2-class---text-edit__title-required')).toBeHidden();
+  await expect(page.locator('[data-name=companyVATNumber] .v2-class---text-edit__title-required')).toBeHidden({ timeout: 500 });
 });
 
 test('PayPal: test payment', async ({ page }) => {
