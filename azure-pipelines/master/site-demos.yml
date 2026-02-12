@@ -1,0 +1,71 @@
+resources:
+  pipelines:
+    - pipeline: UpdateSurveyjstestSite
+      source: Update Site Demos (surveyjstest.azurewebsites.net)
+      trigger: true
+
+variables:
+  npm_config_cache: $(Pipeline.Workspace)/.npm
+  CurrentBranch: $(Build.SourceBranchName)
+  ProjectId: 'd79f2855-7b94-4261-9daf-4cace0a06c03'
+
+trigger:
+  batch: true
+  branches:
+    include:
+      - master
+
+pr: none
+
+pool:
+  vmImage: "windows-latest"
+
+jobs:
+- job: Playwright
+
+  strategy:
+    matrix:
+      Shard_1: { SHARD_INDEX: 1, SHARD_TOTAL: 4 }
+      Shard_2: { SHARD_INDEX: 2, SHARD_TOTAL: 4 }
+      Shard_3: { SHARD_INDEX: 3, SHARD_TOTAL: 4 }
+      Shard_4: { SHARD_INDEX: 4, SHARD_TOTAL: 4 }
+
+  steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '24.x'
+    displayName: 'Install Node.js'
+
+  - bash: |
+      npm install
+    displayName: 'npm install'
+
+  - bash: |
+      export PLAYWRIGHT_SHARD_INDEX=$(SHARD_INDEX)
+      npm run examples:ci -- --shard=$(SHARD_INDEX)/$(SHARD_TOTAL)
+    displayName: 'run Playwright tests'
+
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: '$(Build.SourcesDirectory)/test-results/results-shard-$(SHARD_INDEX).xml'
+      testRunTitle: 'Playwright E2E Shard $(SHARD_INDEX)'
+    condition: succeededOrFailed()
+    displayName: 'Publish Playwright Test Results'
+
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: '$(Build.SourcesDirectory)/test-results/'
+      Contents: '**'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)/Site-Test-Artifacts/$(SHARD_INDEX)'
+      OverWrite: true
+    condition: failed()
+    displayName: 'Copy VRT/Failed Test Artifacts for Shard $(SHARD_INDEX)'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/Site-Test-Artifacts/$(SHARD_INDEX)'
+      ArtifactName: 'Site-Test-Artifacts-Shard-$(SHARD_INDEX)'
+      publishLocation: 'Container'
+    condition: failed()
+    displayName: 'Publish Test Artifacts for Shard $(SHARD_INDEX)'
