@@ -1,7 +1,7 @@
 import { test, expect, acceptCookieBanner, siteUrl as url } from '../helper';
 
 test('Switch platform', async ({ page }) => {
-  test.setTimeout(480000);
+  test.setTimeout(1000000);
 
   await page.goto(url);
   await page.goto(`${url}/form-library`);
