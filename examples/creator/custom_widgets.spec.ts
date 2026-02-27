@@ -1,7 +1,7 @@
 import { test, expect, acceptCookieBanner, examplesURL as url } from '../../helper';
 
 test('Check custom widgets default tabs', async ({ page }) => {
-  test.setTimeout(1000000);
+  test.setTimeout(480000);
 
   await page.goto(`${url}/Examples/Builder?id=customwidgets&platform=reactjs`);
   await acceptCookieBanner(page);

@@ -1,7 +1,7 @@
 import { test, expect, acceptCookieBanner, examplesURL as url } from '../helper';
 
 test('Library-1', async ({ page }) => {
-  test.setTimeout(1000000);
+  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-text&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-radiogroup&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-dropdown&platform=Knockoutjs&theme=default');
@@ -88,7 +88,7 @@ test('Library-1', async ({ page }) => {
 });
 
 test('Library-2', async ({ page }) => {
-  test.setTimeout(1000000);
+  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=survey-markdown-matrix&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=survey-markdown-radiogroup&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=survey-markdown-radiogroup-marked&platform=Knockoutjs&theme=default');
@@ -287,7 +287,7 @@ test('Library-2', async ({ page }) => {
 });
 
 test('Library-3', async ({ page }) => {
-  test.setTimeout(1000000);
+  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=custom-theme&platform=Knockoutjs&theme=bootstrap');
   // await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=bootstrap-material-theme&platform=Knockoutjs&theme=bootstrap')
   // await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=floating-labels&platform=Knockoutjs&theme=bootstrap')
@@ -961,7 +961,7 @@ test('Library-3', async ({ page }) => {
 });
 
 test('Survey-Creator-1', async ({ page }) => {
-  test.setTimeout(1000000);
+  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=options&theme=default&platform=Knockoutjs');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=singlepage&theme=default&platform=Knockoutjs');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=localization&theme=default&platform=Knockoutjs');
@@ -995,7 +995,7 @@ test('Survey-Creator-1', async ({ page }) => {
 });
 
 test('Survey-Creator-2', async ({ page }) => {
-  test.setTimeout(1000000);
+  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=options&theme=modern&platform=Knockoutjs');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=singlepage&theme=modern&platform=Knockoutjs');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=localization&theme=modern&platform=Knockoutjs');
@@ -1059,7 +1059,7 @@ test('Survey-Creator-2', async ({ page }) => {
 });
 
 test('Pdf-Export', async ({ page }) => {
-  test.setTimeout(1000000);
+  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Pdf-Export?id=survey-pdf-export');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Pdf-Export?id=survey-pdf-customstylization');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Pdf-Export?id=survey-pdf-integrationwithcreator');
@@ -1071,7 +1071,7 @@ test('Pdf-Export', async ({ page }) => {
 });
 
 test('Analytics', async ({ page }) => {
-  test.setTimeout(1000000);
+  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=nps-direct&platform=Knockoutjs');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=multilanguage&platform=Knockoutjs');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Analytics?id=plain-data&platform=Knockoutjs');
