@@ -25,10 +25,14 @@ jobs:
 
   strategy:
     matrix:
-      Shard_1: { SHARD_INDEX: 1, SHARD_TOTAL: 4 }
-      Shard_2: { SHARD_INDEX: 2, SHARD_TOTAL: 4 }
-      Shard_3: { SHARD_INDEX: 3, SHARD_TOTAL: 4 }
-      Shard_4: { SHARD_INDEX: 4, SHARD_TOTAL: 4 }
+      Shard_1: { SHARD_INDEX: 1, SHARD_TOTAL: 8 }
+      Shard_2: { SHARD_INDEX: 2, SHARD_TOTAL: 8 }
+      Shard_3: { SHARD_INDEX: 3, SHARD_TOTAL: 8 }
+      Shard_4: { SHARD_INDEX: 4, SHARD_TOTAL: 8 }
+      Shard_5: { SHARD_INDEX: 5, SHARD_TOTAL: 8 }
+      Shard_6: { SHARD_INDEX: 6, SHARD_TOTAL: 8 }
+      Shard_7: { SHARD_INDEX: 7, SHARD_TOTAL: 8 }
+      Shard_8: { SHARD_INDEX: 8, SHARD_TOTAL: 8 }
 
   steps:
   - task: NodeTool@0
