@@ -290,3 +290,120 @@ test('Fill cart for registered users', async ({ page }) => {
 
   await expect(invalidLoginAttemptMessage).toBeVisible();
 });
+
+test('Payment link', async ({ page }) => {
+  test.setTimeout(480000);
+
+  // Navigate to the pricing page
+  await page.goto(`${url}/pricing`);
+  await acceptCookieBanner(page);
+
+  // Buy the SurveyJS Basic product
+  await page.locator('.v2-class---pricing-header--basic a').filter({ hasText: 'Buy Now', visible: true }).first().click();
+  await page.waitForTimeout(5000);
+
+  // Fill in the cart form fields
+  await page.getByPlaceholder('Full Name').click();
+  await page.getByPlaceholder('Full Name').fill('Tester Name');
+  await page.getByPlaceholder('Full Name').press('Tab');
+  await page.getByPlaceholder('Email').fill('tester@surveyjs.io');
+  await page.getByPlaceholder('Email').press('Tab');
+  await page.getByPlaceholder('Country').click();
+  await page.getByText('Argentina').click();
+  await page.locator('[placeholder="Company Name"]').click();
+  await page.getByPlaceholder('Company Name').fill('Tester Company');
+  await page.locator('[placeholder="Postal Code"]').click();
+  await page.getByPlaceholder('Postal Code').fill('123456');
+  await page.getByPlaceholder('Postal Code').press('Tab');
+  await page.getByPlaceholder('Address').fill('Test adress');
+  await page.getByPlaceholder('Address').press('Tab');
+  await page.getByPlaceholder('Phone').fill('+34567890123');
+
+  // Accept the License Agreement, Terms of Use, and Privacy Statement
+  await page.getByText('I have read, understand, and').click();
+
+  // Click the "Get Payment Link" button
+  await page.locator('button[title="Get Payment Link"]').click();
+  await page.waitForTimeout(5000);
+
+  // Verify the payment link info message is displayed
+  const paymentLinkInfo = page.locator('.v2-class---payment-link-info');
+  await expect(paymentLinkInfo).toBeVisible();
+
+  // Extract the generated payment link URL
+  const paymentLinkContainer = page.locator('.v2-class---payment-link-text');
+  const paymentLinkText = await paymentLinkContainer.innerText();
+  const paymentLink = paymentLinkText.trim().replace(/\u00a0/g, '');
+
+  // Navigate to the generated payment link
+  await page.goto(paymentLink);
+  await page.waitForTimeout(5000);
+
+  // Accept the License Agreement, Terms of Use, and Privacy Statement on the payment page
+  await page.getByText('I have read, understand, and').click();
+
+  // Proceed to checkout
+  await page.locator('button').filter({ hasText: 'Proceed to Checkout' }).first().click();
+
+  // Complete the PayPal test payment via Debit or Credit Card
+  await page.waitForTimeout(10000);
+  const frameLocator0 = await page.frameLocator('#sjs-pyapal-payment iframe').first();
+
+  const link = await frameLocator0.getByText('Debit or Credit Card');
+  await page.waitForTimeout(10000);
+  await link.click();
+
+  await page.waitForTimeout(10000);
+  const frameLocatorNested = await frameLocator0.frameLocator("[title='paypal_card_form']").first();
+
+  await frameLocatorNested.getByLabel('Card number').click();
+  await frameLocatorNested.getByLabel('Card number').fill('4032039884454820');
+
+  await frameLocatorNested.getByLabel('Expires').click();
+  await frameLocatorNested.getByPlaceholder('MM/YY').fill('01 / 28');
+
+  await frameLocatorNested.getByLabel('CSC').click();
+  await frameLocatorNested.getByPlaceholder('CSC').fill('464');
+
+  await page.waitForTimeout(5000);
+
+  await frameLocatorNested.locator('input[name="givenName"]').click();
+  await frameLocatorNested.locator('input[name="givenName"]').fill('Tester');
+
+  await frameLocatorNested.locator('input[name="familyName"]').click();
+  await frameLocatorNested.locator('input[name="familyName"]').fill('Name');
+
+  if(await frameLocatorNested.locator('input[name="line1"]').isVisible()) {
+    await frameLocatorNested.locator('input[name="line1"]').click();
+    await frameLocatorNested.locator('input[name="line1"]').fill('Test address');
+  }
+
+  if(await frameLocatorNested.locator('input[name="city"]').isVisible()) {
+    await frameLocatorNested.locator('input[name="city"]').click();
+    await frameLocatorNested.locator('input[name="city"]').fill('Test city');
+  }
+
+  if(await frameLocatorNested.locator('select[name="state"]').isVisible()) {
+    await frameLocatorNested.locator('select[name="state"]').selectOption('AL');
+  }
+
+  await frameLocatorNested.locator('input[name="postcode"]').click();
+  await frameLocatorNested.locator('input[name="postcode"]').fill('35004');
+
+  await frameLocatorNested.locator('input[name="phone"]').click();
+  await frameLocatorNested.locator('input[name="phone"]').fill('5555555555');
+
+  await frameLocatorNested.locator('input[name="email"]').click();
+  await frameLocatorNested.locator('input[name="email"]').fill('tester@surveyjs.io');
+
+  const payNow = await frameLocatorNested.locator('#submit-button');
+
+  await payNow.click();
+
+  await page.waitForTimeout(10000);
+
+  // Verify the "Thank you" message is displayed after successful payment
+  const thankYouText = await page.getByText('Thank you for choosing SurveyJS!');
+  await page.waitForTimeout(10000);
+  await thankYouText.click();
+});
