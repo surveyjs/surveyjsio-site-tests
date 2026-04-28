@@ -14,6 +14,9 @@ const shardIndex = process.env.PLAYWRIGHT_SHARD_INDEX || 'default';
 export default defineConfig({
   /* Run tests in files in parallel */
   fullyParallel: true,
+  expect: {
+    toHaveScreenshot: { threshold: 0.02 }
+  },
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
