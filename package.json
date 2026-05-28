@@ -13,10 +13,10 @@
     "site:vrt:ci": "testcafe chrome:headless ./site/V2-VRT-TestCafe/ --screenshots ./  --native-automation --selector-timeout 1500 --reporter spec,xunit:report.xml --browser-init-timeout 420000 --page-request-timeout 168000"
   },
   "dependencies": {
-    "@playwright/test": "1.52.0",
+    "@playwright/test": "1.60.0",
     "devextreme-screenshot-comparer": "^2.0.16",
     "minimist": "^1.2.6",
-    "playwright": "1.52.0",
+    "playwright": "1.60.0",
     "puppeteer": "22.13.1",
     "testcafe": "3.3.0",
     "testcafe-reporter-xunit": "^2.2.1"
