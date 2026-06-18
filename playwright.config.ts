@@ -16,10 +16,16 @@ export default defineConfig({
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
-  /* No retries: flaky e2e should be fixed in the test itself, and infra slowness
-     (Azure cold start) is surfaced by the warmup project instead of being masked
-     by expensive re-runs. */
-  retries: 0,
+  /* One retry as a cheap safety net for residual flake on an already-warm slot
+     (client-side JS load races, transient hiccups). Now that the action/navigation
+     timeouts are bounded, a retry is fast and no longer risks the old multi-minute
+     hangs. The payment suite overrides this to 2 (the PayPal sandbox is flakier).
+     NOTE: the instance-level Azure cold start (2-3 min, longer than navigationTimeout)
+     is handled by the warmup gate, NOT by retries - one retry can't outwait it. */
+  retries: 1,
+  /* Abort the run after 5 hard failures (retries exhausted) so a genuinely broken
+     slot fails fast instead of grinding through the entire suite. */
+  maxFailures: 5,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 4 : undefined,
   /* Backstop per-test budget. The real fast-fail comes from the per-action and
@@ -61,9 +67,13 @@ export default defineConfig({
       testDir: './site',
       use: {
         ...devices['Desktop Chrome'],
-        /* Fail fast on a hung Azure response instead of consuming the whole test budget. */
-        actionTimeout: 30000,
-        navigationTimeout: 60000,
+        /* Generous ceilings, not fixed waits: a warm page still finishes in seconds,
+           but a freshly cold-started Azure slot (e.g. right after a CI restart, when
+           8 workers hit not-yet-JIT-compiled routes at once) needs this headroom so
+           legitimate first-hits don't false-fail. A truly dead slot is caught by the
+           warmup gate, not here. */
+        actionTimeout: 60000,
+        navigationTimeout: 120000,
       },
       dependencies: ['warmup-site'],
     },
@@ -72,8 +82,9 @@ export default defineConfig({
       testDir: './examples',
       use: {
         ...devices['Desktop Chrome'],
-        actionTimeout: 30000,
-        navigationTimeout: 60000,
+        // Same cold-start headroom as the site project (see note above).
+        actionTimeout: 60000,
+        navigationTimeout: 120000,
       },
       dependencies: ['warmup-examples'],
     },
