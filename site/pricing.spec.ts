@@ -1,8 +1,6 @@
 import { test, expect, acceptCookieBanner, siteUrl as url } from '../helper';
 
 test('Pricing buy test', async ({ page }) => {
-  test.setTimeout(480000);
-
   await page.goto(`${url}/Account/Login`);
 
   await page.setViewportSize({ width: 1920, height: 1080 });
@@ -26,5 +24,9 @@ test('Pricing buy test', async ({ page }) => {
   const buyButton = page.locator('a').filter({ hasText: 'Buy Now', visible: true }).first();
 
   await pricingAccountLink.click();
+  // "Buy Now" calls the global addToCart, defined by a script that can still be loading
+  // after a slow/cold page render; wait for it before clicking, otherwise the click
+  // throws "addToCart is not defined" (caught by the page-error guard in helper.ts).
+  await page.waitForFunction(() => typeof (window as any).addToCart === 'function', undefined, { timeout: 60000 }); // eslint-disable-line @typescript-eslint/no-explicit-any
   await buyButton.click();
 });

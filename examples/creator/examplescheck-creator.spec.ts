@@ -1,7 +1,10 @@
 import { test, expect, acceptCookieBanner, examplesURL as url } from '../../helper';
 
+// Bulk JS-error smoke test: visits many pages sequentially, so it legitimately
+// needs a far larger budget than the global timeout.
+test.describe.configure({ timeout: 480000 });
+
 test('Survey-Creator-1', async ({ page }) => {
-  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=options&theme=default&platform=Knockoutjs');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=singlepage&theme=default&platform=Knockoutjs');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=localization&theme=default&platform=Knockoutjs');
@@ -35,7 +38,6 @@ test('Survey-Creator-1', async ({ page }) => {
 });
 
 test('Survey-Creator-2', async ({ page }) => {
-  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=options&theme=modern&platform=Knockoutjs');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=singlepage&theme=modern&platform=Knockoutjs');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Survey-Creator?id=localization&theme=modern&platform=Knockoutjs');

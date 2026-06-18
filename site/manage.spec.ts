@@ -1,8 +1,6 @@
 import { test, expect, acceptCookieBanner, siteUrl as url } from '../helper';
 
 test('Remove the non-commercial usage text', async ({ page }) => {
-  test.setTimeout(480000);
-
   await page.goto(`${url}/login`);
 
   await page.setViewportSize({ width: 1920, height: 1080 });

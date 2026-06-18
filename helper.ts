@@ -6,6 +6,42 @@ export const siteUrl = 'https://surveyjsio-test.azurewebsites.net';
 // export const examplesURL = 'http://localhost:62946';
 // export const siteUrl = 'http://localhost:62946';
 
+/**
+ * Routes each suite exercises, consumed by the warmup projects. On a freshly
+ * cold-started Azure slot the warmup pre-loads these serially so each page's
+ * costly server-side first-hit compilation happens once, in warmup, instead of
+ * 8x under the parallel test surge. When you add a test that visits a NEW page,
+ * add its path here so the warmup covers it.
+ */
+export const siteWarmupPaths = [
+  '/',
+  '/pricing',
+  '/cart',
+  '/login',
+  '/signup',
+  '/manage',
+  '/service',
+  '/Account',
+  '/form-library',
+  '/Examples',
+  '/faq',
+  '/faq/licensing',
+  '/documentation',
+  '/stay-updated',
+];
+
+// Examples pages are parametrized (hundreds of ids), so we can't enumerate them all;
+// one representative URL per route family is enough to compile each controller.
+export const examplesWarmupPaths = [
+  '/form-library/examples/order-form-template-free/reactjs',
+  '/survey-creator/examples/survey-creator-interface-localization/knockoutjs',
+  '/Examples/Pdf-Export?id=survey-pdf-export',
+  '/Examples/Analytics?id=nps-direct&platform=Reactjs',
+  '/Examples/Library?id=questiontype-text&platform=Knockoutjs&theme=default',
+  '/Examples/Survey-Creator?id=options&theme=default&platform=Knockoutjs',
+  '/Examples/Builder?id=customwidgets&platform=reactjs',
+];
+
 export const screens = {
   'Large-Desktop': { width: 1920, height: 1080 },
   'Desktop': { width: 1366, height: 768 },

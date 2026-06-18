@@ -1,7 +1,10 @@
 import { test, expect, acceptCookieBanner, examplesURL as url } from '../../helper';
 
+// Bulk JS-error smoke test: visits many pages sequentially, so it legitimately
+// needs a far larger budget than the global timeout.
+test.describe.configure({ timeout: 480000 });
+
 test('Library-1-1', async ({ page }) => {
-  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-text&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-radiogroup&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-dropdown&platform=Knockoutjs&theme=default');
@@ -32,8 +35,6 @@ test('Library-1-1', async ({ page }) => {
 });
 
 test('Library-1-2', async ({ page }) => {
-  test.setTimeout(480000);
-
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=survey-cookie&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=survey-startwithnewline&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=survey-quiz&platform=Knockoutjs&theme=default');
@@ -62,8 +63,6 @@ test('Library-1-2', async ({ page }) => {
 });
 
 test('Library-1-3', async ({ page }) => {
-  test.setTimeout(480000);
-
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=custom-widget-inputmask&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=custom-widget-ckeditor&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=custom-widget-autocomplete&platform=Knockoutjs&theme=default');
@@ -97,7 +96,6 @@ test('Library-1-3', async ({ page }) => {
 });
 
 test('Library-2-1', async ({ page }) => {
-  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=survey-markdown-matrix&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=survey-markdown-radiogroup&platform=Knockoutjs&theme=default');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=survey-markdown-radiogroup-marked&platform=Knockoutjs&theme=default');
@@ -149,7 +147,6 @@ test('Library-2-1', async ({ page }) => {
 });
 
 test('Library-2-2', async ({ page }) => {
-  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-paneldynamic&platform=Knockoutjs&theme=modern');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-expression&platform=Knockoutjs&theme=modern');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=questiontype-expression-async&platform=Knockoutjs&theme=modern');

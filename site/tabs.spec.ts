@@ -1,8 +1,6 @@
 import { test, expect, acceptCookieBanner, siteUrl as url } from '../helper';
 
 test('Click example tabs', async ({ page }) => {
-  test.setTimeout(480000);
-
   await page.goto(`${url}/Examples/Library?id=questiontype-radiogroup&platform=jQuery&theme=default`);
   await acceptCookieBanner(page);
 
@@ -21,8 +19,6 @@ test('Click example tabs', async ({ page }) => {
 });
 
 test('Click survey result tabs', async ({ page }) => {
-  test.setTimeout(480000);
-
   await page.goto(`${url}/Examples/Library?id=questiontype-radiogroup&platform=jQuery&theme=default`);
   await acceptCookieBanner(page);
 
@@ -45,8 +41,6 @@ test('Click survey result tabs', async ({ page }) => {
 });
 
 test('Check survey result tabs', async ({ page }) => {
-  test.setTimeout(480000);
-
   await page.goto(`${url}/Examples/Library?id=questiontype-radiogroup&platform=jQuery&theme=default`);
   await acceptCookieBanner(page);
 

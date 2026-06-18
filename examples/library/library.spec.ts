@@ -3,8 +3,6 @@ import { test, expect, acceptCookieBanner, examplesURL as url } from '../../help
 // --- Tests from question_types (codesandbox) ---
 
 test('codesandbox', async ({ page }) => {
-  test.setTimeout(480000);
-
   await page.goto(`${url}/form-library/examples/text-entry-question/reactjs`);
 
   await page.setViewportSize({ width: 1920, height: 1080 });
@@ -18,8 +16,6 @@ test('codesandbox', async ({ page }) => {
 // --- Tests from question_types (text, signaturepad) ---
 
 test('text', async ({ page }) => {
-  test.setTimeout(480000);
-
   await page.goto(`${url}/Examples/Library`);
 
   // Custom cookie handling from TestCafe fixture translated to Playwright
@@ -51,8 +47,6 @@ test('text', async ({ page }) => {
 });
 
 test('signaturepad', async ({ page }) => {
-  test.setTimeout(480000);
-
   await page.goto('https://surveyjstest.azurewebsites.net/form-library/examples/signature-pad-widget-javascript');
 
   await page.setViewportSize({ width: 1920, height: 1080 });
@@ -70,8 +64,6 @@ test('signaturepad', async ({ page }) => {
 // --- Tests from survey (title_logo) ---
 
 test('title_logo', async ({ page }) => {
-  test.setTimeout(480000);
-
   await page.goto(`${url}/Examples/Library`);
   await acceptCookieBanner(page);
 

@@ -1,8 +1,6 @@
 import { test, expect, acceptCookieBanner, examplesURL as url } from '../../helper';
 
 test('Adorner exists', async ({ page }) => {
-  test.setTimeout(480000);
-
   await page.goto(`${url}/survey-creator/examples/s/create-custom-adorners/reactjs`);
 
   await page.setViewportSize({ width: 1920, height: 1080 });
