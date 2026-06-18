@@ -10,7 +10,7 @@ trigger:
     - master
 
 pool:
-  vmImage: "windows-latest"
+  name: main-selfhosted
 
 jobs:
 - job: Playwright
