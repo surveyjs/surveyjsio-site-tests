@@ -1,8 +1,6 @@
 import { test, expect, acceptCookieBanner, siteUrl as url } from '../helper';
 
 test('Pricing buy test', async ({ page }) => {
-  test.setTimeout(480000);
-
   await page.goto(`${url}/Account/Login`);
 
   await page.setViewportSize({ width: 1920, height: 1080 });

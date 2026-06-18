@@ -2,7 +2,6 @@ import { test, expect, acceptCookieBanner, siteUrl as url, compareScreenshot, sc
 
 test.beforeAll('Setup', async () => {
   console.log('Before tests');
-  test.setTimeout(480000);
 });
 
 test('FAQ Overview', async ({ page }) => {

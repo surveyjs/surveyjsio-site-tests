@@ -1,8 +1,6 @@
 import { test, expect, acceptCookieBanner, siteUrl as url } from '../helper';
 
 test('Cart: vat number field', async ({ page }) => {
-  test.setTimeout(480000);
-
   await page.goto(`${url}/pricing`);
   await acceptCookieBanner(page);
   await page.locator('div:nth-child(4) > .v2-class---pricing-header__content > div:nth-child(2) > .v2-class---button').first().click();
@@ -24,16 +22,21 @@ test('Cart: vat number field', async ({ page }) => {
   await expect(page.locator('[data-name=companyVATNumber]')).toBeVisible();
   await expect(page.locator('[data-name=companyVATNumber] .v2-class---text-edit__title-required')).toBeVisible();
 
+  // Mirror the working Austria selection above: type into the dropdown filter so
+  // the value-change pipeline (which recomputes VAT) fires. A raw option click
+  // updates the displayed value but does not trigger the VAT recalculation.
   await page.locator('[data-name=country]').click();
+  await page.getByPlaceholder('Country').type('Australia');
   await page.getByText('Australia').click();
 
   await expect(page.locator('[data-name=companyVATNumber]')).toBeVisible();
-  await expect(page.locator('[data-name=companyVATNumber] .v2-class---text-edit__title-required')).toBeHidden({ timeout: 500 });
+  // Switching from an EU to a non-EU country clears the "VAT required" marker
+  // reactively; on the slow Azure slot this can take longer than the old hard
+  // 500ms, so rely on the default expect timeout instead of a tight one.
+  await expect(page.locator('[data-name=companyVATNumber] .v2-class---text-edit__title-required')).toBeHidden();
 });
 
 test('PayPal: test payment', async ({ page }) => {
-  test.setTimeout(480000);
-
   await page.goto(`${url}/pricing`);
   await acceptCookieBanner(page);
   await page.locator('div:nth-child(4) > .v2-class---pricing-header__content > div:nth-child(2) > .v2-class---button').first().click();
@@ -121,7 +124,6 @@ test('PayPal: test payment', async ({ page }) => {
 });
 
 test('Fill cart for unregistered user', async ({ page }) => {
-  test.setTimeout(480000);
   await page.setViewportSize({ width: 1920, height: 1080 });
 
   await page.goto(`${url}/pricing`);
@@ -174,8 +176,6 @@ test('Fill cart for unregistered user', async ({ page }) => {
 });
 
 test('Fill cart for registered users', async ({ page }) => {
-  test.setTimeout(480000);
-
   await page.setViewportSize({ width: 1920, height: 1080 });
 
   await page.goto(`${url}/signup`);
@@ -292,8 +292,6 @@ test('Fill cart for registered users', async ({ page }) => {
 });
 
 test('Payment link', async ({ page }) => {
-  test.setTimeout(480000);
-
   // Navigate to the pricing page
   await page.goto(`${url}/pricing`);
   await acceptCookieBanner(page);

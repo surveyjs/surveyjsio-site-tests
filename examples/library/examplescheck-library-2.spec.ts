@@ -1,7 +1,10 @@
 import { test, expect, acceptCookieBanner, examplesURL as url } from '../../helper';
 
+// Bulk JS-error smoke test: visits many pages sequentially, so it legitimately
+// needs a far larger budget than the global timeout.
+test.describe.configure({ timeout: 480000 });
+
 test('Library-2-3', async ({ page }) => {
-  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=textprocessing-choices&platform=Knockoutjs&theme=modern');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=survey-markdown-matrix&platform=Knockoutjs&theme=modern');
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=survey-markdown-radiogroup&platform=Knockoutjs&theme=modern');
@@ -92,7 +95,6 @@ test('Library-2-3', async ({ page }) => {
 });
 
 test('Library-3', async ({ page }) => {
-  test.setTimeout(480000);
   await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=custom-theme&platform=Knockoutjs&theme=bootstrap');
   // await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=bootstrap-material-theme&platform=Knockoutjs&theme=bootstrap')
   // await page.goto('https://surveyjstest.azurewebsites.net/Examples/Library?id=floating-labels&platform=Knockoutjs&theme=bootstrap')
