@@ -1,4 +1,4 @@
-import { test, expect, acceptCookieBanner, siteUrl as url } from '../helper';
+import { test, expect, acceptCookieBanner, siteUrl as url, selectCountry } from '../helper';
 
 // These tests depend on external services - the PayPal sandbox and the payment-link
 // generation backend - which get flaky under the parallel 8-worker load on the shared
@@ -17,9 +17,7 @@ test('Cart: vat number field', async ({ page }) => {
 
   await expect(page.locator('[data-name=companyVATNumber]')).toBeVisible();
   await expect(page.locator('[data-name=companyVATNumber] .v2-class---text-edit__title-required')).toBeHidden({ timeout: 500 });
-  await page.getByPlaceholder('Country').click();
-  await page.getByPlaceholder('Country').type('A');
-  await page.getByText('Austria').click();
+  await selectCountry(page, 'Austria');
 
   await expect(page.locator('[data-name=companyVATNumber]')).toBeVisible();
   await expect(page.locator('[data-name=companyVATNumber] .v2-class---text-edit__title-required')).toBeVisible();
@@ -30,15 +28,10 @@ test('Cart: vat number field', async ({ page }) => {
   await expect(page.locator('[data-name=companyVATNumber]')).toBeVisible();
   await expect(page.locator('[data-name=companyVATNumber] .v2-class---text-edit__title-required')).toBeVisible();
 
-  // Re-select through the dropdown's search field (the same path that worked for
-  // Austria above): clearing and typing fires the value-change that recomputes VAT.
-  // A plain click on an option from the already-open list only updates the displayed
-  // country and skips that recalculation (manually the marker does clear).
-  await page.getByRole('combobox', { name: 'Country' }).click();
-  await page.getByRole('combobox', { name: 'Country' }).fill('Australia');
-  // Target the listbox option, not the filter-string echo of what we just typed
-  // (getByText('Australia') matches both and trips strict mode).
-  await page.getByRole('option', { name: 'Australia' }).click();
+  // Switching to a non-EU country must clear the "VAT required" marker; selectCountry
+  // goes through the type-to-filter path that actually fires the VAT recompute (a plain
+  // option click only updates the displayed country and skips it).
+  await selectCountry(page, 'Australia');
 
   await expect(page.locator('[data-name=companyVATNumber]')).toBeVisible();
   await expect(page.locator('[data-name=companyVATNumber] .v2-class---text-edit__title-required')).toBeHidden();
@@ -55,8 +48,7 @@ test('PayPal: test payment', async ({ page }) => {
   await page.getByPlaceholder('Full Name').press('Tab');
   await page.getByPlaceholder('Email').fill('tester@surveyjs.io');
   await page.getByPlaceholder('Email').press('Tab');
-  await page.getByPlaceholder('Country').click();
-  await page.getByText('Argentina').click();
+  await selectCountry(page, 'Argentina');
   await page.locator('[placeholder="Company Name"]').click();
   await page.getByPlaceholder('Company Name').fill('Tester Company');
   await page.locator('[placeholder="Postal Code"]').click();
@@ -314,8 +306,7 @@ test('Payment link', async ({ page }) => {
   await page.getByPlaceholder('Full Name').press('Tab');
   await page.getByPlaceholder('Email').fill('tester@surveyjs.io');
   await page.getByPlaceholder('Email').press('Tab');
-  await page.getByPlaceholder('Country').click();
-  await page.getByText('Argentina').click();
+  await selectCountry(page, 'Argentina');
   await page.locator('[placeholder="Company Name"]').click();
   await page.getByPlaceholder('Company Name').fill('Tester Company');
   await page.locator('[placeholder="Postal Code"]').click();

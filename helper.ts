@@ -76,6 +76,20 @@ export async function acceptCookieBanner(page: Page):Promise<void> {
   await page.locator('a').filter({ hasText: 'Accept All' }).click();
 }
 
+/**
+ * Selects a country in the cart's SurveyJS dropdown reliably. Going through the
+ * type-to-filter path (instead of a raw option click from the full list) is what
+ * fires the value-change the cart reacts to (e.g. VAT recompute), and filtering
+ * makes the option unambiguous - a plain getByText also matches the filter-string
+ * echo and trips strict mode. Works for both the first and subsequent selections.
+ */
+export async function selectCountry(page: Page, countryName: string): Promise<void> {
+  const combo = page.getByRole('combobox', { name: 'Country' });
+  await combo.click();
+  await combo.fill(countryName);
+  await page.getByRole('option', { name: countryName }).click();
+}
+
 export const test = baseTest.extend<{page: void, skipJSErrors: boolean}>({
   skipJSErrors: [false, { option: false }],
   page: async ({ page, skipJSErrors }, use) => {
