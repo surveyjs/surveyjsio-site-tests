@@ -45,6 +45,10 @@ test('licences expired notifications', async ({ page, browser }) => {
   await page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io website Terms of Use and Priv' }).click();
   await mockPopupType({ popupType: 'none', preventCountingRequests: true }); // prevent counting next api call because we don't know actually about cookie existence in current browser context https://playwright.dev/docs/next/api/class-browsercontext
   await page.locator('.v2-class---signup-page__actions-footer-button-container--login').click(); // +0 api call because counting prevented
+  // Login is async and finishes with a client-side redirect; wait for the logged-in top
+  // bar before touching cookies/navigating, otherwise the goto races with that redirect
+  // (net::ERR_ABORTED).
+  await expect(page.locator(topBarAccountClass).first()).toBeVisible({ timeout: 30000 });
   await removeExpirationCookie();
   await mockPopupType({ popupType: 'none' });
   await page.goto(`${url}`); // +1 api call and cookie is set

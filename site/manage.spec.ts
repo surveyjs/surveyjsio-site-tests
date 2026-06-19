@@ -20,6 +20,11 @@ test('Remove the non-commercial usage text', async ({ page }) => {
   await acceptTermsCheckboxLogin.click();
   await loginButton.click();
 
+  // Login is async and finishes with a client-side redirect; wait for the logged-in top
+  // bar before navigating, otherwise the goto below races with that redirect
+  // (net::ERR_ABORTED) and can also land on an unauthenticated page.
+  await expect(page.locator('.v2-class---top-menu-item--drop-down-account').first()).toBeVisible({ timeout: 30000 });
+
   const removeNonCommercialTab = page.locator('.v2-class---paragraph-link').filter({ hasText: 'instructions', visible: true }).first();
 
   await page.goto(`${url}/manage`);

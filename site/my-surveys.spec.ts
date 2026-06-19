@@ -21,6 +21,10 @@ test('remember organization', async ({ page, browser }) => {
   await page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io website Terms of Use and Priv' }).click();
   await page.locator('.v2-class---signup-page__actions-footer-button-container--login').click();
 
+  // Login is async and finishes with a client-side redirect; wait for the logged-in top
+  // bar before navigating, otherwise the goto races with that redirect (net::ERR_ABORTED).
+  await expect(page.locator('.v2-class---top-menu-item--drop-down-account').first()).toBeVisible({ timeout: 30000 });
+
   await page.goto(`${url}/service/mysurveys`);
 
   await expect(await isOrganizationCookieExists()).toBeFalsy();
