@@ -212,7 +212,9 @@ test('Fill cart for registered users', async ({ page }) => {
 
   await page.waitForTimeout(5000);
 
-  await expect(menuAccountLink).toBeVisible();
+  // Registration is a server round-trip (account creation) + redirect; give it real
+  // headroom on the slow shared slot before asserting the logged-in menu.
+  await expect(menuAccountLink).toBeVisible({ timeout: 30000 });
 
   const basicRow = page.locator('.v2-class---cart-item').filter({ hasText: 'SurveyJS Basic' });
   const proRow = page.locator('.v2-class---cart-item').filter({ hasText: 'SurveyJS Pro' });

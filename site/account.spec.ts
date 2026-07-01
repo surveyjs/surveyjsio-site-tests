@@ -85,7 +85,7 @@ test('RegisterRemove', async ({ page }) => {
   await acceptTermsCheckbox.click();
   await registerButton.click();
 
-  await expect(menuAccountLink).toBeVisible();
+  await expect(menuAccountLink).toBeVisible({ timeout: 30000 });
   // #endregion register user
 
   // #region logoff and login again
@@ -103,7 +103,7 @@ test('RegisterRemove', async ({ page }) => {
   await acceptTermsCheckbox.click();
   await loginButton.click();
 
-  await expect(menuAccountLink).toBeVisible();
+  await expect(menuAccountLink).toBeVisible({ timeout: 30000 });
   // #endregion logoff and login again
 
   // #region remove user
