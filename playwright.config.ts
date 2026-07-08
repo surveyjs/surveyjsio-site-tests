@@ -33,7 +33,10 @@ export default defineConfig({
      that gets genuinely stuck. */
   timeout: 180000,
   expect: {
-    timeout: 10000,
+    // Assertions poll for up to this long. Kept generous because the shared Azure
+    // slot is slow under the parallel load, so state (cart totals, post-auth UI)
+    // can take a bit to settle; auth round-trips override this with a larger value.
+    timeout: 15000,
   },
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: 'html',
@@ -82,9 +85,11 @@ export default defineConfig({
       testDir: './examples',
       use: {
         ...devices['Desktop Chrome'],
-        // Same cold-start headroom as the site project (see note above).
+        // The examples slot serves many heavy, parametrized demo pages that the warmup
+        // can't all pre-warm, so cold first-hits after a site update run slower than the
+        // site slot - give navigation extra headroom.
         actionTimeout: 60000,
-        navigationTimeout: 120000,
+        navigationTimeout: 180000,
       },
       dependencies: ['warmup-examples'],
     },
