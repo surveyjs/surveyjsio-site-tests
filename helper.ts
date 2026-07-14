@@ -63,6 +63,8 @@ export async function compareScreenshot(page: Page, elementSelector: string | Lo
   if (maxDiffPixels) options.maxDiffPixels = maxDiffPixels;
   if (mask) options.mask = mask;
 
+  await page.evaluate(() => document.fonts.ready);
+
   if (!!currentElement) {
     const element = (<any>currentElement).filter({ visible: true });
     await expect.soft(element.nth(elementIndex)).toBeVisible();
