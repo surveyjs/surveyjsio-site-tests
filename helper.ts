@@ -28,6 +28,7 @@ export const siteWarmupPaths = [
   '/faq/licensing',
   '/documentation',
   '/stay-updated',
+  '/find-surveyjs-guides-for-my-stack',
 ];
 
 // Examples pages are parametrized (hundreds of ids), so we can't enumerate them all;
