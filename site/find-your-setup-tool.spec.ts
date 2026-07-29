@@ -187,9 +187,9 @@ test('The recommended plan follows the answers on the last page', async ({ page 
   await pick(page, 'changeFrequency', 'regularly');
   await expectPlan(page, 'Basic');
 
-  // Occasional changes alone are not enough - the plan waits for the author answer.
+  // Occasional changes now show a plan even without the author answer.
   await pick(page, 'changeFrequency', 'occasionally');
-  await expect(page.locator(SEL.planName)).toHaveCount(0);
+  await expect(page.locator(SEL.planName)).toHaveCount(1);
 
   await pick(page, 'whoEdits', 'dev');
   await expectPlan(page, 'Essential');
