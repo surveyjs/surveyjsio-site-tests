@@ -33,9 +33,9 @@ test('text', async ({ page }) => {
   await sideBarItemTextEntry.click();
 
   // Text inputs: TestCafe uses nth(0), nth(2), nth(1)
-  const textInput0 = page.locator('input.sd-text').nth(0);
-  const textInput1 = page.locator('input.sd-text').nth(1);
-  const textInput2 = page.locator('input.sd-text').nth(2);
+  const textInput0 = page.locator('input.sd-formbox__input').nth(0);
+  const textInput1 = page.locator('input.sd-formbox__input').nth(1);
+  const textInput2 = page.locator('input.sd-formbox__input').nth(2);
 
   await textInput0.fill('Test'); // CaretPos handling is implicit in Playwright fill()
   await textInput2.fill('01012001');
