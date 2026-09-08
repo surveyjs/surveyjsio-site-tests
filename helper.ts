@@ -86,9 +86,17 @@ export async function acceptCookieBanner(page: Page):Promise<void> {
  */
 export async function selectCountry(page: Page, countryName: string): Promise<void> {
   const combo = page.getByRole('combobox', { name: 'Country' });
+  await combo.scrollIntoViewIfNeeded();
+  // Tabbing in (or a previous open) can leave aria-expanded=true with no list.
+  // Escape back to closed, then click so the list actually mounts.
+  await combo.focus();
+  await combo.press('Escape');
   await combo.click();
+  // Qty changes re-render the cart; the dropdown can open empty for a beat. Filter
+  // against that empty list sticks on "No data to display" and never recovers.
+  await expect(page.getByRole('option').first()).toBeVisible();
   await combo.fill(countryName);
-  await page.getByRole('option', { name: countryName }).click();
+  await page.getByRole('option', { name: countryName, exact: true }).click();
 }
 
 export const test = baseTest.extend<{page: void, skipJSErrors: boolean}>({
