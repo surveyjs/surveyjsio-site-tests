@@ -4,6 +4,8 @@
   "scripts": {
     "site:ci": "npx playwright test --project=site",
     "site:ui": "npx playwright test --project=site --ui",
+    "site-netcore:ci": "npx playwright test --config=playwright.netcore.config.ts --project=site",
+    "site-netcore:ui": "npx playwright test --config=playwright.netcore.config.ts --project=site --ui",
     "examples:ci": "npx playwright test --project=examples",
     "examples:ui": "npx playwright test --ui --project=examples",
     "pre-push-check": "npm run lint",
