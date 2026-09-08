@@ -96,7 +96,12 @@ export async function selectCountry(page: Page, countryName: string): Promise<vo
   // against that empty list sticks on "No data to display" and never recovers.
   await expect(page.getByRole('option').first()).toBeVisible();
   await combo.fill(countryName);
-  await page.getByRole('option', { name: countryName, exact: true }).click();
+  // The filtered item is focused, but on a short mobile viewport the list sits
+  // below the fold in a fixed popup — Playwright's click then loops on
+  // "element is outside of the viewport". Enter commits the focused option.
+  await expect(page.getByRole('option', { name: countryName, exact: true })).toBeVisible();
+  await combo.press('Enter');
+  await expect(combo).toHaveValue(countryName);
 }
 
 export const test = baseTest.extend<{page: void, skipJSErrors: boolean}>({
