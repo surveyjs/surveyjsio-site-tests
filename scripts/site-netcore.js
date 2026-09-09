@@ -1,4 +1,4 @@
-process.env.SITE_URL = process.env.SITE_URL || 'https://surveyjs-io.azurewebsites.net';
+process.env.SITE_URL = process.env.SITE_URL || 'https://surveyjs-io-test-hybfhueebfhmf4hy.southcentralus-01.azurewebsites.net';
 
 const { spawnSync } = require('child_process');
 
