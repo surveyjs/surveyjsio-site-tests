@@ -77,6 +77,22 @@ export async function acceptCookieBanner(page: Page):Promise<void> {
   await page.locator('a').filter({ hasText: 'Accept All' }).click();
 }
 
+/** Pre-seeded account on the test slot. Used by read-only /manage checks. */
+export const surveyJsTestUser = {
+  email: 'surveyjstest@gmail.com',
+  password: 'Surveyjstest1',
+};
+
+export async function loginSurveyJsTestUser(page: Page): Promise<void> {
+  await page.goto(`${siteUrl}/login`);
+  await acceptCookieBanner(page);
+  await page.locator('#Email').first().fill(surveyJsTestUser.email);
+  await page.locator('#Password').first().fill(surveyJsTestUser.password);
+  await page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io', visible: true }).locator('.v2-class---checkbox__checkmark').first().click();
+  await page.locator('main a').filter({ hasText: 'Log In', visible: true }).first().click();
+  await expect(page.locator('.v2-class---top-menu-item--drop-down-account').first()).toBeVisible({ timeout: 30000 });
+}
+
 /**
  * Selects a country in the cart's SurveyJS dropdown reliably. Going through the
  * type-to-filter path (instead of a raw option click from the full list) is what
