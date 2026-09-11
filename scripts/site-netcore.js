@@ -2,7 +2,7 @@ process.env.SITE_URL = process.env.SITE_URL || 'https://surveyjs-io-test-hybfhue
 
 const { spawnSync } = require('child_process');
 
-const result = spawnSync('npx', ['playwright', 'test', '--project=site', ...process.argv.slice(2)], {
+const result = spawnSync('npx', ['playwright', 'test', '--project=site', '--max-failures=0', ...process.argv.slice(2)], {
   stdio: 'inherit',
   shell: true
 });
