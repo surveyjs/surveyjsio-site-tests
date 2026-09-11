@@ -41,6 +41,7 @@ test('sidebar filter narrows the list to matching demos', async ({ page }) => {
   await expect(sidebar(page).locator('a').filter({ visible: true })).toHaveCount(2);
 
   // Clearing the filter restores the full list (Overview is its first entry).
+  // eslint-disable-next-line surveyjs/eslint-plugin-i18n/only-english-or-code
   // Prefix match: some deployments platform-suffix the href (…/overview/reactjs).
   await filter.fill('');
   await expect(sidebar(page).locator('a[href^="/form-library/examples/overview"]').first()).toBeVisible();
