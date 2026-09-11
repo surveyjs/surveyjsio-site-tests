@@ -1,7 +1,7 @@
 import type { Locator, Page } from '@playwright/test';
 import { expect, test as baseTest } from '@playwright/test';
 
-export const examplesURL = 'https://surveyjstest.azurewebsites.net';
+export const examplesURL = process.env.EXAMPLES_URL || 'https://surveyjstest.azurewebsites.net';
 export const siteUrl = process.env.SITE_URL || 'https://surveyjsio-test.azurewebsites.net';
 // export const examplesURL = 'http://localhost:62946';
 // export const siteUrl = 'http://localhost:62946';
@@ -29,6 +29,38 @@ export const siteWarmupPaths = [
   '/documentation',
   '/stay-updated',
   '/find-surveyjs-guides-for-my-stack',
+  // landing-pages.spec.ts + top-menu.spec.ts
+  '/open-source',
+  '/dashboard',
+  '/pdf-generator',
+  '/features',
+  '/partner-solutions',
+  '/free-survey-tool',
+  '/themes/theme-adapters',
+  '/backend-integration/examples',
+  '/licensing',
+  '/support',
+  '/healthcare',
+  '/human-resources',
+  '/education',
+  '/market-research',
+  '/stay-updated/roadmap',
+  '/stay-updated/breaking-changes',
+  '/stay-updated/case-studies',
+  '/stay-updated/tutorials',
+  '/stay-updated/white-papers',
+  '/stay-updated/migration-guides',
+  // sidebar-navigation.spec.ts
+  '/documentation/surveyjs-architecture',
+  '/documentation/backend-integration',
+  '/form-library/documentation/overview',
+  '/faq/support',
+  '/faq/data-storage',
+  '/stay-updated/release-notes',
+  '/stay-updated/major-updates/2024',
+  // demo-menu-pages.spec.ts
+  '/create-free-survey',
+  '/try',
 ];
 
 // Examples pages are parametrized (hundreds of ids), so we can't enumerate them all;
@@ -41,6 +73,9 @@ export const examplesWarmupPaths = [
   '/Examples/Library?id=questiontype-text&platform=Knockoutjs&theme=default',
   '/Examples/Survey-Creator?id=options&theme=default&platform=Knockoutjs',
   '/Examples/Builder?id=customwidgets&platform=reactjs',
+  // demo-menu-examples.spec.ts
+  '/dashboard/examples/interactive-survey-data-dashboard',
+  '/pdf-generator/examples/save-completed-forms-as-pdf-files/reactjs',
 ];
 
 export const screens = {
