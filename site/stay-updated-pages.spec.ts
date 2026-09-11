@@ -3,6 +3,7 @@ import { test, expect, acceptCookieBanner, siteUrl as url } from '../helper';
 
 // Pages of the "Stay Updated" top-menu. Content on these pages changes with
 // every release/post, so assertions target time-independent structure only:
+// eslint-disable-next-line surveyjs/eslint-plugin-i18n/only-english-or-code
 // article cards, dates, status labels, anchor menus — never specific texts.
 
 const M = '.v2-class---markdown-content-page';
@@ -52,7 +53,6 @@ test('Breaking Changes renders an article with an anchor menu and bottom navigat
   await open(page, '/stay-updated/breaking-changes');
 
   await expect(page.locator(`${M}__article-content`).first()).toBeVisible();
-  // eslint-disable-next-line surveyjs/eslint-plugin-i18n/only-english-or-code
   // The anchor menu fills in asynchronously - use a polling assertion.
   await expect(page.locator('.v2-class---anchor-menu a').first()).toBeVisible();
   await expect(page.locator(`${M}__navigation`).first()).toBeAttached();
