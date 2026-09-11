@@ -132,28 +132,28 @@ test('Stay Updated Overview', async ({ page }) => {
   await expect(page.locator('div:nth-child(3) > .s-search__search-button')).toBeVisible();
   await expect(page.getByRole('textbox', { name: 'Search in blog & updates...' })).toBeVisible();
 
+  // Blog content changes with every post, so no screenshots here -
+  // assert only the time-independent page structure.
+
+  // Left sidebar renders with at least one navigation link.
   const leftSidebar = page.locator('.v2-class---sidebar').first();
-  await compareScreenshot(page, leftSidebar, 'markdown-content-blog-vnav-1.png');
+  await expect(leftSidebar).toBeVisible();
+  expect(await leftSidebar.locator('a').count()).toBeGreaterThan(0);
 
+  // Anchor menu fills in asynchronously; polling assertion covers that.
   const rightSidebar = page.locator('.v2-class---anchor-menu').first();
-  await compareScreenshot(page, rightSidebar, 'markdown-content-blog-anchor-menu-1.png');
+  await expect(rightSidebar).toBeVisible();
+  await expect(rightSidebar.locator('a').first()).toBeVisible();
 
-  // await page.locator('.s-search__search-button').first().click();
-  // await expect(leftSidebar).toBeHidden();
-
-  // await page.locator('div:nth-child(3) > .s-search__search-button').click();
-  // await expect(rightSidebar).toBeHidden();
-
-  // await page.locator('.s-search__search-button').first().click();
-  // await expect(leftSidebar).toBeVisible();
-
-  // await page.locator('div:nth-child(3) > .s-search__search-button').click();
-  // await expect(rightSidebar).toBeVisible();
-
+  // A pinned (highlighted) article with a title always tops the list.
   const pinnedArticle = page.locator('.v2-class---markdown-content-page__pinned-article').first();
-  await compareScreenshot(page, pinnedArticle, 'markdown-content-blog-pinned-article.png');
+  await expect(pinnedArticle).toBeVisible();
+  await expect(pinnedArticle.locator('.v2-class---markdown-content-page__article-title').first()).toBeVisible();
 
+  // Every article card carries a title, description, and date.
   const articleItem = page.locator('.v2-class---markdown-content-page__articles-list-item').first();
-
-  await compareScreenshot(page, articleItem, 'markdown-content-blog-article-item.png');
+  await expect(articleItem).toBeVisible();
+  await expect(articleItem.locator('.v2-class---markdown-content-page__article-title').first()).toBeVisible();
+  await expect(articleItem.locator('.v2-class---markdown-content-page__article-description').first()).toBeVisible();
+  await expect(articleItem.locator('.v2-class---markdown-content-page__article-date').first()).toBeVisible();
 });
