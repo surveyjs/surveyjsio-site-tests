@@ -73,8 +73,16 @@ export async function compareScreenshot(page: Page, elementSelector: string | Lo
   }
 }
 
-export async function acceptCookieBanner(page: Page):Promise<void> {
-  await page.locator('a').filter({ hasText: 'Accept All' }).click();
+export async function acceptCookieBanner(page: Page): Promise<void> {
+  const acceptAll = page.locator('a').filter({ hasText: 'Accept All' });
+  const visible = acceptAll.filter({ visible: true }).first();
+  // After accept the link stays in the DOM but hidden. A second click() then
+  // waits the full actionTimeout for visibility — that's the CI failure after
+  // home already dismissed the banner and login navigates.
+  if (await acceptAll.count() > 0 && !(await visible.isVisible())) {
+    return;
+  }
+  await visible.click();
 }
 
 /** Pre-seeded account on the test slot. Used by read-only /manage checks. */
