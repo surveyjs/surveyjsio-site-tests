@@ -86,10 +86,11 @@ test.describe('Account management (read-only)', () => {
     await expect(panel.locator('h3').first()).toHaveText('License Manager');
     await expect(panel.getByText('Your product maintenance subscription has expired.')).toBeVisible();
     const proRow = proLicenseRow(panel);
-    await expect(proRow.getByText('PRO', { exact: true })).toBeVisible();
+    // Title also wraps a mobile-only "Exp. …" node, so exact getByText('PRO') matches nothing.
+    await expect(proRow.locator('.v2-class---license-manager-license__title')).toContainText('PRO');
     await expect(proRow.getByText('UNPAID')).toHaveCount(0);
     await expect(proRow.getByText('2 / 1').first()).toBeVisible();
-    await expect(proRow.getByText('2025').first()).toBeVisible();
+    await expect(proRow.locator('.v2-class---license-manager-license__info--exp-date.v2-class---account-page--not-for-mobile .v2-class---license-manager-license__info-value')).toContainText('2025');
     await expect(panel.getByText(LICENSE_KEY).first()).toBeVisible();
     await expect(proRow.getByRole('link', { name: 'Assign', exact: true })).toBeVisible();
     await expect(proRow.getByRole('link', { name: 'Renew', exact: true })).toBeVisible();
