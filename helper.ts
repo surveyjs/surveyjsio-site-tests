@@ -2,7 +2,7 @@ import type { Locator, Page } from '@playwright/test';
 import { expect, test as baseTest } from '@playwright/test';
 
 export const examplesURL = process.env.EXAMPLES_URL || 'https://surveyjstest.azurewebsites.net';
-export const siteUrl = process.env.SITE_URL || 'https://surveyjs-io-test-auth-guewbpd8facbhgab.southcentralus-01.azurewebsites.net';
+export const siteUrl = process.env.SITE_URL || 'https://surveyjsio-test.azurewebsites.net';
 // export const examplesURL = 'http://localhost:62946';
 // export const siteUrl = 'http://localhost:62946';
 
