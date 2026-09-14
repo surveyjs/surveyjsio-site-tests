@@ -2,7 +2,7 @@ import type { Locator, Page } from '@playwright/test';
 import { expect, test as baseTest } from '@playwright/test';
 
 export const examplesURL = process.env.EXAMPLES_URL || 'https://surveyjstest.azurewebsites.net';
-export const siteUrl = process.env.SITE_URL || 'https://surveyjsio-test.azurewebsites.net';
+export const siteUrl = process.env.SITE_URL || 'https://surveyjs-io-test-auth-guewbpd8facbhgab.southcentralus-01.azurewebsites.net';
 // export const examplesURL = 'http://localhost:62946';
 // export const siteUrl = 'http://localhost:62946';
 
@@ -126,11 +126,25 @@ export const surveyJsTestUser = {
   password: 'Surveyjstest1',
 };
 
+/**
+ * Login/signup text input by its visible label. Old surveyjs.io prefixes
+ * register fields (RegisterEmail / RegisterPassword) because login and signup
+ * share SignInViewModel; the new surveyjs.auth RegisterViewModel uses Email /
+ * Password. Labels stay the same. Looks at the sibling label inside
+ * .v2-class---text-edit rather than getByLabel(), because the old markup's
+ * for= attributes do not match the input ids.
+ */
+export function authField(page: Page, label: string): Locator {
+  return page.locator('.v2-class---text-edit', {
+    has: page.locator('label.v2-class---text-edit__label').filter({ hasText: new RegExp(`^${label}\\s*$`) }),
+  }).locator('input');
+}
+
 export async function loginSurveyJsTestUser(page: Page): Promise<void> {
   await page.goto(`${siteUrl}/login`);
   await acceptCookieBanner(page);
-  await page.locator('#Email').first().fill(surveyJsTestUser.email);
-  await page.locator('#Password').first().fill(surveyJsTestUser.password);
+  await authField(page, 'Email').fill(surveyJsTestUser.email);
+  await authField(page, 'Password').fill(surveyJsTestUser.password);
   await page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io', visible: true }).locator('.v2-class---checkbox__checkmark').first().click();
   await page.locator('main a').filter({ hasText: 'Log In', visible: true }).first().click();
   await expect(page.locator('.v2-class---top-menu-item--drop-down-account').first()).toBeVisible({ timeout: 30000 });

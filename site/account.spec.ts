@@ -1,4 +1,4 @@
-import { test, expect, acceptCookieBanner, siteUrl as url } from '../helper';
+import { test, expect, acceptCookieBanner, authField, siteUrl as url } from '../helper';
 
 test('FormElements', async ({ page }) => {
   await page.setViewportSize({ width: 1920, height: 1080 });
@@ -11,8 +11,8 @@ test('FormElements', async ({ page }) => {
   const rememberMeCheckbox = page.locator('label').filter({ hasText: 'Remember me', visible: true }).locator('.v2-class---checkbox__checkmark').first();
   const signUpLinkMain = page.locator('main').locator('a').filter({ hasText: 'Sign Up', visible: true }).first();
 
-  await expect(page.locator('#Email')).toBeVisible({ timeout: 5000 });
-  await expect(page.locator('#Password')).toBeVisible();
+  await expect(authField(page, 'Email')).toBeVisible({ timeout: 5000 });
+  await expect(authField(page, 'Password')).toBeVisible();
   await expect(page.locator('a').filter({ hasText: 'Forgot your password?', visible: true }).first()).toBeVisible();
   await expect(acceptTermsCheckbox).toBeVisible();
   await expect(rememberMeCheckbox).toBeVisible();
@@ -27,10 +27,10 @@ test('FormElements', async ({ page }) => {
 
   await signUpLinkMain.click();
 
-  await expect(page.locator('#DisplayName')).toBeVisible();
-  await expect(page.locator('#RegisterEmail')).toBeVisible();
-  await expect(page.locator('#RegisterPassword')).toBeVisible();
-  await expect(page.locator('#ConfirmPassword')).toBeVisible();
+  await expect(authField(page, 'Display Name')).toBeVisible();
+  await expect(authField(page, 'Email')).toBeVisible();
+  await expect(authField(page, 'Password')).toBeVisible();
+  await expect(authField(page, 'Confirm Password')).toBeVisible();
 
   await expect(page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io', visible: true }).first()).toBeVisible();
 
@@ -50,8 +50,8 @@ test('RegisterRemove', async ({ page }) => {
   const password = 'Test71';
   const displayName = 'Test71 Name';
 
-  const emailInput = page.locator('#Email');
-  const passwordInput = page.locator('#Password');
+  const emailInput = authField(page, 'Email');
+  const passwordInput = authField(page, 'Password');
   const loginButton = page.locator('a.v2-class---button').filter({ hasText: 'Log In', visible: true }).first();
   const registerButton = page.locator('a.v2-class---button').filter({ hasText: 'Create Account', visible: true }).first();
   const acceptTermsCheckbox = page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io' }).locator('.v2-class---checkbox__checkmark').first();
@@ -73,15 +73,13 @@ test('RegisterRemove', async ({ page }) => {
   const goToRegisterLink = page.locator('a').filter({ hasText: 'Sign Up', visible: true }).first();
   await goToRegisterLink.click();
 
-  const displayNameInput = page.locator("[name='DisplayName']");
-  const registerEmailInput = page.locator("[name='RegisterEmail']");
-  const registerPasswordInput = page.locator("[name='RegisterPassword']");
-  const confirmPassword = page.locator("[name='ConfirmPassword']");
+  const displayNameInput = authField(page, 'Display Name');
+  const confirmPassword = authField(page, 'Confirm Password');
 
-  await displayNameInput.first().fill(displayName);
-  await registerEmailInput.first().fill(email);
-  await registerPasswordInput.first().fill(password);
-  await confirmPassword.first().fill(password);
+  await displayNameInput.fill(displayName);
+  await emailInput.fill(email);
+  await passwordInput.fill(password);
+  await confirmPassword.fill(password);
   await acceptTermsCheckbox.click();
   await registerButton.click();
 
@@ -155,7 +153,7 @@ test('ForgotPasswordForm', async ({ page }) => {
 
   await expect(page.locator('h1').filter({ hasText: 'Reset Password', visible: true }).first()).toBeVisible();
 
-  await page.locator('#Email').first().fill('test@tester.org');
+  await authField(page, 'Email').fill('test@tester.org');
 
   await page.locator('a').filter({ hasText: 'Reset', visible: true }).first().click();
 

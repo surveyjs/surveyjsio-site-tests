@@ -1,4 +1,4 @@
-import { test, expect, acceptCookieBanner, siteUrl as url, selectCountry } from '../helper';
+import { test, expect, acceptCookieBanner, authField, siteUrl as url, selectCountry } from '../helper';
 
 // These tests depend on external services - the PayPal sandbox and the payment-link
 // generation backend - which get flaky under the parallel 8-worker load on the shared
@@ -189,8 +189,8 @@ test('Fill cart for registered users', async ({ page }) => {
   const password = 'Test71';
   const displayName = 'Test71 Name';
 
-  const emailInput = page.locator('#Email');
-  const passwordInput = page.locator('#Password');
+  const emailInput = authField(page, 'Email');
+  const passwordInput = authField(page, 'Password');
   const loginButton = page.locator('a.v2-class---button').filter({ hasText: 'Log In' });
   const registerButton = page.locator('a.v2-class---button').filter({ hasText: 'Create Account' });
   const acceptTermsCheckbox = page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io' }).locator('.v2-class---checkbox__checkmark');
@@ -198,15 +198,13 @@ test('Fill cart for registered users', async ({ page }) => {
   const menuLogInLink = page.locator('a').filter({ hasText: 'Log In', visible: true }).first();
   const invalidLoginAttemptMessage = page.locator('li').filter({ hasText: 'Invalid login attempt.', visible: true }).first();
 
-  const displayNameInput = page.locator("[name='DisplayName']");
-  const registerEmailInput = page.locator("[name='RegisterEmail']");
-  const registerPasswordInput = page.locator("[name='RegisterPassword']");
-  const confirmPassword = page.locator("[name='ConfirmPassword']");
+  const displayNameInput = authField(page, 'Display Name');
+  const confirmPassword = authField(page, 'Confirm Password');
 
-  await displayNameInput.first().fill(displayName);
-  await registerEmailInput.first().fill(email);
-  await registerPasswordInput.first().fill(password);
-  await confirmPassword.first().fill(password);
+  await displayNameInput.fill(displayName);
+  await emailInput.fill(email);
+  await passwordInput.fill(password);
+  await confirmPassword.fill(password);
   await acceptTermsCheckbox.first().click();
   await registerButton.first().click();
 
