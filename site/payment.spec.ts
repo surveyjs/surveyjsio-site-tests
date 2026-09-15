@@ -6,7 +6,9 @@ import { test, expect, acceptCookieBanner, authField, siteUrl as url, selectCoun
 // contention; this is genuine external flake, not a masked test bug. NOTE: it also
 // covers "Cart: vat number field" (a separate, deterministic failure under
 // investigation) - retries won't hide that, it fails the same way each attempt.
-test.describe.configure({ retries: 2 });
+if (!process.argv.includes('--ui')) {
+  test.describe.configure({ retries: 2 });
+}
 
 test('Cart: vat number field', async ({ page }) => {
   await page.goto(`${url}/pricing`);

@@ -1,6 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 const shardIndex = process.env.PLAYWRIGHT_SHARD_INDEX || 'default';
+const isUIMode = process.argv.includes('--ui');
 
 /**
  * Read environment variables from file.
@@ -24,11 +25,13 @@ export default defineConfig({
      timeouts are bounded, a retry is fast and no longer risks the old multi-minute
      hangs. The payment suite overrides this to 2 (the PayPal sandbox is flakier).
      NOTE: the instance-level Azure cold start (2-3 min, longer than navigationTimeout)
-     is handled by the warmup gate, NOT by retries - one retry can't outwait it. */
-  retries: 1,
+     is handled by the warmup gate, NOT by retries - one retry can't outwait it.
+     UI mode skips retries so a failure stays visible instead of auto-rerunning. */
+  retries: isUIMode ? 0 : 1,
   /* Abort the run after 5 hard failures (retries exhausted) so a genuinely broken
-     slot fails fast instead of grinding through the entire suite. */
-  maxFailures: 5,
+     slot fails fast instead of grinding through the entire suite. UI mode has no
+     cap so you can keep running after failures. */
+  maxFailures: isUIMode ? 0 : 5,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 4 : undefined,
   /* Backstop per-test budget. The real fast-fail comes from the per-action and
