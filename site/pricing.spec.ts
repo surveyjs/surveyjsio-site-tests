@@ -6,7 +6,7 @@
  * filtered by visibility. /api/Cart/add is mocked so a run leaves no cart behind.
  */
 import type { Locator, Page } from '@playwright/test';
-import { test, expect, acceptCookieBanner, siteUrl as url } from '../helper';
+import { test, expect, acceptCookieBanner, authField, siteUrl as url } from '../helper';
 
 const PRICING_PAGE = '.v2-class---pricing-page';
 const SHORT_TABLE = '.v2-class---pricing-page__pricing-table--short';
@@ -125,8 +125,8 @@ test('Pricing buy test', async ({ page }) => {
   const email = 'surveyjstest@gmail.com';
   const password = 'Surveyjstest1';
 
-  const emailInput = page.locator('#Email');
-  const passwordInput = page.locator('#Password');
+  const emailInput = authField(page, 'Email');
+  const passwordInput = authField(page, 'Password');
   const loginButton = page.locator('main a').filter({ hasText: 'Log In', visible: true }).first();
   const acceptTermsCheckboxLogin = page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io', visible: true }).locator('.v2-class---checkbox__checkmark').first();
 

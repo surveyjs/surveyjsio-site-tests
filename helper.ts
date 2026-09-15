@@ -109,15 +109,12 @@ export async function compareScreenshot(page: Page, elementSelector: string | Lo
 }
 
 export async function acceptCookieBanner(page: Page): Promise<void> {
-  const acceptAll = page.locator('a').filter({ hasText: 'Accept All' });
-  const visible = acceptAll.filter({ visible: true }).first();
-  // After accept the link stays in the DOM but hidden. A second click() then
-  // waits the full actionTimeout for visibility — that's the CI failure after
-  // home already dismissed the banner and login navigates.
-  if (await acceptAll.count() > 0 && !(await visible.isVisible())) {
-    return;
+  const acceptAll = page.locator('a').filter({ hasText: 'Accept All', visible: true }).first();
+  // After accept the link stays in the DOM but hidden. Do not click() unless
+  // it is already visible — otherwise Playwright waits the full actionTimeout.
+  if (await acceptAll.isVisible()) {
+    await acceptAll.click();
   }
-  await visible.click();
 }
 
 /** Pre-seeded account on the test slot. Used by read-only /manage checks. */
@@ -126,11 +123,25 @@ export const surveyJsTestUser = {
   password: 'Surveyjstest1',
 };
 
+/**
+ * Login/signup text input by its visible label. Old surveyjs.io prefixes
+ * register fields (RegisterEmail / RegisterPassword) because login and signup
+ * share SignInViewModel; the new surveyjs.auth RegisterViewModel uses Email /
+ * Password. Labels stay the same. Looks at the sibling label inside
+ * .v2-class---text-edit rather than getByLabel(), because the old markup's
+ * for= attributes do not match the input ids.
+ */
+export function authField(page: Page, label: string): Locator {
+  return page.locator('.v2-class---text-edit', {
+    has: page.locator('label.v2-class---text-edit__label').filter({ hasText: new RegExp(`^${label}\\s*$`) }),
+  }).locator('input');
+}
+
 export async function loginSurveyJsTestUser(page: Page): Promise<void> {
   await page.goto(`${siteUrl}/login`);
   await acceptCookieBanner(page);
-  await page.locator('#Email').first().fill(surveyJsTestUser.email);
-  await page.locator('#Password').first().fill(surveyJsTestUser.password);
+  await authField(page, 'Email').fill(surveyJsTestUser.email);
+  await authField(page, 'Password').fill(surveyJsTestUser.password);
   await page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io', visible: true }).locator('.v2-class---checkbox__checkmark').first().click();
   await page.locator('main a').filter({ hasText: 'Log In', visible: true }).first().click();
   await expect(page.locator('.v2-class---top-menu-item--drop-down-account').first()).toBeVisible({ timeout: 30000 });
