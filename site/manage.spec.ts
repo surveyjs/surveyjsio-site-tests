@@ -86,7 +86,6 @@ test.describe('Account management (read-only)', () => {
     await expect(panel.locator('h3').first()).toHaveText('License Manager');
     await expect(panel.getByText('Your product maintenance subscription has expired.')).toBeVisible();
     const proRow = proLicenseRow(panel);
-    // Title also wraps a mobile-only "Exp. …" node, so exact getByText('PRO') matches nothing.
     await expect(proRow.locator('.v2-class---license-manager-license__title')).toContainText('PRO');
     await expect(proRow.getByText('UNPAID')).toHaveCount(0);
     await expect(proRow.getByText('2 / 1').first()).toBeVisible();
