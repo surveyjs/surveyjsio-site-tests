@@ -6,7 +6,7 @@
  * project) are mocked or cancelled, and checked against a fresh page load.
  */
 import type { Locator, Page } from '@playwright/test';
-import { test, expect, acceptCookieBanner, siteUrl as url } from '../helper';
+import { test, expect, acceptCookieBanner, authField, siteUrl as url } from '../helper';
 
 const MY_SURVEYS_PAGE = '.v2-class---my-surveys-page';
 const LIST_ITEM = '.v2-class---my-surveys-page__list-item';
@@ -33,8 +33,8 @@ async function login(page: Page): Promise<void> {
   await silenceExpirationPopup(page);
   await page.goto(`${url}/login`);
   await acceptCookieBanner(page);
-  await page.getByPlaceholder('Email').fill(tester.email);
-  await page.getByPlaceholder('Password').fill(tester.password);
+  await authField(page, 'Email').fill(tester.email);
+  await authField(page, 'Password').fill(tester.password);
   await page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io website Terms of Use and Priv' }).click();
   await page.locator('.v2-class---signup-page__actions-footer-button-container--login').click();
   // Login is async and finishes with a client-side redirect; wait for the logged-in top
@@ -45,6 +45,9 @@ async function login(page: Page): Promise<void> {
 async function openMySurveys(page: Page): Promise<Locator> {
   await login(page);
   await page.goto(`${url}/service/mysurveys`);
+  // On the netcore stand login happens on a separate auth host, so the consent
+  // given there does not dismiss the banner once we are back on the site.
+  await acceptCookieBanner(page);
   await expect(page.locator(MY_SURVEYS_PAGE)).toBeVisible();
   const items = page.locator(LIST_ITEM);
   await expect(items.first()).toBeVisible();
@@ -113,9 +116,12 @@ test('My Surveys sends an anonymous visitor to the login page', async ({ page })
   await page.setViewportSize({ width: 1920, height: 1080 });
   await page.goto(`${url}/service/mysurveys`);
 
-  await expect(page).toHaveURL(/\/login\?ReturnUrl=%2Fservice%2Fmysurveys/i);
-  await expect(page.locator('#Email')).toBeVisible();
-  await expect(page.locator('#Password')).toBeVisible();
+  // The netcore stand hands the visitor to a separate OIDC auth host, so the page
+  // it lands on is not necessarily on siteUrl and the return target is carried in
+  // the OIDC state rather than a ReturnUrl query parameter.
+  await expect(page).toHaveURL(/\/login(\?|$)/i);
+  await expect(authField(page, 'Email')).toBeVisible();
+  await expect(authField(page, 'Password')).toBeVisible();
 });
 
 test('My Surveys renders the survey list with its actions', async ({ page }) => {

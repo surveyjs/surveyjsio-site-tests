@@ -248,15 +248,18 @@ test('Pricing renewal Buy Now sends an anonymous visitor to log in first', async
   await page.route(/\/api\/Cart\/add/, (route) => route.abort());
 
   await page.waitForFunction(() => typeof (window as any).addToCart === 'function', undefined, { timeout: 60000 }); // eslint-disable-line @typescript-eslint/no-explicit-any
-  await Promise.all([
-    page.waitForURL(/\/login/),
+  // Assert the request the page itself makes: the netcore stand answers it with a
+  // chain of OIDC redirects to a separate auth host, and the final URL no longer
+  // carries the parameters the pricing page built.
+  const [loginRequest] = await Promise.all([
+    page.waitForRequest((request) => request.isNavigationRequest() && /\/login\?/.test(request.url())),
     buyNow(planHeader(page, 'pro'), 'renewal').click(),
   ]);
 
-  expect(page.url()).toContain('ReturnUrl=%2Fcart');
-  expect(page.url()).toContain(`renewal-product-code%3D${PRO_RENEWAL}`);
-  expect(page.url()).toContain('currency%3DEUR');
-  await expect(page.locator('#Email')).toBeVisible();
+  expect(loginRequest.url()).toContain('ReturnUrl=%2Fcart');
+  expect(loginRequest.url()).toContain(`renewal-product-code%3D${PRO_RENEWAL}`);
+  expect(loginRequest.url()).toContain('currency%3DEUR');
+  await expect(authField(page, 'Email')).toBeVisible();
 });
 
 test('Pricing Complete Feature List collapses and expands all product rows', async ({ page }) => {
