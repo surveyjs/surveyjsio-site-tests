@@ -139,6 +139,115 @@ test('RegisterRemove', async ({ page }) => {
   // #endregion remove user
 });
 
+test('ChangePassword', async ({ page }) => {
+  await page.setViewportSize({ width: 1920, height: 1080 });
+
+  await page.goto(`${url}/login`);
+  await acceptCookieBanner(page);
+
+  const randomNumber1 = Math.round(Math.random() * 10000);
+  const randomNumber2 = Math.round(Math.random() * 10000);
+  const email = `${randomNumber1}test${randomNumber2}@tester.org`;
+  const password = 'Test71';
+  const newPassword = 'Test72';
+  const displayName = 'Test71 Name';
+
+  const emailInput = authField(page, 'Email');
+  const passwordInput = authField(page, 'Password');
+  const loginButton = page.locator('a.v2-class---button').filter({ hasText: 'Log In', visible: true }).first();
+  const registerButton = page.locator('a.v2-class---button').filter({ hasText: 'Create Account', visible: true }).first();
+  const acceptTermsCheckbox = page.locator('label').filter({ hasText: 'I have read, understand and accept the surveyjs.io' }).locator('.v2-class---checkbox__checkmark').first();
+  const menuAccountLink = page.locator('span').filter({ hasText: 'Account', visible: true }).first();
+  const menuLogInLink = page.locator('a').filter({ hasText: 'Log In', visible: true }).first();
+  const menuSignUpLink = page.locator('a').filter({ hasText: 'Sign Up', visible: true }).first();
+  const invalidLoginAttemptMessage = page.locator('li').filter({ hasText: 'Invalid login attempt.', visible: true }).first();
+
+  // #region register user
+  const goToRegisterLink = page.locator('a').filter({ hasText: 'Sign Up', visible: true }).first();
+  await goToRegisterLink.click();
+
+  const displayNameInput = authField(page, 'Display Name');
+  const confirmPassword = authField(page, 'Confirm Password');
+
+  await displayNameInput.fill(displayName);
+  await emailInput.fill(email);
+  await passwordInput.fill(password);
+  await confirmPassword.fill(password);
+  await acceptTermsCheckbox.click();
+  await registerButton.click();
+
+  await expect(menuAccountLink).toBeVisible({ timeout: 30000 });
+  // #endregion register user
+
+  // #region change password
+  await page.goto(`${url}/manage#details`);
+
+  const changePasswordLink = page.locator('a.v2-class---paragraph-link').filter({ hasText: /^Change Password$/ }).first();
+  const oldPasswordInput = page.locator('#OldPassword');
+  const newPasswordInput = page.locator('#NewPassword');
+  const confirmNewPasswordInput = page.locator('#ConfirmPassword');
+  const saveChangesButton = page.locator('#change-password-form').getByRole('link', { name: 'Save Changes' });
+
+  await changePasswordLink.click();
+  await oldPasswordInput.fill(password);
+  await newPasswordInput.fill(newPassword);
+  await confirmNewPasswordInput.fill(newPassword);
+  await saveChangesButton.click();
+
+  // The form collapses back to its read-only state once the password change succeeds.
+  await expect(changePasswordLink).toBeVisible({ timeout: 30000 });
+  // #endregion change password
+
+  // #region logoff and login with new password
+  const menuLogOffLink = page.locator('span').filter({ hasText: 'Sign Out', visible: true }).first();
+
+  await menuAccountLink.hover();
+  await expect(menuLogOffLink).toBeVisible();
+  await menuLogOffLink.click();
+
+  await expect(menuLogInLink.or(menuSignUpLink)).toBeVisible();
+
+  await page.goto(`${url}/login`);
+  await emailInput.first().fill(email);
+  await passwordInput.first().fill(password);
+  await acceptTermsCheckbox.click();
+  await loginButton.click();
+
+  await expect(invalidLoginAttemptMessage).toBeVisible();
+
+  await passwordInput.first().fill(newPassword);
+  await loginButton.click();
+
+  await expect(menuAccountLink).toBeVisible({ timeout: 30000 });
+  // #endregion logoff and login with new password
+
+  // #region remove user
+  const menuManageLink = page.locator('span').filter({ hasText: 'Settings', visible: true }).first();
+  const deleteAccountEmailInput = page.locator('input[placeholder="Email"]');
+  const deleteUserButton = page.locator('.v2-class---button').filter({ hasText: 'Confirm', visible: true }).first();
+  const goToDeletePageButton = page.locator('.v2-class---button').filter({ hasText: 'Delete', visible: true }).first();
+
+  await menuAccountLink.hover();
+  await menuManageLink.click();
+
+  await page.locator('#delete-account-item').first().click();
+  await goToDeletePageButton.click();
+
+  page.once('dialog', dialog => {
+    if (dialog.type() === 'confirm') {
+      dialog.accept();
+    } else {
+      throw new Error(`An unexpected ${dialog.type()} dialog with the message "${dialog.message()}" appeared.`);
+    }
+  });
+
+  await deleteAccountEmailInput.first().fill(email);
+  await deleteUserButton.click();
+
+  await expect(menuLogInLink.or(menuSignUpLink)).toBeVisible();
+  // #endregion remove user
+});
+
 test('ForgotPasswordForm', async ({ page }) => {
   await page.setViewportSize({ width: 1920, height: 1080 });
 
